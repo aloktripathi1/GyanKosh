@@ -23,16 +23,31 @@ class DocumentCreateResponse(BaseModel):
 
 
 class JobRead(BaseModel):
-    model_config = ConfigDict(from_attributes=True)
-
     id: uuid.UUID
     document_id: uuid.UUID
     status: JobStatus
     current_stage: str | None
     progress_pct: int
     error: str | None
+    tkp_version_id: uuid.UUID | None = None
     created_at: datetime
     updated_at: datetime
+
+    @classmethod
+    def from_job(cls, job) -> "JobRead":
+        publishing = job.stage_results.get("publishing") if job.stage_results else None
+        tkp_version_id = publishing.get("tkp_version_id") if publishing else None
+        return cls(
+            id=job.id,
+            document_id=job.document_id,
+            status=job.status,
+            current_stage=job.current_stage,
+            progress_pct=job.progress_pct,
+            error=job.error,
+            tkp_version_id=tkp_version_id,
+            created_at=job.created_at,
+            updated_at=job.updated_at,
+        )
 
 
 class TKPVersionRead(BaseModel):

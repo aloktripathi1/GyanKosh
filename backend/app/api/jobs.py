@@ -22,7 +22,7 @@ def _get_job_or_404(db: Session, job_id: uuid.UUID) -> Job:
 
 @router.get("/{job_id}", response_model=JobRead, dependencies=[Depends(require_api_key)])
 def get_job(job_id: uuid.UUID, db: Session = Depends(get_db)) -> JobRead:
-    return JobRead.model_validate(_get_job_or_404(db, job_id))
+    return JobRead.from_job(_get_job_or_404(db, job_id))
 
 
 @router.get("/{job_id}/stream", dependencies=[Depends(require_api_key)])
@@ -42,7 +42,7 @@ async def stream_job(job_id: uuid.UUID) -> StreamingResponse:
                 snapshot = (job.status.value, job.current_stage, job.progress_pct)
                 if snapshot != last_snapshot:
                     last_snapshot = snapshot
-                    yield f"data: {JobRead.model_validate(job).model_dump_json()}\n\n"
+                    yield f"data: {JobRead.from_job(job).model_dump_json()}\n\n"
                 if job.status.value in ("completed", "failed"):
                     return
             finally:
