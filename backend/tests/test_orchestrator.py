@@ -137,6 +137,53 @@ def test_full_pipeline_completes_and_checkpoints_every_stage(stub_agents, storag
     assert len(db.added) == 1  # the TKPVersion row
 
 
+def test_progress_reflects_precached_stages_from_document_hash_reuse(stub_agents, storage):
+    """A re-upload of an already-seen document pre-seeds document_intelligence/
+    classification/knowledge_extraction into stage_results at job creation
+    (see api/documents.py's cache reuse). Progress must reflect that seeded
+    work immediately, not read 0% while the stepper shows those stages done."""
+    document = FakeDocument("doc.txt")
+    db = FakeSession(document)
+    doc_intel = DocumentIntelligenceOutput(
+        document_id="d1", sections=[DocumentSection(id="s1", level=1, text="Newton's second law: F=ma.")], raw_text="x"
+    )
+    classification = ClassificationOutput(
+        subject="Physics", grade="9", difficulty=DifficultyLevel.BEGINNER, topic="t", chapter="c", category="cat", language="en"
+    )
+    extraction = KnowledgeExtractionOutput(
+        objectives=[GroundedItem(text="o", source_span=SPAN)],
+        prerequisites=[], concepts=[Concept(text="F=ma.", name="N2", source_span=SPAN)],
+        definitions=[], formulae=[], keywords=[], examples=[], applications=[], misconceptions=[],
+    )
+    job = FakeJob(
+        stage_results={
+            "document_intelligence": doc_intel.model_dump(mode="json"),
+            "classification": classification.model_dump(mode="json"),
+            "knowledge_extraction": extraction.model_dump(mode="json"),
+        }
+    )
+
+    progress_at_first_new_stage = {}
+    real_teaching_planner_run = pipeline.teaching_planner.run
+
+    def capture_progress(*args, **kwargs):
+        progress_at_first_new_stage["value"] = job.progress_pct
+        return real_teaching_planner_run(*args, **kwargs)
+
+    pipeline.teaching_planner.run = capture_progress
+    try:
+        pipeline.run_pipeline(db, job)
+    finally:
+        pipeline.teaching_planner.run = real_teaching_planner_run
+
+    # 3 of 10 stages were already checkpointed before the pipeline even started.
+    assert progress_at_first_new_stage["value"] == 30
+
+    assert job.status == JobStatus.COMPLETED
+    # The pre-cached stages' agents must never be re-invoked.
+    assert stub_agents["document_intelligence"] == 0
+    assert stub_agents["classification"] == 0
+    assert stub_agents["knowledge_extraction"] == 0
 def test_resume_from_checkpoint_skips_completed_stages_and_no_duplicate_calls(stub_agents, storage):
     """Definition of Done: pipeline survives a mid-run 'worker kill' and resumes
     from the last checkpointed stage instead of restarting, with no duplicate

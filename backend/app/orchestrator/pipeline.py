@@ -174,6 +174,11 @@ def run_pipeline(db: Session, job: Job) -> None:
     storage = get_storage()
 
     job.status = JobStatus.RUNNING
+    # Stages can arrive pre-checkpointed (document-hash cache reuse on upload),
+    # so progress must reflect them even though they never went through
+    # run_stage/progress.emit here.
+    already_done = sum(1 for s in STAGE_NAMES if s in job.stage_results)
+    job.progress_pct = max(job.progress_pct, int(already_done / len(STAGE_NAMES) * 100))
     db.commit()
 
     stage = next_stage(job)
