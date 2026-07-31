@@ -23,11 +23,16 @@ TIER_MODELS = {
 }
 
 MAX_TOKENS = 32000
+# The SDK's default timeout is ~10 minutes per request; with MAX_RETRIES=3 in
+# the orchestrator, a single stalled connection could hang a stage for the
+# better part of half an hour before failing. Fail fast instead so retries
+# actually retry rather than each waiting out a near-full default timeout.
+REQUEST_TIMEOUT_SECONDS = 120
 
 
 @lru_cache
 def _client() -> anthropic.Anthropic:
-    return anthropic.Anthropic(api_key=get_settings().anthropic_api_key)
+    return anthropic.Anthropic(api_key=get_settings().anthropic_api_key, timeout=REQUEST_TIMEOUT_SECONDS)
 
 
 def structured_call(tier: ModelTier, system_prompt: str, user_prompt: str, output_schema: type[T]) -> T:
