@@ -11,6 +11,12 @@ from app.models.document import Document
 from app.models.job import Job
 from app.schemas.entities import DocumentCreateResponse, DocumentRead
 from app.storage import get_storage
+from app.tasks.pipeline_tasks import run_job
+
+# Stages before Content/Activity/Assessment/Gap generation diverge — cheap to
+# reuse verbatim when the exact same document bytes are uploaded again, so a
+# re-run never re-bills the classification/extraction LLM calls.
+_CACHEABLE_STAGES = ("document_intelligence", "classification", "knowledge_extraction")
 
 router = APIRouter(prefix="/documents", tags=["documents"])
 
@@ -50,10 +56,26 @@ async def upload_document(file: UploadFile, db: Session = Depends(get_db)) -> Do
     db.add(document)
     db.flush()
 
-    job = Job(document_id=document.id)
+    cached_stage_results = _find_cached_stage_results(db, content_hash)
+    job = Job(document_id=document.id, stage_results=cached_stage_results)
     db.add(job)
     db.commit()
     db.refresh(document)
     db.refresh(job)
 
+    run_job.delay(str(job.id))
+
     return DocumentCreateResponse(document=DocumentRead.model_validate(document), job_id=job.id)
+
+
+def _find_cached_stage_results(db: Session, content_hash: str) -> dict:
+    prior_job = (
+        db.query(Job)
+        .join(Document, Job.document_id == Document.id)
+        .filter(Document.content_hash == content_hash)
+        .order_by(Job.created_at.desc())
+        .first()
+    )
+    if prior_job is None:
+        return {}
+    return {stage: prior_job.stage_results[stage] for stage in _CACHEABLE_STAGES if stage in prior_job.stage_results}

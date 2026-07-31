@@ -1,0 +1,238 @@
+"""Orchestrator resilience tests. The retry/checkpoint/resume algorithm in
+app.orchestrator.pipeline is DB-agnostic (it only calls job.stage_results,
+job.status, db.commit()), so these tests use a lightweight fake Session/Job
+instead of a live Postgres connection, matching Section 14's "mock the LLM
+client" philosophy applied to the DB boundary instead."""
+
+import uuid
+
+import pytest
+
+from app.models.job import STAGE_NAMES, JobStatus
+from app.orchestrator import pipeline
+from app.schemas.activity_generator import ActivityGenerationOutput
+from app.schemas.assessment_generator import AssessmentGenerationOutput
+from app.schemas.classification import ClassificationOutput, DifficultyLevel
+from app.schemas.common import SourceSpan
+from app.schemas.content_generator import PeriodContentOutput
+from app.schemas.document_intelligence import DocumentIntelligenceOutput, DocumentSection
+from app.schemas.gap_analysis import GapAnalysisOutput
+from app.schemas.knowledge_extraction import Concept, GroundedItem, KnowledgeExtractionOutput
+from app.schemas.teaching_planner import Period, TeachingPlanOutput
+from app.storage.local_storage import LocalStorageBackend
+
+SPAN = SourceSpan(section_id="s1", start_char=0, end_char=5, quote="F=ma.")
+
+
+class FakeJob:
+    def __init__(self, stage_results=None):
+        self.id = uuid.uuid4()
+        self.document_id = uuid.uuid4()
+        self.status = JobStatus.PENDING
+        self.current_stage = None
+        self.progress_pct = 0
+        self.error = None
+        self.stage_results = stage_results or {}
+
+
+class FakeDocument:
+    def __init__(self, storage_path: str):
+        self.id = uuid.uuid4()
+        self.file_type = "txt"
+        self.storage_path = storage_path
+
+
+class FakeSession:
+    """Only implements what run_pipeline/run_stage/_run_publishing touch."""
+
+    def __init__(self, document):
+        self._document = document
+        self.added = []
+
+    def get(self, model, id_):
+        return self._document
+
+    def commit(self):
+        pass
+
+    def add(self, obj):
+        self.added.append(obj)
+
+    def flush(self):
+        pass
+
+
+@pytest.fixture
+def storage(tmp_path):
+    backend = LocalStorageBackend(str(tmp_path))
+    backend.save("doc.txt", __import__("io").BytesIO(b"Newton's second law: F=ma."))
+    return backend
+
+
+@pytest.fixture(autouse=True)
+def patch_storage(monkeypatch, storage):
+    monkeypatch.setattr(pipeline, "get_storage", lambda: storage)
+    monkeypatch.setattr(pipeline, "BACKOFF_BASE_SECONDS", 0)
+
+
+@pytest.fixture
+def stub_agents(monkeypatch):
+    """Replace every agent's .run with a fast, deterministic stub returning a
+    minimal valid output for its stage."""
+    doc_intel = DocumentIntelligenceOutput(
+        document_id="d1", sections=[DocumentSection(id="s1", level=1, text="Newton's second law: F=ma.")], raw_text="x"
+    )
+    classification = ClassificationOutput(
+        subject="Physics", grade="9", difficulty=DifficultyLevel.BEGINNER, topic="t", chapter="c", category="cat", language="en"
+    )
+    extraction = KnowledgeExtractionOutput(
+        objectives=[GroundedItem(text="o", source_span=SPAN)],
+        prerequisites=[], concepts=[Concept(text="F=ma.", name="N2", source_span=SPAN)],
+        definitions=[], formulae=[], keywords=[], examples=[], applications=[], misconceptions=[],
+    )
+    plan = TeachingPlanOutput(
+        periods=[Period(period_number=1, title="P1", objectives=["o"], concepts_covered=["c"], sequencing_rationale="r")],
+        total_periods=1, planning_rationale="r",
+    )
+    content = PeriodContentOutput(periods=[])
+    activities = ActivityGenerationOutput(periods=[])
+    assessments = AssessmentGenerationOutput(periods=[])
+    gaps = GapAnalysisOutput(gaps=[])
+
+    calls = {name: 0 for name in STAGE_NAMES}
+
+    def make_stub(name, value):
+        def stub(*args, **kwargs):
+            calls[name] += 1
+            return value
+        return stub
+
+    monkeypatch.setattr(pipeline.document_intelligence, "run", make_stub("document_intelligence", doc_intel))
+    monkeypatch.setattr(pipeline.classification_agent, "run", make_stub("classification", classification))
+    monkeypatch.setattr(pipeline.knowledge_extraction, "run", make_stub("knowledge_extraction", extraction))
+    monkeypatch.setattr(pipeline.teaching_planner, "run", make_stub("teaching_planner", plan))
+    monkeypatch.setattr(pipeline.content_generator, "run", make_stub("content_generation", content))
+    monkeypatch.setattr(pipeline.activity_generator, "run", make_stub("activity_generation", activities))
+    monkeypatch.setattr(pipeline.assessment_generator, "run", make_stub("assessment_generation", assessments))
+    monkeypatch.setattr(pipeline.gap_analysis, "run", make_stub("gap_analysis", gaps))
+    monkeypatch.setattr(pipeline, "render_lesson_plans", lambda tkp, storage: "tkp/lesson_plans.pdf")
+    monkeypatch.setattr(pipeline, "render_teacher_guide", lambda tkp, storage: "tkp/teacher_guide.pdf")
+    monkeypatch.setattr(pipeline, "render_assessment_book", lambda tkp, storage: "tkp/assessment_book.pdf")
+
+    return calls
+
+
+def test_full_pipeline_completes_and_checkpoints_every_stage(stub_agents, storage):
+    document = FakeDocument("doc.txt")
+    db = FakeSession(document)
+    job = FakeJob()
+
+    pipeline.run_pipeline(db, job)
+
+    assert job.status == JobStatus.COMPLETED
+    assert job.progress_pct == 100
+    assert set(job.stage_results.keys()) == set(STAGE_NAMES)
+    agent_backed_stages = [s for s in STAGE_NAMES if s not in ("validation", "publishing")]
+    assert all(stub_agents[s] == 1 for s in agent_backed_stages)
+    assert len(db.added) == 1  # the TKPVersion row
+
+
+def test_resume_from_checkpoint_skips_completed_stages_and_no_duplicate_calls(stub_agents, storage):
+    """Definition of Done: pipeline survives a mid-run 'worker kill' and resumes
+    from the last checkpointed stage instead of restarting, with no duplicate
+    LLM calls for already-completed stages."""
+    document = FakeDocument("doc.txt")
+    db = FakeSession(document)
+
+    # Simulate a job that already checkpointed the first 3 stages before the
+    # worker died — as if run_pipeline had been interrupted mid-run.
+    precomputed = {}
+    for stage in STAGE_NAMES[:3]:
+        precomputed[stage] = {"__stub__": stage}  # stand-in checkpoint payloads
+
+    # _execute_stage would try to parse these with the real schema for later
+    # stages, so instead precompute via a real (short) run up to stage 3, then
+    # kill it, to get valid checkpoint payloads.
+    job = FakeJob()
+    original_execute = pipeline._execute_stage
+    call_count = {"n": 0}
+
+    def killer(job, stage, document, storage, db):
+        call_count["n"] += 1
+        if call_count["n"] > 3:
+            raise RuntimeError("simulated worker kill")
+        return original_execute(job, stage, document, storage, db)
+
+    import app.orchestrator.pipeline as pipeline_module
+
+    pipeline_module._execute_stage = killer
+    try:
+        with pytest.raises(pipeline.StageFailedError):
+            pipeline.run_pipeline(db, job)
+    finally:
+        pipeline_module._execute_stage = original_execute
+
+    assert job.status == JobStatus.FAILED
+    completed_after_kill = set(job.stage_results.keys())
+    assert completed_after_kill == set(STAGE_NAMES[:3])
+    calls_before_resume = dict(stub_agents)
+
+    # "Restart the worker": call run_pipeline again on the same job. It must
+    # resume from stage 4, not redo stages 1-3.
+    job.status = JobStatus.PENDING
+    job.error = None
+    pipeline.run_pipeline(db, job)
+
+    assert job.status == JobStatus.COMPLETED
+    assert set(job.stage_results.keys()) == set(STAGE_NAMES)
+    for stage in STAGE_NAMES[:3]:
+        assert calls_before_resume[stage] == stub_agents[stage], f"{stage} was re-invoked after resume"
+
+
+def test_stage_retries_then_succeeds(stub_agents, storage):
+    document = FakeDocument("doc.txt")
+    db = FakeSession(document)
+    job = FakeJob()
+
+    attempts = {"n": 0}
+    real_run = pipeline.classification_agent.run
+
+    def flaky(*args, **kwargs):
+        attempts["n"] += 1
+        if attempts["n"] < 2:
+            raise RuntimeError("transient LLM error")
+        return real_run(*args, **kwargs)
+
+    job.stage_results["document_intelligence"] = pipeline.document_intelligence.run(None).model_dump(mode="json")
+    pipeline.classification_agent.run = flaky
+    try:
+        pipeline.run_stage(db, job, "classification", document, storage)
+    finally:
+        pipeline.classification_agent.run = real_run
+
+    assert attempts["n"] == 2
+    assert "classification" in job.stage_results
+    assert job.status != JobStatus.FAILED
+
+
+def test_stage_fails_explicitly_after_exhausting_retries(stub_agents, storage):
+    document = FakeDocument("doc.txt")
+    db = FakeSession(document)
+    job = FakeJob()
+    job.stage_results["document_intelligence"] = pipeline.document_intelligence.run(None).model_dump(mode="json")
+
+    def always_fails(*args, **kwargs):
+        raise RuntimeError("permanent LLM error")
+
+    pipeline.classification_agent.run = always_fails
+    try:
+        with pytest.raises(pipeline.StageFailedError):
+            pipeline.run_stage(db, job, "classification", document, storage)
+    finally:
+        import importlib
+
+        importlib.reload(pipeline)
+
+    assert job.status == JobStatus.FAILED
+    assert job.error is not None
+    assert "classification" in job.error
