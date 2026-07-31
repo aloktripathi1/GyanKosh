@@ -4,7 +4,10 @@ Pipeline that converts a raw educational document into a structured, classroom-r
 
 ## Status
 
-Milestone 1 (scaffold) complete: repo structure, Pydantic schemas for all 10 stage outputs, Postgres schema + Alembic migration, FastAPI skeleton with the documented routes, empty backend deploy on Render. No agent/LLM logic yet — every `agents/`, `validation/`, `publishing/`, and `orchestrator.pipeline.run_stage` function raises `NotImplementedError` with a milestone marker.
+- **Milestone 1 (scaffold)**: repo structure, Pydantic schemas for all 10 stage outputs, Postgres schema + Alembic migration, FastAPI skeleton with the documented routes, empty backend deploy on Render.
+- **Milestone 2 (understanding pipeline)**: Document Intelligence agent (PDF/DOCX/PPTX/text parsing), Classification agent, and Knowledge Extraction agent — verified end-to-end on both a STEM and a humanities document, with source-span grounding resolved deterministically from LLM-cited quotes.
+
+Still stubbed (`NotImplementedError` with a milestone marker): Teaching Planner, Content/Activity/Assessment/Gap generation agents, validation checks, PDF rendering, and orchestrator stage execution/retry/checkpointing.
 
 ## Local setup
 
@@ -35,4 +38,6 @@ npm run dev
 
 ## Architecture
 
-See Section 6 of `BUILD_CONTEXT.md` and `architecture-diagram.excalidraw` in this folder.
+![GyanKosh architecture diagram](Gyankosh.png)
+
+See Section 6 of `BUILD_CONTEXT.md` and `architecture-diagram.excalidraw` in this folder for the editable source.
