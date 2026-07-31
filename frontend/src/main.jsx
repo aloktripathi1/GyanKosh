@@ -1,6 +1,7 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
+import "./styles.css";
 import Upload from "./pages/Upload.jsx";
 import JobProgress from "./pages/JobProgress.jsx";
 import TKPReview from "./pages/TKPReview.jsx";
