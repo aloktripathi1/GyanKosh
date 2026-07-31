@@ -1,7 +1,8 @@
 import base64
+import json
 from enum import Enum
 from functools import lru_cache
-from typing import TypeVar
+from typing import Any, TypeVar
 
 import anthropic
 from pydantic import BaseModel
@@ -65,9 +66,31 @@ def structured_call(tier: ModelTier, system_prompt: str, user_prompt: str, outpu
 
     for block in response.content:
         if block.type == "tool_use" and block.name == tool_name:
-            return output_schema.model_validate(block.input)
+            return output_schema.model_validate(_repair_stringified_json(block.input))
 
     raise RuntimeError(f"Model did not return a {tool_name} tool_use block")
+
+
+def _repair_stringified_json(value: Any) -> Any:
+    """On deeply-nested schemas, tool-use output occasionally serializes a
+    nested list/object as a JSON string instead of embedding it directly —
+    observed live on a real dense document (16-page NCERT chapter) where a
+    list field came back as '[\\n  {...}\\n]' rather than an actual list.
+    Recursively un-stringify anything that parses as JSON before validation,
+    rather than failing a whole stage retry over a formatting quirk."""
+    if isinstance(value, str):
+        stripped = value.strip()
+        if stripped[:1] in "[{":
+            try:
+                return _repair_stringified_json(json.loads(stripped))
+            except (json.JSONDecodeError, ValueError):
+                return value
+        return value
+    if isinstance(value, list):
+        return [_repair_stringified_json(item) for item in value]
+    if isinstance(value, dict):
+        return {k: _repair_stringified_json(v) for k, v in value.items()}
+    return value
 
 
 OCR_SYSTEM_PROMPT = """You transcribe scanned textbook pages into clean text.

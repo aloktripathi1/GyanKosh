@@ -65,6 +65,29 @@ def test_structured_call_returns_validated_output(monkeypatch):
     assert result == _Output(value="hello")
 
 
+def test_structured_call_repairs_stringified_list_field(monkeypatch):
+    """Observed live: a nested list field occasionally comes back as a JSON
+    string instead of an actual list on a dense real document. Must be
+    repaired before validation, not fail the whole stage over formatting."""
+
+    class _WithList(BaseModel):
+        items: list[str]
+
+    stringified_input = {"items": '["a", "b", "c"]'}
+    fake = _FakeAnthropicClient(_tool_use_response("_WithList", stringified_input))
+    monkeypatch.setattr(llm_client, "_client", lambda: fake)
+
+    result = llm_client.structured_call(llm_client.ModelTier.CHEAP, "sys", "user", _WithList)
+
+    assert result.items == ["a", "b", "c"]
+
+
+def test_repair_stringified_json_leaves_plain_strings_alone():
+    assert llm_client._repair_stringified_json("just a normal string") == "just a normal string"
+    assert llm_client._repair_stringified_json({"a": 1, "b": [1, 2]}) == {"a": 1, "b": [1, 2]}
+    assert llm_client._repair_stringified_json("not json but starts with [oops") == "not json but starts with [oops"
+
+
 def test_ocr_page_text_marks_system_prompt_as_ephemeral_cache(monkeypatch):
     fake_response = SimpleNamespace(content=[SimpleNamespace(type="text", text="transcribed text")])
     fake = _FakeAnthropicClient(fake_response)
