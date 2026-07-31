@@ -45,11 +45,12 @@ def _regenerate_field(section: str, tkp_version: TKPVersion, job: Job) -> dict:
     teaching_plan = TeachingPlanOutput.model_validate(tkp_version.teaching_plan)
 
     if section == "classification":
-        return classification_agent.run(_doc_intel(job)).model_dump(mode="json")
+        return classification_agent.run(_doc_intel(job), job.teaching_context).model_dump(mode="json")
     if section == "extracted_knowledge":
         return knowledge_extraction.run(_doc_intel(job)).model_dump(mode="json")
     if section == "teaching_plan":
-        return teaching_planner.run(teaching_planner.TeachingPlannerInput(classification, extracted_knowledge)).model_dump(mode="json")
+        planner_input = teaching_planner.TeachingPlannerInput(classification, extracted_knowledge, job.teaching_context)
+        return teaching_planner.run(planner_input).model_dump(mode="json")
     if section == "period_content":
         return content_generator.run(content_generator.ContentGeneratorInput(teaching_plan, extracted_knowledge)).model_dump(mode="json")
     if section == "activities":

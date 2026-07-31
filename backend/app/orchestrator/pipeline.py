@@ -58,7 +58,7 @@ def _execute_stage(job: Job, stage: str, document: Document, storage: StorageBac
 
     if stage == "classification":
         doc_intel = _load(job, "document_intelligence", DocumentIntelligenceOutput)
-        return classification_agent.run(doc_intel).model_dump(mode="json")
+        return classification_agent.run(doc_intel, job.teaching_context).model_dump(mode="json")
 
     if stage == "knowledge_extraction":
         doc_intel = _load(job, "document_intelligence", DocumentIntelligenceOutput)
@@ -67,7 +67,8 @@ def _execute_stage(job: Job, stage: str, document: Document, storage: StorageBac
     if stage == "teaching_planner":
         cls = _load(job, "classification", ClassificationOutput)
         ek = _load(job, "knowledge_extraction", KnowledgeExtractionOutput)
-        return teaching_planner.run(teaching_planner.TeachingPlannerInput(cls, ek)).model_dump(mode="json")
+        planner_input = teaching_planner.TeachingPlannerInput(cls, ek, job.teaching_context)
+        return teaching_planner.run(planner_input).model_dump(mode="json")
 
     if stage == "content_generation":
         plan = _load(job, "teaching_planner", TeachingPlanOutput)

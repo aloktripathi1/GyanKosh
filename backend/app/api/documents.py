@@ -2,7 +2,7 @@ import hashlib
 import io
 import uuid
 
-from fastapi import APIRouter, Depends, HTTPException, UploadFile, status
+from fastapi import APIRouter, Depends, Form, HTTPException, UploadFile, status
 from sqlalchemy.orm import Session
 
 from app.api.deps import require_api_key
@@ -30,7 +30,11 @@ MAX_UPLOAD_BYTES = 25 * 1024 * 1024
 
 
 @router.post("", response_model=DocumentCreateResponse, status_code=status.HTTP_202_ACCEPTED, dependencies=[Depends(require_api_key)])
-async def upload_document(file: UploadFile, db: Session = Depends(get_db)) -> DocumentCreateResponse:
+async def upload_document(
+    file: UploadFile,
+    teaching_context: str | None = Form(None),
+    db: Session = Depends(get_db),
+) -> DocumentCreateResponse:
     if file.content_type not in ALLOWED_CONTENT_TYPES:
         raise HTTPException(status_code=status.HTTP_415_UNSUPPORTED_MEDIA_TYPE, detail=f"Unsupported file type: {file.content_type}")
 
@@ -57,7 +61,11 @@ async def upload_document(file: UploadFile, db: Session = Depends(get_db)) -> Do
     db.flush()
 
     cached_stage_results = _find_cached_stage_results(db, content_hash)
-    job = Job(document_id=document.id, stage_results=cached_stage_results)
+    job = Job(
+        document_id=document.id,
+        stage_results=cached_stage_results,
+        teaching_context=teaching_context or None,
+    )
     db.add(job)
     db.commit()
     db.refresh(document)

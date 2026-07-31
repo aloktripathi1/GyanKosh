@@ -32,6 +32,7 @@ class FakeJob:
         self.current_stage = None
         self.progress_pct = 0
         self.error = None
+        self.teaching_context = None
         self.stage_results = stage_results or {}
 
 
@@ -91,7 +92,7 @@ def stub_agents(monkeypatch):
         definitions=[], formulae=[], keywords=[], examples=[], applications=[], misconceptions=[],
     )
     plan = TeachingPlanOutput(
-        periods=[Period(period_number=1, title="P1", objectives=["o"], concepts_covered=["c"], sequencing_rationale="r")],
+        periods=[Period(period_number=1, title="P1", objectives=["o"], concepts_covered=["c"], sequencing_rationale="r", recommended_duration_minutes=40)],
         total_periods=1, planning_rationale="r",
     )
     content = PeriodContentOutput(periods=[])

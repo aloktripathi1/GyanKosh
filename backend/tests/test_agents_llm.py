@@ -69,6 +69,7 @@ def sample_plan():
                 objectives=["Understand F = ma"],
                 concepts_covered=["Newton's Second Law"],
                 sequencing_rationale="Foundational law taught first",
+                recommended_duration_minutes=40,
             )
         ],
         total_periods=1,
@@ -80,6 +81,31 @@ def test_classification_run_returns_schema(monkeypatch, sample_document, sample_
     monkeypatch.setattr(classification, "structured_call", lambda **kwargs: sample_classification)
     result = classification.run(sample_document)
     assert result == sample_classification
+
+
+def test_classification_run_includes_teaching_context_in_prompt(monkeypatch, sample_document, sample_classification):
+    captured = {}
+
+    def fake_call(**kwargs):
+        captured.update(kwargs)
+        return sample_classification
+
+    monkeypatch.setattr(classification, "structured_call", fake_call)
+    classification.run(sample_document, teaching_context="Grade 8 CBSE, exam-prep style")
+    assert "Grade 8 CBSE" in captured["user_prompt"]
+
+
+def test_teaching_planner_run_includes_teaching_context_in_prompt(monkeypatch, sample_classification, sample_extraction, sample_plan):
+    captured = {}
+
+    def fake_call(**kwargs):
+        captured.update(kwargs)
+        return sample_plan
+
+    monkeypatch.setattr(teaching_planner, "structured_call", fake_call)
+    planner_input = teaching_planner.TeachingPlannerInput(sample_classification, sample_extraction, "Only 3 periods available")
+    teaching_planner.run(planner_input)
+    assert "Only 3 periods available" in captured["user_prompt"]
 
 
 def test_knowledge_extraction_run_resolves_grounding(monkeypatch, sample_document):

@@ -33,7 +33,7 @@ def _stage_results():
         misconceptions=[],
     )
     plan = TeachingPlanOutput(
-        periods=[Period(period_number=1, title="P1", objectives=["o"], concepts_covered=["c"], sequencing_rationale="r")],
+        periods=[Period(period_number=1, title="P1", objectives=["o"], concepts_covered=["c"], sequencing_rationale="r", recommended_duration_minutes=40)],
         total_periods=1,
         planning_rationale="r",
     )

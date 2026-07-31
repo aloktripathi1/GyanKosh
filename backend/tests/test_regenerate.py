@@ -48,7 +48,7 @@ def _extraction():
 
 def _plan():
     return TeachingPlanOutput(
-        periods=[Period(period_number=1, title="P1", objectives=["o"], concepts_covered=["c"], sequencing_rationale="r")],
+        periods=[Period(period_number=1, title="P1", objectives=["o"], concepts_covered=["c"], sequencing_rationale="r", recommended_duration_minutes=40)],
         total_periods=1, planning_rationale="r",
     )
 
@@ -84,7 +84,7 @@ def test_regenerate_teaching_plan_updates_field_and_revalidates(monkeypatch):
     db = FakeSession(job)
 
     new_plan = TeachingPlanOutput(
-        periods=[Period(period_number=1, title="Updated", objectives=["o2"], concepts_covered=["c"], sequencing_rationale="r2")],
+        periods=[Period(period_number=1, title="Updated", objectives=["o2"], concepts_covered=["c"], sequencing_rationale="r2", recommended_duration_minutes=40)],
         total_periods=1, planning_rationale="regenerated",
     )
     monkeypatch.setattr(regenerate.teaching_planner, "run", lambda *a, **k: new_plan)

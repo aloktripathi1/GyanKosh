@@ -4,10 +4,10 @@ from app.schemas.classification import ClassificationOutput
 from app.schemas.document_intelligence import DocumentIntelligenceOutput
 
 
-def run(input: DocumentIntelligenceOutput) -> ClassificationOutput:
+def run(input: DocumentIntelligenceOutput, teaching_context: str | None = None) -> ClassificationOutput:
     return structured_call(
         tier=ModelTier.CHEAP,
         system_prompt=SYSTEM_PROMPT,
-        user_prompt=build_user_prompt(input),
+        user_prompt=build_user_prompt(input, teaching_context),
         output_schema=ClassificationOutput,
     )

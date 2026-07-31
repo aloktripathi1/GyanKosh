@@ -1,6 +1,6 @@
 import { useCallback, useRef, useState } from "react";
 import { useNavigate } from "react-router-dom";
-import { UploadCloud, FileText, Target, LayoutList, ShieldCheck } from "lucide-react";
+import { UploadCloud, FileText, Target, LayoutList, ShieldCheck, Plus } from "lucide-react";
 import { uploadDocument } from "../api.js";
 
 const ACCEPTED = ".pdf,.docx,.pptx,.txt";
@@ -15,6 +15,8 @@ export default function Upload() {
   const [dragOver, setDragOver] = useState(false);
   const [status, setStatus] = useState("idle"); // idle | uploading | error
   const [error, setError] = useState(null);
+  const [showContext, setShowContext] = useState(false);
+  const [teachingContext, setTeachingContext] = useState("");
   const inputRef = useRef(null);
   const navigate = useNavigate();
 
@@ -24,14 +26,14 @@ export default function Upload() {
       setStatus("uploading");
       setError(null);
       try {
-        const res = await uploadDocument(file);
+        const res = await uploadDocument(file, teachingContext.trim() || undefined);
         navigate(`/jobs/${res.job_id}`);
       } catch (err) {
         setStatus("error");
         setError(err.detail || err.message || "Upload failed");
       }
     },
-    [navigate]
+    [navigate, teachingContext]
   );
 
   return (
@@ -95,6 +97,42 @@ export default function Upload() {
         </div>
 
         {status === "error" && <div className="error-banner">Upload failed: {error}</div>}
+
+        {status !== "uploading" && (
+          <div className="stack-sm">
+            {!showContext ? (
+              <button
+                type="button"
+                className="context-toggle"
+                onClick={(e) => {
+                  e.stopPropagation();
+                  setShowContext(true);
+                }}
+              >
+                <Plus size={13} /> Add teaching context (optional)
+              </button>
+            ) : (
+              <div className="stack-sm">
+                <label htmlFor="teaching-context" className="context-label">
+                  Teaching context (optional)
+                </label>
+                <textarea
+                  id="teaching-context"
+                  className="context-input"
+                  placeholder="e.g. Grade 8 CBSE, focus on numerical problems, 3 periods only, exam-prep style"
+                  rows={3}
+                  value={teachingContext}
+                  onChange={(e) => setTeachingContext(e.target.value)}
+                  onClick={(e) => e.stopPropagation()}
+                />
+                <p className="muted" style={{ fontSize: "var(--text-xs)" }}>
+                  Grade level, objectives, teaching style, or time constraints — used to shape the plan, not
+                  to introduce new subject matter.
+                </p>
+              </div>
+            )}
+          </div>
+        )}
 
         <div
           className="feature-list hero-in hero-in-delay-2"
