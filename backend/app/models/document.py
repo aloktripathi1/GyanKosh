@@ -16,4 +16,7 @@ class Document(Base):
     file_type: Mapped[str] = mapped_column(String, nullable=False)
     storage_path: Mapped[str] = mapped_column(String, nullable=False)
     content_hash: Mapped[str] = mapped_column(String, nullable=False, index=True)
+    document_type_hint: Mapped[str | None] = mapped_column(
+        String, nullable=True, doc="user-declared document nature at upload time, used for parser routing"
+    )
     uploaded_at: Mapped[datetime] = mapped_column(DateTime(timezone=True), server_default=func.now())

@@ -1,3 +1,4 @@
+import base64
 from enum import Enum
 from functools import lru_cache
 from typing import TypeVar
@@ -53,3 +54,35 @@ def structured_call(tier: ModelTier, system_prompt: str, user_prompt: str, outpu
             return output_schema.model_validate(block.input)
 
     raise RuntimeError(f"Model did not return a {tool_name} tool_use block")
+
+
+OCR_SYSTEM_PROMPT = """You transcribe scanned textbook pages into clean text.
+Reproduce every word exactly as written — do not summarize, paraphrase, or skip
+content. Preserve structure: headings on their own line, tables as markdown
+tables, equations as LaTeX between $ delimiters, figure/activity captions
+included as plain text. If the page is blank or contains no legible text,
+respond with exactly: [blank page]"""
+
+
+def ocr_page_text(image_bytes: bytes, media_type: str = "image/png") -> str:
+    """Vision fallback for pages a text-layer extractor can't read (scanned
+    PDFs, image-only pages) — only called when the cheap path already failed,
+    per the cost-aware routing the document-type hint exists to support."""
+    response = _client().messages.create(
+        model=TIER_MODELS[ModelTier.STRONG],
+        max_tokens=MAX_TOKENS,
+        system=OCR_SYSTEM_PROMPT,
+        messages=[
+            {
+                "role": "user",
+                "content": [
+                    {
+                        "type": "image",
+                        "source": {"type": "base64", "media_type": media_type, "data": base64.b64encode(image_bytes).decode()},
+                    },
+                    {"type": "text", "text": "Transcribe this page."},
+                ],
+            }
+        ],
+    )
+    return "".join(block.text for block in response.content if block.type == "text").strip()

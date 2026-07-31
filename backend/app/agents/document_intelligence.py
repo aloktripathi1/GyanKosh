@@ -5,6 +5,8 @@ import fitz  # PyMuPDF
 from docx import Document as DocxDocument
 from pptx import Presentation
 
+from app.agents.document_type_hints import SCANNED_PDF
+from app.llm.client import ocr_page_text
 from app.schemas.document_intelligence import (
     DocumentIntelligenceOutput,
     DocumentSection,
@@ -15,15 +17,24 @@ from app.schemas.document_intelligence import (
 
 EQUATION_PATTERN = re.compile(r"[=≈≠≤≥∑∫√±×÷^]|\b[a-zA-Z]\s*=\s*[-\w]")
 
+# Below this many characters of extracted text, a page is almost certainly a
+# scan or image-only — not a legitimately short page of real content.
+OCR_FALLBACK_THRESHOLD_CHARS = 40
+# A user-declared "scanned" hint trusts the signal more: even a page with a
+# little stray extracted text (stamps, watermarks, running headers) still
+# gets the OCR treatment rather than being taken at face value.
+OCR_FALLBACK_THRESHOLD_CHARS_HINTED = 200
+
 
 class DocumentIntelligenceInput:
     """Raw bytes, not a storage_path — the caller reads the file via the storage
     interface and hands this agent plain bytes, so parsing stays a pure function."""
 
-    def __init__(self, document_id: str, file_type: str, content: bytes):
+    def __init__(self, document_id: str, file_type: str, content: bytes, document_type_hint: str | None = None):
         self.document_id = document_id
         self.file_type = file_type
         self.content = content
+        self.document_type_hint = document_type_hint
 
 
 def _find_equations(section_id: str, text: str, page: int | None) -> list[EquationBlock]:
@@ -35,14 +46,22 @@ def _find_equations(section_id: str, text: str, page: int | None) -> list[Equati
     return equations
 
 
-def _parse_pdf(document_id: str, content: bytes) -> DocumentIntelligenceOutput:
+def _parse_pdf(document_id: str, content: bytes, document_type_hint: str | None = None) -> DocumentIntelligenceOutput:
     doc = fitz.open(stream=content, filetype="pdf")
     sections: list[DocumentSection] = []
     raw_text_parts: list[str] = []
+    threshold = OCR_FALLBACK_THRESHOLD_CHARS_HINTED if document_type_hint == SCANNED_PDF else OCR_FALLBACK_THRESHOLD_CHARS
 
     for page_index, page in enumerate(doc):
         page_num = page_index + 1
         text = page.get_text()
+
+        if len(text.strip()) < threshold:
+            pixmap = page.get_pixmap(dpi=150)
+            ocr_text = ocr_page_text(pixmap.tobytes("png"), media_type="image/png")
+            if ocr_text and ocr_text != "[blank page]":
+                text = ocr_text
+
         raw_text_parts.append(text)
         section_id = f"page-{page_num}"
 
@@ -221,4 +240,6 @@ def run(input: DocumentIntelligenceInput) -> DocumentIntelligenceOutput:
     parser = _PARSERS.get(input.file_type)
     if parser is None:
         raise ValueError(f"Unsupported file_type for Document Intelligence: {input.file_type}")
+    if input.file_type == "pdf":
+        return _parse_pdf(input.document_id, input.content, input.document_type_hint)
     return parser(input.document_id, input.content)

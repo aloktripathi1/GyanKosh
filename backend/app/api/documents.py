@@ -5,6 +5,7 @@ import uuid
 from fastapi import APIRouter, Depends, Form, HTTPException, UploadFile, status
 from sqlalchemy.orm import Session
 
+from app.agents.document_type_hints import ALL_HINTS
 from app.api.deps import require_api_key
 from app.db import get_db
 from app.models.document import Document
@@ -33,10 +34,13 @@ MAX_UPLOAD_BYTES = 25 * 1024 * 1024
 async def upload_document(
     file: UploadFile,
     teaching_context: str | None = Form(None),
+    document_type_hint: str | None = Form(None),
     db: Session = Depends(get_db),
 ) -> DocumentCreateResponse:
     if file.content_type not in ALLOWED_CONTENT_TYPES:
         raise HTTPException(status_code=status.HTTP_415_UNSUPPORTED_MEDIA_TYPE, detail=f"Unsupported file type: {file.content_type}")
+    if document_type_hint is not None and document_type_hint not in ALL_HINTS:
+        raise HTTPException(status_code=status.HTTP_400_BAD_REQUEST, detail=f"Unknown document_type_hint: {document_type_hint}")
 
     contents = await file.read()
     if len(contents) > MAX_UPLOAD_BYTES:
@@ -56,6 +60,7 @@ async def upload_document(
         file_type=file_type,
         storage_path=storage_key,
         content_hash=content_hash,
+        document_type_hint=document_type_hint,
     )
     db.add(document)
     db.flush()

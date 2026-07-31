@@ -51,9 +51,10 @@ def _execute_stage(job: Job, stage: str, document: Document, storage: StorageBac
     agent. Pure dispatch — no retry or commit here, that belongs to run_stage."""
     if stage == "document_intelligence":
         content = storage.read(document.storage_path)
-        result = document_intelligence.run(
-            document_intelligence.DocumentIntelligenceInput(str(document.id), document.file_type, content)
+        di_input = document_intelligence.DocumentIntelligenceInput(
+            str(document.id), document.file_type, content, document.document_type_hint
         )
+        result = document_intelligence.run(di_input)
         return result.model_dump(mode="json")
 
     if stage == "classification":

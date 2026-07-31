@@ -27,10 +27,11 @@ async function request(path, options = {}) {
   return res.json();
 }
 
-export function uploadDocument(file, teachingContext) {
+export function uploadDocument(file, teachingContext, documentTypeHint) {
   const form = new FormData();
   form.append("file", file);
   if (teachingContext) form.append("teaching_context", teachingContext);
+  if (documentTypeHint) form.append("document_type_hint", documentTypeHint);
   return request("/documents", { method: "POST", body: form });
 }
 

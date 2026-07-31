@@ -41,6 +41,7 @@ class FakeDocument:
         self.id = uuid.uuid4()
         self.file_type = "txt"
         self.storage_path = storage_path
+        self.document_type_hint = None
 
 
 class FakeSession:

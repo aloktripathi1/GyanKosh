@@ -5,6 +5,14 @@ import { uploadDocument } from "../api.js";
 
 const ACCEPTED = ".pdf,.docx,.pptx,.txt";
 
+const DOCUMENT_TYPES = [
+  { value: "mostly_text", label: "Mostly text" },
+  { value: "text_with_tables", label: "Text with tables" },
+  { value: "text_with_diagrams", label: "Text with diagrams" },
+  { value: "text_with_equations", label: "Text with equations" },
+  { value: "scanned_pdf", label: "Scanned PDF" },
+];
+
 const FEATURES = [
   { icon: Target, title: "Grounded, not hallucinated", desc: "Every generated claim traces back to a source span in your document." },
   { icon: LayoutList, title: "Full lesson package", desc: "Plans, activities, assessments, and a learning-gap analysis, generated together." },
@@ -17,6 +25,7 @@ export default function Upload() {
   const [error, setError] = useState(null);
   const [showContext, setShowContext] = useState(false);
   const [teachingContext, setTeachingContext] = useState("");
+  const [documentType, setDocumentType] = useState(null);
   const inputRef = useRef(null);
   const navigate = useNavigate();
 
@@ -26,14 +35,14 @@ export default function Upload() {
       setStatus("uploading");
       setError(null);
       try {
-        const res = await uploadDocument(file, teachingContext.trim() || undefined);
+        const res = await uploadDocument(file, teachingContext.trim() || undefined, documentType || undefined);
         navigate(`/jobs/${res.job_id}`);
       } catch (err) {
         setStatus("error");
         setError(err.detail || err.message || "Upload failed");
       }
     },
-    [navigate, teachingContext]
+    [navigate, teachingContext, documentType]
   );
 
   return (
@@ -49,6 +58,22 @@ export default function Upload() {
             assessments, and a learning-gap analysis grounded in your source material. Watch it happen in
             real time.
           </p>
+        </div>
+
+        <div className="stack-sm hero-in">
+          <span className="context-label">What kind of document is this? (optional — helps us parse it well)</span>
+          <div className="doctype-chips">
+            {DOCUMENT_TYPES.map((t) => (
+              <button
+                key={t.value}
+                type="button"
+                className={`doctype-chip${documentType === t.value ? " active" : ""}`}
+                onClick={() => setDocumentType(documentType === t.value ? null : t.value)}
+              >
+                {t.label}
+              </button>
+            ))}
+          </div>
         </div>
 
         <div

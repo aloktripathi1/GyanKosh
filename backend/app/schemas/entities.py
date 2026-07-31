@@ -14,6 +14,7 @@ class DocumentRead(BaseModel):
     file_type: str
     storage_path: str
     content_hash: str
+    document_type_hint: str | None = None
     uploaded_at: datetime
 
 
