@@ -1,0 +1,59 @@
+<!doctype html>
+<html>
+<head><meta charset="utf-8"><style>{{ base_css }}</style></head>
+<body>
+  <h1>{{ classification.topic }} — Assessment Book</h1>
+  <p class="subtitle">{{ classification.subject }} · Grade {{ classification.grade }}</p>
+
+  {% for period in assessments.periods %}
+  <div class="period">
+    <h2>Period {{ period.period_number }}</h2>
+
+    {% if period.mcqs %}
+    <h3>Multiple choice</h3>
+    {% for q in period.mcqs %}
+    <div class="card">
+      <strong>{{ loop.index }}. {{ q.question }}</strong>
+      <ul>{% for opt in q.options %}<li>{{ opt }}</li>{% endfor %}</ul>
+      <span class="answer">Correct: {{ q.options[q.correct_option_index] }}</span>
+      <p class="rubric">{{ q.explanation }}</p>
+    </div>
+    {% endfor %}
+    {% endif %}
+
+    {% if period.short_answer %}
+    <h3>Short answer</h3>
+    {% for q in period.short_answer %}
+    <div class="card">
+      <strong>{{ loop.index }}. {{ q.question }}</strong>
+      <p class="answer">Model answer: {{ q.model_answer }}</p>
+      <p class="rubric">Rubric: {{ q.rubric | join('; ') }}</p>
+    </div>
+    {% endfor %}
+    {% endif %}
+
+    {% if period.long_answer %}
+    <h3>Long answer</h3>
+    {% for q in period.long_answer %}
+    <div class="card">
+      <strong>{{ loop.index }}. {{ q.question }}</strong>
+      <p class="answer">Model answer: {{ q.model_answer }}</p>
+      <p class="rubric">Rubric: {{ q.rubric | join('; ') }}</p>
+    </div>
+    {% endfor %}
+    {% endif %}
+
+    {% if period.numerical %}
+    <h3>Numerical</h3>
+    {% for q in period.numerical %}
+    <div class="card">
+      <strong>{{ loop.index }}. {{ q.question }}</strong>
+      <p class="answer">Answer: {{ q.correct_answer }} (± {{ q.tolerance }})</p>
+      <p class="rubric">Solution: {{ q.solution_steps | join(' → ') }}</p>
+    </div>
+    {% endfor %}
+    {% endif %}
+  </div>
+  {% endfor %}
+</body>
+</html>

@@ -45,9 +45,11 @@ class TKPVersionRead(BaseModel):
     extracted_knowledge: dict | None
     teaching_plan: dict | None
     period_content: dict | None
+    activities: dict | None
     assessments: dict | None
     learning_gaps: dict | None
     validation_report: dict | None
+    pdf_paths: dict | None
     published_at: datetime | None
 
 

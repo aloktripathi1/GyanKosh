@@ -1,0 +1,49 @@
+<!doctype html>
+<html>
+<head><meta charset="utf-8"><style>{{ base_css }}</style></head>
+<body>
+  <h1>{{ classification.topic }} — Lesson Plans</h1>
+  <p class="subtitle">{{ classification.subject }} · Grade {{ classification.grade }} · {{ classification.chapter }}</p>
+  <p class="meta">{{ teaching_plan.total_periods }} periods · {{ teaching_plan.planning_rationale }}</p>
+
+  {% for period in teaching_plan.periods %}
+  {% set content = content_by_period.get(period.period_number) %}
+  <div class="period">
+    <h2>Period {{ period.period_number }}: {{ period.title }}</h2>
+    <p><span class="label">Objectives:</span></p>
+    <ul>{% for o in period.objectives %}<li>{{ o }}</li>{% endfor %}</ul>
+    <p><span class="label">Sequencing rationale:</span> {{ period.sequencing_rationale }}</p>
+
+    {% if content %}
+    <h3>Entry ticket</h3>
+    <div class="card">{{ content.entry_ticket }}</div>
+
+    <h3>Teacher script</h3>
+    <div class="card">{{ content.teacher_script }}</div>
+
+    <h3>Blackboard notes</h3>
+    <div class="card">{{ content.blackboard_notes }}</div>
+
+    <h3>Activities</h3>
+    <ul>{% for a in content.activities %}<li>{{ a }}</li>{% endfor %}</ul>
+
+    <h3>Checkpoint questions</h3>
+    {% for q in content.checkpoint_questions %}
+    <div class="card"><strong>Q:</strong> {{ q.question }}<br><span class="answer">A:</span> {{ q.expected_answer }}</div>
+    {% endfor %}
+
+    <h3>Exit ticket</h3>
+    <div class="card">{{ content.exit_ticket }}</div>
+
+    <h3>Homework</h3>
+    <div class="card">{{ content.homework }}</div>
+
+    <h3>Mentor moment</h3>
+    <div class="card">{{ content.mentor_moment }}</div>
+    {% else %}
+    <p><em>No generated content for this period.</em></p>
+    {% endif %}
+  </div>
+  {% endfor %}
+</body>
+</html>

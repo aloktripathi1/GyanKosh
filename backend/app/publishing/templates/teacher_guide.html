@@ -1,0 +1,52 @@
+<!doctype html>
+<html>
+<head><meta charset="utf-8"><style>{{ base_css }}</style></head>
+<body>
+  <h1>{{ classification.topic }} — Teacher Guide</h1>
+  <p class="subtitle">{{ classification.subject }} · Grade {{ classification.grade }} · Difficulty: {{ classification.difficulty }}</p>
+
+  <h2>Overview</h2>
+  <p>{{ teaching_plan.planning_rationale }}</p>
+
+  <h2>Learning objectives</h2>
+  <ul>{% for o in extracted_knowledge.objectives %}<li>{{ o.text }}</li>{% endfor %}</ul>
+
+  <h2>Prerequisites</h2>
+  <ul>{% for p in extracted_knowledge.prerequisites %}<li>{{ p.text }}</li>{% endfor %}</ul>
+
+  <h2>Key concepts</h2>
+  <ul>{% for c in extracted_knowledge.concepts %}<li><strong>{{ c.name }}:</strong> {{ c.text }}</li>{% endfor %}</ul>
+
+  <h2>Common misconceptions to watch for</h2>
+  {% for m in extracted_knowledge.misconceptions %}
+  <div class="card">{{ m.text }}<br><span class="label">Correction:</span> {{ m.correction }}</div>
+  {% endfor %}
+
+  {% for period in teaching_plan.periods %}
+  {% set content = content_by_period.get(period.period_number) %}
+  {% set period_activities = activities_by_period.get(period.period_number) %}
+  <div class="period">
+    <h2>Period {{ period.period_number }}: {{ period.title }}</h2>
+    {% if content %}
+    <h3>Teacher script</h3>
+    <div class="card">{{ content.teacher_script }}</div>
+    <h3>Mentor moment</h3>
+    <div class="card">{{ content.mentor_moment }}</div>
+    {% endif %}
+    {% if period_activities %}
+    <h3>Activities</h3>
+    {% for a in period_activities.activities %}
+    <div class="card">
+      <strong>{{ a.title }}</strong> ({{ a.type }}, {{ a.duration_minutes }} min)<br>
+      <span class="label">Materials:</span> {{ a.materials | join(', ') }}<br>
+      <span class="label">Instructions:</span>
+      <ul>{% for step in a.instructions %}<li>{{ step }}</li>{% endfor %}</ul>
+      <span class="label">Success criteria:</span>
+      <ul>{% for c in a.success_criteria %}<li>{{ c }}</li>{% endfor %}</ul>
+    </div>
+    {% endfor %}
+    {% endif %}
+  </div>
+  {% endfor %}
+</body>
+</html>
