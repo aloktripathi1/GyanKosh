@@ -10,6 +10,7 @@ Pipeline that converts a raw educational document (PDF/DOCX/PPT/text) into a str
 ## 2. Explicit Scope Cuts (do not build these)
 - No multilingual generation, no curriculum-board alignment (CBSE/CommonCore), no observability/tracing stack, no multi-tenant auth, no horizontal scaling. Single worker, single Postgres instance is correct for this prototype.
 - Do not attempt these before the core 10-stage pipeline is fully working end to end.
+- These cuts stand even under a "production quality" bar — quality here means the core pipeline is robust, tested, and well-engineered, not that scope expands to include bonus features. Depth on the 10 stages over breadth across the bonus list.
 
 ## 3. Functional Requirements (10 stages)
 1. Document Intelligence — parse PDF/DOCX/PPT/text, preserve structure (headings, tables, figures, equations).
@@ -177,3 +178,30 @@ Push to GitHub after every major change, not just at milestone ends: after each 
 - Validation Engine: flags at least one deliberately-injected ungrounded claim in a test run (proves the grounding check actually works, not just green-lights everything).
 - Pipeline survives a mid-run worker kill and resumes from the last checkpointed stage instead of restarting.
 - End-to-end run succeeds on both a STEM doc (equations/formulae) and a humanities doc (subjective narrative) — this is the explicit rubric criterion, don't only test on one doc type.
+- Every relevant edge case in Section 15 has a passing test, not just the happy path.
+
+## 14. Testing Strategy
+- **Unit tests per agent**: mock the LLM client, feed known inputs, assert output validates against the stage's Pydantic schema. Tests structure and contract, not pedagogical quality (that's not machine-testable).
+- **Fixture/golden tests**: 3 fixed input docs — one STEM, one humanities, one deliberately messy (poor structure, thin content) — run through the full pipeline in CI/dev. Assert no unhandled exceptions and a clean validation report on the first two; assert the third produces a graceful low-confidence flag, not a crash or fabricated content.
+- **Grounding regression test**: inject a known ungrounded claim into a mocked content-agent response, assert the Validation Engine catches it. This is the test that proves Section 6's grounding design actually works, not just exists on paper.
+- **Orchestrator resilience test**: kill the worker mid-pipeline, restart, assert resume-from-checkpoint (not restart-from-zero) and no duplicate LLM calls for already-completed stages.
+- **API-level tests**: auth rejection on missing/invalid key, upload rejection on wrong type/oversized file, 202 + job id returned immediately on valid upload.
+- Run the full test suite before every push in Section 12's git workflow, not just before milestone ends.
+
+## 15. Edge Case Checklist
+Test these explicitly, don't assume they're covered by the happy path.
+- **Upload/parsing**: corrupted file, scanned image-only PDF (no extractable text), empty document, very large document (100+ pages), wrong file extension vs actual content, document with no text (images/diagrams only).
+- **Classification/extraction**: ambiguous or multi-subject document, non-English content, document too thin to yield meaningful objectives.
+- **Planning**: document too short to justify even one period, document dense enough to imply an unreasonable period count (cap it, don't let the LLM output 40 periods unchecked).
+- **Generation**: humanities/narrative content with no "right answer" for assessments — assessment agent must adapt question types, not force numerical problems onto a poem analysis.
+- **Validation**: content referencing a concept absent from extracted knowledge (must be flagged, not silently passed); two periods contradicting each other's terminology.
+- **Orchestration**: LLM API timeout/rate limit mid-stage, worker crash/restart, duplicate job submission for the same document, concurrent regenerate-section requests on the same TKP.
+- **Publishing**: PDF template render failure on unusual content (very long tables, special characters, equations), concurrent writes to the same TKP version.
+- Each of these gets a real test case, not a mental note.
+
+## 16. UI Quality Bar
+"Simple UI to evaluate gen content" does not mean generic. Avoid default-template look (unstyled shadcn blocks, no visual hierarchy, placeholder-feeling copy).
+- Real states for every screen: empty (before upload), loading (with the SSE progress actually reflected, not a spinner lying about state), error (upload failed, stage failed — show which stage and why, not a generic "something went wrong"), success.
+- Typography and spacing should be deliberate — pick a type scale and stick to it, don't rely on framework defaults untouched.
+- The TKP review screen is the one that matters most: period-by-period navigation, clear separation between generated sections (script vs activities vs assessment), and the regenerate-single-section action visibly scoped to that section, not ambiguous about what it affects.
+- No fabricated demo data dressed as real output — if a section fails validation, show that in the UI, don't hide it.
