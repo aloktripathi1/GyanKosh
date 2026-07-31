@@ -1,3 +1,4 @@
+import hashlib
 import io
 import uuid
 
@@ -32,13 +33,20 @@ async def upload_document(file: UploadFile, db: Session = Depends(get_db)) -> Do
         raise HTTPException(status_code=status.HTTP_413_REQUEST_ENTITY_TOO_LARGE, detail="File exceeds max upload size")
 
     file_type = ALLOWED_CONTENT_TYPES[file.content_type]
+    content_hash = hashlib.sha256(contents).hexdigest()
     document_id = uuid.uuid4()
     storage_key = f"documents/{document_id}/{file.filename}"
 
     storage = get_storage()
     storage.save(storage_key, io.BytesIO(contents))
 
-    document = Document(id=document_id, filename=file.filename, file_type=file_type, storage_path=storage_key)
+    document = Document(
+        id=document_id,
+        filename=file.filename,
+        file_type=file_type,
+        storage_path=storage_key,
+        content_hash=content_hash,
+    )
     db.add(document)
     db.flush()
 

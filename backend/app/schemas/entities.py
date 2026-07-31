@@ -13,6 +13,7 @@ class DocumentRead(BaseModel):
     filename: str
     file_type: str
     storage_path: str
+    content_hash: str
     uploaded_at: datetime
 
 
