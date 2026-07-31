@@ -22,7 +22,7 @@ class TeacherKnowledgePackage(BaseModel):
     teaching_plan: TeachingPlanOutput
     period_content: PeriodContentOutput
     activities: ActivityGenerationOutput
-    assessments: list[AssessmentGenerationOutput]
+    assessments: AssessmentGenerationOutput
     learning_gaps: GapAnalysisOutput
     validation_report: ValidationReport
     published_at: datetime | None = None

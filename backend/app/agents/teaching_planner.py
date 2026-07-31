@@ -1,3 +1,5 @@
+from app.llm.client import ModelTier, structured_call
+from app.llm.prompts.teaching_planner import SYSTEM_PROMPT, build_user_prompt
 from app.schemas.classification import ClassificationOutput
 from app.schemas.knowledge_extraction import KnowledgeExtractionOutput
 from app.schemas.teaching_planner import TeachingPlanOutput
@@ -10,6 +12,9 @@ class TeachingPlannerInput:
 
 
 def run(input: TeachingPlannerInput) -> TeachingPlanOutput:
-    """Pure function: strong-tier LLM call, structured output. N periods is model-decided,
-    not fixed. Implemented in Milestone 3."""
-    raise NotImplementedError("Teaching Planner agent lands in Milestone 3")
+    return structured_call(
+        tier=ModelTier.STRONG,
+        system_prompt=SYSTEM_PROMPT,
+        user_prompt=build_user_prompt(input.classification, input.extracted_knowledge),
+        output_schema=TeachingPlanOutput,
+    )

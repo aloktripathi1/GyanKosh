@@ -37,9 +37,13 @@ class NumericalQuestion(BaseModel):
     source_spans: list[SourceSpan]
 
 
-class AssessmentGenerationOutput(BaseModel):
+class PeriodAssessment(BaseModel):
     period_number: int
     mcqs: list[MCQ]
     short_answer: list[ShortAnswerQuestion]
     long_answer: list[LongAnswerQuestion]
     numerical: list[NumericalQuestion]
+
+
+class AssessmentGenerationOutput(BaseModel):
+    periods: list[PeriodAssessment]
