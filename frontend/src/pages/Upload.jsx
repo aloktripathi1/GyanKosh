@@ -7,7 +7,7 @@ const ACCEPTED = ".pdf,.docx,.pptx,.txt";
 
 const FEATURES = [
   { icon: Target, title: "Grounded, not hallucinated", desc: "Every generated claim traces back to a source span in your document." },
-  { icon: LayoutList, title: "Full lesson package", desc: "Plans, activities, assessments, and a learning-gap analysis — generated together." },
+  { icon: LayoutList, title: "Full lesson package", desc: "Plans, activities, assessments, and a learning-gap analysis, generated together." },
   { icon: ShieldCheck, title: "Reviewed before you use it", desc: "Schema, grounding, and consistency checks run automatically, surfaced in the UI." },
 ];
 
@@ -35,22 +35,22 @@ export default function Upload() {
   );
 
   return (
-    <div className="app-shell fade-in">
-      <div className="stack" style={{ gap: "var(--space-7)" }}>
-        <div className="stack">
+    <div className="app-shell">
+      <div className="stack" style={{ gap: "var(--space-6)" }}>
+        <div className="stack hero-in">
           <span className="eyebrow">A teaching co-pilot</span>
-          <h1 style={{ maxWidth: "16ch" }}>
+          <h1 style={{ maxWidth: "22ch" }}>
             Turn any document into a <span className="highlight-mark">ready-to-teach</span> package
           </h1>
           <p className="subtitle">
             Upload a PDF, DOCX, PPTX, or plain-text document. GyanKosh produces lesson plans, activities,
-            assessments, and a learning-gap analysis — grounded in the source material, with progress you can
-            watch happen.
+            assessments, and a learning-gap analysis grounded in your source material. Watch it happen in
+            real time.
           </p>
         </div>
 
         <div
-          className={`dropzone${dragOver ? " dragover" : ""}`}
+          className={`dropzone hero-in hero-in-delay-1${dragOver ? " dragover" : ""}`}
           onClick={() => status !== "uploading" && inputRef.current?.click()}
           onDragOver={(e) => {
             e.preventDefault();
@@ -66,7 +66,7 @@ export default function Upload() {
           <span className="corner corner-tl" />
           <span className="corner corner-br" />
           <div className="stack-sm" style={{ alignItems: "center" }}>
-            {status === "uploading" ? <FileText size={22} /> : <UploadCloud size={22} />}
+            {status === "uploading" ? <FileText size={30} /> : <UploadCloud size={30} />}
             {status === "uploading" ? (
               <>
                 <p style={{ fontWeight: 600, color: "var(--color-text)" }}>Uploading…</p>
@@ -96,10 +96,15 @@ export default function Upload() {
 
         {status === "error" && <div className="error-banner">Upload failed: {error}</div>}
 
-        <div className="stack" style={{ gap: "var(--space-4)", borderTop: "var(--rule)", paddingTop: "var(--space-5)" }}>
+        <div
+          className="feature-list hero-in hero-in-delay-2"
+          style={{ borderTop: "var(--rule)", paddingTop: "var(--space-6)" }}
+        >
           {FEATURES.map((f) => (
             <div className="feature-row" key={f.title}>
-              <f.icon size={16} className="feature-icon" />
+              <span className="feature-icon-wrap">
+                <f.icon size={16} />
+              </span>
               <div>
                 <h4>{f.title}</h4>
                 <p>{f.desc}</p>
