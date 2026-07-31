@@ -1,3 +1,5 @@
+import re
+
 from pydantic import BaseModel
 
 from app.llm.client import ModelTier, structured_call
@@ -64,14 +66,39 @@ class _KnowledgeExtractionDraft(BaseModel):
     misconceptions: list[_DraftMisconception]
 
 
+def _find_span(section_text: str, quote: str) -> tuple[int, int] | None:
+    """Exact substring match first; if that fails, fall back to a
+    whitespace-insensitive match. PDF text extraction inserts a hard newline
+    at every visual line wrap (not just paragraph breaks), so a quote that
+    spans a line wrap in the source will never come back from the model with
+    that exact embedded newline — models reproduce quotes with normalized
+    spacing, not byte-for-byte whitespace. Matching word-by-word with `\\s+`
+    between them still requires every word to appear in order in the source;
+    it doesn't weaken the grounding guarantee, it just stops line-wrap
+    artifacts from masquerading as ungrounded content."""
+    start = section_text.find(quote)
+    if start != -1:
+        return start, start + len(quote)
+
+    words = quote.split()
+    if not words:
+        return None
+    pattern = re.compile(r"\s+".join(re.escape(word) for word in words))
+    match = pattern.search(section_text)
+    if match:
+        return match.start(), match.end()
+    return None
+
+
 def _resolve_span(document: DocumentIntelligenceOutput, section_id: str, quote: str) -> SourceSpan:
     section = next((s for s in document.sections if s.id == section_id), None)
     if section is None:
         raise GroundingResolutionError(f"Unknown section_id '{section_id}' cited for quote {quote!r}")
-    start = section.text.find(quote)
-    if start == -1:
+    span = _find_span(section.text, quote)
+    if span is None:
         raise GroundingResolutionError(f"Quote {quote!r} not found verbatim in section '{section_id}'")
-    return SourceSpan(section_id=section_id, page=section.page, start_char=start, end_char=start + len(quote), quote=quote)
+    start, end = span
+    return SourceSpan(section_id=section_id, page=section.page, start_char=start, end_char=end, quote=section.text[start:end])
 
 
 def _finalize(document: DocumentIntelligenceOutput, draft: _DraftItem, **extra) -> dict:
