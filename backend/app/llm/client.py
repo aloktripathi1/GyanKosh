@@ -21,7 +21,7 @@ TIER_MODELS = {
     ModelTier.STRONG: "claude-sonnet-5",
 }
 
-MAX_TOKENS = 8192
+MAX_TOKENS = 32000
 
 
 @lru_cache
@@ -32,12 +32,20 @@ def _client() -> anthropic.Anthropic:
 def structured_call(tier: ModelTier, system_prompt: str, user_prompt: str, output_schema: type[T]) -> T:
     """Route to the model for `tier` and force a tool-use call bound to
     `output_schema`, so the response is schema-valid by construction rather than
-    parsed out of free-form prose."""
+    parsed out of free-form prose.
+
+    The system prompt and tool definition are identical across every call to a
+    given stage (they don't depend on document content) and are marked cacheable:
+    Anthropic caches everything up to and including the marked block — tool
+    definitions, then system — so a cache hit covers both. This pays off on
+    same-stage retries (identical prompt, per the orchestrator's retry-on-failure
+    path) and across different jobs/documents hitting the same stage within the
+    5-minute cache window, at ~10% of the input-token cost on a hit."""
     tool_name = output_schema.__name__
     response = _client().messages.create(
         model=TIER_MODELS[tier],
         max_tokens=MAX_TOKENS,
-        system=system_prompt,
+        system=[{"type": "text", "text": system_prompt, "cache_control": {"type": "ephemeral"}}],
         messages=[{"role": "user", "content": user_prompt}],
         tools=[
             {
@@ -48,6 +56,12 @@ def structured_call(tier: ModelTier, system_prompt: str, user_prompt: str, outpu
         ],
         tool_choice={"type": "tool", "name": tool_name},
     )
+
+    if response.stop_reason == "max_tokens":
+        raise RuntimeError(
+            f"Response truncated at max_tokens ({MAX_TOKENS}) before completing {tool_name} — "
+            "the document is likely too dense for a single call at this stage."
+        )
 
     for block in response.content:
         if block.type == "tool_use" and block.name == tool_name:
@@ -71,7 +85,7 @@ def ocr_page_text(image_bytes: bytes, media_type: str = "image/png") -> str:
     response = _client().messages.create(
         model=TIER_MODELS[ModelTier.STRONG],
         max_tokens=MAX_TOKENS,
-        system=OCR_SYSTEM_PROMPT,
+        system=[{"type": "text", "text": OCR_SYSTEM_PROMPT, "cache_control": {"type": "ephemeral"}}],
         messages=[
             {
                 "role": "user",
