@@ -1,0 +1,64 @@
+databases:
+  - name: gyankosh-db
+    plan: free
+    databaseName: gyankosh
+    user: gyankosh
+
+services:
+  - type: redis
+    name: gyankosh-redis
+    plan: free
+    ipAllowList: []
+
+  - type: web
+    name: gyankosh-backend
+    runtime: docker
+    dockerfilePath: ./backend/Dockerfile
+    dockerContext: ./backend
+    plan: free
+    healthCheckPath: /health
+    envVars:
+      - key: DATABASE_URL
+        fromDatabase:
+          name: gyankosh-db
+          property: connectionString
+      - key: REDIS_URL
+        fromService:
+          type: redis
+          name: gyankosh-redis
+          property: connectionString
+      - key: ANTHROPIC_API_KEY
+        sync: false
+      - key: API_KEY
+        sync: false
+      - key: STORAGE_BACKEND
+        value: local
+      - key: LOCAL_STORAGE_PATH
+        value: /app/storage_data
+    preDeployCommand: alembic upgrade head
+
+  - type: worker
+    name: gyankosh-worker
+    runtime: docker
+    dockerfilePath: ./backend/Dockerfile
+    dockerContext: ./backend
+    dockerCommand: celery -A app.tasks.celery_app worker --loglevel=info
+    plan: free
+    envVars:
+      - key: DATABASE_URL
+        fromDatabase:
+          name: gyankosh-db
+          property: connectionString
+      - key: REDIS_URL
+        fromService:
+          type: redis
+          name: gyankosh-redis
+          property: connectionString
+      - key: ANTHROPIC_API_KEY
+        sync: false
+      - key: API_KEY
+        sync: false
+      - key: STORAGE_BACKEND
+        value: local
+      - key: LOCAL_STORAGE_PATH
+        value: /app/storage_data
