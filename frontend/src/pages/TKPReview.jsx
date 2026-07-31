@@ -117,7 +117,7 @@ export default function TKPReview() {
 function Header({ tkp }) {
   const c = tkp.classification || {};
   return (
-    <div className="card-glass">
+    <div className="card-bordered">
       <p className="eyebrow">Teacher Knowledge Package</p>
       <h1 style={{ marginTop: "var(--space-2)" }}>{c.topic || "Untitled"}</h1>
       <p className="subtitle">

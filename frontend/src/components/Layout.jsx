@@ -1,23 +1,19 @@
 import { Link, Outlet } from "react-router-dom";
-import { BookOpen } from "lucide-react";
 import ThemeToggle from "./ThemeToggle.jsx";
 
 export default function Layout() {
   return (
     <>
-      <div style={{ maxWidth: 960, margin: "0 auto", padding: "var(--space-5) var(--space-5) 0" }}>
-        <div className="row-between">
-          <Link to="/" style={{ textDecoration: "none", color: "inherit" }}>
+      <header className="masthead">
+        <div className="masthead-inner">
+          <Link to="/" style={{ textDecoration: "none" }}>
             <span className="brand-mark">
-              <span className="logo-glyph">
-                <BookOpen size={16} strokeWidth={2.5} />
-              </span>
-              GyanKosh
+              <span className="brand-glyph">Gyan</span>Kosh
             </span>
           </Link>
           <ThemeToggle />
         </div>
-      </div>
+      </header>
       <Outlet />
     </>
   );

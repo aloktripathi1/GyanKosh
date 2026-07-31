@@ -1,32 +1,19 @@
 import { useEffect, useRef, useState } from "react";
 import { useNavigate, useParams } from "react-router-dom";
-import {
-  FileSearch,
-  Tags,
-  BookOpen,
-  CalendarDays,
-  PenLine,
-  Puzzle,
-  ClipboardList,
-  AlertTriangle,
-  ShieldCheck,
-  PackageCheck,
-  Check,
-  X,
-} from "lucide-react";
+import { Check, X } from "lucide-react";
 import { getJob, streamJobProgress } from "../api.js";
 
 const STAGES = [
-  ["document_intelligence", "Reading document", FileSearch],
-  ["classification", "Classifying content", Tags],
-  ["knowledge_extraction", "Extracting knowledge", BookOpen],
-  ["teaching_planner", "Planning periods", CalendarDays],
-  ["content_generation", "Writing lesson content", PenLine],
-  ["activity_generation", "Designing activities", Puzzle],
-  ["assessment_generation", "Building assessments", ClipboardList],
-  ["gap_analysis", "Analyzing learning gaps", AlertTriangle],
-  ["validation", "Validating output", ShieldCheck],
-  ["publishing", "Publishing package", PackageCheck],
+  ["document_intelligence", "Reading document"],
+  ["classification", "Classifying content"],
+  ["knowledge_extraction", "Extracting knowledge"],
+  ["teaching_planner", "Planning periods"],
+  ["content_generation", "Writing lesson content"],
+  ["activity_generation", "Designing activities"],
+  ["assessment_generation", "Building assessments"],
+  ["gap_analysis", "Analyzing learning gaps"],
+  ["validation", "Validating output"],
+  ["publishing", "Publishing package"],
 ];
 
 function useElapsed(startTime) {
@@ -115,17 +102,17 @@ export default function JobProgress() {
       <div className="stack" style={{ gap: "var(--space-6)" }}>
         <div className="stack-sm">
           <span className="eyebrow">
-            <span className="pulse-dot" style={{ marginRight: 2 }} /> Live pipeline run
+            <span className="live-dot" /> Live pipeline run
           </span>
-          <h1>Generating your teaching package</h1>
-          <p className="subtitle">Watching the 10-stage pipeline run in real time, straight from the orchestrator.</p>
+          <h1 style={{ fontSize: "var(--text-2xl)" }}>Generating your teaching package</h1>
+          <p className="subtitle">Watching the 10-stage pipeline run, straight from the orchestrator.</p>
         </div>
 
-        <div className="card-glass stack" style={{ gap: "var(--space-5)" }}>
+        <div className="card-bordered stack" style={{ gap: "var(--space-5)" }}>
           <div className="row-between" style={{ flexWrap: "wrap", gap: "var(--space-4)" }}>
-            <div className="row" style={{ gap: "var(--space-6)" }}>
+            <div className="row" style={{ gap: "var(--space-5)" }}>
               <div className="stat-tile">
-                <div className="stat-value gradient-text">{job.progress_pct}%</div>
+                <div className="stat-value">{job.progress_pct}%</div>
                 <div className="stat-label">Complete</div>
               </div>
               <div className="stat-tile">
@@ -141,7 +128,7 @@ export default function JobProgress() {
           </div>
 
           <div className="stepper">
-            {STAGES.map(([key, label, Icon], i) => {
+            {STAGES.map(([key, label], i) => {
               const state =
                 job.status === "failed" && key === job.current_stage
                   ? "failed"
@@ -155,11 +142,11 @@ export default function JobProgress() {
                   <div className="step-line" />
                   <div className="step-marker">
                     {state === "done" ? (
-                      <Check size={14} strokeWidth={3} />
+                      <Check size={13} strokeWidth={3} />
                     ) : state === "failed" ? (
-                      <X size={14} strokeWidth={3} />
+                      <X size={13} strokeWidth={3} />
                     ) : (
-                      <Icon size={14} />
+                      i + 1
                     )}
                   </div>
                   <div>
