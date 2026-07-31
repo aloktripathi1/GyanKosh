@@ -1,4 +1,6 @@
+import logging
 import re
+from collections.abc import Callable
 
 from pydantic import BaseModel
 
@@ -15,6 +17,9 @@ from app.schemas.knowledge_extraction import (
     KnowledgeExtractionOutput,
     Misconception,
 )
+
+
+logger = logging.getLogger(__name__)
 
 
 class GroundingResolutionError(Exception):
@@ -106,6 +111,28 @@ def _finalize(document: DocumentIntelligenceOutput, draft: _DraftItem, **extra) 
     return {"text": draft.text, "source_span": span, **extra}
 
 
+def _finalize_list(
+    document: DocumentIntelligenceOutput,
+    model_cls: type,
+    drafts: list[_DraftItem],
+    extra_fn: Callable[[_DraftItem], dict] = lambda d: {},
+) -> list:
+    """Resolve every draft item, dropping (not failing the stage over) any
+    single item that can't be grounded. On a real dense document, a model
+    will occasionally paraphrase one item out of dozens of otherwise-correct
+    extractions — failing the whole call and burning a retry over one bad
+    item threw away every correctly grounded item alongside it. Grounding is
+    still enforced exactly as strictly: an ungrounded item is never accepted,
+    it's just dropped instead of poisoning the batch."""
+    items = []
+    for draft in drafts:
+        try:
+            items.append(model_cls(**_finalize(document, draft, **extra_fn(draft))))
+        except GroundingResolutionError as e:
+            logger.warning("Dropping ungrounded knowledge_extraction item: %s", e)
+    return items
+
+
 def run(input: DocumentIntelligenceOutput) -> KnowledgeExtractionOutput:
     draft = structured_call(
         tier=ModelTier.CHEAP,
@@ -115,13 +142,13 @@ def run(input: DocumentIntelligenceOutput) -> KnowledgeExtractionOutput:
     )
 
     return KnowledgeExtractionOutput(
-        objectives=[GroundedItem(**_finalize(input, d)) for d in draft.objectives],
-        prerequisites=[GroundedItem(**_finalize(input, d)) for d in draft.prerequisites],
-        concepts=[Concept(**_finalize(input, d, name=d.name)) for d in draft.concepts],
-        definitions=[Definition(**_finalize(input, d, term=d.term)) for d in draft.definitions],
-        formulae=[Formula(**_finalize(input, d, name=d.name, expression=d.expression)) for d in draft.formulae],
-        keywords=[GroundedItem(**_finalize(input, d)) for d in draft.keywords],
-        examples=[Example(**_finalize(input, d, related_concept=d.related_concept)) for d in draft.examples],
-        applications=[GroundedItem(**_finalize(input, d)) for d in draft.applications],
-        misconceptions=[Misconception(**_finalize(input, d, correction=d.correction)) for d in draft.misconceptions],
+        objectives=_finalize_list(input, GroundedItem, draft.objectives),
+        prerequisites=_finalize_list(input, GroundedItem, draft.prerequisites),
+        concepts=_finalize_list(input, Concept, draft.concepts, lambda d: {"name": d.name}),
+        definitions=_finalize_list(input, Definition, draft.definitions, lambda d: {"term": d.term}),
+        formulae=_finalize_list(input, Formula, draft.formulae, lambda d: {"name": d.name, "expression": d.expression}),
+        keywords=_finalize_list(input, GroundedItem, draft.keywords),
+        examples=_finalize_list(input, Example, draft.examples, lambda d: {"related_concept": d.related_concept}),
+        applications=_finalize_list(input, GroundedItem, draft.applications),
+        misconceptions=_finalize_list(input, Misconception, draft.misconceptions, lambda d: {"correction": d.correction}),
     )

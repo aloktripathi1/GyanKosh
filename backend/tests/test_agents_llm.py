@@ -128,6 +128,34 @@ def test_knowledge_extraction_run_resolves_grounding(monkeypatch, sample_documen
     assert result.objectives[0].source_span.quote == "Newton's second law:"
 
 
+def test_knowledge_extraction_drops_ungrounded_items_without_failing_the_batch(monkeypatch, sample_document):
+    """Real behavior observed on a dense real document: the model correctly
+    quotes most items but occasionally paraphrases one. That one item must be
+    dropped, not fail every correctly-grounded item alongside it."""
+    from app.agents.knowledge_extraction import _DraftItem, _KnowledgeExtractionDraft
+
+    draft = _KnowledgeExtractionDraft(
+        objectives=[
+            _DraftItem(text="grounded", source_section_id="s1", source_quote="Newton's second law:"),
+            _DraftItem(text="fabricated", source_section_id="s1", source_quote="a sentence that does not appear anywhere"),
+        ],
+        prerequisites=[],
+        concepts=[],
+        definitions=[],
+        formulae=[],
+        keywords=[],
+        examples=[],
+        applications=[],
+        misconceptions=[],
+    )
+    monkeypatch.setattr(knowledge_extraction, "structured_call", lambda **kwargs: draft)
+
+    result = knowledge_extraction.run(sample_document)
+
+    assert len(result.objectives) == 1
+    assert result.objectives[0].text == "grounded"
+
+
 def test_teaching_planner_run_returns_schema(monkeypatch, sample_classification, sample_extraction, sample_plan):
     monkeypatch.setattr(teaching_planner, "structured_call", lambda **kwargs: sample_plan)
     result = teaching_planner.run(
