@@ -1,12 +1,26 @@
 import { useCallback, useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
+import {
+  LayoutGrid,
+  AlertTriangle,
+  FileDown,
+  RefreshCw,
+  CheckCircle2,
+  XCircle,
+  Tag,
+  BookOpen,
+  CalendarDays,
+  PenLine,
+  Puzzle,
+  ClipboardList,
+} from "lucide-react";
 import { getTkp, regenerateSection } from "../api.js";
 
 const API_KEY = import.meta.env.VITE_API_KEY || "dev-local-key";
 
 const TABS_STATIC = [
-  { key: "overview", label: "Overview" },
-  { key: "gaps", label: "Learning Gaps" },
+  { key: "overview", label: "Overview", icon: LayoutGrid },
+  { key: "gaps", label: "Learning Gaps", icon: AlertTriangle },
 ];
 
 export default function TKPReview() {
@@ -54,8 +68,9 @@ export default function TKPReview() {
   }
   if (!tkp) {
     return (
-      <div className="app-shell">
-        <p className="muted">Loading package…</p>
+      <div className="app-shell stack">
+        <div className="skeleton" style={{ height: 40, width: "50%" }} />
+        <div className="skeleton" style={{ height: 200 }} />
       </div>
     );
   }
@@ -68,7 +83,7 @@ export default function TKPReview() {
   ];
 
   return (
-    <div className="app-shell">
+    <div className="app-shell fade-in">
       <div className="stack">
         <Header tkp={tkp} />
         {error && <div className="error-banner">{error}</div>}
@@ -80,6 +95,7 @@ export default function TKPReview() {
               className={`period-tab${tab === t.key ? " active" : ""}`}
               onClick={() => setTab(t.key)}
             >
+              {t.icon && <t.icon size={13} style={{ marginRight: 4, verticalAlign: -2 }} />}
               {t.label}
             </button>
           ))}
@@ -101,13 +117,13 @@ export default function TKPReview() {
 function Header({ tkp }) {
   const c = tkp.classification || {};
   return (
-    <div>
+    <div className="card-glass">
       <p className="eyebrow">Teacher Knowledge Package</p>
-      <h1>{c.topic || "Untitled"}</h1>
+      <h1 style={{ marginTop: "var(--space-2)" }}>{c.topic || "Untitled"}</h1>
       <p className="subtitle">
         {c.subject} · Grade {c.grade} · {c.chapter}
       </p>
-      <div className="row" style={{ marginTop: "var(--space-3)" }}>
+      <div className="row" style={{ marginTop: "var(--space-4)", flexWrap: "wrap" }}>
         <ValidationBadge report={tkp.validation_report} />
         {tkp.pdf_paths &&
           Object.entries(tkp.pdf_paths).map(([name, path]) => (
@@ -118,6 +134,7 @@ function Header({ tkp }) {
               target="_blank"
               rel="noreferrer"
             >
+              <FileDown size={12} />
               {name.replaceAll("_", " ")} PDF
             </a>
           ))}
@@ -131,25 +148,33 @@ function ValidationBadge({ report }) {
   const checks = [report.schema_check, report.grounding_check, report.completeness_check, report.consistency_check];
   const passed = checks.every((c) => c?.passed);
   return passed ? (
-    <span className="badge badge-success">Validation passed</span>
+    <span className="badge badge-success">
+      <CheckCircle2 size={12} /> Validation passed
+    </span>
   ) : (
-    <span className="badge badge-error">Validation issues found</span>
+    <span className="badge badge-error">
+      <XCircle size={12} /> Validation issues found
+    </span>
   );
 }
 
-function SectionHeader({ title, section, regenerate, regenerating, scopeNote }) {
+function SectionHeader({ title, icon: Icon, section, regenerate, regenerating, scopeNote }) {
   return (
     <div className="section-header">
       <div>
-        <h3>{title}</h3>
+        <h3 className="row" style={{ gap: 8 }}>
+          {Icon && <Icon size={16} style={{ color: "var(--color-primary)" }} />}
+          {title}
+        </h3>
         {scopeNote && (
-          <p className="muted" style={{ fontSize: "var(--text-xs)" }}>
+          <p className="muted" style={{ fontSize: "var(--text-xs)", marginTop: 2 }}>
             {scopeNote}
           </p>
         )}
       </div>
       {section && (
         <button className="regen-btn" disabled={regenerating === section} onClick={() => regenerate(section)}>
+          <RefreshCw size={12} className={regenerating === section ? "spin" : undefined} />
           {regenerating === section ? "Regenerating…" : "Regenerate"}
         </button>
       )}
@@ -164,6 +189,7 @@ function Overview({ tkp, regenerate, regenerating }) {
       <div className="section-block">
         <SectionHeader
           title="Classification"
+          icon={Tag}
           section="classification"
           regenerate={regenerate}
           regenerating={regenerating}
@@ -177,6 +203,7 @@ function Overview({ tkp, regenerate, regenerating }) {
       <div className="section-block">
         <SectionHeader
           title="Extracted Knowledge"
+          icon={BookOpen}
           section="extracted_knowledge"
           regenerate={regenerate}
           regenerating={regenerating}
@@ -190,6 +217,7 @@ function Overview({ tkp, regenerate, regenerating }) {
       <div className="section-block">
         <SectionHeader
           title="Teaching Plan"
+          icon={CalendarDays}
           section="teaching_plan"
           regenerate={regenerate}
           regenerating={regenerating}
@@ -235,6 +263,7 @@ function ValidationDetail({ report }) {
           <div key={label} className="row-between">
             <span style={{ fontSize: "var(--text-sm)" }}>{label}</span>
             <span className={`badge ${check?.passed ? "badge-success" : "badge-error"}`}>
+              {check?.passed ? <CheckCircle2 size={12} /> : <XCircle size={12} />}
               {check?.passed ? "Passed" : "Failed"}
             </span>
           </div>
@@ -277,6 +306,7 @@ function PeriodPanel({ tkp, period, regenerate, regenerating }) {
       <div className="section-block">
         <SectionHeader
           title="Lesson Content"
+          icon={PenLine}
           section="period_content"
           regenerate={regenerate}
           regenerating={regenerating}
@@ -309,6 +339,7 @@ function PeriodPanel({ tkp, period, regenerate, regenerating }) {
       <div className="section-block">
         <SectionHeader
           title="Activities"
+          icon={Puzzle}
           section="activities"
           regenerate={regenerate}
           regenerating={regenerating}
@@ -333,6 +364,7 @@ function PeriodPanel({ tkp, period, regenerate, regenerating }) {
       <div className="section-block">
         <SectionHeader
           title="Assessment"
+          icon={ClipboardList}
           section="assessments"
           regenerate={regenerate}
           regenerating={regenerating}
@@ -368,7 +400,13 @@ function GapsPanel({ tkp, regenerate, regenerating }) {
   const gaps = tkp.learning_gaps?.gaps || [];
   return (
     <div className="card stack">
-      <SectionHeader title="Learning Gaps" section="learning_gaps" regenerate={regenerate} regenerating={regenerating} />
+      <SectionHeader
+        title="Learning Gaps"
+        icon={AlertTriangle}
+        section="learning_gaps"
+        regenerate={regenerate}
+        regenerating={regenerating}
+      />
       {gaps.length === 0 ? (
         <EmptyNote label="learning gaps" />
       ) : (
