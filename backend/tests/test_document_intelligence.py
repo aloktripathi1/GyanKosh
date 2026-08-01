@@ -53,6 +53,54 @@ def test_normal_text_page_never_calls_ocr(monkeypatch):
     assert "real, extractable text" in result.sections[0].text
 
 
+def test_corrupted_pdf_raises_clear_error(monkeypatch):
+    with pytest.raises(ValueError, match="corrupted"):
+        document_intelligence.run(
+            document_intelligence.DocumentIntelligenceInput("d1", "pdf", b"this is not a pdf file at all")
+        )
+
+
+def test_zero_page_pdf_raises_clear_error(monkeypatch):
+    class _FakeDoc:
+        page_count = 0
+        metadata = {}
+
+    monkeypatch.setattr(fitz, "open", lambda **kwargs: _FakeDoc())
+
+    with pytest.raises(ValueError, match="no pages"):
+        document_intelligence.run(document_intelligence.DocumentIntelligenceInput("d1", "pdf", b"%PDF-fake"))
+
+
+def test_oversized_pdf_is_rejected_before_processing_any_page(monkeypatch):
+    class _FakeDoc:
+        page_count = document_intelligence.MAX_PDF_PAGES + 1
+        metadata = {}
+
+        def __iter__(self):
+            raise AssertionError("must reject before iterating pages")
+
+    monkeypatch.setattr(fitz, "open", lambda **kwargs: _FakeDoc())
+
+    with pytest.raises(ValueError, match="exceeding"):
+        document_intelligence.run(document_intelligence.DocumentIntelligenceInput("d1", "pdf", b"%PDF-fake"))
+
+
+def test_blank_page_with_no_ocr_recovery_raises_clear_error(monkeypatch):
+    """A scanned page that OCR also can't read (truly blank) must be flagged
+    explicitly rather than silently producing an empty TKP downstream."""
+    monkeypatch.setattr(document_intelligence, "ocr_page_text", lambda *a, **k: "[blank page]")
+
+    with pytest.raises(ValueError, match="No extractable text"):
+        document_intelligence.run(
+            document_intelligence.DocumentIntelligenceInput("d1", "pdf", _blank_pdf_bytes())
+        )
+
+
+def test_empty_txt_raises_clear_error():
+    with pytest.raises(ValueError, match="No extractable text"):
+        document_intelligence.run(document_intelligence.DocumentIntelligenceInput("d1", "txt", b"   \n\n  "))
+
+
 def test_scanned_hint_lowers_the_bar_for_ocr(monkeypatch):
     """A short-but-nonzero text layer (e.g. a watermark) still gets OCR'd when
     the user declares the document is scanned."""

@@ -24,6 +24,11 @@ OCR_FALLBACK_THRESHOLD_CHARS = 40
 # little stray extracted text (stamps, watermarks, running headers) still
 # gets the OCR treatment rather than being taken at face value.
 OCR_FALLBACK_THRESHOLD_CHARS_HINTED = 200
+# A page cap, not a byte cap — MAX_UPLOAD_BYTES in api/documents.py bounds file
+# size, but a huge page count is its own cost/latency risk (up to one OCR call
+# per page). Reject explicitly rather than let an oversized document run for
+# an unbounded amount of time.
+MAX_PDF_PAGES = 200
 
 
 class DocumentIntelligenceInput:
@@ -47,7 +52,16 @@ def _find_equations(section_id: str, text: str, page: int | None) -> list[Equati
 
 
 def _parse_pdf(document_id: str, content: bytes, document_type_hint: str | None = None) -> DocumentIntelligenceOutput:
-    doc = fitz.open(stream=content, filetype="pdf")
+    try:
+        doc = fitz.open(stream=content, filetype="pdf")
+    except Exception as e:
+        raise ValueError(f"Could not open PDF — file is corrupted or not a valid PDF: {e}") from e
+
+    if doc.page_count == 0:
+        raise ValueError("PDF has no pages")
+    if doc.page_count > MAX_PDF_PAGES:
+        raise ValueError(f"PDF has {doc.page_count} pages, exceeding the {MAX_PDF_PAGES}-page limit")
+
     sections: list[DocumentSection] = []
     raw_text_parts: list[str] = []
     threshold = OCR_FALLBACK_THRESHOLD_CHARS_HINTED if document_type_hint == SCANNED_PDF else OCR_FALLBACK_THRESHOLD_CHARS
@@ -241,5 +255,15 @@ def run(input: DocumentIntelligenceInput) -> DocumentIntelligenceOutput:
     if parser is None:
         raise ValueError(f"Unsupported file_type for Document Intelligence: {input.file_type}")
     if input.file_type == "pdf":
-        return _parse_pdf(input.document_id, input.content, input.document_type_hint)
-    return parser(input.document_id, input.content)
+        result = _parse_pdf(input.document_id, input.content, input.document_type_hint)
+    else:
+        result = parser(input.document_id, input.content)
+
+    # Even after OCR fallback, a document can come back with nothing usable
+    # (e.g. every scanned page genuinely blank) — surface that explicitly
+    # rather than silently feeding empty content into every downstream stage.
+    has_tables_or_figures = any(s.tables or s.figures for s in result.sections)
+    if not result.raw_text.strip() and not has_tables_or_figures:
+        raise ValueError("No extractable text, tables, or figures found in this document")
+
+    return result
