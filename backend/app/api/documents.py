@@ -29,6 +29,17 @@ ALLOWED_CONTENT_TYPES = {
 }
 MAX_UPLOAD_BYTES = 25 * 1024 * 1024
 
+# DOCX/PPTX are both ZIP containers at the byte level — the same magic number
+# doesn't distinguish them, so a mismatch here only catches the cases it
+# actually can: a PDF-labeled upload that isn't a PDF, or an Office-labeled
+# upload that isn't even a ZIP. txt has no reliable signature, so it's exempt.
+_MAGIC_BYTES = {"pdf": b"%PDF", "docx": b"PK\x03\x04", "pptx": b"PK\x03\x04"}
+
+
+def _content_type_matches_bytes(file_type: str, contents: bytes) -> bool:
+    signature = _MAGIC_BYTES.get(file_type)
+    return signature is None or contents.startswith(signature)
+
 
 @router.post("", response_model=DocumentCreateResponse, status_code=status.HTTP_202_ACCEPTED, dependencies=[Depends(require_api_key)])
 async def upload_document(
@@ -46,8 +57,15 @@ async def upload_document(
     contents = await file.read()
     if len(contents) > MAX_UPLOAD_BYTES:
         raise HTTPException(status_code=status.HTTP_413_REQUEST_ENTITY_TOO_LARGE, detail="File exceeds max upload size")
+    if len(contents) == 0:
+        raise HTTPException(status_code=status.HTTP_400_BAD_REQUEST, detail="Uploaded file is empty")
 
     file_type = ALLOWED_CONTENT_TYPES[file.content_type]
+    if not _content_type_matches_bytes(file_type, contents):
+        raise HTTPException(
+            status_code=status.HTTP_400_BAD_REQUEST,
+            detail=f"File content doesn't match its declared type ({file.content_type})",
+        )
     content_hash = hashlib.sha256(contents).hexdigest()
     document_id = uuid.uuid4()
     storage_key = f"documents/{document_id}/{file.filename}"
