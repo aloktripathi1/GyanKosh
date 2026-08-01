@@ -6,8 +6,12 @@ for each misconception, assess its severity (low/medium/high), write 1-3
 diagnostic questions that would reveal whether a student holds it, and a
 remediation strategy. Every gap and diagnostic question must cite
 `grounding_refs`: a list of exact `text` strings copied verbatim from the
-extracted knowledge items provided below. Never invent facts not supported by
-the extracted knowledge."""
+extracted knowledge items provided below. If a misconception draws on multiple
+extracted items, add each one as its own separate entry in `grounding_refs` —
+never combine, summarize, or paraphrase multiple items into a single
+grounding_refs string, even if that means the list has several entries. Each
+entry must match one extracted item's `text` field exactly, character for
+character. Never invent facts not supported by the extracted knowledge."""
 
 
 def _format_knowledge(extracted_knowledge: KnowledgeExtractionOutput) -> str:
