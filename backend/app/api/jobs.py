@@ -9,7 +9,9 @@ from app.api.deps import require_api_key
 from app.db import SessionLocal, get_db
 from app.models.document import Document
 from app.models.job import Job
+from app.models.tkp_version import TKPVersion
 from app.schemas.entities import JobRead, JobSummary
+from app.storage import get_storage
 
 router = APIRouter(prefix="/jobs", tags=["jobs"])
 
@@ -53,6 +55,28 @@ def list_jobs(db: Session = Depends(get_db), limit: int = 50) -> list[JobSummary
 @router.get("/{job_id}", response_model=JobRead, dependencies=[Depends(require_api_key)])
 def get_job(job_id: uuid.UUID, db: Session = Depends(get_db)) -> JobRead:
     return JobRead.from_job(_get_job_or_404(db, job_id))
+
+
+@router.delete("/{job_id}", status_code=status.HTTP_204_NO_CONTENT, dependencies=[Depends(require_api_key)])
+def delete_job(job_id: uuid.UUID, db: Session = Depends(get_db)) -> None:
+    """Removes a job (and its document, TKP version if any, and stored files)
+    from history — for stuck/hung/abandoned runs that would otherwise sit in
+    the Library forever with no way to clear them. FK order matters: TKPVersion
+    references job_id, Job references document_id, so delete in that order."""
+    job = _get_job_or_404(db, job_id)
+    document = db.get(Document, job.document_id)
+
+    db.query(TKPVersion).filter(TKPVersion.job_id == job_id).delete()
+    db.delete(job)
+    db.flush()
+    if document is not None:
+        storage = get_storage()
+        try:
+            storage.delete(document.storage_path)
+        except FileNotFoundError:
+            pass
+        db.delete(document)
+    db.commit()
 
 
 @router.get("/{job_id}/stream", dependencies=[Depends(require_api_key)])

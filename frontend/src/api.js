@@ -48,6 +48,10 @@ export function listJobs() {
   return request("/jobs");
 }
 
+export function deleteJob(jobId) {
+  return request(`/jobs/${jobId}`, { method: "DELETE" });
+}
+
 export function getTkp(tkpId) {
   return request(`/tkp/${tkpId}`);
 }

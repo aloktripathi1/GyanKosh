@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
-import { FileText, Library as LibraryIcon } from "lucide-react";
-import { listJobs } from "../api.js";
+import { FileText, Library as LibraryIcon, Trash2 } from "lucide-react";
+import { deleteJob, listJobs } from "../api.js";
 
 const STATUS_VARIANTS = {
   pending: ["badge-neutral", "Queued"],
@@ -33,12 +33,28 @@ function rowHref(job) {
 export default function Library() {
   const [jobs, setJobs] = useState(null);
   const [error, setError] = useState(null);
+  const [deletingId, setDeletingId] = useState(null);
 
   useEffect(() => {
     listJobs()
       .then(setJobs)
       .catch((err) => setError(err.detail || err.message || "Could not load history"));
   }, []);
+
+  async function handleDelete(e, jobId) {
+    e.preventDefault();
+    e.stopPropagation();
+    if (!window.confirm("Remove this run from history? This can't be undone.")) return;
+    setDeletingId(jobId);
+    try {
+      await deleteJob(jobId);
+      setJobs((prev) => prev.filter((j) => j.id !== jobId));
+    } catch (err) {
+      setError(err.detail || err.message || "Could not delete this run");
+    } finally {
+      setDeletingId(null);
+    }
+  }
 
   return (
     <div className="app-shell fade-in">
@@ -86,7 +102,18 @@ export default function Library() {
                     {job.topic ? ` · ${job.topic}` : ""} · {formatDate(job.created_at)}
                   </p>
                 </div>
-                <StatusBadge status={job.status} />
+                <div className="row" style={{ gap: "var(--space-3)" }}>
+                  <StatusBadge status={job.status} />
+                  <button
+                    type="button"
+                    className="icon-btn"
+                    title="Remove from history"
+                    disabled={deletingId === job.id}
+                    onClick={(e) => handleDelete(e, job.id)}
+                  >
+                    <Trash2 size={14} />
+                  </button>
+                </div>
               </Link>
             ))}
           </div>

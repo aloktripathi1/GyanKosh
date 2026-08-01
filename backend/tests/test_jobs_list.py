@@ -1,9 +1,13 @@
 import uuid
 from datetime import UTC, datetime
 
+import pytest
+from fastapi import HTTPException
+
 from app.api import jobs as jobs_api
 from app.models.document import Document
 from app.models.job import Job, JobStatus
+from app.models.tkp_version import TKPVersion
 
 
 class _FakeMultiEntityQuery:
@@ -65,3 +69,70 @@ def test_list_jobs_returns_newest_first_with_classification_and_tkp_link():
 def test_list_jobs_handles_empty_history():
     db = _FakeSession([])
     assert jobs_api.list_jobs(db) == []
+
+
+class _FakeTKPQuery:
+    def __init__(self):
+        self.deleted = False
+
+    def filter(self, *a, **k):
+        return self
+
+    def delete(self):
+        self.deleted = True
+
+
+class _FakeDeleteSession:
+    def __init__(self, job=None, document=None):
+        self._job = job
+        self._document = document
+        self.deleted_objects = []
+        self.tkp_query = _FakeTKPQuery()
+
+    def get(self, model, id_):
+        if model is Job:
+            return self._job if self._job is not None and id_ == self._job.id else None
+        if model is Document:
+            return self._document
+        return None
+
+    def query(self, model):
+        assert model is TKPVersion
+        return self.tkp_query
+
+    def delete(self, obj):
+        self.deleted_objects.append(obj)
+
+    def flush(self):
+        pass
+
+    def commit(self):
+        pass
+
+
+def test_delete_job_removes_job_document_tkp_versions_and_stored_file(monkeypatch):
+    document = Document(id=uuid.uuid4(), filename="x.pdf", file_type="pdf", storage_path="documents/x/x.pdf", content_hash="h")
+    job = Job(id=uuid.uuid4(), document_id=document.id, status=JobStatus.RUNNING)
+    db = _FakeDeleteSession(job, document)
+
+    deleted_paths = []
+
+    class _FakeStorage:
+        def delete(self, path):
+            deleted_paths.append(path)
+
+    monkeypatch.setattr(jobs_api, "get_storage", lambda: _FakeStorage())
+
+    jobs_api.delete_job(job.id, db)
+
+    assert db.tkp_query.deleted, "must delete any TKPVersion rows referencing this job (FK: job_id)"
+    assert job in db.deleted_objects
+    assert document in db.deleted_objects
+    assert deleted_paths == ["documents/x/x.pdf"]
+
+
+def test_delete_job_404s_for_unknown_job():
+    db = _FakeDeleteSession()
+    with pytest.raises(HTTPException) as exc_info:
+        jobs_api.delete_job(uuid.uuid4(), db)
+    assert exc_info.value.status_code == 404
