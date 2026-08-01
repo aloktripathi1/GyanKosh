@@ -1,3 +1,5 @@
+import logging
+import time
 from concurrent.futures import ThreadPoolExecutor, as_completed
 
 from sqlalchemy.orm import Session
@@ -22,6 +24,8 @@ from app.schemas.validation import ValidationReport
 from app.storage import get_storage
 from app.storage.base import StorageBackend
 from app.validation import consistency_check, grounding_check, schema_check
+
+logger = logging.getLogger("gyankosh.orchestrator")
 
 MAX_RETRIES = 3
 BACKOFF_BASE_SECONDS = 2
@@ -152,11 +156,14 @@ def _run_publishing(job: Job, storage: StorageBackend, db: Session) -> dict:
     return {"tkp_version_id": str(tkp_version.id), "pdf_paths": pdf_paths}
 
 
-def _compute_stage(db: Session, job: Job, stage: str, document: Document, storage: StorageBackend) -> dict:
-    """Run one stage's agent with retry/backoff and return its result. No DB
-    writes happen here — this is the half of stage execution that's safe to
+def _compute_stage(db: Session, job: Job, stage: str, document: Document, storage: StorageBackend) -> tuple[dict, float]:
+    """Run one stage's agent with retry/backoff and return (result, duration_seconds).
+    No DB writes happen here — this is the half of stage execution that's safe to
     call from a worker thread, so the parallel group can run several of these
     concurrently before checkpointing any of them."""
+    job_id = str(job.id)
+    start = time.monotonic()
+    attempt_count = 0
     try:
         result = None
         for attempt in Retrying(
@@ -165,14 +172,32 @@ def _compute_stage(db: Session, job: Job, stage: str, document: Document, storag
             reraise=True,
         ):
             with attempt:
+                attempt_count += 1
+                if attempt_count > 1:
+                    logger.warning(
+                        f"retrying (attempt {attempt_count}/{MAX_RETRIES})",
+                        extra={"job_id": job_id, "stage": stage},
+                    )
                 result = _execute_stage(job, stage, document, storage, db)
-        return result
     except Exception as e:  # noqa: BLE001 - any stage failure is retryable, then explicit
+        duration_ms = int((time.monotonic() - start) * 1000)
+        logger.error(
+            f"stage failed after {attempt_count} attempt(s): {e}",
+            extra={"job_id": job_id, "stage": stage, "duration_ms": duration_ms},
+        )
         raise StageFailedError(stage, e) from e
 
+    duration = time.monotonic() - start
+    logger.info(
+        f"stage completed (attempt {attempt_count}/{MAX_RETRIES})",
+        extra={"job_id": job_id, "stage": stage, "duration_ms": int(duration * 1000)},
+    )
+    return result, duration
 
-def _checkpoint_stage(db: Session, job: Job, stage: str, result: dict) -> None:
+
+def _checkpoint_stage(db: Session, job: Job, stage: str, result: dict, duration_seconds: float) -> None:
     job.stage_results = {**job.stage_results, stage: result}
+    job.stage_timings = {**job.stage_timings, stage: round(duration_seconds, 2)}
     completed = sum(1 for s in STAGE_NAMES if s in job.stage_results)
     progress.emit(db, job, stage, int(completed / len(STAGE_NAMES) * 100))
 
@@ -181,13 +206,13 @@ def run_stage(db: Session, job: Job, stage: str, document: Document, storage: St
     """Execute one stage with retry/backoff, checkpoint the result on success, and
     mark the job failed (explicitly, never silently) on exhaustion."""
     try:
-        result = _compute_stage(db, job, stage, document, storage)
+        result, duration = _compute_stage(db, job, stage, document, storage)
     except StageFailedError as e:
         job.status = JobStatus.FAILED
         job.error = str(e)
         db.commit()
         raise
-    _checkpoint_stage(db, job, stage, result)
+    _checkpoint_stage(db, job, stage, result, duration)
 
 
 def _run_parallel_group(db: Session, job: Job, document: Document, storage: StorageBackend) -> None:
@@ -207,11 +232,11 @@ def _run_parallel_group(db: Session, job: Job, document: Document, storage: Stor
         for future in as_completed(futures):
             stage = futures[future]
             try:
-                result = future.result()
+                result, duration = future.result()
             except StageFailedError as e:
                 first_error = first_error or e
                 continue
-            _checkpoint_stage(db, job, stage, result)
+            _checkpoint_stage(db, job, stage, result, duration)
 
     if first_error is not None:
         job.status = JobStatus.FAILED
@@ -226,6 +251,9 @@ def run_pipeline(db: Session, job: Job) -> None:
     from the first uncompleted stage rather than restarting."""
     document = db.get(Document, job.document_id)
     storage = get_storage()
+    job_id = str(job.id)
+    pipeline_start = time.monotonic()
+    logger.info("pipeline started", extra={"job_id": job_id})
 
     job.status = JobStatus.RUNNING
     # Stages can arrive pre-checkpointed (document-hash cache reuse on upload),
@@ -248,3 +276,5 @@ def run_pipeline(db: Session, job: Job) -> None:
     job.status = JobStatus.COMPLETED
     job.progress_pct = 100
     db.commit()
+    total_ms = int((time.monotonic() - pipeline_start) * 1000)
+    logger.info(f"pipeline completed in {total_ms}ms", extra={"job_id": job_id, "duration_ms": total_ms})

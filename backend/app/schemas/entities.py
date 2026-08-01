@@ -31,6 +31,7 @@ class JobRead(BaseModel):
     progress_pct: int
     error: str | None
     tkp_version_id: uuid.UUID | None = None
+    stage_timings: dict = {}
     created_at: datetime
     updated_at: datetime
 
@@ -46,6 +47,7 @@ class JobRead(BaseModel):
             progress_pct=job.progress_pct,
             error=job.error,
             tkp_version_id=tkp_version_id,
+            stage_timings=job.stage_timings or {},
             created_at=job.created_at,
             updated_at=job.updated_at,
         )

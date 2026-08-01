@@ -33,6 +33,7 @@ class FakeJob:
         self.error = None
         self.teaching_context = None
         self.stage_results = stage_results or {}
+        self.stage_timings = {}
 
 
 class FakeDocument:
@@ -123,6 +124,11 @@ def test_full_pipeline_completes_and_checkpoints_every_stage(stub_agents, storag
     agent_backed_stages = [s for s in STAGE_NAMES if s not in ("validation", "publishing")]
     assert all(stub_agents[s] == 1 for s in agent_backed_stages)
     assert len(db.added) == 1  # the TKPVersion row
+
+    # Observability: every stage records a wall-clock duration, not just its
+    # output — this is what a per-job timing breakdown reads from.
+    assert set(job.stage_timings.keys()) == set(STAGE_NAMES)
+    assert all(isinstance(v, float) and v >= 0 for v in job.stage_timings.values())
 
 
 def test_progress_reflects_precached_stages_from_document_hash_reuse(stub_agents, storage):

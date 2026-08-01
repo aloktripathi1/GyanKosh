@@ -3,6 +3,9 @@ from fastapi.middleware.cors import CORSMiddleware
 
 from app.api import documents, files, jobs, tkp
 from app.config import get_settings
+from app.logging_config import configure_logging
+
+configure_logging()
 
 app = FastAPI(title="GyanKosh API", version="0.1.0")
 

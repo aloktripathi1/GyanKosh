@@ -47,5 +47,8 @@ class Job(Base):
         String, nullable=True, doc="optional teacher-provided context: grade override, objectives, style, time constraints"
     )
     stage_results: Mapped[dict] = mapped_column(JSONB, default=dict, nullable=False)
+    stage_timings: Mapped[dict] = mapped_column(
+        JSONB, default=dict, nullable=False, doc="stage name -> wall-clock seconds, for observability/debugging"
+    )
     created_at: Mapped[datetime] = mapped_column(DateTime(timezone=True), server_default=func.now())
     updated_at: Mapped[datetime] = mapped_column(DateTime(timezone=True), server_default=func.now(), onupdate=func.now())
