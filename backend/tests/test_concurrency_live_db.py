@@ -70,7 +70,6 @@ def test_with_for_update_blocks_a_second_concurrent_transaction(tkp_id):
             events.append((name, event, time.monotonic()))
 
     a_holds_lock = threading.Event()
-    release_a = threading.Event()
     errors: list[Exception] = []
     HOLD_SECONDS = 1.0
     results: dict[str, float] = {}
