@@ -27,8 +27,8 @@ def get_job(job_id: uuid.UUID, db: Session = Depends(get_db)) -> JobRead:
 
 @router.get("/{job_id}/stream", dependencies=[Depends(require_api_key)])
 async def stream_job(job_id: uuid.UUID) -> StreamingResponse:
-    """SSE progress stream. Polls the jobs row on an interval; full push-based
-    implementation (LISTEN/NOTIFY) lands in Milestone 4."""
+    """SSE progress stream: polls the jobs row every 2s and pushes a new event
+    only when status/current_stage/progress_pct actually changes."""
 
     async def event_generator():
         last_snapshot = None
