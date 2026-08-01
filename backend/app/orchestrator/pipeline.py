@@ -1,6 +1,6 @@
 import logging
 import time
-from concurrent.futures import ThreadPoolExecutor, as_completed
+from concurrent.futures import ThreadPoolExecutor, TimeoutError as FutureTimeoutError, as_completed
 
 from sqlalchemy.orm import Session
 from tenacity import Retrying, stop_after_attempt, wait_exponential
@@ -29,6 +29,14 @@ logger = logging.getLogger("gyankosh.orchestrator")
 
 MAX_RETRIES = 3
 BACKOFF_BASE_SECONDS = 2
+# Safety net, not the primary defense: MAX_RETRIES attempts at
+# REQUEST_TIMEOUT_SECONDS (120s) each plus backoff already bounds a *normal*
+# worst case around 6 minutes. This catches abnormal hangs that wouldn't
+# resolve on their own at all — e.g. multiple threads contending for one
+# SQLAlchemy Session concurrently (see db.py's expire_on_commit=False for the
+# actual fix to that specific case) — so a stage fails explicitly instead of
+# leaving a job "running" forever.
+STAGE_TIMEOUT_SECONDS = 600
 
 # content/activity/assessment generation and gap analysis each depend only on
 # the teaching plan and/or knowledge extraction, never on each other — running
@@ -204,14 +212,31 @@ def _checkpoint_stage(db: Session, job: Job, stage: str, result: dict, duration_
 
 def run_stage(db: Session, job: Job, stage: str, document: Document, storage: StorageBackend) -> None:
     """Execute one stage with retry/backoff, checkpoint the result on success, and
-    mark the job failed (explicitly, never silently) on exhaustion."""
+    mark the job failed (explicitly, never silently) on exhaustion — including
+    on an outright hang, not just a raised exception."""
+    job_id = str(job.id)
+    pool = ThreadPoolExecutor(max_workers=1)
     try:
-        result, duration = _compute_stage(db, job, stage, document, storage)
-    except StageFailedError as e:
-        job.status = JobStatus.FAILED
-        job.error = str(e)
-        db.commit()
-        raise
+        future = pool.submit(_compute_stage, db, job, stage, document, storage)
+        try:
+            result, duration = future.result(timeout=STAGE_TIMEOUT_SECONDS)
+        except FutureTimeoutError:
+            logger.error(
+                f"stage timed out after {STAGE_TIMEOUT_SECONDS}s (still running in the background, abandoning)",
+                extra={"job_id": job_id, "stage": stage},
+            )
+            e = StageFailedError(stage, TimeoutError(f"exceeded {STAGE_TIMEOUT_SECONDS}s stage timeout"))
+            job.status = JobStatus.FAILED
+            job.error = str(e)
+            db.commit()
+            raise e from None
+        except StageFailedError as e:
+            job.status = JobStatus.FAILED
+            job.error = str(e)
+            db.commit()
+            raise
+    finally:
+        pool.shutdown(wait=False)  # a genuinely hung worker thread can't be killed; don't block on it
     _checkpoint_stage(db, job, stage, result, duration)
 
 
@@ -227,9 +252,10 @@ def _run_parallel_group(db: Session, job: Job, document: Document, storage: Stor
     db.commit()
 
     first_error: StageFailedError | None = None
-    with ThreadPoolExecutor(max_workers=len(pending)) as pool:
-        futures = {pool.submit(_compute_stage, db, job, stage, document, storage): stage for stage in pending}
-        for future in as_completed(futures):
+    pool = ThreadPoolExecutor(max_workers=len(pending))
+    futures = {pool.submit(_compute_stage, db, job, stage, document, storage): stage for stage in pending}
+    try:
+        for future in as_completed(futures, timeout=STAGE_TIMEOUT_SECONDS):
             stage = futures[future]
             try:
                 result, duration = future.result()
@@ -237,6 +263,17 @@ def _run_parallel_group(db: Session, job: Job, document: Document, storage: Stor
                 first_error = first_error or e
                 continue
             _checkpoint_stage(db, job, stage, result, duration)
+    except FutureTimeoutError:
+        stuck = [stage for future, stage in futures.items() if not future.done()]
+        logger.error(
+            f"parallel batch timed out after {STAGE_TIMEOUT_SECONDS}s, still running: {stuck}",
+            extra={"job_id": str(job.id), "stage": "+".join(stuck)},
+        )
+        first_error = first_error or StageFailedError(
+            "+".join(stuck), TimeoutError(f"exceeded {STAGE_TIMEOUT_SECONDS}s stage timeout: {stuck}")
+        )
+    finally:
+        pool.shutdown(wait=False)  # a genuinely hung worker thread can't be killed; don't block on it
 
     if first_error is not None:
         job.status = JobStatus.FAILED

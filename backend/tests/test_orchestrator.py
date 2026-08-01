@@ -4,6 +4,8 @@ job.status, db.commit()), so these tests use a lightweight fake Session/Job
 instead of a live Postgres connection, matching Section 14's "mock the LLM
 client" philosophy applied to the DB boundary instead."""
 
+import threading
+import time
 import uuid
 
 import pytest
@@ -344,3 +346,67 @@ def test_stage_fails_explicitly_after_exhausting_retries(stub_agents, storage):
     assert job.status == JobStatus.FAILED
     assert job.error is not None
     assert "classification" in job.error
+
+
+def test_run_stage_times_out_on_a_genuine_hang(stub_agents, storage, monkeypatch):
+    """Proves the timeout safety net actually fires — not just that the code
+    calls future.result(timeout=...), but that a stage which never returns
+    (simulating the real production hang this was added for) gets killed off
+    within the configured bound instead of leaving the job stuck forever."""
+    monkeypatch.setattr(pipeline, "STAGE_TIMEOUT_SECONDS", 0.3)
+    document = FakeDocument("doc.txt")
+    db = FakeSession(document)
+    job = FakeJob()
+    job.stage_results["document_intelligence"] = pipeline.document_intelligence.run(None).model_dump(mode="json")
+
+    never_returns = threading.Event()  # deliberately never .set() — simulates a true hang
+    real_run = stage_runners.classification_agent.run
+    stage_runners.classification_agent.run = lambda *a, **k: never_returns.wait()
+    try:
+        start = time.monotonic()
+        with pytest.raises(pipeline.StageFailedError):
+            pipeline.run_stage(db, job, "classification", document, storage)
+        elapsed = time.monotonic() - start
+    finally:
+        stage_runners.classification_agent.run = real_run
+        never_returns.set()  # let the leaked background thread actually finish, don't leave it dangling past the test
+
+    assert elapsed < 5, f"took {elapsed:.2f}s — timeout did not bound the hang"
+    assert job.status == JobStatus.FAILED
+    assert "classification" in job.error
+    assert "timeout" in job.error.lower() or "timed out" in job.error.lower()
+
+
+def test_parallel_group_times_out_on_one_hung_stage_but_checkpoints_the_rest(stub_agents, storage, monkeypatch):
+    """The parallel batch's timeout must isolate the hung stage — the 3
+    siblings that complete normally should still be checkpointed, exactly
+    like the existing partial-failure behavior for a raised exception."""
+    monkeypatch.setattr(pipeline, "STAGE_TIMEOUT_SECONDS", 0.5)
+    document = FakeDocument("doc.txt")
+    db = FakeSession(document)
+    job = FakeJob()
+    job.stage_results["document_intelligence"] = pipeline.document_intelligence.run(None).model_dump(mode="json")
+    job.stage_results["classification"] = stage_runners.classification_agent.run(None, None).model_dump(mode="json")
+    job.stage_results["knowledge_extraction"] = stage_runners.knowledge_extraction.run(None).model_dump(mode="json")
+    job.stage_results["teaching_planner"] = stage_runners.teaching_planner.run(None).model_dump(mode="json")
+
+    never_returns = threading.Event()
+    real_run = stage_runners.gap_analysis.run
+    stage_runners.gap_analysis.run = lambda *a, **k: never_returns.wait()
+    try:
+        start = time.monotonic()
+        with pytest.raises(pipeline.StageFailedError):
+            pipeline._run_parallel_group(db, job, document, storage)
+        elapsed = time.monotonic() - start
+    finally:
+        stage_runners.gap_analysis.run = real_run
+        never_returns.set()
+
+    assert elapsed < 5, f"took {elapsed:.2f}s — timeout did not bound the hang"
+    assert job.status == JobStatus.FAILED
+    assert "gap_analysis" in job.error
+    # the 3 siblings that didn't hang must still be checkpointed, not lost
+    assert "content_generation" in job.stage_results
+    assert "activity_generation" in job.stage_results
+    assert "assessment_generation" in job.stage_results
+    assert "gap_analysis" not in job.stage_results
