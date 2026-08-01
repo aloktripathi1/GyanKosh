@@ -1,0 +1,3529 @@
+{
+  "id": "5f619605-2260-4008-ae20-3e9a9baa10d6",
+  "job_id": "2a40e2fd-bbd1-4aac-b705-6f12a6fe7e07",
+  "version": 1,
+  "classification": {
+    "grade": "10",
+    "topic": "Electricity",
+    "chapter": "Chapter 11",
+    "subject": "Science",
+    "category": "Textbook Chapter",
+    "language": "English",
+    "difficulty": "beginner"
+  },
+  "extracted_knowledge": {
+    "concepts": [
+      {
+        "name": "Electric Current",
+        "text": "A stream of electrons moving through a conductor constitutes an electric current.",
+        "source_span": {
+          "page": 22,
+          "quote": "A stream of electrons moving through a conductor constitutes an electric current.",
+          "end_char": 322,
+          "section_id": "page-22",
+          "start_char": 241
+        }
+      },
+      {
+        "name": "Electric Circuit",
+        "text": "A continuous and closed path of an electric current is called an electric circuit.",
+        "source_span": {
+          "page": 1,
+          "quote": "A continuous and closed path of an electric current is called an\nelectric circuit.",
+          "end_char": 1348,
+          "section_id": "page-1",
+          "start_char": 1266
+        }
+      },
+      {
+        "name": "Potential Difference",
+        "text": "A difference of electric pressure called the potential difference along the conductor causes charges to flow in a conducting metallic wire.",
+        "source_span": {
+          "page": 3,
+          "quote": "the electrons move only\nif there is a difference of electric pressure – called the potential difference –\nalong the conductor.",
+          "end_char": 881,
+          "section_id": "page-3",
+          "start_char": 755
+        }
+      },
+      {
+        "name": "Resistance",
+        "text": "Resistance is a property that resists the flow of electrons in a conductor and controls the magnitude of the current.",
+        "source_span": {
+          "page": 22,
+          "quote": "Resistance is a property that resists the flow of electrons in a conductor. It controls\nthe magnitude of the current.",
+          "end_char": 761,
+          "section_id": "page-22",
+          "start_char": 644
+        }
+      },
+      {
+        "name": "Electrical Resistivity",
+        "text": "Electrical resistivity is a constant of proportionality that represents a characteristic property of a material showing how much the material resists electrical current flow.",
+        "source_span": {
+          "page": 8,
+          "quote": "ρ (rho) is a constant of proportionality and is called the electrical\nresistivity of the material of the conductor.",
+          "end_char": 985,
+          "section_id": "page-8",
+          "start_char": 870
+        }
+      },
+      {
+        "name": "Series Combination of Resistors",
+        "text": "When resistors are connected end to end, they are said to be connected in series. The same current flows through each resistor in a series combination.",
+        "source_span": {
+          "page": 11,
+          "quote": "three resistors having resistances R1,\nR2 and R3, respectively, are joined end to end. Here the resistors are said\nto be connected in series.",
+          "end_char": 1525,
+          "section_id": "page-11",
+          "start_char": 1384
+        }
+      },
+      {
+        "name": "Parallel Combination of Resistors",
+        "text": "When resistors are connected together between common points, they are said to be connected in parallel. The potential difference across each resistor is the same.",
+        "source_span": {
+          "page": 12,
+          "quote": "three resistors\nare connected together between points X and Y. Here, the resistors are\nsaid to be connected in parallel.",
+          "end_char": 1323,
+          "section_id": "page-12",
+          "start_char": 1203
+        }
+      },
+      {
+        "name": "Electric Power",
+        "text": "Electric power is the rate at which electric energy is dissipated or consumed in an electric circuit.",
+        "source_span": {
+          "page": 21,
+          "quote": "Equation (11.21) gives the rate at which electric energy is dissipated\nor consumed in an electric circuit. This is also termed as electric power.",
+          "end_char": 386,
+          "section_id": "page-21",
+          "start_char": 241
+        }
+      }
+    ],
+    "examples": [
+      {
+        "text": "A current of 0.5 A is drawn by a filament of an electric bulb for 10 minutes. Find the amount of electric charge that flows through the circuit. Solution: I = 0.5 A; t = 10 min = 600 s. From Eq. (11.1), Q = It = 0.5 A × 600 s = 300 C",
+        "source_span": {
+          "page": 2,
+          "quote": "A current of 0.5 A is drawn by a filament of an electric bulb for 10\nminutes. Find the amount of electric charge that flows through the\ncircuit.\nSolution\nWe are given, I = 0.5 A; t = 10 min = 600 s.\nFrom Eq. (11.1), we have\nQ\n= It\n= 0.5 A × 600 s\n= 300 C",
+          "end_char": 1579,
+          "section_id": "page-2",
+          "start_char": 1325
+        },
+        "related_concept": "Electric Current"
+      },
+      {
+        "text": "An electric bulb is connected to a 220 V generator. The current is 0.50 A. What is the power? P = VI = 220 V × 0.50 A = 110 J/s = 110 W",
+        "source_span": {
+          "page": 21,
+          "quote": "An electric bulb is connected to a 220 V generator. The current is\n0.50 A. What is the power of the bulb?\nSolution\nP\n=\nVI\n=\n220 V × 0.50 A\n=\n110 J/s\n=\n110 W.",
+          "end_char": 1613,
+          "section_id": "page-21",
+          "start_char": 1456
+        },
+        "related_concept": "Electric Power"
+      }
+    ],
+    "formulae": [
+      {
+        "name": "Potential Difference",
+        "text": "Potential difference is the work done divided by the charge moved.",
+        "expression": "V = W/Q",
+        "source_span": {
+          "page": 3,
+          "quote": "Potential difference (V) between two points = Work done (W)/Charge (Q)\nV\n=\nW/Q\n(11.2)",
+          "end_char": 1669,
+          "section_id": "page-3",
+          "start_char": 1584
+        }
+      },
+      {
+        "name": "Ohm's Law",
+        "text": "The potential difference across a conductor is proportional to the current through it.",
+        "expression": "V = IR",
+        "source_span": {
+          "page": 6,
+          "quote": "V ∝ I\n(11.4)\nor\nV/I\n=\nconstant\n=\nR\nor\nV\n=\nIR\n(11.5)",
+          "end_char": 1306,
+          "section_id": "page-6",
+          "start_char": 1255
+        }
+      },
+      {
+        "name": "Current from Resistance",
+        "text": "Current is inversely proportional to resistance.",
+        "expression": "I = V/R",
+        "source_span": {
+          "page": 6,
+          "quote": "Also from Eq. (11.5) we get\nI = V/R\n(11.7)",
+          "end_char": 1819,
+          "section_id": "page-6",
+          "start_char": 1777
+        }
+      },
+      {
+        "name": "Resistance and Length",
+        "text": "Resistance is directly proportional to the length of a conductor.",
+        "expression": "R ∝ l",
+        "source_span": {
+          "page": 8,
+          "quote": "Precise measurements\nhave shown that resistance of a uniform metallic conductor is directly\nproportional to its length (l) and inversely proportional to the area of\ncross-section (A). That is,\nR ∝ l\n(11.8)",
+          "end_char": 774,
+          "section_id": "page-8",
+          "start_char": 569
+        }
+      },
+      {
+        "name": "Resistance and Cross-sectional Area",
+        "text": "Resistance is inversely proportional to the cross-sectional area of a conductor.",
+        "expression": "R ∝ 1/A",
+        "source_span": {
+          "page": 8,
+          "quote": "and\nR ∝ 1/A\n(11.9)",
+          "end_char": 793,
+          "section_id": "page-8",
+          "start_char": 775
+        }
+      },
+      {
+        "name": "Potential Difference in Series",
+        "text": "The total potential difference across resistors in series equals the sum of individual potential differences.",
+        "expression": "V = V1 + V2 + V3",
+        "source_span": {
+          "page": 13,
+          "quote": "V = V1 + V2  + V3\n(11.11)",
+          "end_char": 1264,
+          "section_id": "page-13",
+          "start_char": 1239
+        }
+      },
+      {
+        "name": "Equivalent Resistance for Series",
+        "text": "For a series combination, the potential difference is the current times the equivalent resistance.",
+        "expression": "V = IR",
+        "source_span": {
+          "page": 13,
+          "quote": "V = I R\n(11.12)",
+          "end_char": 1682,
+          "section_id": "page-13",
+          "start_char": 1667
+        }
+      },
+      {
+        "name": "Series Resistance Calculation",
+        "text": "The equivalent resistance of resistors in series equals the sum of individual resistances.",
+        "expression": "Rs = R1 + R2 + R3",
+        "source_span": {
+          "page": 14,
+          "quote": "or\nRs = R1 +R2 + R3\n(11.14)",
+          "end_char": 222,
+          "section_id": "page-14",
+          "start_char": 195
+        }
+      },
+      {
+        "name": "Current in Parallel",
+        "text": "The total current in a parallel combination equals the sum of currents through each branch.",
+        "expression": "I = I1 + I2 + I3",
+        "source_span": {
+          "page": 16,
+          "quote": "I = I1 + I2 + I3\n(11.15)",
+          "end_char": 559,
+          "section_id": "page-16",
+          "start_char": 535
+        }
+      },
+      {
+        "name": "Parallel Combination Resistance",
+        "text": "For a parallel combination, current equals voltage divided by equivalent resistance.",
+        "expression": "I = V/Rp",
+        "source_span": {
+          "page": 16,
+          "quote": "I = V/Rp\n(11.16)",
+          "end_char": 726,
+          "section_id": "page-16",
+          "start_char": 710
+        }
+      },
+      {
+        "name": "Parallel Equivalent Resistance",
+        "text": "The reciprocal of the equivalent resistance in parallel equals the sum of reciprocals of individual resistances.",
+        "expression": "1/Rp = 1/R1 + 1/R2 + 1/R3",
+        "source_span": {
+          "page": 16,
+          "quote": "1/Rp = 1/R1 + 1/R2 + 1/R3\n(11.18)",
+          "end_char": 929,
+          "section_id": "page-16",
+          "start_char": 896
+        }
+      },
+      {
+        "name": "Heat from Current",
+        "text": "Heat produced is the product of voltage, current, and time.",
+        "expression": "H = VIt",
+        "source_span": {
+          "page": 18,
+          "quote": "H = VIt\n(11.20)",
+          "end_char": 2014,
+          "section_id": "page-18",
+          "start_char": 1999
+        }
+      },
+      {
+        "name": "Joule's Law of Heating",
+        "text": "Heat produced in a resistor is proportional to the square of current, resistance, and time.",
+        "expression": "H = I²Rt",
+        "source_span": {
+          "page": 19,
+          "quote": "H = I2 Rt\n(11.21)",
+          "end_char": 73,
+          "section_id": "page-19",
+          "start_char": 56
+        }
+      },
+      {
+        "name": "Power Forms",
+        "text": "Power can be expressed in multiple equivalent forms.",
+        "expression": "P = VI = I²R = V²/R",
+        "source_span": {
+          "page": 21,
+          "quote": "P  =  VI\nOr\nP  =  I2R = V2/R\n(11.22)",
+          "end_char": 447,
+          "section_id": "page-21",
+          "start_char": 411
+        }
+      },
+      {
+        "name": "Watt Definition",
+        "text": "One watt is the power of one volt times one ampere.",
+        "expression": "1 W = 1 VA",
+        "source_span": {
+          "page": 21,
+          "quote": "1 W  =  1 volt × 1 ampere = 1 V A\n(11.23)",
+          "end_char": 658,
+          "section_id": "page-21",
+          "start_char": 617
+        }
+      }
+    ],
+    "keywords": [
+      {
+        "text": "Electric current",
+        "source_span": {
+          "page": 1,
+          "quote": "if the electric charge\nflows through a conductor (for example, through a metallic wire), we\nsay that there is an electric current in the conductor.",
+          "end_char": 947,
+          "section_id": "page-1",
+          "start_char": 800
+        }
+      },
+      {
+        "text": "Electric circuit",
+        "source_span": {
+          "page": 1,
+          "quote": "A continuous and closed path of an electric current is called an\nelectric circuit.",
+          "end_char": 1348,
+          "section_id": "page-1",
+          "start_char": 1266
+        }
+      },
+      {
+        "text": "Ampere",
+        "source_span": {
+          "page": 2,
+          "quote": "The electric\ncurrent is expressed by a unit called ampere (A)",
+          "end_char": 407,
+          "section_id": "page-2",
+          "start_char": 346
+        }
+      },
+      {
+        "text": "Coulomb",
+        "source_span": {
+          "page": 2,
+          "quote": "The SI unit of electric charge is coulomb (C)",
+          "end_char": 197,
+          "section_id": "page-2",
+          "start_char": 152
+        }
+      },
+      {
+        "text": "Ammeter",
+        "source_span": {
+          "page": 2,
+          "quote": "An instrument called ammeter measures electric\ncurrent in a circuit.",
+          "end_char": 750,
+          "section_id": "page-2",
+          "start_char": 682
+        }
+      },
+      {
+        "text": "Potential difference",
+        "source_span": {
+          "page": 3,
+          "quote": "a difference of electric pressure – called the potential difference –\nalong the conductor",
+          "end_char": 880,
+          "section_id": "page-3",
+          "start_char": 791
+        }
+      },
+      {
+        "text": "Volt",
+        "source_span": {
+          "page": 3,
+          "quote": "The SI unit of electric potential difference is volt (V)",
+          "end_char": 1726,
+          "section_id": "page-3",
+          "start_char": 1670
+        }
+      },
+      {
+        "text": "Voltmeter",
+        "source_span": {
+          "page": 3,
+          "quote": "The potential difference is measured by means of an instrument called\nthe voltmeter.",
+          "end_char": 2114,
+          "section_id": "page-3",
+          "start_char": 2030
+        }
+      },
+      {
+        "text": "Resistance",
+        "source_span": {
+          "page": 6,
+          "quote": "R is a constant for the given metallic wire\nat a given temperature and is called its resistance.",
+          "end_char": 1418,
+          "section_id": "page-6",
+          "start_char": 1322
+        }
+      },
+      {
+        "text": "Resistivity",
+        "source_span": {
+          "page": 8,
+          "quote": "ρ (rho) is a constant of proportionality and is called the electrical\nresistivity of the material of the conductor.",
+          "end_char": 985,
+          "section_id": "page-8",
+          "start_char": 870
+        }
+      },
+      {
+        "text": "Series combination",
+        "source_span": {
+          "page": 11,
+          "quote": "three resistors having resistances R1,\nR2 and R3, respectively, are joined end to end. Here the resistors are said\nto be connected in series.",
+          "end_char": 1525,
+          "section_id": "page-11",
+          "start_char": 1384
+        }
+      },
+      {
+        "text": "Parallel combination",
+        "source_span": {
+          "page": 12,
+          "quote": "three resistors\nare connected together between points X and Y. Here, the resistors are\nsaid to be connected in parallel.",
+          "end_char": 1323,
+          "section_id": "page-12",
+          "start_char": 1203
+        }
+      },
+      {
+        "text": "Electric power",
+        "source_span": {
+          "page": 21,
+          "quote": "Equation (11.21) gives the rate at which electric energy is dissipated\nor consumed in an electric circuit. This is also termed as electric power.",
+          "end_char": 386,
+          "section_id": "page-21",
+          "start_char": 241
+        }
+      },
+      {
+        "text": "Watt",
+        "source_span": {
+          "page": 21,
+          "quote": "The SI unit of electric power is watt (W)",
+          "end_char": 489,
+          "section_id": "page-21",
+          "start_char": 448
+        }
+      },
+      {
+        "text": "Kilowatt hour",
+        "source_span": {
+          "page": 21,
+          "quote": "The commercial unit of electric energy\nis kilowatt hour (kW h)",
+          "end_char": 1050,
+          "section_id": "page-21",
+          "start_char": 988
+        }
+      }
+    ],
+    "objectives": [],
+    "definitions": [
+      {
+        "term": "Electric Current",
+        "text": "Electric current is the rate of flow of electric charges, expressed by the amount of charge flowing through a particular area in unit time.",
+        "source_span": {
+          "page": 1,
+          "quote": "Electric current is expressed by\nthe amount of charge flowing through a particular area in unit time. In\nother words, it is the rate of flow of electric charges.",
+          "end_char": 1684,
+          "section_id": "page-1",
+          "start_char": 1523
+        }
+      },
+      {
+        "term": "Coulomb",
+        "text": "A coulomb is a unit of electric charge equivalent to the charge contained in nearly 6 × 10^18 electrons.",
+        "source_span": {
+          "page": 2,
+          "quote": "The SI unit of electric charge is coulomb (C), which is equivalent to\nthe charge contained in nearly 6 × 1018 electrons.",
+          "end_char": 272,
+          "section_id": "page-2",
+          "start_char": 152
+        }
+      },
+      {
+        "term": "Ampere",
+        "text": "An ampere is a unit of electric current constituted by the flow of one coulomb of charge per second.",
+        "source_span": {
+          "page": 2,
+          "quote": "The electric\ncurrent is expressed by a unit called ampere (A), named after the\nFrench scientist, Andre-Marie Ampere (1775–1836). One ampere is\nconstituted by the flow of one coulomb of charge per second, that is,\n1 A = 1 C/1 s.",
+          "end_char": 573,
+          "section_id": "page-2",
+          "start_char": 346
+        }
+      },
+      {
+        "term": "Ammeter",
+        "text": "An instrument that measures electric current in a circuit and is always connected in series through which the current is to be measured.",
+        "source_span": {
+          "page": 2,
+          "quote": "An instrument called ammeter measures electric\ncurrent in a circuit. It is always connected in series\nin a circuit through which the current is to be\nmeasured.",
+          "end_char": 841,
+          "section_id": "page-2",
+          "start_char": 682
+        }
+      },
+      {
+        "term": "Potential Difference",
+        "text": "The electric potential difference between two points in an electric circuit is the work done to move a unit charge from one point to the other.",
+        "source_span": {
+          "page": 3,
+          "quote": "We define the electric potential difference between two points in an\nelectric circuit carrying some current as the work done to move a unit\ncharge from one point to the other –\nPotential difference (V) between two points = Work done (W)/Charge (Q)",
+          "end_char": 1654,
+          "section_id": "page-3",
+          "start_char": 1407
+        }
+      },
+      {
+        "term": "Volt",
+        "text": "A volt is the SI unit of electric potential difference, where one volt is the potential difference between two points when 1 joule of work is done to move a charge of 1 coulomb.",
+        "source_span": {
+          "page": 3,
+          "quote": "The SI unit of electric potential difference is volt (V), named after\nAlessandro Volta (1745 –1827), an Italian physicist. One volt is the\npotential difference between two points in a current carrying conductor\nwhen 1 joule of work is done to move a charge of 1 coulomb from one\npoint to the other.",
+          "end_char": 1968,
+          "section_id": "page-3",
+          "start_char": 1670
+        }
+      },
+      {
+        "term": "Voltmeter",
+        "text": "An instrument that measures potential difference and is always connected in parallel across the points between which the potential difference is to be measured.",
+        "source_span": {
+          "page": 3,
+          "quote": "The potential difference is measured by means of an instrument called\nthe voltmeter. The voltmeter is always connected in parallel across the\npoints between which the potential difference is to be measured.",
+          "end_char": 2236,
+          "section_id": "page-3",
+          "start_char": 2030
+        }
+      },
+      {
+        "term": "Resistance",
+        "text": "A constant for a given metallic wire at a given temperature that represents the property of a conductor to resist the flow of charges through it.",
+        "source_span": {
+          "page": 6,
+          "quote": "In Eq. (11.4), R is a constant for the given metallic wire\nat a given temperature and is called its resistance. It is the\nproperty of a conductor to resist the flow of charges  through it.",
+          "end_char": 1495,
+          "section_id": "page-6",
+          "start_char": 1307
+        }
+      },
+      {
+        "term": "Variable Resistance",
+        "text": "A component used to regulate current without changing the voltage source.",
+        "source_span": {
+          "page": 6,
+          "quote": "A component used to\nregulate current without changing the voltage source is called variable\nresistance.",
+          "end_char": 2188,
+          "section_id": "page-6",
+          "start_char": 2085
+        }
+      },
+      {
+        "term": "Rheostat",
+        "text": "A device called rheostat is often used to change the resistance in the circuit.",
+        "source_span": {
+          "page": 6,
+          "quote": "In an electric circuit, a device called rheostat is often used to\nchange the resistance in the circuit.",
+          "end_char": 2292,
+          "section_id": "page-6",
+          "start_char": 2189
+        }
+      },
+      {
+        "term": "Conductor",
+        "text": "A component of a given size that offers a low resistance to the flow of electric current.",
+        "source_span": {
+          "page": 7,
+          "quote": "A component of a given size that offers a low\nresistance is a good conductor.",
+          "end_char": 618,
+          "section_id": "page-7",
+          "start_char": 541
+        }
+      },
+      {
+        "term": "Resistor",
+        "text": "A conductor having some appreciable resistance.",
+        "source_span": {
+          "page": 7,
+          "quote": "A conductor having some appreciable\nresistance is called a resistor.",
+          "end_char": 687,
+          "section_id": "page-7",
+          "start_char": 619
+        }
+      },
+      {
+        "term": "Insulator",
+        "text": "A component of identical size that offers an even higher resistance than a poor conductor.",
+        "source_span": {
+          "page": 7,
+          "quote": "A component of identical size that offers a\nhigher resistance is a poor conductor. An insulator of the same size offers\neven higher resistance.",
+          "end_char": 831,
+          "section_id": "page-7",
+          "start_char": 688
+        }
+      },
+      {
+        "term": "Series Combination",
+        "text": "A configuration where resistors are joined end to end in a circuit with the same current flowing through each.",
+        "source_span": {
+          "page": 11,
+          "quote": "three resistors having resistances R1,\nR2 and R3, respectively, are joined end to end. Here the resistors are said\nto be connected in series.",
+          "end_char": 1525,
+          "section_id": "page-11",
+          "start_char": 1384
+        }
+      },
+      {
+        "term": "Parallel Combination",
+        "text": "A configuration where resistors are connected together between common points with the same potential difference across each.",
+        "source_span": {
+          "page": 12,
+          "quote": "three resistors\nare connected together between points X and Y. Here, the resistors are\nsaid to be connected in parallel.",
+          "end_char": 1323,
+          "section_id": "page-12",
+          "start_char": 1203
+        }
+      },
+      {
+        "term": "Equivalent Resistance",
+        "text": "A single resistance that can replace a combination of resistors while maintaining the same potential difference and current.",
+        "source_span": {
+          "page": 13,
+          "quote": "It is possible to\nreplace the three resistors joined in series by an equivalent single resistor\nof resistance R, such that the potential difference V across it, and the\ncurrent I through the circuit remains the same.",
+          "end_char": 1612,
+          "section_id": "page-13",
+          "start_char": 1396
+        }
+      },
+      {
+        "term": "Watt",
+        "text": "The SI unit of electric power, which is the power consumed by a device that carries 1 ampere of current when operated at a potential difference of 1 volt.",
+        "source_span": {
+          "page": 21,
+          "quote": "The SI unit of electric power is watt (W). It is the power consumed by\na device that carries 1 A of current when operated at a potential difference\nof 1 V.",
+          "end_char": 603,
+          "section_id": "page-21",
+          "start_char": 448
+        }
+      }
+    ],
+    "applications": [
+      {
+        "text": "An electric circuit comprises a cell, plug key, electrical components and connecting wires. A schematic diagram uses conventional symbols to represent different components.",
+        "source_span": {
+          "page": 4,
+          "quote": "We know that an electric circuit, as shown in Fig. 11.1, comprises a cell\n(or a battery), a plug key, electrical component(s), and connecting wires.\nIt is often convenient to draw a schematic diagram, in which different\ncomponents of the circuit are represented by the symbols conveniently\nused.",
+          "end_char": 460,
+          "section_id": "page-4",
+          "start_char": 165
+        }
+      },
+      {
+        "text": "An ammeter measures electric current in a circuit and must be connected in series to measure the current accurately.",
+        "source_span": {
+          "page": 2,
+          "quote": "An instrument called ammeter measures electric\ncurrent in a circuit. It is always connected in series\nin a circuit through which the current is to be\nmeasured.",
+          "end_char": 841,
+          "section_id": "page-2",
+          "start_char": 682
+        }
+      },
+      {
+        "text": "A voltmeter measures potential difference and is always connected in parallel across the points where the potential difference is to be measured.",
+        "source_span": {
+          "page": 3,
+          "quote": "The potential difference is measured by means of an instrument called\nthe voltmeter. The voltmeter is always connected in parallel across the\npoints between which the potential difference is to be measured.",
+          "end_char": 2236,
+          "section_id": "page-3",
+          "start_char": 2030
+        }
+      },
+      {
+        "text": "A rheostat is used in an electric circuit to change the resistance and regulate current without changing the voltage source.",
+        "source_span": {
+          "page": 6,
+          "quote": "In an electric circuit, a device called rheostat is often used to\nchange the resistance in the circuit.",
+          "end_char": 2292,
+          "section_id": "page-6",
+          "start_char": 2189
+        }
+      },
+      {
+        "text": "Alloys like nichrome, constantan, and manganin are commonly used in electrical heating devices such as electric irons and toasters because they do not oxidise readily at high temperatures.",
+        "source_span": {
+          "page": 9,
+          "quote": "Alloys do not oxidise (burn) readily\nat high temperatures. For this reason, they are commonly used in\nelectrical heating devices, like electric iron, toasters etc.",
+          "end_char": 552,
+          "section_id": "page-9",
+          "start_char": 389
+        }
+      },
+      {
+        "text": "Tungsten is used almost exclusively for filaments of electric bulbs because of its high melting point (3380°C), allowing it to get very hot and emit light without melting.",
+        "source_span": {
+          "page": 20,
+          "quote": "A strong metal with high melting point such as\ntungsten (melting point 3380°C) is used for making bulb filaments.",
+          "end_char": 953,
+          "section_id": "page-20",
+          "start_char": 840
+        }
+      },
+      {
+        "text": "Copper and aluminium are generally used for electrical transmission lines because of their low resistivity.",
+        "source_span": {
+          "page": 9,
+          "quote": "copper and\naluminium are generally used for electrical transmission lines.",
+          "end_char": 704,
+          "section_id": "page-9",
+          "start_char": 630
+        }
+      },
+      {
+        "text": "Electric bulbs are filled with chemically inactive nitrogen and argon gases to prolong the life of the filament by preventing oxidation.",
+        "source_span": {
+          "page": 20,
+          "quote": "The bulbs are usually filled with chemically\ninactive nitrogen and argon gases to prolong the life of filament.",
+          "end_char": 1159,
+          "section_id": "page-20",
+          "start_char": 1048
+        }
+      },
+      {
+        "text": "Electric heating is used to produce light in electric bulbs where the filament gets very hot and emits light, with most power appearing as heat and a small part as light radiation.",
+        "source_span": {
+          "page": 20,
+          "quote": "The electric heating is also used to produce light, as in an electric\nbulb. Here, the filament must retain as much of the heat generated as is\npossible, so that it gets very hot and emits light.",
+          "end_char": 796,
+          "section_id": "page-20",
+          "start_char": 602
+        }
+      },
+      {
+        "text": "Parallel circuits are used for domestic electrical connections because they divide current through gadgets and allow different devices with different resistances and current requirements to operate properly.",
+        "source_span": {
+          "page": 17,
+          "quote": "a parallel\ncircuit divides the current through the electrical gadgets. The total\nresistance in a parallel circuit is decreased as per Eq. (11.18). This is\nhelpful particularly when each gadget has different resistance and\nrequires different current to operate properly.",
+          "end_char": 2016,
+          "section_id": "page-17",
+          "start_char": 1747
+        }
+      }
+    ],
+    "prerequisites": [],
+    "misconceptions": [
+      {
+        "text": "Electrons are consumed in an electric circuit.",
+        "correction": "Electrons are not consumed in an electric circuit. We pay electricity providers for the energy to move electrons through electric gadgets, not for the electrons themselves.",
+        "source_span": {
+          "page": 21,
+          "quote": "Many people think that electrons are consumed in an electric circuit. This is wrong!\nWe pay the electricity board or electric company to provide energy to move electrons\nthrough the electric gadgets like electric bulb, fan and engines. We pay for the energy\nthat we use.",
+          "end_char": 1441,
+          "section_id": "page-21",
+          "start_char": 1171
+        }
+      }
+    ]
+  },
+  "teaching_plan": {
+    "periods": [
+      {
+        "title": "Introduction to Electric Current and Circuits",
+        "objectives": [
+          "Define electric current and explain the flow of electrons in a conductor",
+          "Explain what constitutes an electric circuit",
+          "Identify the conditions required for current to flow in a circuit"
+        ],
+        "period_number": 1,
+        "concepts_covered": [
+          "Electric Current",
+          "Electric Circuit"
+        ],
+        "sequencing_rationale": "These are the foundational concepts of electricity; students must understand what current is and how a circuit forms before exploring what drives current or resists it. This sets the stage for all subsequent topics.",
+        "recommended_duration_minutes": 35
+      },
+      {
+        "title": "Potential Difference: The Driving Force of Current",
+        "objectives": [
+          "Explain the concept of potential difference and its role in driving current",
+          "Relate potential difference to the movement of charges in a conducting wire",
+          "Describe how potential difference is measured and its units"
+        ],
+        "period_number": 2,
+        "concepts_covered": [
+          "Potential Difference"
+        ],
+        "sequencing_rationale": "Once students understand current and circuits, they need to grasp why current flows at all — introducing potential difference as the cause of current flow logically follows and sets up the concept of resistance.",
+        "recommended_duration_minutes": 30
+      },
+      {
+        "title": "Resistance and Electrical Resistivity",
+        "objectives": [
+          "Define resistance and explain its effect on current flow",
+          "Understand the concept of electrical resistivity as a material property",
+          "Differentiate between resistance and resistivity, and identify factors affecting each"
+        ],
+        "period_number": 3,
+        "concepts_covered": [
+          "Resistance",
+          "Electrical Resistivity"
+        ],
+        "sequencing_rationale": "With current and potential difference established, resistance is the next logical concept, explaining what opposes current flow. Resistivity extends this into material-based understanding, providing a bridge into circuit calculations.",
+        "recommended_duration_minutes": 40
+      },
+      {
+        "title": "Series Combination of Resistors",
+        "objectives": [
+          "Describe how resistors are connected in series",
+          "Explain why the same current flows through each resistor in series",
+          "Calculate equivalent resistance in a series combination through simple numerical examples"
+        ],
+        "period_number": 4,
+        "concepts_covered": [
+          "Series Combination of Resistors"
+        ],
+        "sequencing_rationale": "Once resistance is understood, students can explore how multiple resistors interact in a circuit. Series combination is introduced first as it is conceptually simpler and directly builds on the single-resistor case.",
+        "recommended_duration_minutes": 45
+      },
+      {
+        "title": "Parallel Combination of Resistors",
+        "objectives": [
+          "Describe how resistors are connected in parallel",
+          "Explain why potential difference remains the same across each resistor in parallel",
+          "Calculate equivalent resistance in a parallel combination through numerical examples",
+          "Compare series and parallel combinations in terms of current, voltage, and resistance behavior"
+        ],
+        "period_number": 5,
+        "concepts_covered": [
+          "Parallel Combination of Resistors"
+        ],
+        "sequencing_rationale": "Parallel combination follows series combination naturally, allowing direct comparison and reinforcing understanding of both configurations. This period requires more time due to the numerical practice involved in equivalent resistance calculations.",
+        "recommended_duration_minutes": 50
+      },
+      {
+        "title": "Electric Power and Energy Consumption",
+        "objectives": [
+          "Define electric power and its relationship to current, voltage, and resistance",
+          "Calculate electric power dissipated in circuits using relevant formulas",
+          "Relate electric power concepts to real-life energy consumption and appliance ratings"
+        ],
+        "period_number": 6,
+        "concepts_covered": [
+          "Electric Power"
+        ],
+        "sequencing_rationale": "Electric power builds on all previously learned concepts (current, potential difference, resistance) and serves as a culminating, application-oriented topic that ties the unit together with practical relevance.",
+        "recommended_duration_minutes": 40
+      }
+    ],
+    "total_periods": 6,
+    "planning_rationale": "The content spans eight interrelated concepts building from foundational ideas (current, circuit) through causative and resistive properties (potential difference, resistance, resistivity) to circuit configurations (series and parallel combinations) and culminates in applied calculations (electric power). Given this is a beginner-level Grade 10 introduction, each conceptual block needs dedicated time to build understanding before moving to the next, with numerical practice periods (series/parallel combinations) requiring longer duration due to problem-solving components. Six periods allow logical grouping of closely related concepts (e.g., resistance with resistivity, current with circuits) while keeping each period focused and time-appropriate, without exceeding the maximum period limit or artificially inflating period count for closely related ideas."
+  },
+  "period_content": {
+    "periods": [
+      {
+        "homework": "Draw three different simple circuits (with a bulb, a motor, and a buzzer) each showing the correct placement of an ammeter, and calculate the charge that flows if each device draws 1 A for 5 minutes.",
+        "activities": [
+          "Draw and label a simple electric circuit with battery, switch, bulb, and ammeter",
+          "Group discussion: What happens if the circuit is broken?",
+          "Numerical practice: calculating charge from current and time"
+        ],
+        "exit_ticket": "In your own words, explain why an ammeter must be connected in series in a circuit.",
+        "entry_ticket": "What do you think happens inside a wire when a bulb glows? Write one or two lines about what you imagine is 'flowing' through the wire.",
+        "source_spans": [
+          {
+            "page": 22,
+            "quote": "A stream of electrons moving through a conductor constitutes an electric current.",
+            "end_char": 322,
+            "section_id": "page-22",
+            "start_char": 241
+          },
+          {
+            "page": 1,
+            "quote": "A continuous and closed path of an electric current is called an\nelectric circuit.",
+            "end_char": 1348,
+            "section_id": "page-1",
+            "start_char": 1266
+          },
+          {
+            "page": 1,
+            "quote": "Electric current is expressed by\nthe amount of charge flowing through a particular area in unit time. In\nother words, it is the rate of flow of electric charges.",
+            "end_char": 1684,
+            "section_id": "page-1",
+            "start_char": 1523
+          },
+          {
+            "page": 2,
+            "quote": "The SI unit of electric charge is coulomb (C), which is equivalent to\nthe charge contained in nearly 6 × 1018 electrons.",
+            "end_char": 272,
+            "section_id": "page-2",
+            "start_char": 152
+          },
+          {
+            "page": 2,
+            "quote": "The electric\ncurrent is expressed by a unit called ampere (A), named after the\nFrench scientist, Andre-Marie Ampere (1775–1836). One ampere is\nconstituted by the flow of one coulomb of charge per second, that is,\n1 A = 1 C/1 s.",
+            "end_char": 573,
+            "section_id": "page-2",
+            "start_char": 346
+          },
+          {
+            "page": 2,
+            "quote": "An instrument called ammeter measures electric\ncurrent in a circuit. It is always connected in series\nin a circuit through which the current is to be\nmeasured.",
+            "end_char": 841,
+            "section_id": "page-2",
+            "start_char": 682
+          },
+          {
+            "page": 21,
+            "quote": "Many people think that electrons are consumed in an electric circuit. This is wrong!\nWe pay the electricity board or electric company to provide energy to move electrons\nthrough the electric gadgets like electric bulb, fan and engines. We pay for the energy\nthat we use.",
+            "end_char": 1441,
+            "section_id": "page-21",
+            "start_char": 1171
+          }
+        ],
+        "mentor_moment": "Use a simple analogy like water flowing in a closed pipe loop to help students visualize why the circuit must be closed for current to flow - this concrete image often clears up confusion faster than equations alone.",
+        "period_number": 1,
+        "teacher_script": "Begin by asking students to recall a simple torch circuit. Ask: what makes the bulb glow? Introduce the idea that a stream of electrons moving through a conductor constitutes an electric current. Emphasize that electric current is the rate of flow of electric charges, expressed by the amount of charge flowing through a particular area in unit time. Explain the unit: a coulomb is a unit of electric charge equivalent to the charge contained in nearly 6 × 10^18 electrons, and an ampere is a unit of electric current constituted by the flow of one coulomb of charge per second. Show a simple circuit diagram with a battery, wires, switch, and bulb, and explain that a continuous and closed path of an electric current is called an electric circuit. Discuss the conditions needed: a source of potential difference, a closed conducting path, and no break in the circuit. Introduce the ammeter as an instrument that measures electric current in a circuit and is always connected in series through which the current is to be measured. Address the misconception that electrons are consumed in an electric circuit - clarify that electrons are not used up, they simply flow and return.",
+        "blackboard_notes": "Electric Current: rate of flow of charge\nQ = It\n1 Coulomb ≈ 6×10^18 electrons\n1 Ampere = 1 Coulomb/second\nElectric Circuit: continuous, closed path\nAmmeter: measures current, connected in SERIES\nMisconception: Electrons are NOT consumed in a circuit!",
+        "checkpoint_questions": [
+          {
+            "question": "What constitutes an electric current in a conductor?",
+            "source_spans": [
+              {
+                "page": 22,
+                "quote": "A stream of electrons moving through a conductor constitutes an electric current.",
+                "end_char": 322,
+                "section_id": "page-22",
+                "start_char": 241
+              }
+            ],
+            "expected_answer": "A stream of electrons moving through a conductor constitutes an electric current."
+          },
+          {
+            "question": "What is an electric circuit?",
+            "source_spans": [
+              {
+                "page": 1,
+                "quote": "A continuous and closed path of an electric current is called an\nelectric circuit.",
+                "end_char": 1348,
+                "section_id": "page-1",
+                "start_char": 1266
+              }
+            ],
+            "expected_answer": "A continuous and closed path of an electric current is called an electric circuit."
+          },
+          {
+            "question": "A current of 0.5 A is drawn by a filament of an electric bulb for 10 minutes. Find the amount of electric charge that flows through the circuit.",
+            "source_spans": [
+              {
+                "page": 2,
+                "quote": "A current of 0.5 A is drawn by a filament of an electric bulb for 10\nminutes. Find the amount of electric charge that flows through the\ncircuit.\nSolution\nWe are given, I = 0.5 A; t = 10 min = 600 s.\nFrom Eq. (11.1), we have\nQ\n= It\n= 0.5 A × 600 s\n= 300 C",
+                "end_char": 1579,
+                "section_id": "page-2",
+                "start_char": 1325
+              }
+            ],
+            "expected_answer": "Q = It = 0.5 A × 600 s = 300 C"
+          },
+          {
+            "question": "Are electrons consumed in an electric circuit?",
+            "source_spans": [
+              {
+                "page": 21,
+                "quote": "Many people think that electrons are consumed in an electric circuit. This is wrong!\nWe pay the electricity board or electric company to provide energy to move electrons\nthrough the electric gadgets like electric bulb, fan and engines. We pay for the energy\nthat we use.",
+                "end_char": 1441,
+                "section_id": "page-21",
+                "start_char": 1171
+              }
+            ],
+            "expected_answer": "No, this is a misconception. Electrons are not consumed; they continuously flow through the closed circuit."
+          }
+        ]
+      },
+      {
+        "homework": "If 5 joules of work is done to move 2 coulombs of charge between two points, calculate the potential difference between those points. Also, draw a circuit showing correct placement of both ammeter and voltmeter.",
+        "activities": [
+          "Demonstration: connecting a voltmeter across a bulb in a circuit",
+          "Compare ammeter and voltmeter placement in a circuit diagram",
+          "Numerical practice: calculating work done using V = W/Q"
+        ],
+        "exit_ticket": "Explain what it means when we say '1 volt is the potential difference between two points when 1 joule of work is done to move a charge of 1 coulomb.'",
+        "entry_ticket": "If current is like water flowing, what do you think 'pushes' the water (or charges) to flow? Write your guess.",
+        "source_spans": [
+          {
+            "page": 3,
+            "quote": "the electrons move only\nif there is a difference of electric pressure – called the potential difference –\nalong the conductor.",
+            "end_char": 881,
+            "section_id": "page-3",
+            "start_char": 755
+          },
+          {
+            "page": 3,
+            "quote": "We define the electric potential difference between two points in an\nelectric circuit carrying some current as the work done to move a unit\ncharge from one point to the other –\nPotential difference (V) between two points = Work done (W)/Charge (Q)",
+            "end_char": 1654,
+            "section_id": "page-3",
+            "start_char": 1407
+          },
+          {
+            "page": 3,
+            "quote": "Potential difference (V) between two points = Work done (W)/Charge (Q)\nV\n=\nW/Q\n(11.2)",
+            "end_char": 1669,
+            "section_id": "page-3",
+            "start_char": 1584
+          },
+          {
+            "page": 3,
+            "quote": "The SI unit of electric potential difference is volt (V), named after\nAlessandro Volta (1745 –1827), an Italian physicist. One volt is the\npotential difference between two points in a current carrying conductor\nwhen 1 joule of work is done to move a charge of 1 coulomb from one\npoint to the other.",
+            "end_char": 1968,
+            "section_id": "page-3",
+            "start_char": 1670
+          },
+          {
+            "page": 3,
+            "quote": "The potential difference is measured by means of an instrument called\nthe voltmeter. The voltmeter is always connected in parallel across the\npoints between which the potential difference is to be measured.",
+            "end_char": 2236,
+            "section_id": "page-3",
+            "start_char": 2030
+          }
+        ],
+        "mentor_moment": "Encourage students to physically trace the difference between series (ammeter) and parallel (voltmeter) connections on a real circuit board - hands-on tracing prevents the common mix-up between these two instruments.",
+        "period_number": 2,
+        "teacher_script": "Recall from the last period that current flows in a closed circuit. Ask: what makes the charges actually move? Introduce that a difference of electric pressure called the potential difference along the conductor causes charges to flow in a conducting metallic wire. Define: the electric potential difference between two points in an electric circuit is the work done to move a unit charge from one point to the other, so potential difference is the work done divided by the charge moved. Introduce the unit: a volt is the SI unit of electric potential difference, where one volt is the potential difference between two points when 1 joule of work is done to move a charge of 1 coulomb. Introduce the voltmeter as an instrument that measures potential difference and is always connected in parallel across the points between which the potential difference is to be measured. Discuss how a battery or cell maintains this potential difference to keep the current flowing continuously.",
+        "blackboard_notes": "Potential Difference (V): work done per unit charge\nV = W/Q\nUnit: Volt (V)\n1 V = 1 J / 1 C\nVoltmeter: measures P.D., connected in PARALLEL\nP.D. drives the flow of charges in a conductor",
+        "checkpoint_questions": [
+          {
+            "question": "What causes charges to flow in a conducting metallic wire?",
+            "source_spans": [
+              {
+                "page": 3,
+                "quote": "the electrons move only\nif there is a difference of electric pressure – called the potential difference –\nalong the conductor.",
+                "end_char": 881,
+                "section_id": "page-3",
+                "start_char": 755
+              }
+            ],
+            "expected_answer": "A difference of electric pressure called the potential difference along the conductor causes charges to flow in a conducting metallic wire."
+          },
+          {
+            "question": "Define potential difference in terms of work and charge.",
+            "source_spans": [
+              {
+                "page": 3,
+                "quote": "We define the electric potential difference between two points in an\nelectric circuit carrying some current as the work done to move a unit\ncharge from one point to the other –\nPotential difference (V) between two points = Work done (W)/Charge (Q)",
+                "end_char": 1654,
+                "section_id": "page-3",
+                "start_char": 1407
+              },
+              {
+                "page": 3,
+                "quote": "Potential difference (V) between two points = Work done (W)/Charge (Q)\nV\n=\nW/Q\n(11.2)",
+                "end_char": 1669,
+                "section_id": "page-3",
+                "start_char": 1584
+              }
+            ],
+            "expected_answer": "The electric potential difference between two points in an electric circuit is the work done to move a unit charge from one point to the other; Potential difference is the work done divided by the charge moved."
+          },
+          {
+            "question": "How is a voltmeter connected in a circuit and what does it measure?",
+            "source_spans": [
+              {
+                "page": 3,
+                "quote": "The potential difference is measured by means of an instrument called\nthe voltmeter. The voltmeter is always connected in parallel across the\npoints between which the potential difference is to be measured.",
+                "end_char": 2236,
+                "section_id": "page-3",
+                "start_char": 2030
+              }
+            ],
+            "expected_answer": "A voltmeter measures potential difference and is always connected in parallel across the points between which the potential difference is to be measured."
+          }
+        ]
+      },
+      {
+        "homework": "Two wires of the same material have different lengths and thicknesses. Explain which wire will have more resistance and why, using the relationships between resistance, length, and cross-sectional area.",
+        "activities": [
+          "Compare resistance of different length/thickness wires using a circuit demo",
+          "Sort given materials into good conductors, poor conductors, high resistance materials",
+          "Discuss the role of a rheostat in adjusting bulb brightness"
+        ],
+        "exit_ticket": "Explain in your own words the difference between resistance and resistivity.",
+        "entry_ticket": "Why do you think a thin wire heats up more than a thick wire when the same current passes through both? Write your guess.",
+        "source_spans": [
+          {
+            "page": 22,
+            "quote": "Resistance is a property that resists the flow of electrons in a conductor. It controls\nthe magnitude of the current.",
+            "end_char": 761,
+            "section_id": "page-22",
+            "start_char": 644
+          },
+          {
+            "page": 8,
+            "quote": "ρ (rho) is a constant of proportionality and is called the electrical\nresistivity of the material of the conductor.",
+            "end_char": 985,
+            "section_id": "page-8",
+            "start_char": 870
+          },
+          {
+            "page": 6,
+            "quote": "V ∝ I\n(11.4)\nor\nV/I\n=\nconstant\n=\nR\nor\nV\n=\nIR\n(11.5)",
+            "end_char": 1306,
+            "section_id": "page-6",
+            "start_char": 1255
+          },
+          {
+            "page": 6,
+            "quote": "Also from Eq. (11.5) we get\nI = V/R\n(11.7)",
+            "end_char": 1819,
+            "section_id": "page-6",
+            "start_char": 1777
+          },
+          {
+            "page": 8,
+            "quote": "Precise measurements\nhave shown that resistance of a uniform metallic conductor is directly\nproportional to its length (l) and inversely proportional to the area of\ncross-section (A). That is,\nR ∝ l\n(11.8)",
+            "end_char": 774,
+            "section_id": "page-8",
+            "start_char": 569
+          },
+          {
+            "page": 8,
+            "quote": "and\nR ∝ 1/A\n(11.9)",
+            "end_char": 793,
+            "section_id": "page-8",
+            "start_char": 775
+          },
+          {
+            "page": 6,
+            "quote": "In Eq. (11.4), R is a constant for the given metallic wire\nat a given temperature and is called its resistance. It is the\nproperty of a conductor to resist the flow of charges  through it.",
+            "end_char": 1495,
+            "section_id": "page-6",
+            "start_char": 1307
+          },
+          {
+            "page": 6,
+            "quote": "A component used to\nregulate current without changing the voltage source is called variable\nresistance.",
+            "end_char": 2188,
+            "section_id": "page-6",
+            "start_char": 2085
+          },
+          {
+            "page": 6,
+            "quote": "In an electric circuit, a device called rheostat is often used to\nchange the resistance in the circuit.",
+            "end_char": 2292,
+            "section_id": "page-6",
+            "start_char": 2189
+          },
+          {
+            "page": 7,
+            "quote": "A component of a given size that offers a low\nresistance is a good conductor.",
+            "end_char": 618,
+            "section_id": "page-7",
+            "start_char": 541
+          },
+          {
+            "page": 7,
+            "quote": "A conductor having some appreciable\nresistance is called a resistor.",
+            "end_char": 687,
+            "section_id": "page-7",
+            "start_char": 619
+          },
+          {
+            "page": 7,
+            "quote": "A component of identical size that offers a\nhigher resistance is a poor conductor. An insulator of the same size offers\neven higher resistance.",
+            "end_char": 831,
+            "section_id": "page-7",
+            "start_char": 688
+          }
+        ],
+        "mentor_moment": "When explaining resistivity versus resistance, use the analogy of comparing two ropes of different materials but same size - the material itself (resistivity) matters separately from the rope's length/thickness (resistance). This distinction is often confused by students, so revisit it with multiple examples.",
+        "period_number": 3,
+        "teacher_script": "Begin with the question: does every material allow current to flow the same way? Introduce that resistance is a property that resists the flow of electrons in a conductor and controls the magnitude of the current. Explain Ohm's law relationship: the potential difference across a conductor is proportional to the current through it, and therefore current is inversely proportional to resistance. Discuss factors affecting resistance: resistance is directly proportional to the length of a conductor, and resistance is inversely proportional to the cross-sectional area of a conductor. Introduce resistivity: electrical resistivity is a constant of proportionality that represents a characteristic property of a material showing how much the material resists electrical current flow, described further as a constant for a given metallic wire at a given temperature that represents the property of a conductor to resist the flow of charges through it. Differentiate resistance (depends on dimensions) from resistivity (depends only on material). Introduce classification of materials: a component of a given size that offers a low resistance to the flow of electric current (good conductor), a conductor having some appreciable resistance, and a component of identical size that offers an even higher resistance than a poor conductor (insulator-like). Introduce rheostat: a component used to regulate current without changing the voltage source, and a device called rheostat is often used to change the resistance in the circuit.",
+        "blackboard_notes": "Resistance (R): opposes flow of current\nV ∝ I  =>  I ∝ 1/R  (Ohm's Law)\nR ∝ length (l)\nR ∝ 1/Area (A)\nResistivity (ρ): material property, constant at given temperature\nRheostat: regulates current without changing voltage\nGood conductor -> low R; Poor conductor -> appreciable R; High resistance material -> very high R",
+        "checkpoint_questions": [
+          {
+            "question": "What is resistance and what does it control?",
+            "source_spans": [
+              {
+                "page": 22,
+                "quote": "Resistance is a property that resists the flow of electrons in a conductor. It controls\nthe magnitude of the current.",
+                "end_char": 761,
+                "section_id": "page-22",
+                "start_char": 644
+              }
+            ],
+            "expected_answer": "Resistance is a property that resists the flow of electrons in a conductor and controls the magnitude of the current."
+          },
+          {
+            "question": "How does the length and cross-sectional area of a conductor affect its resistance?",
+            "source_spans": [
+              {
+                "page": 8,
+                "quote": "Precise measurements\nhave shown that resistance of a uniform metallic conductor is directly\nproportional to its length (l) and inversely proportional to the area of\ncross-section (A). That is,\nR ∝ l\n(11.8)",
+                "end_char": 774,
+                "section_id": "page-8",
+                "start_char": 569
+              },
+              {
+                "page": 8,
+                "quote": "and\nR ∝ 1/A\n(11.9)",
+                "end_char": 793,
+                "section_id": "page-8",
+                "start_char": 775
+              }
+            ],
+            "expected_answer": "Resistance is directly proportional to the length of a conductor and inversely proportional to the cross-sectional area of a conductor."
+          },
+          {
+            "question": "What is electrical resistivity?",
+            "source_spans": [
+              {
+                "page": 8,
+                "quote": "ρ (rho) is a constant of proportionality and is called the electrical\nresistivity of the material of the conductor.",
+                "end_char": 985,
+                "section_id": "page-8",
+                "start_char": 870
+              },
+              {
+                "page": 6,
+                "quote": "In Eq. (11.4), R is a constant for the given metallic wire\nat a given temperature and is called its resistance. It is the\nproperty of a conductor to resist the flow of charges  through it.",
+                "end_char": 1495,
+                "section_id": "page-6",
+                "start_char": 1307
+              }
+            ],
+            "expected_answer": "Electrical resistivity is a constant of proportionality that represents a characteristic property of a material showing how much the material resists electrical current flow, and is a constant for a given metallic wire at a given temperature."
+          },
+          {
+            "question": "What is a rheostat used for?",
+            "source_spans": [
+              {
+                "page": 6,
+                "quote": "A component used to\nregulate current without changing the voltage source is called variable\nresistance.",
+                "end_char": 2188,
+                "section_id": "page-6",
+                "start_char": 2085
+              },
+              {
+                "page": 6,
+                "quote": "In an electric circuit, a device called rheostat is often used to\nchange the resistance in the circuit.",
+                "end_char": 2292,
+                "section_id": "page-6",
+                "start_char": 2189
+              }
+            ],
+            "expected_answer": "A rheostat is a component used to regulate current without changing the voltage source; it is often used to change the resistance in the circuit."
+          }
+        ]
+      },
+      {
+        "homework": "Solve: Four resistors of 1Ω, 2Ω, 3Ω, and 4Ω are connected in series. Find the equivalent resistance and the current if a 10V battery is connected across them.",
+        "activities": [
+          "Build a series circuit with 3 resistors and measure current at different points",
+          "Numerical problem-solving: find R_eq for given series resistors",
+          "Discuss real-life example: why old-style series Christmas lights all go out if one bulb fails"
+        ],
+        "exit_ticket": "If two resistors of 4Ω and 6Ω are connected in series across a 20V battery, find the current flowing through the circuit.",
+        "entry_ticket": "If you connect three bulbs one after another in a single loop with a battery, what do you predict will happen if one bulb is removed? Write your prediction.",
+        "source_spans": [
+          {
+            "page": 11,
+            "quote": "three resistors having resistances R1,\nR2 and R3, respectively, are joined end to end. Here the resistors are said\nto be connected in series.",
+            "end_char": 1525,
+            "section_id": "page-11",
+            "start_char": 1384
+          },
+          {
+            "page": 11,
+            "quote": "three resistors having resistances R1,\nR2 and R3, respectively, are joined end to end. Here the resistors are said\nto be connected in series.",
+            "end_char": 1525,
+            "section_id": "page-11",
+            "start_char": 1384
+          },
+          {
+            "page": 13,
+            "quote": "V = V1 + V2  + V3\n(11.11)",
+            "end_char": 1264,
+            "section_id": "page-13",
+            "start_char": 1239
+          },
+          {
+            "page": 13,
+            "quote": "V = I R\n(11.12)",
+            "end_char": 1682,
+            "section_id": "page-13",
+            "start_char": 1667
+          },
+          {
+            "page": 14,
+            "quote": "or\nRs = R1 +R2 + R3\n(11.14)",
+            "end_char": 222,
+            "section_id": "page-14",
+            "start_char": 195
+          },
+          {
+            "page": 13,
+            "quote": "It is possible to\nreplace the three resistors joined in series by an equivalent single resistor\nof resistance R, such that the potential difference V across it, and the\ncurrent I through the circuit remains the same.",
+            "end_char": 1612,
+            "section_id": "page-13",
+            "start_char": 1396
+          }
+        ],
+        "mentor_moment": "Have students physically hold hands in a line to represent series resistors - this kinesthetic activity helps reinforce why there's only one path (and hence the same current) through each resistor.",
+        "period_number": 4,
+        "teacher_script": "Introduce the series combination: when resistors are connected end to end, they are said to be connected in series - this can be shown as a configuration where resistors are joined end to end in a circuit with the same current flowing through each. Emphasize that the same current flows through each resistor in a series combination since there's only one path for current to flow. Discuss the total potential difference across resistors in series equals the sum of individual potential differences. Derive together: for a series combination, the potential difference is the current times the equivalent resistance, leading to the conclusion that the equivalent resistance of resistors in series equals the sum of individual resistances. Work through numerical examples using R_eq = R1 + R2 + R3. Introduce the concept of equivalent resistance: a single resistance that can replace a combination of resistors while maintaining the same potential difference and current.",
+        "blackboard_notes": "Series Combination:\n- Resistors joined end to end\n- Same current (I) through each resistor\n- V_total = V1 + V2 + V3\n- V = I × R_eq\n- R_eq = R1 + R2 + R3\nEquivalent Resistance: single resistance replacing combination, same V and I",
+        "checkpoint_questions": [
+          {
+            "question": "What happens to the current in a series combination of resistors?",
+            "source_spans": [
+              {
+                "page": 11,
+                "quote": "three resistors having resistances R1,\nR2 and R3, respectively, are joined end to end. Here the resistors are said\nto be connected in series.",
+                "end_char": 1525,
+                "section_id": "page-11",
+                "start_char": 1384
+              }
+            ],
+            "expected_answer": "The same current flows through each resistor in a series combination."
+          },
+          {
+            "question": "How do you find the equivalent resistance of resistors connected in series?",
+            "source_spans": [
+              {
+                "page": 14,
+                "quote": "or\nRs = R1 +R2 + R3\n(11.14)",
+                "end_char": 222,
+                "section_id": "page-14",
+                "start_char": 195
+              }
+            ],
+            "expected_answer": "The equivalent resistance of resistors in series equals the sum of individual resistances (R_eq = R1 + R2 + R3 + ...)."
+          },
+          {
+            "question": "Three resistors of 2Ω, 3Ω, and 5Ω are connected in series. What is the equivalent resistance?",
+            "source_spans": [
+              {
+                "page": 14,
+                "quote": "or\nRs = R1 +R2 + R3\n(11.14)",
+                "end_char": 222,
+                "section_id": "page-14",
+                "start_char": 195
+              }
+            ],
+            "expected_answer": "R_eq = 2 + 3 + 5 = 10 Ω"
+          },
+          {
+            "question": "What is meant by 'equivalent resistance'?",
+            "source_spans": [
+              {
+                "page": 13,
+                "quote": "It is possible to\nreplace the three resistors joined in series by an equivalent single resistor\nof resistance R, such that the potential difference V across it, and the\ncurrent I through the circuit remains the same.",
+                "end_char": 1612,
+                "section_id": "page-13",
+                "start_char": 1396
+              }
+            ],
+            "expected_answer": "A single resistance that can replace a combination of resistors while maintaining the same potential difference and current."
+          }
+        ]
+      },
+      {
+        "homework": "Three resistors of 2Ω, 4Ω, and 6Ω are connected in parallel. Find the equivalent resistance and, if the combination is connected to a 12V battery, the current through each resistor.",
+        "activities": [
+          "Build a parallel circuit with 2-3 resistors and measure voltage across each",
+          "Numerical problem-solving: find R_eq for given parallel resistors",
+          "Create a comparison chart: Series vs Parallel combination"
+        ],
+        "exit_ticket": "Compare: in a series combination, resistance ______ (increases/decreases) as more resistors are added; in a parallel combination, resistance ______ (increases/decreases) as more resistors are added. Explain why.",
+        "entry_ticket": "In a household, if you switch off one light bulb, do the other appliances stop working? Why do you think that happens?",
+        "source_spans": [
+          {
+            "page": 12,
+            "quote": "three resistors\nare connected together between points X and Y. Here, the resistors are\nsaid to be connected in parallel.",
+            "end_char": 1323,
+            "section_id": "page-12",
+            "start_char": 1203
+          },
+          {
+            "page": 12,
+            "quote": "three resistors\nare connected together between points X and Y. Here, the resistors are\nsaid to be connected in parallel.",
+            "end_char": 1323,
+            "section_id": "page-12",
+            "start_char": 1203
+          },
+          {
+            "page": 16,
+            "quote": "I = I1 + I2 + I3\n(11.15)",
+            "end_char": 559,
+            "section_id": "page-16",
+            "start_char": 535
+          },
+          {
+            "page": 16,
+            "quote": "I = V/Rp\n(11.16)",
+            "end_char": 726,
+            "section_id": "page-16",
+            "start_char": 710
+          },
+          {
+            "page": 16,
+            "quote": "1/Rp = 1/R1 + 1/R2 + 1/R3\n(11.18)",
+            "end_char": 929,
+            "section_id": "page-16",
+            "start_char": 896
+          },
+          {
+            "page": 13,
+            "quote": "It is possible to\nreplace the three resistors joined in series by an equivalent single resistor\nof resistance R, such that the potential difference V across it, and the\ncurrent I through the circuit remains the same.",
+            "end_char": 1612,
+            "section_id": "page-13",
+            "start_char": 1396
+          },
+          {
+            "page": 11,
+            "quote": "three resistors having resistances R1,\nR2 and R3, respectively, are joined end to end. Here the resistors are said\nto be connected in series.",
+            "end_char": 1525,
+            "section_id": "page-11",
+            "start_char": 1384
+          }
+        ],
+        "mentor_moment": "Draw a real household wiring diagram on the board and ask students to identify why appliances are wired in parallel rather than series - connecting the abstract math to a concrete, relatable scenario builds lasting understanding.",
+        "period_number": 5,
+        "teacher_script": "Recall series combination limitations from the previous period. Introduce parallel combination: when resistors are connected together between common points, they are said to be connected in parallel - this is a configuration where resistors are connected together between common points with the same potential difference across each. Emphasize the potential difference across each resistor is the same in a parallel combination. Discuss the total current in a parallel combination equals the sum of currents through each branch. Derive: for a parallel combination, current equals voltage divided by equivalent resistance, leading to the reciprocal of the equivalent resistance in parallel equals the sum of reciprocals of individual resistances (1/R_eq = 1/R1 + 1/R2 + 1/R3). Work through numerical examples. Conclude with a comparison table contrasting series (same current, added voltages, added resistances) versus parallel (same voltage, added currents, reciprocal added resistances), and explain why household circuits use parallel wiring.",
+        "blackboard_notes": "Parallel Combination:\n- Resistors between common points\n- Same voltage (V) across each resistor\n- I_total = I1 + I2 + I3\n- I = V / R_eq\n- 1/R_eq = 1/R1 + 1/R2 + 1/R3\n\nSeries vs Parallel:\nSeries: same I, V adds, R adds\nParallel: same V, I adds, 1/R adds",
+        "checkpoint_questions": [
+          {
+            "question": "What remains the same across each resistor in a parallel combination?",
+            "source_spans": [
+              {
+                "page": 12,
+                "quote": "three resistors\nare connected together between points X and Y. Here, the resistors are\nsaid to be connected in parallel.",
+                "end_char": 1323,
+                "section_id": "page-12",
+                "start_char": 1203
+              }
+            ],
+            "expected_answer": "The potential difference across each resistor is the same in a parallel combination."
+          },
+          {
+            "question": "How is the total current related to individual branch currents in a parallel combination?",
+            "source_spans": [
+              {
+                "page": 16,
+                "quote": "I = I1 + I2 + I3\n(11.15)",
+                "end_char": 559,
+                "section_id": "page-16",
+                "start_char": 535
+              }
+            ],
+            "expected_answer": "The total current in a parallel combination equals the sum of currents through each branch."
+          },
+          {
+            "question": "How do you calculate the equivalent resistance of resistors in parallel?",
+            "source_spans": [
+              {
+                "page": 16,
+                "quote": "1/Rp = 1/R1 + 1/R2 + 1/R3\n(11.18)",
+                "end_char": 929,
+                "section_id": "page-16",
+                "start_char": 896
+              }
+            ],
+            "expected_answer": "The reciprocal of the equivalent resistance in parallel equals the sum of reciprocals of individual resistances (1/R_eq = 1/R1 + 1/R2 + ...)."
+          },
+          {
+            "question": "Two resistors of 4Ω and 4Ω are connected in parallel. What is the equivalent resistance?",
+            "source_spans": [
+              {
+                "page": 16,
+                "quote": "1/Rp = 1/R1 + 1/R2 + 1/R3\n(11.18)",
+                "end_char": 929,
+                "section_id": "page-16",
+                "start_char": 896
+              }
+            ],
+            "expected_answer": "1/R_eq = 1/4 + 1/4 = 1/2, so R_eq = 2 Ω"
+          }
+        ]
+      },
+      {
+        "homework": "List three appliances at home with their power ratings (in Watts). If each is used for 2 hours a day, calculate the total energy consumed (in Wh) for each appliance in one day.",
+        "activities": [
+          "Calculate power consumed by various household appliances given V and I",
+          "Numerical practice: solve the bulb power example (220V, 0.5A)",
+          "Discuss electricity bill calculation using power ratings and units consumed (kWh)"
+        ],
+        "exit_ticket": "A device operates at 5A current and 100V potential difference. Calculate the power consumed using two different equivalent formulas for power.",
+        "entry_ticket": "Look at the wattage rating on a light bulb or appliance at home (e.g., 60W, 100W). What do you think this number represents?",
+        "source_spans": [
+          {
+            "page": 21,
+            "quote": "Equation (11.21) gives the rate at which electric energy is dissipated\nor consumed in an electric circuit. This is also termed as electric power.",
+            "end_char": 386,
+            "section_id": "page-21",
+            "start_char": 241
+          },
+          {
+            "page": 21,
+            "quote": "An electric bulb is connected to a 220 V generator. The current is\n0.50 A. What is the power of the bulb?\nSolution\nP\n=\nVI\n=\n220 V × 0.50 A\n=\n110 J/s\n=\n110 W.",
+            "end_char": 1613,
+            "section_id": "page-21",
+            "start_char": 1456
+          },
+          {
+            "page": 21,
+            "quote": "The SI unit of electric power is watt (W). It is the power consumed by\na device that carries 1 A of current when operated at a potential difference\nof 1 V.",
+            "end_char": 603,
+            "section_id": "page-21",
+            "start_char": 448
+          },
+          {
+            "page": 21,
+            "quote": "1 W  =  1 volt × 1 ampere = 1 V A\n(11.23)",
+            "end_char": 658,
+            "section_id": "page-21",
+            "start_char": 617
+          },
+          {
+            "page": 18,
+            "quote": "H = VIt\n(11.20)",
+            "end_char": 2014,
+            "section_id": "page-18",
+            "start_char": 1999
+          },
+          {
+            "page": 19,
+            "quote": "H = I2 Rt\n(11.21)",
+            "end_char": 73,
+            "section_id": "page-19",
+            "start_char": 56
+          },
+          {
+            "page": 21,
+            "quote": "P  =  VI\nOr\nP  =  I2R = V2/R\n(11.22)",
+            "end_char": 447,
+            "section_id": "page-21",
+            "start_char": 411
+          }
+        ],
+        "mentor_moment": "Connect this lesson to students' everyday lives by discussing their family's electricity bill - relating power (Watts) to real monetary cost builds genuine engagement and shows the practical importance of understanding electric power.",
+        "period_number": 6,
+        "teacher_script": "Begin by asking what happens to electrical energy when it passes through a resistor - it gets converted to heat. Introduce that heat produced is the product of voltage, current, and time, and more specifically, heat produced in a resistor is proportional to the square of current, resistance, and time (H = I²Rt). Introduce electric power: electric power is the rate at which electric energy is dissipated or consumed in an electric circuit. Explain that power can be expressed in multiple equivalent forms (P = VI = I²R = V²/R). Introduce the unit: the SI unit of electric power, which is the power consumed by a device that carries 1 ampere of current when operated at a potential difference of 1 volt, and one watt is the power of one volt times one ampere. Work through the example: an electric bulb is connected to a 220V generator with current 0.50A - calculate power (P = VI = 220V × 0.50A = 110W). Discuss real-life appliance ratings and how to calculate energy consumption and cost using power and time.",
+        "blackboard_notes": "Electric Power: rate of energy dissipation\nP = VI = I²R = V²/R\nUnit: Watt (W)\n1 W = 1 V × 1 A\nHeat: H = VIt = I²Rt\nAppliance ratings show power consumption (e.g., 60W, 100W)",
+        "checkpoint_questions": [
+          {
+            "question": "Define electric power.",
+            "source_spans": [
+              {
+                "page": 21,
+                "quote": "Equation (11.21) gives the rate at which electric energy is dissipated\nor consumed in an electric circuit. This is also termed as electric power.",
+                "end_char": 386,
+                "section_id": "page-21",
+                "start_char": 241
+              }
+            ],
+            "expected_answer": "Electric power is the rate at which electric energy is dissipated or consumed in an electric circuit."
+          },
+          {
+            "question": "An electric bulb is connected to a 220V generator and draws a current of 0.50A. What is the power?",
+            "source_spans": [
+              {
+                "page": 21,
+                "quote": "An electric bulb is connected to a 220 V generator. The current is\n0.50 A. What is the power of the bulb?\nSolution\nP\n=\nVI\n=\n220 V × 0.50 A\n=\n110 J/s\n=\n110 W.",
+                "end_char": 1613,
+                "section_id": "page-21",
+                "start_char": 1456
+              }
+            ],
+            "expected_answer": "P = VI = 220V × 0.50A = 110 W"
+          },
+          {
+            "question": "What is the SI unit of electric power and how is it defined?",
+            "source_spans": [
+              {
+                "page": 21,
+                "quote": "The SI unit of electric power is watt (W). It is the power consumed by\na device that carries 1 A of current when operated at a potential difference\nof 1 V.",
+                "end_char": 603,
+                "section_id": "page-21",
+                "start_char": 448
+              },
+              {
+                "page": 21,
+                "quote": "1 W  =  1 volt × 1 ampere = 1 V A\n(11.23)",
+                "end_char": 658,
+                "section_id": "page-21",
+                "start_char": 617
+              }
+            ],
+            "expected_answer": "The watt is the SI unit of electric power, defined as the power consumed by a device that carries 1 ampere of current when operated at a potential difference of 1 volt; one watt is the power of one volt times one ampere."
+          },
+          {
+            "question": "How is heat produced in a resistor related to current and resistance?",
+            "source_spans": [
+              {
+                "page": 19,
+                "quote": "H = I2 Rt\n(11.21)",
+                "end_char": 73,
+                "section_id": "page-19",
+                "start_char": 56
+              }
+            ],
+            "expected_answer": "Heat produced in a resistor is proportional to the square of current, resistance, and time (H = I²Rt)."
+          }
+        ]
+      }
+    ]
+  },
+  "activities": {
+    "periods": [
+      {
+        "activities": [
+          {
+            "type": "lab",
+            "title": "Building a Simple Electric Circuit",
+            "materials": [
+              "1.5V cell",
+              "connecting wires",
+              "small bulb with holder",
+              "plug key/switch",
+              "ammeter"
+            ],
+            "instructions": [
+              "Divide students into small groups and distribute materials.",
+              "Have students connect the cell, bulb, plug key, and ammeter using wires to form a closed loop, referring to conventional circuit symbols.",
+              "Ask students to open and close the plug key and observe the bulb lighting up.",
+              "Instruct students to note the ammeter reading while the circuit is closed.",
+              "Discuss why the bulb only lights when the path is continuous and closed."
+            ],
+            "source_spans": [
+              {
+                "page": 1,
+                "quote": "A continuous and closed path of an electric current is called an\nelectric circuit.",
+                "end_char": 1348,
+                "section_id": "page-1",
+                "start_char": 1266
+              },
+              {
+                "page": 4,
+                "quote": "We know that an electric circuit, as shown in Fig. 11.1, comprises a cell\n(or a battery), a plug key, electrical component(s), and connecting wires.\nIt is often convenient to draw a schematic diagram, in which different\ncomponents of the circuit are represented by the symbols conveniently\nused.",
+                "end_char": 460,
+                "section_id": "page-4",
+                "start_char": 165
+              },
+              {
+                "page": 2,
+                "quote": "An instrument called ammeter measures electric\ncurrent in a circuit. It is always connected in series\nin a circuit through which the current is to be\nmeasured.",
+                "end_char": 841,
+                "section_id": "page-2",
+                "start_char": 682
+              }
+            ],
+            "duration_minutes": 20,
+            "success_criteria": [
+              "Students correctly assemble a closed circuit that lights the bulb.",
+              "Students can explain that current flows only when the circuit is complete and closed.",
+              "Students correctly connect the ammeter in series."
+            ]
+          },
+          {
+            "type": "discussion",
+            "title": "Charge Flow Calculation Discussion",
+            "materials": [
+              "whiteboard",
+              "markers",
+              "calculators"
+            ],
+            "instructions": [
+              "Present the problem: a current of 0.5 A is drawn by a filament for 10 minutes; find the charge that flows.",
+              "Guide students to identify known values I and t, converting time to seconds.",
+              "Ask students to work in pairs to calculate the charge using Q = It.",
+              "Have a few pairs share their solutions on the board.",
+              "Summarize the relationship between electric current and flow of electrons."
+            ],
+            "source_spans": [
+              {
+                "page": 22,
+                "quote": "A stream of electrons moving through a conductor constitutes an electric current.",
+                "end_char": 322,
+                "section_id": "page-22",
+                "start_char": 241
+              },
+              {
+                "page": 2,
+                "quote": "A current of 0.5 A is drawn by a filament of an electric bulb for 10\nminutes. Find the amount of electric charge that flows through the\ncircuit.\nSolution\nWe are given, I = 0.5 A; t = 10 min = 600 s.\nFrom Eq. (11.1), we have\nQ\n= It\n= 0.5 A × 600 s\n= 300 C",
+                "end_char": 1579,
+                "section_id": "page-2",
+                "start_char": 1325
+              }
+            ],
+            "duration_minutes": 15,
+            "success_criteria": [
+              "Students correctly convert 10 minutes to 600 seconds.",
+              "Students correctly calculate Q = 300 C.",
+              "Students articulate that electric current is a stream of electrons moving through a conductor."
+            ]
+          }
+        ],
+        "period_number": 1
+      },
+      {
+        "activities": [
+          {
+            "type": "demonstration",
+            "title": "Voltmeter Connection Demonstration",
+            "materials": [
+              "cell",
+              "bulb",
+              "connecting wires",
+              "voltmeter",
+              "plug key"
+            ],
+            "instructions": [
+              "Set up a simple circuit with a cell, bulb, and plug key.",
+              "Demonstrate connecting the voltmeter in parallel across the bulb.",
+              "Close the circuit and read the potential difference shown on the voltmeter.",
+              "Explain that the voltmeter reading represents the potential difference driving the current through the bulb.",
+              "Ask students to predict what happens to the reading if the cell is replaced with one of different voltage."
+            ],
+            "source_spans": [
+              {
+                "page": 3,
+                "quote": "The potential difference is measured by means of an instrument called\nthe voltmeter. The voltmeter is always connected in parallel across the\npoints between which the potential difference is to be measured.",
+                "end_char": 2236,
+                "section_id": "page-3",
+                "start_char": 2030
+              },
+              {
+                "page": 3,
+                "quote": "the electrons move only\nif there is a difference of electric pressure – called the potential difference –\nalong the conductor.",
+                "end_char": 881,
+                "section_id": "page-3",
+                "start_char": 755
+              }
+            ],
+            "duration_minutes": 20,
+            "success_criteria": [
+              "Students observe correct parallel connection of the voltmeter.",
+              "Students can state that potential difference is what causes charges to flow in the wire.",
+              "Students can read a voltmeter accurately."
+            ]
+          },
+          {
+            "type": "discussion",
+            "title": "Analogy Discussion: Water Flow and Potential Difference",
+            "materials": [
+              "whiteboard",
+              "diagram of water tank and pipe"
+            ],
+            "instructions": [
+              "Draw a diagram comparing water flowing from a higher tank to a lower tank through a pipe.",
+              "Ask students to relate the height difference to potential difference in a circuit.",
+              "Facilitate a discussion on why charges flow from higher to lower potential.",
+              "Have students draw their own analogy diagrams in notebooks."
+            ],
+            "source_spans": [
+              {
+                "page": 3,
+                "quote": "the electrons move only\nif there is a difference of electric pressure – called the potential difference –\nalong the conductor.",
+                "end_char": 881,
+                "section_id": "page-3",
+                "start_char": 755
+              }
+            ],
+            "duration_minutes": 15,
+            "success_criteria": [
+              "Students can explain the analogy between water pressure difference and electric potential difference.",
+              "Students correctly relate potential difference to the driving force of current."
+            ]
+          }
+        ],
+        "period_number": 2
+      },
+      {
+        "activities": [
+          {
+            "type": "lab",
+            "title": "Investigating Resistance with a Rheostat",
+            "materials": [
+              "cell",
+              "bulb",
+              "rheostat",
+              "ammeter",
+              "connecting wires",
+              "plug key"
+            ],
+            "instructions": [
+              "Set up a circuit including a cell, bulb, ammeter, plug key, and rheostat in series.",
+              "Close the circuit and record the ammeter reading at the initial rheostat setting.",
+              "Slide the rheostat contact to increase resistance and record the new ammeter reading.",
+              "Repeat for several rheostat positions and tabulate current versus resistance setting.",
+              "Discuss how increasing resistance decreases current, without changing the voltage source."
+            ],
+            "source_spans": [
+              {
+                "page": 22,
+                "quote": "Resistance is a property that resists the flow of electrons in a conductor. It controls\nthe magnitude of the current.",
+                "end_char": 761,
+                "section_id": "page-22",
+                "start_char": 644
+              },
+              {
+                "page": 6,
+                "quote": "In an electric circuit, a device called rheostat is often used to\nchange the resistance in the circuit.",
+                "end_char": 2292,
+                "section_id": "page-6",
+                "start_char": 2189
+              }
+            ],
+            "duration_minutes": 25,
+            "success_criteria": [
+              "Students correctly assemble the series circuit with a rheostat.",
+              "Students observe and record that current decreases as resistance increases.",
+              "Students can explain that a rheostat regulates current by changing resistance."
+            ]
+          },
+          {
+            "type": "group work",
+            "title": "Comparing Materials by Resistivity",
+            "materials": [
+              "reference cards on nichrome, constantan, manganin, tungsten, copper, aluminium",
+              "chart paper",
+              "markers"
+            ],
+            "instructions": [
+              "Divide the class into groups and assign each group a material: nichrome, tungsten, or copper/aluminium.",
+              "Ask each group to research (using provided reference cards) why their material is used in specific applications based on its resistivity properties.",
+              "Have groups create a chart explaining the property (e.g., high melting point, low resistivity, oxidation resistance) and its application.",
+              "Groups present their findings to the class."
+            ],
+            "source_spans": [
+              {
+                "page": 8,
+                "quote": "ρ (rho) is a constant of proportionality and is called the electrical\nresistivity of the material of the conductor.",
+                "end_char": 985,
+                "section_id": "page-8",
+                "start_char": 870
+              },
+              {
+                "page": 9,
+                "quote": "Alloys do not oxidise (burn) readily\nat high temperatures. For this reason, they are commonly used in\nelectrical heating devices, like electric iron, toasters etc.",
+                "end_char": 552,
+                "section_id": "page-9",
+                "start_char": 389
+              },
+              {
+                "page": 20,
+                "quote": "A strong metal with high melting point such as\ntungsten (melting point 3380°C) is used for making bulb filaments.",
+                "end_char": 953,
+                "section_id": "page-20",
+                "start_char": 840
+              },
+              {
+                "page": 9,
+                "quote": "copper and\naluminium are generally used for electrical transmission lines.",
+                "end_char": 704,
+                "section_id": "page-9",
+                "start_char": 630
+              }
+            ],
+            "duration_minutes": 20,
+            "success_criteria": [
+              "Students correctly identify electrical resistivity as a material characteristic that affects current flow.",
+              "Students can explain why nichrome is used in heating devices due to resistance to oxidation at high temperatures.",
+              "Students can explain why tungsten is used in bulb filaments due to its high melting point.",
+              "Students can explain why copper and aluminium are used in transmission lines due to low resistivity."
+            ]
+          }
+        ],
+        "period_number": 3
+      },
+      {
+        "activities": [
+          {
+            "type": "lab",
+            "title": "Building and Testing a Series Circuit",
+            "materials": [
+              "cell",
+              "three resistors",
+              "ammeter",
+              "connecting wires",
+              "plug key"
+            ],
+            "instructions": [
+              "Instruct groups to connect three resistors end to end in a single loop with the cell, ammeter, and plug key.",
+              "Close the circuit and record the ammeter reading at one point in the circuit.",
+              "Move the ammeter to different points in the loop (between different resistors) and record readings each time.",
+              "Compare the readings and discuss what they notice about the current at each point.",
+              "Summarize findings as a class, linking to the concept of series combination."
+            ],
+            "source_spans": [
+              {
+                "page": 11,
+                "quote": "three resistors having resistances R1,\nR2 and R3, respectively, are joined end to end. Here the resistors are said\nto be connected in series.",
+                "end_char": 1525,
+                "section_id": "page-11",
+                "start_char": 1384
+              }
+            ],
+            "duration_minutes": 25,
+            "success_criteria": [
+              "Students correctly connect three resistors end to end forming a series circuit.",
+              "Students observe and confirm that the current reading is the same at every point in the series circuit.",
+              "Students can state that resistors connected end to end are in series and carry the same current."
+            ]
+          }
+        ],
+        "period_number": 4
+      },
+      {
+        "activities": [
+          {
+            "type": "lab",
+            "title": "Building and Testing a Parallel Circuit",
+            "materials": [
+              "cell",
+              "three resistors",
+              "voltmeter",
+              "connecting wires",
+              "plug key"
+            ],
+            "instructions": [
+              "Instruct groups to connect three resistors between the same two common points to form a parallel combination.",
+              "Connect the voltmeter across each resistor one at a time, closing the circuit each time.",
+              "Record the voltmeter reading across each resistor.",
+              "Compare the readings across all three resistors and discuss observations.",
+              "Summarize as a class, linking to the concept of parallel combination."
+            ],
+            "source_spans": [
+              {
+                "page": 12,
+                "quote": "three resistors\nare connected together between points X and Y. Here, the resistors are\nsaid to be connected in parallel.",
+                "end_char": 1323,
+                "section_id": "page-12",
+                "start_char": 1203
+              }
+            ],
+            "duration_minutes": 25,
+            "success_criteria": [
+              "Students correctly connect resistors in parallel between common points.",
+              "Students confirm that the potential difference across each resistor is the same.",
+              "Students can explain the defining feature of a parallel combination of resistors."
+            ]
+          },
+          {
+            "type": "discussion",
+            "title": "Discussion: Why Homes Use Parallel Wiring",
+            "materials": [
+              "whiteboard",
+              "markers",
+              "diagram of household circuit"
+            ],
+            "instructions": [
+              "Show a simple diagram of a household circuit with multiple appliances connected in parallel.",
+              "Ask students why appliances with different resistances and current needs (e.g., a fan and a bulb) need to be wired in parallel rather than series.",
+              "Facilitate discussion connecting the independent operation of each device to parallel wiring.",
+              "Summarize with a class list of reasons parallel circuits are preferred in homes."
+            ],
+            "source_spans": [
+              {
+                "page": 17,
+                "quote": "a parallel\ncircuit divides the current through the electrical gadgets. The total\nresistance in a parallel circuit is decreased as per Eq. (11.18). This is\nhelpful particularly when each gadget has different resistance and\nrequires different current to operate properly.",
+                "end_char": 2016,
+                "section_id": "page-17",
+                "start_char": 1747
+              }
+            ],
+            "duration_minutes": 15,
+            "success_criteria": [
+              "Students can explain that parallel circuits allow different devices with different resistances and current requirements to operate independently.",
+              "Students correctly identify that parallel wiring is used for domestic electrical connections."
+            ]
+          }
+        ],
+        "period_number": 5
+      },
+      {
+        "activities": [
+          {
+            "type": "discussion",
+            "title": "Calculating Electric Power of a Bulb",
+            "materials": [
+              "whiteboard",
+              "markers",
+              "calculators"
+            ],
+            "instructions": [
+              "Present the problem: an electric bulb connected to a 220 V generator draws a current of 0.50 A; find the power.",
+              "Guide students to recall the formula P = VI.",
+              "Have students work individually or in pairs to calculate the power.",
+              "Ask a few students to present their solution steps on the board.",
+              "Discuss how the result relates to the rate of electric energy consumption."
+            ],
+            "source_spans": [
+              {
+                "page": 21,
+                "quote": "Equation (11.21) gives the rate at which electric energy is dissipated\nor consumed in an electric circuit. This is also termed as electric power.",
+                "end_char": 386,
+                "section_id": "page-21",
+                "start_char": 241
+              },
+              {
+                "page": 21,
+                "quote": "An electric bulb is connected to a 220 V generator. The current is\n0.50 A. What is the power of the bulb?\nSolution\nP\n=\nVI\n=\n220 V × 0.50 A\n=\n110 J/s\n=\n110 W.",
+                "end_char": 1613,
+                "section_id": "page-21",
+                "start_char": 1456
+              }
+            ],
+            "duration_minutes": 20,
+            "success_criteria": [
+              "Students correctly apply P = VI to calculate P = 110 W.",
+              "Students can state that electric power is the rate at which electric energy is dissipated or consumed.",
+              "Students correctly convert and interpret units (J/s = W)."
+            ]
+          },
+          {
+            "type": "demonstration",
+            "title": "Investigating Heat vs. Light in Bulbs",
+            "materials": [
+              "electric bulb with holder",
+              "cell/power source",
+              "connecting wires",
+              "thermometer or hand-observation"
+            ],
+            "instructions": [
+              "Set up a circuit with a bulb connected to a power source.",
+              "Turn on the bulb and let it run for a minute, then carefully have students observe (without touching) the warmth radiating from the bulb.",
+              "Explain that most of the electric power is converted to heat, with only a small portion emitted as light.",
+              "Discuss why bulbs are filled with nitrogen and argon gases to protect the filament from oxidizing at high temperatures.",
+              "Relate this back to the concept of electric power as energy consumption rate."
+            ],
+            "source_spans": [
+              {
+                "page": 20,
+                "quote": "The electric heating is also used to produce light, as in an electric\nbulb. Here, the filament must retain as much of the heat generated as is\npossible, so that it gets very hot and emits light.",
+                "end_char": 796,
+                "section_id": "page-20",
+                "start_char": 602
+              },
+              {
+                "page": 20,
+                "quote": "The bulbs are usually filled with chemically\ninactive nitrogen and argon gases to prolong the life of filament.",
+                "end_char": 1159,
+                "section_id": "page-20",
+                "start_char": 1048
+              }
+            ],
+            "duration_minutes": 15,
+            "success_criteria": [
+              "Students observe that the bulb produces significant heat in addition to light.",
+              "Students can explain that most power appears as heat and a smaller part as light radiation.",
+              "Students can explain why inert gases are used inside bulbs to prolong filament life."
+            ]
+          }
+        ],
+        "period_number": 6
+      }
+    ]
+  },
+  "assessments": {
+    "periods": [
+      {
+        "mcqs": [
+          {
+            "options": [
+              "A stream of protons moving through a conductor",
+              "A stream of electrons moving through a conductor",
+              "A stream of neutrons moving through a conductor",
+              "A stationary charge accumulated on a conductor"
+            ],
+            "question": "What constitutes an electric current in a conductor?",
+            "explanation": "As stated in the knowledge base, a stream of electrons moving through a conductor constitutes an electric current.",
+            "source_spans": [
+              {
+                "page": 22,
+                "quote": "A stream of electrons moving through a conductor constitutes an electric current.",
+                "end_char": 322,
+                "section_id": "page-22",
+                "start_char": 241
+              }
+            ],
+            "correct_option_index": 1
+          },
+          {
+            "options": [
+              "An open path with a break in the conductor",
+              "A continuous and closed path of an electric current",
+              "Only a source of charge with no path needed",
+              "A path that is closed but not continuous"
+            ],
+            "question": "What is required for an electric circuit to allow current flow?",
+            "explanation": "An electric circuit is defined as a continuous and closed path of an electric current; without closure, current cannot flow.",
+            "source_spans": [
+              {
+                "page": 1,
+                "quote": "A continuous and closed path of an electric current is called an\nelectric circuit.",
+                "end_char": 1348,
+                "section_id": "page-1",
+                "start_char": 1266
+              }
+            ],
+            "correct_option_index": 1
+          },
+          {
+            "options": [
+              "The total charge stored in a conductor",
+              "The rate of flow of electric charges through a particular area in unit time",
+              "The resistance offered by a conductor to charge flow",
+              "The potential difference across a conductor"
+            ],
+            "question": "How is electric current mathematically defined?",
+            "explanation": "Electric current is defined as the rate of flow of electric charges, expressed as the amount of charge flowing through a particular area in unit time.",
+            "source_spans": [
+              {
+                "page": 1,
+                "quote": "Electric current is expressed by\nthe amount of charge flowing through a particular area in unit time. In\nother words, it is the rate of flow of electric charges.",
+                "end_char": 1684,
+                "section_id": "page-1",
+                "start_char": 1523
+              }
+            ],
+            "correct_option_index": 1
+          },
+          {
+            "options": [
+              "Voltmeter, connected in parallel",
+              "Ammeter, connected in series",
+              "Ammeter, connected in parallel",
+              "Voltmeter, connected in series"
+            ],
+            "question": "Which instrument is used to measure electric current, and how is it connected in a circuit?",
+            "explanation": "An ammeter measures electric current and is always connected in series through which the current is to be measured.",
+            "source_spans": [
+              {
+                "page": 2,
+                "quote": "An instrument called ammeter measures electric\ncurrent in a circuit. It is always connected in series\nin a circuit through which the current is to be\nmeasured.",
+                "end_char": 841,
+                "section_id": "page-2",
+                "start_char": 682
+              }
+            ],
+            "correct_option_index": 1
+          }
+        ],
+        "numerical": [
+          {
+            "question": "A current of 0.5 A is drawn by a filament of an electric bulb for 10 minutes. Find the amount of electric charge that flows through the circuit.",
+            "tolerance": 0.1,
+            "source_spans": [
+              {
+                "page": 2,
+                "quote": "A current of 0.5 A is drawn by a filament of an electric bulb for 10\nminutes. Find the amount of electric charge that flows through the\ncircuit.\nSolution\nWe are given, I = 0.5 A; t = 10 min = 600 s.\nFrom Eq. (11.1), we have\nQ\n= It\n= 0.5 A × 600 s\n= 300 C",
+                "end_char": 1579,
+                "section_id": "page-2",
+                "start_char": 1325
+              },
+              {
+                "page": 1,
+                "quote": "Electric current is expressed by\nthe amount of charge flowing through a particular area in unit time. In\nother words, it is the rate of flow of electric charges.",
+                "end_char": 1684,
+                "section_id": "page-1",
+                "start_char": 1523
+              }
+            ],
+            "correct_answer": 300.0,
+            "solution_steps": [
+              "Given: I = 0.5 A, t = 10 minutes = 600 seconds",
+              "Using the relation Q = It",
+              "Q = 0.5 A × 600 s = 300 C"
+            ]
+          }
+        ],
+        "long_answer": [
+          {
+            "rubric": [
+              "Defines electric current correctly as rate of flow of charge",
+              "Explains that electrons moving through a conductor constitute current",
+              "Defines coulomb correctly with reference to electron charge",
+              "Defines ampere correctly as one coulomb per second",
+              "Shows understanding of the relationship between charge, current, and time"
+            ],
+            "question": "Explain the concept of electric current and describe the units used to measure electric charge and current, including their relationship.",
+            "model_answer": "Electric current is the rate of flow of electric charge, defined as the amount of charge flowing through a particular area in unit time. It results from a stream of electrons moving through a conductor. The unit of charge is the coulomb, which is equivalent to the charge contained in nearly 6 × 10^18 electrons. The unit of current is the ampere, which is constituted by the flow of one coulomb of charge per second. Thus, current (in amperes) equals charge (in coulombs) divided by time (in seconds).",
+            "source_spans": [
+              {
+                "page": 1,
+                "quote": "Electric current is expressed by\nthe amount of charge flowing through a particular area in unit time. In\nother words, it is the rate of flow of electric charges.",
+                "end_char": 1684,
+                "section_id": "page-1",
+                "start_char": 1523
+              },
+              {
+                "page": 2,
+                "quote": "The SI unit of electric charge is coulomb (C), which is equivalent to\nthe charge contained in nearly 6 × 1018 electrons.",
+                "end_char": 272,
+                "section_id": "page-2",
+                "start_char": 152
+              },
+              {
+                "page": 2,
+                "quote": "The electric\ncurrent is expressed by a unit called ampere (A), named after the\nFrench scientist, Andre-Marie Ampere (1775–1836). One ampere is\nconstituted by the flow of one coulomb of charge per second, that is,\n1 A = 1 C/1 s.",
+                "end_char": 573,
+                "section_id": "page-2",
+                "start_char": 346
+              },
+              {
+                "page": 22,
+                "quote": "A stream of electrons moving through a conductor constitutes an electric current.",
+                "end_char": 322,
+                "section_id": "page-22",
+                "start_char": 241
+              }
+            ]
+          }
+        ],
+        "short_answer": [
+          {
+            "rubric": [
+              "Mentions current as rate of flow of charge through an area per unit time",
+              "Mentions that a stream of electrons moving through a conductor constitutes the current",
+              "Clear and concise explanation"
+            ],
+            "question": "Define electric current and explain how it arises in a conductor.",
+            "model_answer": "Electric current is the rate of flow of electric charges, expressed as the amount of charge flowing through a particular area in unit time. It arises because a stream of electrons moves through the conductor, constituting the current.",
+            "source_spans": [
+              {
+                "page": 1,
+                "quote": "Electric current is expressed by\nthe amount of charge flowing through a particular area in unit time. In\nother words, it is the rate of flow of electric charges.",
+                "end_char": 1684,
+                "section_id": "page-1",
+                "start_char": 1523
+              },
+              {
+                "page": 22,
+                "quote": "A stream of electrons moving through a conductor constitutes an electric current.",
+                "end_char": 322,
+                "section_id": "page-22",
+                "start_char": 241
+              }
+            ]
+          },
+          {
+            "rubric": [
+              "States that a closed and continuous path is required",
+              "Connects this requirement to the definition of an electric circuit",
+              "Explains that a break in the path stops current flow"
+            ],
+            "question": "What conditions are necessary for current to flow in a circuit? Explain using the concept of an electric circuit.",
+            "model_answer": "For current to flow, there must be a continuous and closed path (an electric circuit) through which charges can move. If the path is broken or open at any point, current cannot flow because the circuit is not closed.",
+            "source_spans": [
+              {
+                "page": 1,
+                "quote": "A continuous and closed path of an electric current is called an\nelectric circuit.",
+                "end_char": 1348,
+                "section_id": "page-1",
+                "start_char": 1266
+              }
+            ]
+          }
+        ],
+        "period_number": 1
+      },
+      {
+        "mcqs": [
+          {
+            "options": [
+              "A difference in temperature along the conductor",
+              "A difference of electric pressure called the potential difference along the conductor",
+              "The color of the conductor",
+              "The length of the conductor alone"
+            ],
+            "question": "What causes charges to flow in a conducting metallic wire?",
+            "explanation": "A difference of electric pressure, called potential difference, along the conductor causes charges to flow in a conducting metallic wire.",
+            "source_spans": [
+              {
+                "page": 3,
+                "quote": "the electrons move only\nif there is a difference of electric pressure – called the potential difference –\nalong the conductor.",
+                "end_char": 881,
+                "section_id": "page-3",
+                "start_char": 755
+              }
+            ],
+            "correct_option_index": 1
+          },
+          {
+            "options": [
+              "The total charge stored between the two points",
+              "The current flowing between the two points",
+              "The work done to move a unit charge from one point to the other",
+              "The resistance between the two points"
+            ],
+            "question": "How is the electric potential difference between two points in a circuit defined?",
+            "explanation": "Potential difference between two points is defined as the work done to move a unit charge from one point to the other.",
+            "source_spans": [
+              {
+                "page": 3,
+                "quote": "We define the electric potential difference between two points in an\nelectric circuit carrying some current as the work done to move a unit\ncharge from one point to the other –\nPotential difference (V) between two points = Work done (W)/Charge (Q)",
+                "end_char": 1654,
+                "section_id": "page-3",
+                "start_char": 1407
+              }
+            ],
+            "correct_option_index": 2
+          },
+          {
+            "options": [
+              "Ampere; the current through a 1-ohm resistor",
+              "Coulomb; the charge on 6 × 10^18 electrons",
+              "Volt; the potential difference between two points when 1 joule of work is done to move a charge of 1 coulomb",
+              "Watt; the power dissipated by 1 ampere at 1 volt"
+            ],
+            "question": "What is the SI unit of potential difference and how is it defined?",
+            "explanation": "The volt is the SI unit of potential difference, defined as the potential difference between two points when 1 joule of work is done to move a charge of 1 coulomb between them.",
+            "source_spans": [
+              {
+                "page": 3,
+                "quote": "The SI unit of electric potential difference is volt (V), named after\nAlessandro Volta (1745 –1827), an Italian physicist. One volt is the\npotential difference between two points in a current carrying conductor\nwhen 1 joule of work is done to move a charge of 1 coulomb from one\npoint to the other.",
+                "end_char": 1968,
+                "section_id": "page-3",
+                "start_char": 1670
+              }
+            ],
+            "correct_option_index": 2
+          },
+          {
+            "options": [
+              "Ammeter, connected in series",
+              "Voltmeter, connected in parallel",
+              "Voltmeter, connected in series",
+              "Galvanometer, connected in parallel"
+            ],
+            "question": "Which instrument measures potential difference, and how is it connected in a circuit?",
+            "explanation": "A voltmeter measures potential difference and is always connected in parallel across the points between which the potential difference is to be measured.",
+            "source_spans": [
+              {
+                "page": 3,
+                "quote": "The potential difference is measured by means of an instrument called\nthe voltmeter. The voltmeter is always connected in parallel across the\npoints between which the potential difference is to be measured.",
+                "end_char": 2236,
+                "section_id": "page-3",
+                "start_char": 2030
+              }
+            ],
+            "correct_option_index": 1
+          }
+        ],
+        "numerical": [],
+        "long_answer": [
+          {
+            "rubric": [
+              "Defines potential difference correctly as work done per unit charge",
+              "States the formula relating potential difference, work done, and charge",
+              "Explains the role of potential difference in driving current",
+              "Describes the voltmeter and its parallel connection",
+              "States the definition and unit (volt) correctly"
+            ],
+            "question": "Describe the concept of potential difference, its relation to work done and charge, and how it is measured in a circuit.",
+            "model_answer": "The electric potential difference between two points in a circuit is the work done to move a unit charge from one point to the other. Mathematically, potential difference equals the work done divided by the charge moved. It is this difference of electric pressure along a conductor that drives charges to flow, constituting an electric current. The potential difference is measured using a voltmeter, which is always connected in parallel across the points between which the potential difference is to be measured. Its SI unit is the volt; one volt is the potential difference between two points when 1 joule of work is done to move a charge of 1 coulomb.",
+            "source_spans": [
+              {
+                "page": 3,
+                "quote": "We define the electric potential difference between two points in an\nelectric circuit carrying some current as the work done to move a unit\ncharge from one point to the other –\nPotential difference (V) between two points = Work done (W)/Charge (Q)",
+                "end_char": 1654,
+                "section_id": "page-3",
+                "start_char": 1407
+              },
+              {
+                "page": 3,
+                "quote": "Potential difference (V) between two points = Work done (W)/Charge (Q)\nV\n=\nW/Q\n(11.2)",
+                "end_char": 1669,
+                "section_id": "page-3",
+                "start_char": 1584
+              },
+              {
+                "page": 3,
+                "quote": "the electrons move only\nif there is a difference of electric pressure – called the potential difference –\nalong the conductor.",
+                "end_char": 881,
+                "section_id": "page-3",
+                "start_char": 755
+              },
+              {
+                "page": 3,
+                "quote": "The potential difference is measured by means of an instrument called\nthe voltmeter. The voltmeter is always connected in parallel across the\npoints between which the potential difference is to be measured.",
+                "end_char": 2236,
+                "section_id": "page-3",
+                "start_char": 2030
+              },
+              {
+                "page": 3,
+                "quote": "The SI unit of electric potential difference is volt (V), named after\nAlessandro Volta (1745 –1827), an Italian physicist. One volt is the\npotential difference between two points in a current carrying conductor\nwhen 1 joule of work is done to move a charge of 1 coulomb from one\npoint to the other.",
+                "end_char": 1968,
+                "section_id": "page-3",
+                "start_char": 1670
+              }
+            ]
+          }
+        ],
+        "short_answer": [
+          {
+            "rubric": [
+              "Identifies potential difference as the driving force for charge flow",
+              "Explains that it is a difference of electric pressure along the conductor",
+              "Connects the concept to the movement of charges"
+            ],
+            "question": "Explain the role of potential difference in driving electric current through a conductor.",
+            "model_answer": "Potential difference is a difference of electric pressure along the conductor that causes charges to flow through it. Without this difference, the charges (electrons) would have no driving force to move in a particular direction, and current would not flow.",
+            "source_spans": [
+              {
+                "page": 3,
+                "quote": "the electrons move only\nif there is a difference of electric pressure – called the potential difference –\nalong the conductor.",
+                "end_char": 881,
+                "section_id": "page-3",
+                "start_char": 755
+              }
+            ]
+          },
+          {
+            "rubric": [
+              "Names the voltmeter as the measuring instrument",
+              "States that it is connected in parallel",
+              "Mentions the volt as the unit of measurement"
+            ],
+            "question": "How is potential difference measured, and what instrument is used?",
+            "model_answer": "Potential difference is measured using a voltmeter, which is connected in parallel across the two points between which the potential difference is to be measured. The unit of potential difference is the volt, defined based on the work done to move a unit charge between two points.",
+            "source_spans": [
+              {
+                "page": 3,
+                "quote": "The potential difference is measured by means of an instrument called\nthe voltmeter. The voltmeter is always connected in parallel across the\npoints between which the potential difference is to be measured.",
+                "end_char": 2236,
+                "section_id": "page-3",
+                "start_char": 2030
+              },
+              {
+                "page": 3,
+                "quote": "The SI unit of electric potential difference is volt (V), named after\nAlessandro Volta (1745 –1827), an Italian physicist. One volt is the\npotential difference between two points in a current carrying conductor\nwhen 1 joule of work is done to move a charge of 1 coulomb from one\npoint to the other.",
+                "end_char": 1968,
+                "section_id": "page-3",
+                "start_char": 1670
+              }
+            ]
+          }
+        ],
+        "period_number": 2
+      },
+      {
+        "mcqs": [
+          {
+            "options": [
+              "It increases the flow of electrons without any control",
+              "It resists the flow of electrons and controls the magnitude of the current",
+              "It has no effect on the current",
+              "It only affects the direction of current"
+            ],
+            "question": "What does resistance in a conductor do to the flow of current?",
+            "explanation": "Resistance is a property that resists the flow of electrons in a conductor and controls the magnitude of the current.",
+            "source_spans": [
+              {
+                "page": 22,
+                "quote": "Resistance is a property that resists the flow of electrons in a conductor. It controls\nthe magnitude of the current.",
+                "end_char": 761,
+                "section_id": "page-22",
+                "start_char": 644
+              }
+            ],
+            "correct_option_index": 1
+          },
+          {
+            "options": [
+              "A property dependent only on the length of the conductor",
+              "A constant of proportionality representing a characteristic property of a material showing how much it resists current flow",
+              "The same as electric current",
+              "A unit used to measure potential difference"
+            ],
+            "question": "What is electrical resistivity?",
+            "explanation": "Electrical resistivity is defined as a constant of proportionality that represents a characteristic property of a material showing how much the material resists electrical current flow.",
+            "source_spans": [
+              {
+                "page": 8,
+                "quote": "ρ (rho) is a constant of proportionality and is called the electrical\nresistivity of the material of the conductor.",
+                "end_char": 985,
+                "section_id": "page-8",
+                "start_char": 870
+              }
+            ],
+            "correct_option_index": 1
+          },
+          {
+            "options": [
+              "Resistance is inversely proportional to length",
+              "Resistance is directly proportional to length",
+              "Resistance is unrelated to length",
+              "Resistance decreases exponentially with length"
+            ],
+            "question": "How does resistance vary with the length of a conductor?",
+            "explanation": "Resistance is directly proportional to the length of a conductor - as length increases, resistance increases.",
+            "source_spans": [
+              {
+                "page": 8,
+                "quote": "Precise measurements\nhave shown that resistance of a uniform metallic conductor is directly\nproportional to its length (l) and inversely proportional to the area of\ncross-section (A). That is,\nR ∝ l\n(11.8)",
+                "end_char": 774,
+                "section_id": "page-8",
+                "start_char": 569
+              }
+            ],
+            "correct_option_index": 1
+          },
+          {
+            "options": [
+              "Resistance is directly proportional to cross-sectional area",
+              "Resistance is inversely proportional to cross-sectional area",
+              "Resistance is unaffected by cross-sectional area",
+              "Resistance increases with the square of the area"
+            ],
+            "question": "How does resistance vary with the cross-sectional area of a conductor?",
+            "explanation": "Resistance is inversely proportional to the cross-sectional area of a conductor - as area increases, resistance decreases.",
+            "source_spans": [
+              {
+                "page": 8,
+                "quote": "and\nR ∝ 1/A\n(11.9)",
+                "end_char": 793,
+                "section_id": "page-8",
+                "start_char": 775
+              }
+            ],
+            "correct_option_index": 1
+          },
+          {
+            "options": [
+              "Current increases",
+              "Current decreases",
+              "Current remains constant",
+              "Current becomes zero immediately"
+            ],
+            "question": "According to the relationship between potential difference and current, what happens as resistance increases (at constant potential difference)?",
+            "explanation": "Current is inversely proportional to resistance, so as resistance increases, current decreases (for constant potential difference).",
+            "source_spans": [
+              {
+                "page": 6,
+                "quote": "Also from Eq. (11.5) we get\nI = V/R\n(11.7)",
+                "end_char": 1819,
+                "section_id": "page-6",
+                "start_char": 1777
+              },
+              {
+                "page": 6,
+                "quote": "V ∝ I\n(11.4)\nor\nV/I\n=\nconstant\n=\nR\nor\nV\n=\nIR\n(11.5)",
+                "end_char": 1306,
+                "section_id": "page-6",
+                "start_char": 1255
+              }
+            ],
+            "correct_option_index": 1
+          }
+        ],
+        "numerical": [],
+        "long_answer": [
+          {
+            "rubric": [
+              "Defines resistance correctly",
+              "Explains proportionality with length and inverse proportionality with area",
+              "Describes the rheostat and its function in regulating current",
+              "Distinguishes between good conductors, resistors, and poor conductors based on resistance level"
+            ],
+            "question": "Explain the concept of resistance, describe how a rheostat can be used to control current, and identify the different categories of conductors based on their resistance.",
+            "model_answer": "Resistance is a property that resists the flow of electrons in a conductor and controls the magnitude of the current. Resistance is directly proportional to the length of the conductor and inversely proportional to its cross-sectional area. A rheostat is a device often used to change the resistance in a circuit, allowing regulation of current without changing the voltage source. Conductors can be categorized based on their resistance: a good conductor of a given size offers low resistance to current flow, while a conductor with appreciable resistance is simply called a resistor, and a poor conductor of identical size offers even higher resistance than a resistor.",
+            "source_spans": [
+              {
+                "page": 22,
+                "quote": "Resistance is a property that resists the flow of electrons in a conductor. It controls\nthe magnitude of the current.",
+                "end_char": 761,
+                "section_id": "page-22",
+                "start_char": 644
+              },
+              {
+                "page": 8,
+                "quote": "Precise measurements\nhave shown that resistance of a uniform metallic conductor is directly\nproportional to its length (l) and inversely proportional to the area of\ncross-section (A). That is,\nR ∝ l\n(11.8)",
+                "end_char": 774,
+                "section_id": "page-8",
+                "start_char": 569
+              },
+              {
+                "page": 8,
+                "quote": "and\nR ∝ 1/A\n(11.9)",
+                "end_char": 793,
+                "section_id": "page-8",
+                "start_char": 775
+              },
+              {
+                "page": 6,
+                "quote": "In an electric circuit, a device called rheostat is often used to\nchange the resistance in the circuit.",
+                "end_char": 2292,
+                "section_id": "page-6",
+                "start_char": 2189
+              },
+              {
+                "page": 6,
+                "quote": "A component used to\nregulate current without changing the voltage source is called variable\nresistance.",
+                "end_char": 2188,
+                "section_id": "page-6",
+                "start_char": 2085
+              },
+              {
+                "page": 7,
+                "quote": "A component of a given size that offers a low\nresistance is a good conductor.",
+                "end_char": 618,
+                "section_id": "page-7",
+                "start_char": 541
+              },
+              {
+                "page": 7,
+                "quote": "A conductor having some appreciable\nresistance is called a resistor.",
+                "end_char": 687,
+                "section_id": "page-7",
+                "start_char": 619
+              },
+              {
+                "page": 7,
+                "quote": "A component of identical size that offers a\nhigher resistance is a poor conductor. An insulator of the same size offers\neven higher resistance.",
+                "end_char": 831,
+                "section_id": "page-7",
+                "start_char": 688
+              }
+            ]
+          }
+        ],
+        "short_answer": [
+          {
+            "rubric": [
+              "Explains resistance as dependent on conductor's dimensions and material",
+              "Explains resistivity as a material-specific constant independent of dimensions",
+              "Clearly distinguishes the two concepts"
+            ],
+            "question": "Differentiate between resistance and resistivity.",
+            "model_answer": "Resistance is a property of a specific conductor that resists the flow of electrons and controls the magnitude of current through it; it depends on the conductor's length, cross-sectional area, and the material. Resistivity, on the other hand, is a characteristic property of the material itself (a constant of proportionality), representing how much the material resists current flow, independent of the conductor's dimensions.",
+            "source_spans": [
+              {
+                "page": 22,
+                "quote": "Resistance is a property that resists the flow of electrons in a conductor. It controls\nthe magnitude of the current.",
+                "end_char": 761,
+                "section_id": "page-22",
+                "start_char": 644
+              },
+              {
+                "page": 8,
+                "quote": "ρ (rho) is a constant of proportionality and is called the electrical\nresistivity of the material of the conductor.",
+                "end_char": 985,
+                "section_id": "page-8",
+                "start_char": 870
+              }
+            ]
+          },
+          {
+            "rubric": [
+              "States that resistance increases with length",
+              "States that resistance decreases with cross-sectional area",
+              "Uses correct proportionality relationships"
+            ],
+            "question": "What factors affect the resistance of a conductor, and how?",
+            "model_answer": "Resistance is directly proportional to the length of the conductor - longer conductors have higher resistance. Resistance is inversely proportional to the cross-sectional area of the conductor - conductors with larger cross-sectional area have lower resistance.",
+            "source_spans": [
+              {
+                "page": 8,
+                "quote": "Precise measurements\nhave shown that resistance of a uniform metallic conductor is directly\nproportional to its length (l) and inversely proportional to the area of\ncross-section (A). That is,\nR ∝ l\n(11.8)",
+                "end_char": 774,
+                "section_id": "page-8",
+                "start_char": 569
+              },
+              {
+                "page": 8,
+                "quote": "and\nR ∝ 1/A\n(11.9)",
+                "end_char": 793,
+                "section_id": "page-8",
+                "start_char": 775
+              }
+            ]
+          }
+        ],
+        "period_number": 3
+      },
+      {
+        "mcqs": [
+          {
+            "options": [
+              "They are joined between common points",
+              "They are joined end to end",
+              "They are joined randomly without a common path",
+              "They are connected only at their midpoints"
+            ],
+            "question": "How are resistors connected in a series combination?",
+            "explanation": "When resistors are connected end to end, they are said to be connected in series, with the same current flowing through each resistor.",
+            "source_spans": [
+              {
+                "page": 11,
+                "quote": "three resistors having resistances R1,\nR2 and R3, respectively, are joined end to end. Here the resistors are said\nto be connected in series.",
+                "end_char": 1525,
+                "section_id": "page-11",
+                "start_char": 1384
+              }
+            ],
+            "correct_option_index": 1
+          },
+          {
+            "options": [
+              "The potential difference",
+              "The current",
+              "The resistance",
+              "The power"
+            ],
+            "question": "In a series combination of resistors, what remains the same through each resistor?",
+            "explanation": "The same current flows through each resistor in a series combination since they are joined end to end forming a single path.",
+            "source_spans": [
+              {
+                "page": 11,
+                "quote": "three resistors having resistances R1,\nR2 and R3, respectively, are joined end to end. Here the resistors are said\nto be connected in series.",
+                "end_char": 1525,
+                "section_id": "page-11",
+                "start_char": 1384
+              }
+            ],
+            "correct_option_index": 1
+          },
+          {
+            "options": [
+              "It equals the reciprocal of the sum of reciprocals of individual resistances",
+              "It equals the sum of individual resistances",
+              "It equals the product of individual resistances",
+              "It equals the average of individual resistances"
+            ],
+            "question": "How is the equivalent resistance of resistors connected in series calculated?",
+            "explanation": "The equivalent resistance of resistors in series equals the sum of individual resistances.",
+            "source_spans": [
+              {
+                "page": 14,
+                "quote": "or\nRs = R1 +R2 + R3\n(11.14)",
+                "end_char": 222,
+                "section_id": "page-14",
+                "start_char": 195
+              }
+            ],
+            "correct_option_index": 1
+          },
+          {
+            "options": [
+              "The potential difference equals current divided by equivalent resistance",
+              "The potential difference is the current times the equivalent resistance",
+              "The potential difference is independent of current",
+              "The potential difference equals equivalent resistance divided by current"
+            ],
+            "question": "What is the relationship between total potential difference, current, and equivalent resistance in a series combination?",
+            "explanation": "For a series combination, the potential difference across the combination is the current times the equivalent resistance.",
+            "source_spans": [
+              {
+                "page": 13,
+                "quote": "V = I R\n(11.12)",
+                "end_char": 1682,
+                "section_id": "page-13",
+                "start_char": 1667
+              }
+            ],
+            "correct_option_index": 1
+          }
+        ],
+        "numerical": [
+          {
+            "question": "Three resistors of 2 ohms, 3 ohms, and 5 ohms are connected in series. Calculate the equivalent resistance of the combination.",
+            "tolerance": 0.01,
+            "source_spans": [
+              {
+                "page": 14,
+                "quote": "or\nRs = R1 +R2 + R3\n(11.14)",
+                "end_char": 222,
+                "section_id": "page-14",
+                "start_char": 195
+              },
+              {
+                "page": 11,
+                "quote": "three resistors having resistances R1,\nR2 and R3, respectively, are joined end to end. Here the resistors are said\nto be connected in series.",
+                "end_char": 1525,
+                "section_id": "page-11",
+                "start_char": 1384
+              }
+            ],
+            "correct_answer": 10.0,
+            "solution_steps": [
+              "In series combination, equivalent resistance equals the sum of individual resistances",
+              "R_eq = R1 + R2 + R3 = 2 + 3 + 5",
+              "R_eq = 10 ohms"
+            ]
+          }
+        ],
+        "long_answer": [
+          {
+            "rubric": [
+              "Correctly describes series connection (end to end)",
+              "States that current is the same through each resistor",
+              "States that total potential difference is the sum of individual potential differences",
+              "States that equivalent resistance is the sum of individual resistances",
+              "Explains the relation V = IR_eq for the series combination"
+            ],
+            "question": "Describe the series combination of resistors, including how equivalent resistance is calculated and how potential difference relates to current and equivalent resistance.",
+            "model_answer": "When resistors are connected end to end, they are said to be connected in series, and the same current flows through each resistor in the combination. The total potential difference across the resistors in series equals the sum of the individual potential differences across each resistor. The equivalent resistance of resistors in series equals the sum of the individual resistances of each resistor. For the whole series combination, the potential difference is the current times the equivalent resistance, similar to how potential difference relates to current and resistance for a single resistor.",
+            "source_spans": [
+              {
+                "page": 11,
+                "quote": "three resistors having resistances R1,\nR2 and R3, respectively, are joined end to end. Here the resistors are said\nto be connected in series.",
+                "end_char": 1525,
+                "section_id": "page-11",
+                "start_char": 1384
+              },
+              {
+                "page": 13,
+                "quote": "V = V1 + V2  + V3\n(11.11)",
+                "end_char": 1264,
+                "section_id": "page-13",
+                "start_char": 1239
+              },
+              {
+                "page": 14,
+                "quote": "or\nRs = R1 +R2 + R3\n(11.14)",
+                "end_char": 222,
+                "section_id": "page-14",
+                "start_char": 195
+              },
+              {
+                "page": 13,
+                "quote": "V = I R\n(11.12)",
+                "end_char": 1682,
+                "section_id": "page-13",
+                "start_char": 1667
+              }
+            ]
+          }
+        ],
+        "short_answer": [
+          {
+            "rubric": [
+              "Explains that resistors are joined end to end",
+              "Explains that this creates a single path for current",
+              "Concludes that current must be the same through each resistor"
+            ],
+            "question": "Explain why the same current flows through each resistor in a series combination.",
+            "model_answer": "In a series combination, resistors are connected end to end, forming a single continuous path for current flow. Since there is only one path for the charges to flow through, the same current must pass through each resistor in the combination.",
+            "source_spans": [
+              {
+                "page": 11,
+                "quote": "three resistors having resistances R1,\nR2 and R3, respectively, are joined end to end. Here the resistors are said\nto be connected in series.",
+                "end_char": 1525,
+                "section_id": "page-11",
+                "start_char": 1384
+              }
+            ]
+          }
+        ],
+        "period_number": 4
+      },
+      {
+        "mcqs": [
+          {
+            "options": [
+              "They are joined end to end forming a single path",
+              "They are connected together between common points",
+              "They are connected only in a straight line",
+              "They cannot share any common points"
+            ],
+            "question": "How are resistors connected in a parallel combination?",
+            "explanation": "When resistors are connected together between common points, they are said to be connected in parallel.",
+            "source_spans": [
+              {
+                "page": 12,
+                "quote": "three resistors\nare connected together between points X and Y. Here, the resistors are\nsaid to be connected in parallel.",
+                "end_char": 1323,
+                "section_id": "page-12",
+                "start_char": 1203
+              }
+            ],
+            "correct_option_index": 1
+          },
+          {
+            "options": [
+              "The current",
+              "The potential difference",
+              "The resistance",
+              "The power"
+            ],
+            "question": "What remains the same across each resistor in a parallel combination?",
+            "explanation": "The potential difference across each resistor is the same in a parallel combination, since they share common connection points.",
+            "source_spans": [
+              {
+                "page": 12,
+                "quote": "three resistors\nare connected together between points X and Y. Here, the resistors are\nsaid to be connected in parallel.",
+                "end_char": 1323,
+                "section_id": "page-12",
+                "start_char": 1203
+              }
+            ],
+            "correct_option_index": 1
+          },
+          {
+            "options": [
+              "The total current equals the average of the branch currents",
+              "The total current equals the sum of currents through each branch",
+              "The total current equals the product of the branch currents",
+              "The total current is independent of the branch currents"
+            ],
+            "question": "How is the total current in a parallel combination related to the individual branch currents?",
+            "explanation": "The total current in a parallel combination equals the sum of currents through each branch, as charges divide among the different paths.",
+            "source_spans": [
+              {
+                "page": 16,
+                "quote": "I = I1 + I2 + I3\n(11.15)",
+                "end_char": 559,
+                "section_id": "page-16",
+                "start_char": 535
+              }
+            ],
+            "correct_option_index": 1
+          },
+          {
+            "options": [
+              "It equals the sum of individual resistances",
+              "The reciprocal of the equivalent resistance equals the sum of reciprocals of individual resistances",
+              "It equals the product of individual resistances divided by their sum",
+              "It equals the average of the individual resistances"
+            ],
+            "question": "How is the equivalent resistance of a parallel combination of resistors calculated?",
+            "explanation": "The reciprocal of the equivalent resistance in a parallel combination equals the sum of reciprocals of the individual resistances.",
+            "source_spans": [
+              {
+                "page": 16,
+                "quote": "1/Rp = 1/R1 + 1/R2 + 1/R3\n(11.18)",
+                "end_char": 929,
+                "section_id": "page-16",
+                "start_char": 896
+              }
+            ],
+            "correct_option_index": 1
+          },
+          {
+            "options": [
+              "The equivalent resistance in parallel is always greater than in series",
+              "The equivalent resistance in parallel is generally smaller than the equivalent resistance in series",
+              "The equivalent resistance stays the same in both configurations",
+              "The equivalent resistance cannot be compared between the two configurations"
+            ],
+            "question": "Compared to a series combination, what typically happens to the equivalent resistance in a parallel combination of the same resistors?",
+            "explanation": "Since in series the resistances add directly while in parallel the reciprocals add (leading to a value smaller than the smallest individual resistance), parallel combinations generally result in a smaller equivalent resistance compared to series combinations of the same resistors.",
+            "source_spans": [
+              {
+                "page": 14,
+                "quote": "or\nRs = R1 +R2 + R3\n(11.14)",
+                "end_char": 222,
+                "section_id": "page-14",
+                "start_char": 195
+              },
+              {
+                "page": 16,
+                "quote": "1/Rp = 1/R1 + 1/R2 + 1/R3\n(11.18)",
+                "end_char": 929,
+                "section_id": "page-16",
+                "start_char": 896
+              }
+            ],
+            "correct_option_index": 1
+          }
+        ],
+        "numerical": [
+          {
+            "question": "Two resistors of 4 ohms and 4 ohms are connected in parallel. Calculate the equivalent resistance of the combination.",
+            "tolerance": 0.01,
+            "source_spans": [
+              {
+                "page": 16,
+                "quote": "1/Rp = 1/R1 + 1/R2 + 1/R3\n(11.18)",
+                "end_char": 929,
+                "section_id": "page-16",
+                "start_char": 896
+              }
+            ],
+            "correct_answer": 2.0,
+            "solution_steps": [
+              "For parallel combination: 1/R_eq = 1/R1 + 1/R2",
+              "1/R_eq = 1/4 + 1/4 = 2/4 = 1/2",
+              "R_eq = 2 ohms"
+            ]
+          },
+          {
+            "question": "Two resistors of 6 ohms and 3 ohms are connected in parallel across a 6 V supply. Calculate the total current drawn from the supply, using the equivalent resistance.",
+            "tolerance": 0.05,
+            "source_spans": [
+              {
+                "page": 16,
+                "quote": "1/Rp = 1/R1 + 1/R2 + 1/R3\n(11.18)",
+                "end_char": 929,
+                "section_id": "page-16",
+                "start_char": 896
+              },
+              {
+                "page": 16,
+                "quote": "I = V/Rp\n(11.16)",
+                "end_char": 726,
+                "section_id": "page-16",
+                "start_char": 710
+              }
+            ],
+            "correct_answer": 3.0,
+            "solution_steps": [
+              "First find equivalent resistance: 1/R_eq = 1/6 + 1/3 = 1/6 + 2/6 = 3/6 = 1/2, so R_eq = 2 ohms",
+              "Using I = V / R_eq for the parallel combination",
+              "I = 6 V / 2 ohms = 3 A"
+            ]
+          }
+        ],
+        "long_answer": [
+          {
+            "rubric": [
+              "Correctly describes parallel connection and equal potential difference",
+              "States current sums across branches in parallel",
+              "Gives correct formula I = V/R_eq for parallel",
+              "States reciprocal relation for equivalent resistance in parallel",
+              "Compares to series combination correctly regarding current, voltage, and resistance"
+            ],
+            "question": "Describe the parallel combination of resistors, including the behavior of current and voltage, how equivalent resistance is calculated, and how this compares to a series combination.",
+            "model_answer": "When resistors are connected together between common points, they are said to be connected in parallel, and the potential difference across each resistor is the same. The total current in a parallel combination equals the sum of currents through each branch, and for the combination, current equals voltage divided by equivalent resistance. The reciprocal of the equivalent resistance in parallel equals the sum of reciprocals of the individual resistances, meaning the equivalent resistance in parallel is typically smaller than any of the individual resistances. This contrasts with a series combination, where the same current flows through each resistor, the total potential difference is the sum of individual potential differences, and the equivalent resistance equals the sum of individual resistances (generally larger than any individual resistor).",
+            "source_spans": [
+              {
+                "page": 12,
+                "quote": "three resistors\nare connected together between points X and Y. Here, the resistors are\nsaid to be connected in parallel.",
+                "end_char": 1323,
+                "section_id": "page-12",
+                "start_char": 1203
+              },
+              {
+                "page": 16,
+                "quote": "I = I1 + I2 + I3\n(11.15)",
+                "end_char": 559,
+                "section_id": "page-16",
+                "start_char": 535
+              },
+              {
+                "page": 16,
+                "quote": "I = V/Rp\n(11.16)",
+                "end_char": 726,
+                "section_id": "page-16",
+                "start_char": 710
+              },
+              {
+                "page": 16,
+                "quote": "1/Rp = 1/R1 + 1/R2 + 1/R3\n(11.18)",
+                "end_char": 929,
+                "section_id": "page-16",
+                "start_char": 896
+              },
+              {
+                "page": 11,
+                "quote": "three resistors having resistances R1,\nR2 and R3, respectively, are joined end to end. Here the resistors are said\nto be connected in series.",
+                "end_char": 1525,
+                "section_id": "page-11",
+                "start_char": 1384
+              },
+              {
+                "page": 13,
+                "quote": "V = V1 + V2  + V3\n(11.11)",
+                "end_char": 1264,
+                "section_id": "page-13",
+                "start_char": 1239
+              },
+              {
+                "page": 14,
+                "quote": "or\nRs = R1 +R2 + R3\n(11.14)",
+                "end_char": 222,
+                "section_id": "page-14",
+                "start_char": 195
+              }
+            ]
+          }
+        ],
+        "short_answer": [
+          {
+            "rubric": [
+              "Explains that resistors share common connection points",
+              "Connects this to why potential difference must be equal across each resistor",
+              "Clear reasoning based on the definition of parallel connection"
+            ],
+            "question": "Explain why the potential difference remains the same across each resistor in a parallel combination.",
+            "model_answer": "In a parallel combination, resistors are connected together between common points, meaning both ends of each resistor share the same two nodes. Since potential difference depends only on the two points between which it is measured, and all resistors share the same pair of points, the potential difference across each resistor is the same.",
+            "source_spans": [
+              {
+                "page": 12,
+                "quote": "three resistors\nare connected together between points X and Y. Here, the resistors are\nsaid to be connected in parallel.",
+                "end_char": 1323,
+                "section_id": "page-12",
+                "start_char": 1203
+              }
+            ]
+          },
+          {
+            "rubric": [
+              "Describes current behavior in series (same through each resistor)",
+              "Describes voltage behavior in series (sum of individual differences)",
+              "Describes voltage behavior in parallel (same across each resistor)",
+              "Describes current behavior in parallel (sum of branch currents)"
+            ],
+            "question": "Compare series and parallel combinations of resistors in terms of current and voltage behavior.",
+            "model_answer": "In a series combination, the same current flows through each resistor, while the total potential difference is the sum of the individual potential differences across each resistor. In a parallel combination, the potential difference across each resistor is the same, while the total current is the sum of the currents through each branch.",
+            "source_spans": [
+              {
+                "page": 11,
+                "quote": "three resistors having resistances R1,\nR2 and R3, respectively, are joined end to end. Here the resistors are said\nto be connected in series.",
+                "end_char": 1525,
+                "section_id": "page-11",
+                "start_char": 1384
+              },
+              {
+                "page": 13,
+                "quote": "V = V1 + V2  + V3\n(11.11)",
+                "end_char": 1264,
+                "section_id": "page-13",
+                "start_char": 1239
+              },
+              {
+                "page": 12,
+                "quote": "three resistors\nare connected together between points X and Y. Here, the resistors are\nsaid to be connected in parallel.",
+                "end_char": 1323,
+                "section_id": "page-12",
+                "start_char": 1203
+              },
+              {
+                "page": 16,
+                "quote": "I = I1 + I2 + I3\n(11.15)",
+                "end_char": 559,
+                "section_id": "page-16",
+                "start_char": 535
+              }
+            ]
+          }
+        ],
+        "period_number": 5
+      },
+      {
+        "mcqs": [
+          {
+            "options": [
+              "The total charge stored in a circuit",
+              "The rate at which electric energy is dissipated or consumed in an electric circuit",
+              "The resistance of a circuit element",
+              "The potential difference across a resistor"
+            ],
+            "question": "How is electric power defined?",
+            "explanation": "Electric power is defined as the rate at which electric energy is dissipated or consumed in an electric circuit.",
+            "source_spans": [
+              {
+                "page": 21,
+                "quote": "Equation (11.21) gives the rate at which electric energy is dissipated\nor consumed in an electric circuit. This is also termed as electric power.",
+                "end_char": 386,
+                "section_id": "page-21",
+                "start_char": 241
+              }
+            ],
+            "correct_option_index": 1
+          },
+          {
+            "options": [
+              "Volt; work done per unit charge",
+              "Ampere; charge flow per second",
+              "Watt; the power consumed by a device carrying 1 ampere of current at a potential difference of 1 volt",
+              "Coulomb; charge equivalent to 6 × 10^18 electrons"
+            ],
+            "question": "What is the SI unit of electric power, and how is it defined?",
+            "explanation": "The watt is the SI unit of electric power, defined as the power consumed by a device that carries 1 ampere of current when operated at a potential difference of 1 volt.",
+            "source_spans": [
+              {
+                "page": 21,
+                "quote": "The SI unit of electric power is watt (W). It is the power consumed by\na device that carries 1 A of current when operated at a potential difference\nof 1 V.",
+                "end_char": 603,
+                "section_id": "page-21",
+                "start_char": 448
+              }
+            ],
+            "correct_option_index": 2
+          },
+          {
+            "options": [
+              "55 W",
+              "110 W",
+              "220 W",
+              "440 W"
+            ],
+            "question": "An electric bulb is connected to a 220 V generator and draws a current of 0.50 A. What is the power consumed by the bulb?",
+            "explanation": "Using P = VI = 220 V × 0.50 A = 110 W, as demonstrated in the worked example.",
+            "source_spans": [
+              {
+                "page": 21,
+                "quote": "An electric bulb is connected to a 220 V generator. The current is\n0.50 A. What is the power of the bulb?\nSolution\nP\n=\nVI\n=\n220 V × 0.50 A\n=\n110 J/s\n=\n110 W.",
+                "end_char": 1613,
+                "section_id": "page-21",
+                "start_char": 1456
+              }
+            ],
+            "correct_option_index": 1
+          },
+          {
+            "options": [
+              "Heat produced is inversely proportional to the square of the current",
+              "Heat produced is proportional to the square of current, resistance, and time",
+              "Heat produced is independent of resistance",
+              "Heat produced depends only on time, not current or resistance"
+            ],
+            "question": "How is heat produced in a resistor related to current, resistance, and time?",
+            "explanation": "Heat produced in a resistor is proportional to the square of current, resistance, and time, as given by the heating effect formula.",
+            "source_spans": [
+              {
+                "page": 19,
+                "quote": "H = I2 Rt\n(11.21)",
+                "end_char": 73,
+                "section_id": "page-19",
+                "start_char": 56
+              }
+            ],
+            "correct_option_index": 1
+          },
+          {
+            "options": [
+              "One watt is the power of one volt divided by one ampere",
+              "One watt is the power of one volt times one ampere",
+              "One watt is independent of volts and amperes",
+              "One watt equals one volt squared"
+            ],
+            "question": "What is the relationship between watt and volt-ampere?",
+            "explanation": "One watt is defined as the power of one volt times one ampere, consistent with the formula P = VI.",
+            "source_spans": [
+              {
+                "page": 21,
+                "quote": "1 W  =  1 volt × 1 ampere = 1 V A\n(11.23)",
+                "end_char": 658,
+                "section_id": "page-21",
+                "start_char": 617
+              }
+            ],
+            "correct_option_index": 1
+          }
+        ],
+        "numerical": [
+          {
+            "question": "An electric bulb is connected to a 220 V generator. The current drawn is 0.50 A. Calculate the power consumed by the bulb.",
+            "tolerance": 0.5,
+            "source_spans": [
+              {
+                "page": 21,
+                "quote": "An electric bulb is connected to a 220 V generator. The current is\n0.50 A. What is the power of the bulb?\nSolution\nP\n=\nVI\n=\n220 V × 0.50 A\n=\n110 J/s\n=\n110 W.",
+                "end_char": 1613,
+                "section_id": "page-21",
+                "start_char": 1456
+              }
+            ],
+            "correct_answer": 110.0,
+            "solution_steps": [
+              "Given: V = 220 V, I = 0.50 A",
+              "Using the formula P = VI",
+              "P = 220 V × 0.50 A = 110 W"
+            ]
+          },
+          {
+            "question": "A resistor of 10 ohms carries a current of 2 A for 5 seconds. Calculate the heat produced in the resistor using the relation that heat produced is proportional to the square of current, resistance, and time (H = I²Rt).",
+            "tolerance": 1.0,
+            "source_spans": [
+              {
+                "page": 19,
+                "quote": "H = I2 Rt\n(11.21)",
+                "end_char": 73,
+                "section_id": "page-19",
+                "start_char": 56
+              }
+            ],
+            "correct_answer": 200.0,
+            "solution_steps": [
+              "Given: I = 2 A, R = 10 ohms, t = 5 s",
+              "Using H = I^2 R t",
+              "H = (2)^2 × 10 × 5 = 4 × 10 × 5 = 200 J"
+            ]
+          }
+        ],
+        "long_answer": [
+          {
+            "rubric": [
+              "Defines electric power correctly",
+              "Explains that power can take multiple equivalent forms",
+              "States the watt definition correctly",
+              "Explains the heating effect relationship (heat proportional to I^2, R, t)",
+              "Mentions heat as product of voltage, current, time",
+              "Correctly applies and explains the worked example calculation"
+            ],
+            "question": "Explain the concept of electric power, its relation to current, voltage, and resistance, and how heat is produced due to current flow in a resistor. Use the worked example of the electric bulb to illustrate the calculation of power.",
+            "model_answer": "Electric power is the rate at which electric energy is dissipated or consumed in an electric circuit. It can be expressed in multiple equivalent forms depending on the known quantities: as the product of voltage and current (P = VI), or in terms of current and resistance, or voltage and resistance. The SI unit of electric power is the watt, defined as the power consumed by a device carrying 1 ampere of current at a potential difference of 1 volt (one watt is the power of one volt times one ampere). Heat produced in a resistor is proportional to the square of the current, resistance, and time - this describes the heating effect of current, and heat produced can also be expressed as the product of voltage, current, and time. As a worked example, when an electric bulb connected to a 220 V generator draws a current of 0.50 A, the power consumed is calculated as P = VI = 220 V × 0.50 A = 110 W. This illustrates how power calculations relate directly to appliance ratings and real-life energy consumption.",
+            "source_spans": [
+              {
+                "page": 21,
+                "quote": "Equation (11.21) gives the rate at which electric energy is dissipated\nor consumed in an electric circuit. This is also termed as electric power.",
+                "end_char": 386,
+                "section_id": "page-21",
+                "start_char": 241
+              },
+              {
+                "page": 21,
+                "quote": "P  =  VI\nOr\nP  =  I2R = V2/R\n(11.22)",
+                "end_char": 447,
+                "section_id": "page-21",
+                "start_char": 411
+              },
+              {
+                "page": 21,
+                "quote": "The SI unit of electric power is watt (W). It is the power consumed by\na device that carries 1 A of current when operated at a potential difference\nof 1 V.",
+                "end_char": 603,
+                "section_id": "page-21",
+                "start_char": 448
+              },
+              {
+                "page": 21,
+                "quote": "1 W  =  1 volt × 1 ampere = 1 V A\n(11.23)",
+                "end_char": 658,
+                "section_id": "page-21",
+                "start_char": 617
+              },
+              {
+                "page": 19,
+                "quote": "H = I2 Rt\n(11.21)",
+                "end_char": 73,
+                "section_id": "page-19",
+                "start_char": 56
+              },
+              {
+                "page": 18,
+                "quote": "H = VIt\n(11.20)",
+                "end_char": 2014,
+                "section_id": "page-18",
+                "start_char": 1999
+              },
+              {
+                "page": 21,
+                "quote": "An electric bulb is connected to a 220 V generator. The current is\n0.50 A. What is the power of the bulb?\nSolution\nP\n=\nVI\n=\n220 V × 0.50 A\n=\n110 J/s\n=\n110 W.",
+                "end_char": 1613,
+                "section_id": "page-21",
+                "start_char": 1456
+              }
+            ]
+          }
+        ],
+        "short_answer": [
+          {
+            "rubric": [
+              "Defines electric power correctly as rate of energy dissipation/consumption",
+              "Mentions that power can be expressed using different combinations of voltage, current, and resistance",
+              "Shows understanding of how these quantities interrelate"
+            ],
+            "question": "Explain how electric power relates to current, voltage, and resistance in a circuit.",
+            "model_answer": "Electric power is the rate at which electric energy is dissipated or consumed in a circuit. Power can be expressed in multiple equivalent forms depending on which quantities are known, such as using voltage and current together, or using current and resistance, since these quantities are related through Ohm's law type relationships in the circuit.",
+            "source_spans": [
+              {
+                "page": 21,
+                "quote": "Equation (11.21) gives the rate at which electric energy is dissipated\nor consumed in an electric circuit. This is also termed as electric power.",
+                "end_char": 386,
+                "section_id": "page-21",
+                "start_char": 241
+              },
+              {
+                "page": 21,
+                "quote": "P  =  VI\nOr\nP  =  I2R = V2/R\n(11.22)",
+                "end_char": 447,
+                "section_id": "page-21",
+                "start_char": 411
+              }
+            ]
+          },
+          {
+            "rubric": [
+              "Connects power to energy consumption",
+              "Explains relevance to appliance power ratings",
+              "Demonstrates understanding of practical application of the power concept"
+            ],
+            "question": "Relate the concept of electric power to real-life energy consumption and appliance ratings.",
+            "model_answer": "Electric power represents the rate at which energy is consumed by an appliance. Real-life devices are often rated based on their power (in watts), which tells us how much electric energy they consume in unit time when operated at their rated voltage. This is why higher wattage appliances consume more energy per unit time than lower wattage ones.",
+            "source_spans": [
+              {
+                "page": 21,
+                "quote": "Equation (11.21) gives the rate at which electric energy is dissipated\nor consumed in an electric circuit. This is also termed as electric power.",
+                "end_char": 386,
+                "section_id": "page-21",
+                "start_char": 241
+              }
+            ]
+          }
+        ],
+        "period_number": 6
+      }
+    ]
+  },
+  "learning_gaps": {
+    "gaps": [
+      {
+        "severity": "high",
+        "remediation": "Clarify that electrons are charge carriers that circulate continuously through a closed circuit and are neither created nor destroyed; what is actually consumed and paid for is the electrical energy transferred to the electrons (and dissipated as work/heat/light) as they move due to the potential difference, not the electrons themselves. Use an analogy (e.g., a conveyor belt or water wheel) to show electrons flow in a loop while energy is transferred at each device, and reinforce with the definition of electric power as the rate of energy dissipation, not electron depletion.",
+        "source_spans": [
+          {
+            "page": 21,
+            "quote": "Many people think that electrons are consumed in an electric circuit. This is wrong!\nWe pay the electricity board or electric company to provide energy to move electrons\nthrough the electric gadgets like electric bulb, fan and engines. We pay for the energy\nthat we use.",
+            "end_char": 1441,
+            "section_id": "page-21",
+            "start_char": 1171
+          },
+          {
+            "page": 22,
+            "quote": "A stream of electrons moving through a conductor constitutes an electric current.",
+            "end_char": 322,
+            "section_id": "page-22",
+            "start_char": 241
+          },
+          {
+            "page": 1,
+            "quote": "A continuous and closed path of an electric current is called an\nelectric circuit.",
+            "end_char": 1348,
+            "section_id": "page-1",
+            "start_char": 1266
+          },
+          {
+            "page": 3,
+            "quote": "the electrons move only\nif there is a difference of electric pressure – called the potential difference –\nalong the conductor.",
+            "end_char": 881,
+            "section_id": "page-3",
+            "start_char": 755
+          },
+          {
+            "page": 21,
+            "quote": "Equation (11.21) gives the rate at which electric energy is dissipated\nor consumed in an electric circuit. This is also termed as electric power.",
+            "end_char": 386,
+            "section_id": "page-21",
+            "start_char": 241
+          }
+        ],
+        "misconception": "Electrons are consumed in an electric circuit.",
+        "diagnostic_questions": [
+          {
+            "question": "If a light bulb is left on for an hour, does the number of electrons in the connecting wire decrease afterward? Explain why or why not.",
+            "source_spans": [
+              {
+                "page": 21,
+                "quote": "Many people think that electrons are consumed in an electric circuit. This is wrong!\nWe pay the electricity board or electric company to provide energy to move electrons\nthrough the electric gadgets like electric bulb, fan and engines. We pay for the energy\nthat we use.",
+                "end_char": 1441,
+                "section_id": "page-21",
+                "start_char": 1171
+              },
+              {
+                "page": 22,
+                "quote": "A stream of electrons moving through a conductor constitutes an electric current.",
+                "end_char": 322,
+                "section_id": "page-22",
+                "start_char": 241
+              }
+            ],
+            "targets_misconception": "Electrons are consumed in an electric circuit."
+          },
+          {
+            "question": "Why do we pay our electricity bill based on energy usage rather than on the number of electrons supplied to our home?",
+            "source_spans": [
+              {
+                "page": 21,
+                "quote": "Many people think that electrons are consumed in an electric circuit. This is wrong!\nWe pay the electricity board or electric company to provide energy to move electrons\nthrough the electric gadgets like electric bulb, fan and engines. We pay for the energy\nthat we use.",
+                "end_char": 1441,
+                "section_id": "page-21",
+                "start_char": 1171
+              }
+            ],
+            "targets_misconception": "Electrons are consumed in an electric circuit."
+          },
+          {
+            "question": "In a closed electric circuit, do the same electrons that leave the battery's negative terminal ever 'disappear', or do they continue moving around the circuit? What actually gets used up as the circuit operates?",
+            "source_spans": [
+              {
+                "page": 1,
+                "quote": "A continuous and closed path of an electric current is called an\nelectric circuit.",
+                "end_char": 1348,
+                "section_id": "page-1",
+                "start_char": 1266
+              },
+              {
+                "page": 21,
+                "quote": "Equation (11.21) gives the rate at which electric energy is dissipated\nor consumed in an electric circuit. This is also termed as electric power.",
+                "end_char": 386,
+                "section_id": "page-21",
+                "start_char": 241
+              }
+            ],
+            "targets_misconception": "Electrons are consumed in an electric circuit."
+          }
+        ]
+      }
+    ]
+  },
+  "validation_report": {
+    "schema_check": {
+      "errors": [],
+      "passed": true
+    },
+    "grounding_check": {
+      "passed": true,
+      "violations": []
+    },
+    "consistency_check": {
+      "passed": true,
+      "conflicts": []
+    },
+    "completeness_check": {
+      "passed": true,
+      "missing_items": []
+    }
+  },
+  "pdf_paths": {
+    "lesson_plans": "/files/tkp/2a40e2fd-bbd1-4aac-b705-6f12a6fe7e07/lesson_plans.pdf?expires=1785590779&sig=3aa23d247bfaaa4e57b2ec14fe021b52361b3d887381132f5ba03116d0cf6654",
+    "teacher_guide": "/files/tkp/2a40e2fd-bbd1-4aac-b705-6f12a6fe7e07/teacher_guide.pdf?expires=1785590779&sig=cfd3985f9d4c6d96de033a0f2fa834aa16c3acaa77a836e8ea908c679a5aadbe",
+    "assessment_book": "/files/tkp/2a40e2fd-bbd1-4aac-b705-6f12a6fe7e07/assessment_book.pdf?expires=1785590779&sig=5a064ed236f8d6cfbc269bcf48cb7d6e6d85e7327b7def61f625b3e9181c00bf"
+  },
+  "published_at": "2026-08-01T12:25:22.123021Z"
+}

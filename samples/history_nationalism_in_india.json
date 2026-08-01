@@ -1,0 +1,2601 @@
+{
+  "id": "fa8b7a3d-1a02-44d0-8730-bbf34d5a64ae",
+  "job_id": "3868f8d8-c221-424d-9b3a-8208eba3d3e0",
+  "version": 1,
+  "classification": {
+    "grade": "10",
+    "topic": "Nationalism in India",
+    "chapter": "Chapter II - Nationalism in India",
+    "subject": "History",
+    "category": "textbook chapter",
+    "language": "English",
+    "difficulty": "intermediate"
+  },
+  "extracted_knowledge": {
+    "concepts": [
+      {
+        "name": "Non-Cooperation Movement",
+        "text": "A movement initiated by Mahatma Gandhi that proposed Indians should refuse to cooperate with British rule through boycotts of civil services, army, police, courts, legislative councils, schools, and foreign goods, to be followed by civil disobedience if the government used repression.",
+        "source_span": {
+          "page": 5,
+          "quote": "It should begin\nwith the surrender of titles that the government awarded, and a\nboycott of civil services, army, police, courts and legislative councils,\nschools, and foreign goods. Then, in case the government used\nrepression, a full civil disobedience campaign would be launched.",
+          "end_char": 727,
+          "section_id": "page-5",
+          "start_char": 446
+        }
+      },
+      {
+        "name": "Swaraj",
+        "text": "The concept of self-rule or independence that was central to the Indian nationalist movement. Different social groups interpreted swaraj differently based on their own aspirations and grievances.",
+        "source_span": {
+          "page": 6,
+          "quote": "All of them responded to the call of Swaraj,\nbut the term meant different things to different people.",
+          "end_char": 331,
+          "section_id": "page-6",
+          "start_char": 230
+        }
+      },
+      {
+        "name": "Khilafat",
+        "text": "The issue relating to the Ottoman Sultan (Khalifa), the spiritual head of the Islamic world. After World War I ended with the defeat of Ottoman Turkey, there were concerns about a harsh peace treaty being imposed on the Ottoman emperor.",
+        "source_span": {
+          "page": 4,
+          "quote": "The First World War had\nended with the defeat of Ottoman Turkey. And there were rumours\nthat a harsh peace treaty was going to be imposed on the Ottoman\nemperor –  the spiritual head of the Islamic world (the Khalifa).",
+          "end_char": 1771,
+          "section_id": "page-4",
+          "start_char": 1553
+        }
+      },
+      {
+        "name": "Bharat Mata",
+        "text": "The image and symbol of India as a mother figure that became visually associated with Indian nationalism in the twentieth century. The image was first created by Bankim Chandra Chattopadhyay and later painted by Abanindranath Tagore as an ascetic, calm, composed, divine and spiritual figure.",
+        "source_span": {
+          "page": 19,
+          "quote": "It was in the twentieth\ncentury, with the growth of nationalism, that the identity of India\ncame to be visually associated with the image of Bharat Mata. The\nimage was first created by Bankim Chandra Chattopadhyay.",
+          "end_char": 414,
+          "section_id": "page-19",
+          "start_char": 200
+        }
+      },
+      {
+        "name": "Rowlatt Act",
+        "text": "An act passed in 1919 by the Imperial Legislative Council despite united opposition of Indian members. It gave the government enormous powers to repress political activities and allowed detention of political prisoners without trial for two years.",
+        "source_span": {
+          "page": 3,
+          "quote": "This\nAct had been hurriedly passed through the Imperial Legislative\nCouncil despite the united opposition of the Indian members. It\ngave the government enormous powers to repress political activities,\nand allowed detention of political prisoners without trial for two\nyears.",
+          "end_char": 1800,
+          "section_id": "page-3",
+          "start_char": 1526
+        }
+      },
+      {
+        "name": "Swadeshi Movement",
+        "text": "A movement in Bengal that promoted Indian-made goods and indigenous culture. The movement included the design of a tricolour flag with eight lotuses representing eight provinces and a crescent moon representing Hindus and Muslims.",
+        "source_span": {
+          "page": 20,
+          "quote": "During the Swadeshi\nmovement in Bengal, a tricolour flag (red, green and yellow) was\ndesigned. It had eight lotuses representing eight provinces of British\nIndia, and a crescent moon, representing Hindus and Muslims.",
+          "end_char": 1194,
+          "section_id": "page-20",
+          "start_char": 978
+        }
+      },
+      {
+        "name": "Hartal",
+        "text": "A form of protest in which people withdraw from normal activities, such as strikes and closure of shops, as a form of civil resistance against the government.",
+        "source_span": {
+          "page": 3,
+          "quote": "which would start with a hartal on 6 April.\nRallies were organised in various cities, workers went on strike in\nrailway workshops, and shops closed down.",
+          "end_char": 2033,
+          "section_id": "page-3",
+          "start_char": 1880
+        }
+      }
+    ],
+    "examples": [
+      {
+        "text": "In 1917 Mahatma Gandhi travelled to Champaran in Bihar to inspire the peasants to struggle against the oppressive plantation system.",
+        "source_span": {
+          "page": 3,
+          "quote": "In 1917 he travelled to\nChamparan in  Bihar to inspire the peasants to struggle against the\noppressive plantation system.",
+          "end_char": 1019,
+          "section_id": "page-3",
+          "start_char": 898
+        },
+        "related_concept": "Satyagraha"
+      },
+      {
+        "text": "In 1918, Mahatma Gandhi went to Ahmedabad to organise a satyagraha movement amongst cotton mill workers.",
+        "source_span": {
+          "page": 3,
+          "quote": "In 1918, Mahatma Gandhi went to\nAhmedabad to organise a satyagraha movement amongst cotton\nmill workers.",
+          "end_char": 1124,
+          "section_id": "page-3",
+          "start_char": 1020
+        },
+        "related_concept": "Satyagraha"
+      },
+      {
+        "text": "In 1918, Mahatma Gandhi organised a satyagraha to support the peasants of the Kheda district of Gujarat who were affected by crop failure and could not pay revenue.",
+        "source_span": {
+          "page": 3,
+          "quote": "Then in 1918,  he organised a satyagraha to support\nthe peasants of the Kheda district of Gujarat. Affected by crop\nfailure and a plague epidemic, the peasants of Kheda could not pay\nthe revenue, and were demanding that revenue collection be relaxed.",
+          "end_char": 1375,
+          "section_id": "page-3",
+          "start_char": 1125
+        },
+        "related_concept": "Satyagraha"
+      },
+      {
+        "text": "The import of foreign cloth halved between 1921 and 1922, its value dropping from Rs 102 crore to Rs 57 crore, showing the economic impact of the boycott movement in cities.",
+        "source_span": {
+          "page": 6,
+          "quote": "The import of foreign\ncloth halved between 1921 and 1922, its value dropping from\nRs 102 crore to Rs 57 crore.",
+          "end_char": 1102,
+          "section_id": "page-6",
+          "start_char": 992
+        },
+        "related_concept": "Non-Cooperation Movement"
+      },
+      {
+        "text": "In Awadh, peasants led by Baba Ramchandra demanded reduction of revenue, abolition of begar, and social boycott of oppressive landlords. Nai-dhobi bandhs were organised to deprive landlords of the services of barbers and washermen.",
+        "source_span": {
+          "page": 7,
+          "quote": "The peasant\nmovement demanded reduction of revenue, abolition of begar, and\nsocial boycott of oppressive landlords. In many places nai – dhobi\nbandhs were organised by panchayats to deprive landlords of the\nservices of even barbers and washermen.",
+          "end_char": 801,
+          "section_id": "page-7",
+          "start_char": 555
+        },
+        "related_concept": "Non-Cooperation Movement"
+      },
+      {
+        "text": "In the Gudem Hills of Andhra Pradesh, Alluri Sitaram Raju led a militant guerrilla movement in the early 1920s against the colonial government's restrictions on forest access and forced begar.",
+        "source_span": {
+          "page": 8,
+          "quote": "In the Gudem Hills of Andhra\nPradesh, for instance, a militant guerrilla movement spread in\nthe early 1920s –  not a form of struggle that the Congress could\napprove.",
+          "end_char": 303,
+          "section_id": "page-8",
+          "start_char": 137
+        },
+        "related_concept": "Non-Cooperation Movement"
+      },
+      {
+        "text": "Plantation workers in Assam, upon hearing of the Non-Cooperation Movement, left the tea gardens and headed home, believing Gandhi Raj was coming and everyone would be given land.",
+        "source_span": {
+          "page": 8,
+          "quote": "When they heard of the Non-Cooperation\nMovement, thousands of workers defied the authorities, left the\nplantations and headed home. They believed that Gandhi Raj was\ncoming and everyone would be given land in their own villages.",
+          "end_char": 2244,
+          "section_id": "page-8",
+          "start_char": 2016
+        },
+        "related_concept": "Non-Cooperation Movement"
+      },
+      {
+        "text": "The Bardoli Satyagraha of 1928 was a successful peasant movement led by Vallabhbhai Patel in Gujarat against the enhancement of land revenue.",
+        "source_span": {
+          "page": 7,
+          "quote": "In 1928, Vallabhbhai Patel led the peasant\nmovement in Bardoli, a taluka in Gujarat, against\nenhancement of land revenue. Known as the\nBardoli Satyagraha, this movement was a success\nunder the able leadership of Vallabhbhai Patel.",
+          "end_char": 3183,
+          "section_id": "page-7",
+          "start_char": 2953
+        },
+        "related_concept": null
+      },
+      {
+        "text": "During the Civil Disobedience Movement, rich peasant communities like the Patidars of Gujarat and the Jats of Uttar Pradesh actively participated as producers of commercial crops hit hard by trade depression and falling prices.",
+        "source_span": {
+          "page": 13,
+          "quote": "In the countryside, rich peasant communities – like the Patidars of\nGujarat and the Jats of Uttar Pradesh – were active in the movement.\nBeing producers of commercial crops, they were very hard hit by\nthe trade depression and falling prices.",
+          "end_char": 1142,
+          "section_id": "page-13",
+          "start_char": 901
+        },
+        "related_concept": "Civil Disobedience Movement"
+      },
+      {
+        "text": "Industrial workers in Sholapur attacked police posts, municipal buildings, lawcourts and railway stations after Mahatma Gandhi's arrest in 1930.",
+        "source_span": {
+          "page": 12,
+          "quote": "A month later, when Mahatma\nGandhi himself was arrested, industrial workers in Sholapur attacked\npolice posts, municipal buildings, lawcourts and railway stations –\nall structures that symbolised British rule.",
+          "end_char": 1097,
+          "section_id": "page-12",
+          "start_char": 888
+        },
+        "related_concept": "Civil Disobedience Movement"
+      },
+      {
+        "text": "In 1930 thousands of workers in Chotanagpur tin mines wore Gandhi caps and participated in protest rallies and boycott campaigns as part of the Civil Disobedience Movement.",
+        "source_span": {
+          "page": 14,
+          "quote": "In 1930 thousands of workers in\nChotanagpur tin mines wore Gandhi caps and participated in protest\nrallies and boycott campaigns.",
+          "end_char": 2123,
+          "section_id": "page-14",
+          "start_char": 1994
+        },
+        "related_concept": "Civil Disobedience Movement"
+      },
+      {
+        "text": "Abanindranath Tagore painted a famous image of Bharat Mata portraying her as an ascetic figure, calm, composed, divine and spiritual, dispensing learning, food and clothing.",
+        "source_span": {
+          "page": 19,
+          "quote": "Moved by the Swadeshi\nmovement, Abanindranath Tagore painted his famous image of\nBharat Mata (see Fig. 12). In this painting Bharat Mata is portrayed\nas an ascetic figure; she is calm, composed, divine and spiritual.",
+          "end_char": 800,
+          "section_id": "page-19",
+          "start_char": 584
+        },
+        "related_concept": "Bharat Mata"
+      }
+    ],
+    "formulae": [],
+    "keywords": [
+      {
+        "text": "Anti-colonial movement",
+        "source_span": {
+          "page": 1,
+          "quote": "In India and as in  many other colonies, the growth of modern\nnationalism is intimately connected to the anti-colonial movement.",
+          "end_char": 611,
+          "section_id": "page-1",
+          "start_char": 483
+        }
+      },
+      {
+        "text": "Non-violence",
+        "source_span": {
+          "page": 3,
+          "quote": "Mahatma Gandhi believed that this dharma of non-violence\ncould unite all Indians.",
+          "end_char": 794,
+          "section_id": "page-3",
+          "start_char": 713
+        }
+      },
+      {
+        "text": "Tricolour flag",
+        "source_span": {
+          "page": 20,
+          "quote": "During the Swadeshi\nmovement in Bengal, a tricolour flag (red, green and yellow) was\ndesigned.",
+          "end_char": 1072,
+          "section_id": "page-20",
+          "start_char": 978
+        }
+      },
+      {
+        "text": "Swaraj flag",
+        "source_span": {
+          "page": 20,
+          "quote": "By\n1921, Gandhiji had designed the Swaraj flag. It was again a tricolour\n(red, green and white) and had a spinning wheel in the centre,\nrepresenting the Gandhian ideal of self-help.",
+          "end_char": 1376,
+          "section_id": "page-20",
+          "start_char": 1195
+        }
+      },
+      {
+        "text": "Spinning wheel",
+        "source_span": {
+          "page": 20,
+          "quote": "It was again a tricolour\n(red, green and white) and had a spinning wheel in the centre,\nrepresenting the Gandhian ideal of self-help.",
+          "end_char": 1376,
+          "section_id": "page-20",
+          "start_char": 1243
+        }
+      },
+      {
+        "text": "Independence Day",
+        "source_span": {
+          "page": 11,
+          "quote": "It was declared that 26 January\n1930, would be celebrated as the Independence Day when people\nwere to take a pledge to struggle for complete independence.",
+          "end_char": 542,
+          "section_id": "page-11",
+          "start_char": 388
+        }
+      },
+      {
+        "text": "Poona Pact",
+        "source_span": {
+          "page": 16,
+          "quote": "the\nresult was the Poona Pact of September 1932. It gave the\nDepressed Classes (later to be known as the Schedule Castes)\nreserved seats in provincial and central legislative councils",
+          "end_char": 1516,
+          "section_id": "page-16",
+          "start_char": 1333
+        }
+      },
+      {
+        "text": "Quit India Movement",
+        "source_span": {
+          "page": 21,
+          "quote": "On 8 August 1942 in Bombay, the All India Congress Committee\nendorsed the resolution which called for a non-violent mass struggle on the widest possible scale throughout the\ncountry.",
+          "end_char": 1695,
+          "section_id": "page-21",
+          "start_char": 1513
+        }
+      }
+    ],
+    "objectives": [],
+    "definitions": [
+      {
+        "term": "Forced recruitment",
+        "text": "A process by which the colonial state forced people to join the army",
+        "source_span": {
+          "page": 2,
+          "quote": "Forced recruitment – A process by which the\ncolonial state forced people to join the army",
+          "end_char": 1456,
+          "section_id": "page-2",
+          "start_char": 1367
+        }
+      },
+      {
+        "term": "Boycott",
+        "text": "The refusal to deal and associate with people, or participate in activities, or buy and use things; usually a form of protest",
+        "source_span": {
+          "page": 5,
+          "quote": "Boycott – The refusal to deal and associate with\npeople, or participate in activities, or buy and\nuse things; usually a form of protest",
+          "end_char": 171,
+          "section_id": "page-5",
+          "start_char": 36
+        }
+      },
+      {
+        "term": "Picket",
+        "text": "A form of demonstration or protest by which people block the entrance to a shop, factory or office",
+        "source_span": {
+          "page": 6,
+          "quote": "Picket – A form of demonstration or protest\nby which people block the entrance to a shop,\nfactory or office",
+          "end_char": 2244,
+          "section_id": "page-6",
+          "start_char": 2137
+        }
+      },
+      {
+        "term": "Begar",
+        "text": "Labour that villagers were forced to contribute without any payment",
+        "source_span": {
+          "page": 7,
+          "quote": "Begar – Labour that villagers were forced to\ncontribute without any payment",
+          "end_char": 1848,
+          "section_id": "page-7",
+          "start_char": 1773
+        }
+      }
+    ],
+    "applications": [
+      {
+        "text": "The Congress attempted to use the Khilafat issue as an opportunity to bring Muslims and Hindus together under a unified national movement by supporting the Ottoman emperor against the harsh peace treaty.",
+        "source_span": {
+          "page": 4,
+          "quote": "Gandhiji saw this as an opportunity to bring\nMuslims under the umbrella of a unified national movement.",
+          "end_char": 2155,
+          "section_id": "page-4",
+          "start_char": 2052
+        }
+      },
+      {
+        "text": "The Non-Cooperation Movement was implemented in stages beginning with the surrender of titles and boycott of civil services, army, police, courts, schools, and foreign goods, to be followed by civil disobedience if the government used repression.",
+        "source_span": {
+          "page": 5,
+          "quote": "It should begin\nwith the surrender of titles that the government awarded, and a\nboycott of civil services, army, police, courts and legislative councils,\nschools, and foreign goods. Then, in case the government used\nrepression, a full civil disobedience campaign would be launched.",
+          "end_char": 727,
+          "section_id": "page-5",
+          "start_char": 446
+        }
+      },
+      {
+        "text": "During the Civil Disobedience Movement, Mahatma Gandhi made eleven demands to the Viceroy, ranging from demands of general interest to specific demands of different classes from industrialists to peasants, to unite different social groups.",
+        "source_span": {
+          "page": 11,
+          "quote": "On 31 January 1930, he sent a letter to Viceroy Irwin\nstating eleven demands. Some of these were of general interest;\nothers were specific demands of different classes, from industrialists\nto peasants. The idea was to make the demands wide-ranging, so\nthat all classes within Indian society could identify with them and\neveryone could be brought together in a united campaign.",
+          "end_char": 1222,
+          "section_id": "page-11",
+          "start_char": 846
+        }
+      },
+      {
+        "text": "Popular prints featuring nationalist leaders like Jawaharlal Nehru were used to show them offering themselves to Bharat Mata, conveying the powerful idea of sacrifice for the mother nation.",
+        "source_span": {
+          "page": 19,
+          "quote": "In a lot of popular prints, nationalist leaders are shown\noffering their heads to Bharat Mata. The idea of sacrifice for the mother was\npowerful within popular imagination.",
+          "end_char": 2288,
+          "section_id": "page-19",
+          "start_char": 2116
+        }
+      },
+      {
+        "text": "Nationalist leaders recorded folk tales, toured villages to gather folk songs and legends to preserve traditional culture and help people discover their national identity and restore pride in their past.",
+        "source_span": {
+          "page": 19,
+          "quote": "In late-nineteenth-century India, nationalists began\nrecording folk tales sung by bards and they toured villages to gather\nfolk songs and legends. These tales, they believed, gave a true picture\nof traditional culture that had been corrupted and damaged by\noutside forces.",
+          "end_char": 1402,
+          "section_id": "page-19",
+          "start_char": 1130
+        }
+      },
+      {
+        "text": "Mahatma Gandhi used symbols like the Swaraj flag with a spinning wheel to represent the Gandhian ideal of self-help, and carrying the flag during marches became a symbol of defiance against British rule.",
+        "source_span": {
+          "page": 20,
+          "quote": "By\n1921, Gandhiji had designed the Swaraj flag. It was again a tricolour\n(red, green and white) and had a spinning wheel in the centre,\nrepresenting the Gandhian ideal of self-help. Carrying the flag,\nholding it aloft, during marches became a symbol of defiance.",
+          "end_char": 1457,
+          "section_id": "page-20",
+          "start_char": 1195
+        }
+      }
+    ],
+    "prerequisites": [],
+    "misconceptions": [
+      {
+        "text": "People might think that the different social groups participating in the national movements all shared the same understanding and vision of what independence should mean.",
+        "correction": "Different social groups interpreted swaraj and freedom in different ways based on their own specific grievances and aspirations. For example, peasants wanted land reforms and tax reduction, workers wanted better conditions, and merchants wanted removal of colonial trade restrictions.",
+        "source_span": {
+          "page": 6,
+          "quote": "All of them responded to the call of Swaraj,\nbut the term meant different things to different people.",
+          "end_char": 331,
+          "section_id": "page-6",
+          "start_char": 230
+        }
+      },
+      {
+        "text": "People might think that the increased public participation of women in the Civil Disobedience Movement automatically led to radical changes in the position of women in society.",
+        "correction": "Although women participated prominently in the Civil Disobedience Movement, there was no automatic radical change in the position of women. Mahatma Gandhi believed women's primary duty was home and family, and the Congress was reluctant to give women positions of authority, preferring their symbolic presence.",
+        "source_span": {
+          "page": 15,
+          "quote": "Yet, this increased public role did not necessarily mean any radical\nchange in the way the position of women was visualised. Gandhiji\nwas convinced that it was the duty of women to look after home\nand hearth, be good mothers and good wives.",
+          "end_char": 532,
+          "section_id": "page-15",
+          "start_char": 292
+        }
+      }
+    ]
+  },
+  "teaching_plan": {
+    "periods": [
+      {
+        "title": "The Idea of Swaraj and the Roots of Mass Nationalism",
+        "objectives": [
+          "Understand the concept of Swaraj and how different social groups interpreted it differently",
+          "Recognize the shift from elite to mass-based nationalism in early 20th century India",
+          "Introduce the historical context leading up to Gandhi's entry into Indian politics"
+        ],
+        "period_number": 1,
+        "concepts_covered": [
+          "Swaraj"
+        ],
+        "sequencing_rationale": "This period establishes the foundational idea of Swaraj as the overarching goal of the nationalist movement, which is essential before students can understand specific movements and events that follow. It sets the conceptual framework for the rest of the unit.",
+        "recommended_duration_minutes": 30
+      },
+      {
+        "title": "The Rowlatt Act and Rising Discontent",
+        "objectives": [
+          "Explain the provisions and significance of the Rowlatt Act of 1919",
+          "Analyze why the Act provoked united opposition among Indians",
+          "Understand how repressive legislation fueled nationalist sentiment"
+        ],
+        "period_number": 2,
+        "concepts_covered": [
+          "Rowlatt Act"
+        ],
+        "sequencing_rationale": "The Rowlatt Act is a key trigger event that directly led to increased mass mobilization and sets up the context for the Non-Cooperation Movement, so it logically follows the introduction of Swaraj and precedes discussion of organized resistance movements.",
+        "recommended_duration_minutes": 35
+      },
+      {
+        "title": "The Khilafat Issue and Hindu-Muslim Unity",
+        "objectives": [
+          "Understand the Khilafat issue and its significance to Indian Muslims",
+          "Explain how the Khilafat movement created an opportunity for Hindu-Muslim unity in the nationalist struggle",
+          "Connect international events (WWI, Ottoman Empire) to the Indian nationalist movement"
+        ],
+        "period_number": 3,
+        "concepts_covered": [
+          "Khilafat"
+        ],
+        "sequencing_rationale": "The Khilafat issue is introduced here because it directly ties into the launch of the Non-Cooperation Movement, which Gandhi linked with the Khilafat cause to build a broader coalition; this period bridges the earlier grievances (Rowlatt Act) with the mass movement that follows.",
+        "recommended_duration_minutes": 30
+      },
+      {
+        "title": "The Non-Cooperation Movement: Strategy and Implementation",
+        "objectives": [
+          "Describe Gandhi's strategy of non-cooperation as a method of protest",
+          "Identify the specific forms of boycott proposed under the movement",
+          "Understand the planned progression from non-cooperation to civil disobedience"
+        ],
+        "period_number": 4,
+        "concepts_covered": [
+          "Non-Cooperation Movement"
+        ],
+        "sequencing_rationale": "This period covers the central movement of the unit, building directly on the grievances established in the Rowlatt Act and Khilafat periods. Given the density of content (multiple forms of boycott, phased strategy), this deserves a dedicated period.",
+        "recommended_duration_minutes": 45
+      },
+      {
+        "title": "Hartal as a Tool of Civil Resistance",
+        "objectives": [
+          "Define hartal and explain its role as a protest method",
+          "Analyze specific instances where hartals were used during the nationalist movement",
+          "Evaluate the effectiveness of hartals in mobilizing public participation"
+        ],
+        "period_number": 5,
+        "concepts_covered": [
+          "Hartal"
+        ],
+        "sequencing_rationale": "Hartal is covered right after the Non-Cooperation Movement since it was one of its key tactical expressions; discussing it separately allows students to focus on this specific form of protest in depth before moving to cultural symbols of nationalism.",
+        "recommended_duration_minutes": 25
+      },
+      {
+        "title": "The Swadeshi Movement and Symbols of Nationalism",
+        "objectives": [
+          "Explain the goals and methods of the Swadeshi Movement in Bengal",
+          "Describe the design and symbolism of the tricolour flag created during this period",
+          "Connect economic nationalism (promotion of Indian goods) with cultural identity"
+        ],
+        "period_number": 6,
+        "concepts_covered": [
+          "Swadeshi Movement"
+        ],
+        "sequencing_rationale": "The Swadeshi Movement is placed after the core protest movements to show an earlier parallel/precedent of economic and cultural nationalism, and to transition into the discussion of nationalist symbolism which continues in the next period.",
+        "recommended_duration_minutes": 30
+      },
+      {
+        "title": "Bharat Mata: Visualizing the Nation",
+        "objectives": [
+          "Analyze the image of Bharat Mata as a symbol of Indian nationalism",
+          "Trace the evolution of the image from Bankim Chandra Chattopadhyay to Abanindranath Tagore",
+          "Discuss how visual and cultural symbols helped unify diverse groups under a common national identity"
+        ],
+        "period_number": 7,
+        "concepts_covered": [
+          "Bharat Mata"
+        ],
+        "sequencing_rationale": "This period concludes the unit by examining how nationalism was expressed and reinforced through art and symbolism, tying together the emotional and cultural dimensions of the movements studied in earlier periods.",
+        "recommended_duration_minutes": 25
+      },
+      {
+        "title": "Synthesis: Interpreting Nationalism in India",
+        "objectives": [
+          "Synthesize the various movements, events, and symbols studied into a cohesive understanding of Indian nationalism",
+          "Discuss how different social groups (peasants, workers, business classes, women) interpreted Swaraj and participated in the movement",
+          "Prepare for assessment through discussion and review of key concepts"
+        ],
+        "period_number": 8,
+        "concepts_covered": [
+          "Swaraj",
+          "Non-Cooperation Movement",
+          "Khilafat",
+          "Rowlatt Act",
+          "Swadeshi Movement",
+          "Bharat Mata",
+          "Hartal"
+        ],
+        "sequencing_rationale": "A final synthesis period is necessary to help students integrate the individual concepts into a broader narrative of the nationalist movement, reinforcing connections between events and preparing them for higher-order analysis and assessment.",
+        "recommended_duration_minutes": 40
+      }
+    ],
+    "total_periods": 8,
+    "planning_rationale": "The content covers seven distinct but interconnected concepts spanning political movements, legislative events, and cultural symbolism related to Indian nationalism. Given the intermediate difficulty and grade 10 level, each major concept (Rowlatt Act, Khilafat, Non-Cooperation Movement, Hartal, Swadeshi Movement, Bharat Mata) warrants its own focused period to ensure depth of understanding, particularly around cause-and-effect relationships between events. Swaraj is introduced first as the foundational conceptual thread. A final synthesis period is included to consolidate learning and address the multi-perspective nature of the topic (different groups' interpretations of Swaraj), which is critical for building analytical skills at this level. Eight periods balance thorough coverage of each concept with the constraint of not exceeding 12 periods, using duration estimates that reflect the conceptual density and historical narrative complexity of each topic rather than a fixed classroom period length."
+  },
+  "period_content": {
+    "periods": [
+      {
+        "homework": "Ask a family member or look up what they think 'freedom' or 'independence' meant to ordinary Indians in the early 1900s. Write 3-4 lines.",
+        "activities": [
+          "Think-Pair-Share: What does 'freedom' mean to you vs. to a farmer vs. to a factory worker?",
+          "Class discussion mapping different social groups and their possible aspirations from Swaraj"
+        ],
+        "exit_ticket": "In one sentence, explain why 'Swaraj' might have meant something different to a peasant than to a factory owner.",
+        "entry_ticket": "Write down one word that comes to your mind when you hear the word 'freedom'. Be ready to share it.",
+        "source_spans": [
+          {
+            "page": 6,
+            "quote": "All of them responded to the call of Swaraj,\nbut the term meant different things to different people.",
+            "end_char": 331,
+            "section_id": "page-6",
+            "start_char": 230
+          },
+          {
+            "page": 6,
+            "quote": "All of them responded to the call of Swaraj,\nbut the term meant different things to different people.",
+            "end_char": 331,
+            "section_id": "page-6",
+            "start_char": 230
+          }
+        ],
+        "mentor_moment": "Remember, students often assume history is a single unified story. Use this first period to plant the idea that nationalism was made up of many voices and interpretations - this will help them understand the complexity in later periods.",
+        "period_number": 1,
+        "teacher_script": "Begin by asking students what 'Swaraj' means to them literally (self-rule). Explain that by the early 20th century, the Indian nationalist movement was no longer confined to elite lawyers and English-educated leaders but was becoming a mass movement drawing in peasants, workers, and ordinary people. Emphasize that this shift happened right before Gandhi's rise. Ask: did every Indian want the same kind of Swaraj? Use this question to set up the entire unit - different groups (peasants, workers, business classes, women) will interpret and use the idea of Swaraj differently, based on their own aspirations and grievances. Introduce Gandhi's early career as a bridge into the next periods.",
+        "blackboard_notes": "SWARAJ = Self-rule/Independence\n- Concept central to Indian nationalism\n- Different groups = different meanings\n- Shift: Elite nationalism --> Mass nationalism\n- Gandhi's entry into Indian politics",
+        "checkpoint_questions": [
+          {
+            "question": "What is Swaraj and why did different groups interpret it differently?",
+            "source_spans": [
+              {
+                "page": 6,
+                "quote": "All of them responded to the call of Swaraj,\nbut the term meant different things to different people.",
+                "end_char": 331,
+                "section_id": "page-6",
+                "start_char": 230
+              }
+            ],
+            "expected_answer": "Swaraj means self-rule or independence, which was central to the Indian nationalist movement. Different social groups interpreted swaraj differently based on their own aspirations and grievances."
+          }
+        ]
+      },
+      {
+        "homework": "Write a short paragraph (5-6 lines) imagining you are an Indian leader in 1919 writing a letter protesting the Rowlatt Act.",
+        "activities": [
+          "Role-play: Legislative Council debate - Indian members opposing the Act vs British officials defending it",
+          "Group discussion: Why would a law like this unite different groups against the British?"
+        ],
+        "exit_ticket": "Name one provision of the Rowlatt Act and explain why it angered Indians.",
+        "entry_ticket": "If a law allowed police to arrest and jail you without any trial for two years, how would you feel? Write 2 lines.",
+        "source_spans": [
+          {
+            "page": 3,
+            "quote": "This\nAct had been hurriedly passed through the Imperial Legislative\nCouncil despite the united opposition of the Indian members. It\ngave the government enormous powers to repress political activities,\nand allowed detention of political prisoners without trial for two\nyears.",
+            "end_char": 1800,
+            "section_id": "page-3",
+            "start_char": 1526
+          }
+        ],
+        "mentor_moment": "Help students see the Rowlatt Act as a concrete example of how repressive laws can backfire and unite people rather than suppress them - a powerful lesson beyond history too.",
+        "period_number": 2,
+        "teacher_script": "Introduce the Rowlatt Act of 1919 as a turning point. Explain it was passed by the Imperial Legislative Council despite united opposition from Indian members - this is significant because it shows British disregard for Indian voices even in their own council. Detail the provisions: it gave the government enormous powers to repress political activities, including detention of political prisoners without trial for up to two years. Discuss why this united Indians across different groups in opposition - because it threatened basic civil liberties for everyone, not just political activists. Connect this repressive legislation to the growing nationalist sentiment and set up Gandhi's call for satyagraha against it.",
+        "blackboard_notes": "ROWLATT ACT (1919)\n- Passed despite Indian opposition in Legislative Council\n- Gave govt power to repress political activity\n- Detention without trial - up to 2 years\n- Result: United opposition across India",
+        "checkpoint_questions": [
+          {
+            "question": "What powers did the Rowlatt Act give to the British government?",
+            "source_spans": [
+              {
+                "page": 3,
+                "quote": "This\nAct had been hurriedly passed through the Imperial Legislative\nCouncil despite the united opposition of the Indian members. It\ngave the government enormous powers to repress political activities,\nand allowed detention of political prisoners without trial for two\nyears.",
+                "end_char": 1800,
+                "section_id": "page-3",
+                "start_char": 1526
+              }
+            ],
+            "expected_answer": "The Rowlatt Act gave the government enormous powers to repress political activities and allowed detention of political prisoners without trial for two years."
+          },
+          {
+            "question": "Why was the passing of the Rowlatt Act significant despite opposition?",
+            "source_spans": [
+              {
+                "page": 3,
+                "quote": "This\nAct had been hurriedly passed through the Imperial Legislative\nCouncil despite the united opposition of the Indian members. It\ngave the government enormous powers to repress political activities,\nand allowed detention of political prisoners without trial for two\nyears.",
+                "end_char": 1800,
+                "section_id": "page-3",
+                "start_char": 1526
+              }
+            ],
+            "expected_answer": "It was passed in 1919 by the Imperial Legislative Council despite the united opposition of Indian members, showing British disregard for Indian representation and provoking widespread nationalist anger."
+          }
+        ]
+      },
+      {
+        "homework": "Research and write 4-5 lines on why unity between different religious communities was important for the success of the nationalist movement.",
+        "activities": [
+          "Timeline activity: Placing WWI, Ottoman defeat, and Khilafat Movement in sequence",
+          "Discussion: How can an international issue become a local/national concern?"
+        ],
+        "exit_ticket": "Explain in one sentence how the Khilafat issue connected an international event to Indian nationalism.",
+        "entry_ticket": "What do you think 'Khilafat' might mean? Guess based on the word's sound or roots.",
+        "source_spans": [
+          {
+            "page": 4,
+            "quote": "The First World War had\nended with the defeat of Ottoman Turkey. And there were rumours\nthat a harsh peace treaty was going to be imposed on the Ottoman\nemperor –  the spiritual head of the Islamic world (the Khalifa).",
+            "end_char": 1771,
+            "section_id": "page-4",
+            "start_char": 1553
+          }
+        ],
+        "mentor_moment": "Use this lesson to highlight how global events can shape local politics - a great way to connect world history and Indian history for students, and to underline the value of communal harmony.",
+        "period_number": 3,
+        "teacher_script": "Explain that the Khilafat issue relates to the Ottoman Sultan (Khalifa), who was the spiritual head of the Islamic world. After World War I ended with the defeat of Ottoman Turkey, there were fears that a harsh peace treaty would be imposed on the Ottoman emperor, threatening the Khalifa's status. This became a matter of deep concern for Indian Muslims. Discuss how Gandhi and Congress leaders saw this as an opportunity to bring Muslims into the wider nationalist movement, creating a shared platform for Hindu-Muslim unity. Draw the connection: WWI (international event) --> Ottoman defeat --> Khilafat concern --> Indian Muslim mobilization --> alliance with Non-Cooperation Movement.",
+        "blackboard_notes": "KHILAFAT ISSUE\n- Ottoman Sultan = Khalifa (spiritual head of Islam)\n- WWI ends --> Ottoman Turkey defeated\n- Fear of harsh peace treaty on Khalifa\n- Indian Muslims worried --> Khilafat Movement\n- Opportunity for Hindu-Muslim unity",
+        "checkpoint_questions": [
+          {
+            "question": "What was the Khilafat issue and why did it concern Indian Muslims?",
+            "source_spans": [
+              {
+                "page": 4,
+                "quote": "The First World War had\nended with the defeat of Ottoman Turkey. And there were rumours\nthat a harsh peace treaty was going to be imposed on the Ottoman\nemperor –  the spiritual head of the Islamic world (the Khalifa).",
+                "end_char": 1771,
+                "section_id": "page-4",
+                "start_char": 1553
+              }
+            ],
+            "expected_answer": "The Khilafat issue related to the Ottoman Sultan (Khalifa), the spiritual head of the Islamic world. After WWI ended with Ottoman Turkey's defeat, there were concerns that a harsh peace treaty would be imposed on the Ottoman emperor, which worried Indian Muslims."
+          }
+        ]
+      },
+      {
+        "homework": "Imagine you are a student in 1920. Write a diary entry deciding whether to boycott your school as part of the Non-Cooperation Movement, and explain your reasoning.",
+        "activities": [
+          "Create a poster listing the different forms of boycott under Non-Cooperation",
+          "Debate: Was boycotting schools and courts a wise strategy? Discuss pros and cons"
+        ],
+        "exit_ticket": "List three things Indians were asked to boycott under the Non-Cooperation Movement.",
+        "entry_ticket": "If you wanted to protest against an unfair government without using violence, what could you refuse to do?",
+        "source_spans": [
+          {
+            "page": 5,
+            "quote": "It should begin\nwith the surrender of titles that the government awarded, and a\nboycott of civil services, army, police, courts and legislative councils,\nschools, and foreign goods. Then, in case the government used\nrepression, a full civil disobedience campaign would be launched.",
+            "end_char": 727,
+            "section_id": "page-5",
+            "start_char": 446
+          }
+        ],
+        "mentor_moment": "Encourage students to see non-cooperation as a strategic, staged plan rather than a single event - this helps them appreciate the planning behind mass movements.",
+        "period_number": 4,
+        "teacher_script": "Introduce Gandhi's strategy of Non-Cooperation - the idea that Indians should refuse to cooperate with British rule. List the specific forms of boycott proposed: civil services, army, police, courts, legislative councils, schools, and foreign goods. Explain that this was meant to be a first stage, and if the government responded with repression, the movement was planned to escalate into civil disobedience - meaning active defiance of unjust laws, not just withdrawal. Discuss why this staged approach was strategic - it built momentum and demonstrated restraint while keeping pressure on the British.",
+        "blackboard_notes": "NON-COOPERATION MOVEMENT\n- Gandhi's strategy: refuse to cooperate with British rule\nForms of boycott:\n- Civil services\n- Army\n- Police\n- Courts\n- Legislative councils\n- Schools\n- Foreign goods\n--> If repression continues: Civil Disobedience",
+        "checkpoint_questions": [
+          {
+            "question": "What did Gandhi propose under the Non-Cooperation Movement?",
+            "source_spans": [
+              {
+                "page": 5,
+                "quote": "It should begin\nwith the surrender of titles that the government awarded, and a\nboycott of civil services, army, police, courts and legislative councils,\nschools, and foreign goods. Then, in case the government used\nrepression, a full civil disobedience campaign would be launched.",
+                "end_char": 727,
+                "section_id": "page-5",
+                "start_char": 446
+              }
+            ],
+            "expected_answer": "Gandhi proposed that Indians should refuse to cooperate with British rule through boycotts of civil services, army, police, courts, legislative councils, schools, and foreign goods, to be followed by civil disobedience if the government used repression."
+          },
+          {
+            "question": "What was the planned next step if the government responded to Non-Cooperation with repression?",
+            "source_spans": [
+              {
+                "page": 5,
+                "quote": "It should begin\nwith the surrender of titles that the government awarded, and a\nboycott of civil services, army, police, courts and legislative councils,\nschools, and foreign goods. Then, in case the government used\nrepression, a full civil disobedience campaign would be launched.",
+                "end_char": 727,
+                "section_id": "page-5",
+                "start_char": 446
+              }
+            ],
+            "expected_answer": "The movement was to be followed by civil disobedience if the government used repression."
+          }
+        ]
+      },
+      {
+        "homework": "Write a short newspaper report (as if you were a journalist in 1921) describing a hartal in your town.",
+        "activities": [
+          "Simulate a mock hartal planning meeting in class - decide what to close and why",
+          "Case study analysis: Nai-dhobi bandhs in Awadh led by Baba Ramchandra"
+        ],
+        "exit_ticket": "Why might a hartal be an effective and low-risk way for ordinary people to protest?",
+        "entry_ticket": "Have you ever seen or heard of a strike (shops closed, buses not running)? What was it protesting?",
+        "source_spans": [
+          {
+            "page": 3,
+            "quote": "which would start with a hartal on 6 April.\nRallies were organised in various cities, workers went on strike in\nrailway workshops, and shops closed down.",
+            "end_char": 2033,
+            "section_id": "page-3",
+            "start_char": 1880
+          },
+          {
+            "page": 7,
+            "quote": "The peasant\nmovement demanded reduction of revenue, abolition of begar, and\nsocial boycott of oppressive landlords. In many places nai – dhobi\nbandhs were organised by panchayats to deprive landlords of the\nservices of even barbers and washermen.",
+            "end_char": 801,
+            "section_id": "page-7",
+            "start_char": 555
+          }
+        ],
+        "mentor_moment": "Highlight that hartals allowed even those who could not risk arrest or violence to participate - a good moment to discuss inclusive forms of resistance.",
+        "period_number": 5,
+        "teacher_script": "Define hartal as a form of protest in which people withdraw from normal activities, such as strikes and closure of shops, as a form of civil resistance against the government. Explain how hartals became a common tool during the nationalist movement to demonstrate unity and economic disruption without violence. Discuss examples where social boycott tactics were combined with hartal-like actions, such as the nai-dhobi bandhs in Awadh where peasants deprived landlords of barber and washerman services. Analyze effectiveness: hartals could mobilize large numbers with minimal risk, making them accessible even to those unable to join more active protests.",
+        "blackboard_notes": "HARTAL\n- Protest: withdrawal from normal activities\n- Includes: strikes, closure of shops\n- Form of civil resistance\nRelated tactic: Nai-dhobi bandh (Awadh) - denying barber/washerman services to landlords",
+        "checkpoint_questions": [
+          {
+            "question": "What is a hartal?",
+            "source_spans": [
+              {
+                "page": 3,
+                "quote": "which would start with a hartal on 6 April.\nRallies were organised in various cities, workers went on strike in\nrailway workshops, and shops closed down.",
+                "end_char": 2033,
+                "section_id": "page-3",
+                "start_char": 1880
+              }
+            ],
+            "expected_answer": "A hartal is a form of protest in which people withdraw from normal activities, such as strikes and closure of shops, as a form of civil resistance against the government."
+          },
+          {
+            "question": "Give an example of a social boycott tactic similar to hartal used by peasants in Awadh.",
+            "source_spans": [
+              {
+                "page": 7,
+                "quote": "The peasant\nmovement demanded reduction of revenue, abolition of begar, and\nsocial boycott of oppressive landlords. In many places nai – dhobi\nbandhs were organised by panchayats to deprive landlords of the\nservices of even barbers and washermen.",
+                "end_char": 801,
+                "section_id": "page-7",
+                "start_char": 555
+              }
+            ],
+            "expected_answer": "In Awadh, peasants led by Baba Ramchandra organised nai-dhobi bandhs to deprive landlords of the services of barbers and washermen, as part of a wider social boycott of oppressive landlords."
+          }
+        ]
+      },
+      {
+        "homework": "Draw and label the tricolour flag described in class, explaining each symbol in your own words.",
+        "activities": [
+          "Design your own version of a nationalist flag with symbolic elements and explain the meaning",
+          "Data analysis: Graph the drop in foreign cloth imports (1921-1922) and discuss its significance"
+        ],
+        "exit_ticket": "What do the eight lotuses and the crescent moon on the flag symbolize?",
+        "entry_ticket": "Why might buying goods made in your own country be considered a form of patriotism or protest?",
+        "source_spans": [
+          {
+            "page": 20,
+            "quote": "During the Swadeshi\nmovement in Bengal, a tricolour flag (red, green and yellow) was\ndesigned. It had eight lotuses representing eight provinces of British\nIndia, and a crescent moon, representing Hindus and Muslims.",
+            "end_char": 1194,
+            "section_id": "page-20",
+            "start_char": 978
+          },
+          {
+            "page": 6,
+            "quote": "The import of foreign\ncloth halved between 1921 and 1922, its value dropping from\nRs 102 crore to Rs 57 crore.",
+            "end_char": 1102,
+            "section_id": "page-6",
+            "start_char": 992
+          }
+        ],
+        "mentor_moment": "Show students how everyday economic choices (what to buy, what to wear) became powerful political statements - relevant even today when discussing consumer choices and identity.",
+        "period_number": 6,
+        "teacher_script": "Introduce the Swadeshi Movement in Bengal, which promoted Indian-made goods and indigenous culture as a response to colonial economic exploitation. Explain the movement's methods: encouraging people to boycott foreign goods and support local industries, thereby linking economic nationalism with cultural identity. Describe the tricolour flag designed during this period - featuring eight lotuses representing the eight provinces of British India and a crescent moon representing Hindus and Muslims, symbolizing unity across religious lines. Use the later example of the boycott's economic impact: import of foreign cloth halved between 1921-1922, dropping in value from Rs 102 crore to Rs 57 crore - illustrating how such economic nationalism could produce measurable results.",
+        "blackboard_notes": "SWADESHI MOVEMENT (Bengal)\n- Promote Indian-made goods & indigenous culture\n- Economic nationalism + cultural identity\nTricolour Flag:\n- 8 lotuses = 8 provinces\n- Crescent moon = Hindus & Muslims\nImpact: Foreign cloth imports halved (Rs 102 crore --> Rs 57 crore, 1921-22)",
+        "checkpoint_questions": [
+          {
+            "question": "What did the Swadeshi Movement promote and what symbol did it create?",
+            "source_spans": [
+              {
+                "page": 20,
+                "quote": "During the Swadeshi\nmovement in Bengal, a tricolour flag (red, green and yellow) was\ndesigned. It had eight lotuses representing eight provinces of British\nIndia, and a crescent moon, representing Hindus and Muslims.",
+                "end_char": 1194,
+                "section_id": "page-20",
+                "start_char": 978
+              }
+            ],
+            "expected_answer": "The Swadeshi Movement promoted Indian-made goods and indigenous culture in Bengal, and included the design of a tricolour flag with eight lotuses representing eight provinces and a crescent moon representing Hindus and Muslims."
+          },
+          {
+            "question": "What evidence shows the economic impact of the boycott of foreign goods?",
+            "source_spans": [
+              {
+                "page": 6,
+                "quote": "The import of foreign\ncloth halved between 1921 and 1922, its value dropping from\nRs 102 crore to Rs 57 crore.",
+                "end_char": 1102,
+                "section_id": "page-6",
+                "start_char": 992
+              }
+            ],
+            "expected_answer": "The import of foreign cloth halved between 1921 and 1922, its value dropping from Rs 102 crore to Rs 57 crore, showing the economic impact of the boycott movement in cities."
+          }
+        ]
+      },
+      {
+        "homework": "Write a short poem or paragraph (5-6 lines) describing your own vision of 'Mother India'.",
+        "activities": [
+          "Image analysis: Examine Abanindranath Tagore's painting of Bharat Mata and identify symbolic elements",
+          "Discussion: How do visual symbols unify people who speak different languages or come from different backgrounds?"
+        ],
+        "exit_ticket": "Why do you think a mother figure was chosen to represent the nation rather than a king or soldier?",
+        "entry_ticket": "If you had to draw a picture representing your country as a person, what would that figure look like?",
+        "source_spans": [
+          {
+            "page": 19,
+            "quote": "It was in the twentieth\ncentury, with the growth of nationalism, that the identity of India\ncame to be visually associated with the image of Bharat Mata. The\nimage was first created by Bankim Chandra Chattopadhyay.",
+            "end_char": 414,
+            "section_id": "page-19",
+            "start_char": 200
+          },
+          {
+            "page": 19,
+            "quote": "Moved by the Swadeshi\nmovement, Abanindranath Tagore painted his famous image of\nBharat Mata (see Fig. 12). In this painting Bharat Mata is portrayed\nas an ascetic figure; she is calm, composed, divine and spiritual.",
+            "end_char": 800,
+            "section_id": "page-19",
+            "start_char": 584
+          }
+        ],
+        "mentor_moment": "Remind students that symbols and art can be as powerful as speeches and laws in building a shared identity - encourage them to notice national symbols around them today.",
+        "period_number": 7,
+        "teacher_script": "Explore the image of Bharat Mata (Mother India) as a symbol of Indian nationalism. Explain that the image and symbol of India as a mother figure became visually associated with Indian nationalism in the twentieth century. Trace its evolution: first created by Bankim Chandra Chattopadhyay, and later painted by Abanindranath Tagore, who portrayed her as an ascetic, calm, composed, divine and spiritual figure dispensing learning, food, and clothing. Discuss how such visual symbols helped unify diverse groups - people who may not read political pamphlets could still connect emotionally to an image representing the nation as a mother worthy of devotion and protection.",
+        "blackboard_notes": "BHARAT MATA\n- Image of India as Mother figure\n- Symbol of nationalism (20th century)\nEvolution:\n- First created: Bankim Chandra Chattopadhyay\n- Painted by: Abanindranath Tagore\n- Depicted as: ascetic, calm, composed, divine, spiritual - dispensing learning, food, clothing",
+        "checkpoint_questions": [
+          {
+            "question": "How did Abanindranath Tagore portray Bharat Mata in his painting?",
+            "source_spans": [
+              {
+                "page": 19,
+                "quote": "Moved by the Swadeshi\nmovement, Abanindranath Tagore painted his famous image of\nBharat Mata (see Fig. 12). In this painting Bharat Mata is portrayed\nas an ascetic figure; she is calm, composed, divine and spiritual.",
+                "end_char": 800,
+                "section_id": "page-19",
+                "start_char": 584
+              }
+            ],
+            "expected_answer": "Abanindranath Tagore painted Bharat Mata as an ascetic, calm, composed, divine and spiritual figure, dispensing learning, food and clothing."
+          },
+          {
+            "question": "Trace the origin and evolution of the Bharat Mata image.",
+            "source_spans": [
+              {
+                "page": 19,
+                "quote": "It was in the twentieth\ncentury, with the growth of nationalism, that the identity of India\ncame to be visually associated with the image of Bharat Mata. The\nimage was first created by Bankim Chandra Chattopadhyay.",
+                "end_char": 414,
+                "section_id": "page-19",
+                "start_char": 200
+              }
+            ],
+            "expected_answer": "The image of India as a mother figure was first created by Bankim Chandra Chattopadhyay and later painted by Abanindranath Tagore as an ascetic, calm, composed, divine and spiritual figure."
+          }
+        ]
+      },
+      {
+        "homework": "Prepare a one-page revision summary connecting all 7 concepts studied in this unit, to be used for the upcoming assessment.",
+        "activities": [
+          "Group jigsaw: Each group takes one social group (peasants, workers, business, women) and presents how they interpreted Swaraj using examples from the unit",
+          "Concept map creation linking all 7 key concepts studied",
+          "Mock exam Q&A round - students quiz each other using checkpoint questions from previous periods"
+        ],
+        "exit_ticket": "Choose one social group (peasants, workers, business classes, or women) and explain in 3-4 sentences how their experience of the nationalist movement was unique.",
+        "entry_ticket": "In one sentence, summarize what you think 'Swaraj' meant to Indians overall based on everything we've studied.",
+        "source_spans": [
+          {
+            "page": 6,
+            "quote": "All of them responded to the call of Swaraj,\nbut the term meant different things to different people.",
+            "end_char": 331,
+            "section_id": "page-6",
+            "start_char": 230
+          },
+          {
+            "page": 5,
+            "quote": "It should begin\nwith the surrender of titles that the government awarded, and a\nboycott of civil services, army, police, courts and legislative councils,\nschools, and foreign goods. Then, in case the government used\nrepression, a full civil disobedience campaign would be launched.",
+            "end_char": 727,
+            "section_id": "page-5",
+            "start_char": 446
+          },
+          {
+            "page": 4,
+            "quote": "The First World War had\nended with the defeat of Ottoman Turkey. And there were rumours\nthat a harsh peace treaty was going to be imposed on the Ottoman\nemperor –  the spiritual head of the Islamic world (the Khalifa).",
+            "end_char": 1771,
+            "section_id": "page-4",
+            "start_char": 1553
+          },
+          {
+            "page": 3,
+            "quote": "This\nAct had been hurriedly passed through the Imperial Legislative\nCouncil despite the united opposition of the Indian members. It\ngave the government enormous powers to repress political activities,\nand allowed detention of political prisoners without trial for two\nyears.",
+            "end_char": 1800,
+            "section_id": "page-3",
+            "start_char": 1526
+          },
+          {
+            "page": 20,
+            "quote": "During the Swadeshi\nmovement in Bengal, a tricolour flag (red, green and yellow) was\ndesigned. It had eight lotuses representing eight provinces of British\nIndia, and a crescent moon, representing Hindus and Muslims.",
+            "end_char": 1194,
+            "section_id": "page-20",
+            "start_char": 978
+          },
+          {
+            "page": 19,
+            "quote": "It was in the twentieth\ncentury, with the growth of nationalism, that the identity of India\ncame to be visually associated with the image of Bharat Mata. The\nimage was first created by Bankim Chandra Chattopadhyay.",
+            "end_char": 414,
+            "section_id": "page-19",
+            "start_char": 200
+          },
+          {
+            "page": 3,
+            "quote": "which would start with a hartal on 6 April.\nRallies were organised in various cities, workers went on strike in\nrailway workshops, and shops closed down.",
+            "end_char": 2033,
+            "section_id": "page-3",
+            "start_char": 1880
+          },
+          {
+            "page": 6,
+            "quote": "All of them responded to the call of Swaraj,\nbut the term meant different things to different people.",
+            "end_char": 331,
+            "section_id": "page-6",
+            "start_char": 230
+          },
+          {
+            "page": 15,
+            "quote": "Yet, this increased public role did not necessarily mean any radical\nchange in the way the position of women was visualised. Gandhiji\nwas convinced that it was the duty of women to look after home\nand hearth, be good mothers and good wives.",
+            "end_char": 532,
+            "section_id": "page-15",
+            "start_char": 292
+          },
+          {
+            "page": 7,
+            "quote": "The peasant\nmovement demanded reduction of revenue, abolition of begar, and\nsocial boycott of oppressive landlords. In many places nai – dhobi\nbandhs were organised by panchayats to deprive landlords of the\nservices of even barbers and washermen.",
+            "end_char": 801,
+            "section_id": "page-7",
+            "start_char": 555
+          },
+          {
+            "page": 7,
+            "quote": "In 1928, Vallabhbhai Patel led the peasant\nmovement in Bardoli, a taluka in Gujarat, against\nenhancement of land revenue. Known as the\nBardoli Satyagraha, this movement was a success\nunder the able leadership of Vallabhbhai Patel.",
+            "end_char": 3183,
+            "section_id": "page-7",
+            "start_char": 2953
+          },
+          {
+            "page": 3,
+            "quote": "In 1917 he travelled to\nChamparan in  Bihar to inspire the peasants to struggle against the\noppressive plantation system.",
+            "end_char": 1019,
+            "section_id": "page-3",
+            "start_char": 898
+          },
+          {
+            "page": 3,
+            "quote": "In 1918, Mahatma Gandhi went to\nAhmedabad to organise a satyagraha movement amongst cotton\nmill workers.",
+            "end_char": 1124,
+            "section_id": "page-3",
+            "start_char": 1020
+          },
+          {
+            "page": 3,
+            "quote": "Then in 1918,  he organised a satyagraha to support\nthe peasants of the Kheda district of Gujarat. Affected by crop\nfailure and a plague epidemic, the peasants of Kheda could not pay\nthe revenue, and were demanding that revenue collection be relaxed.",
+            "end_char": 1375,
+            "section_id": "page-3",
+            "start_char": 1125
+          },
+          {
+            "page": 12,
+            "quote": "A month later, when Mahatma\nGandhi himself was arrested, industrial workers in Sholapur attacked\npolice posts, municipal buildings, lawcourts and railway stations –\nall structures that symbolised British rule.",
+            "end_char": 1097,
+            "section_id": "page-12",
+            "start_char": 888
+          }
+        ],
+        "mentor_moment": "As you review with students, emphasize complexity over simplicity - real history involves multiple perspectives and unresolved tensions. This synthesis period is your chance to move them from memorizing facts to genuinely understanding historical nuance.",
+        "period_number": 8,
+        "teacher_script": "This period synthesizes the entire unit. Begin with a rapid review: Swaraj, Rowlatt Act, Khilafat, Non-Cooperation, Hartal, Swadeshi Movement, Bharat Mata. Then focus on the core theme: different social groups interpreted and used Swaraj differently. Discuss examples: peasants like those led by Baba Ramchandra in Awadh wanted reduction of revenue and abolition of begar; workers such as those in Ahmedabad's cotton mills (organized by Gandhi's satyagraha in 1918) sought better conditions; business classes benefited from swadeshi's promotion of Indian goods; women's participation increased in the Civil Disobedience Movement, though this didn't automatically translate into radical changes in their social position. Also revisit Champaran (1917) and Kheda (1918) satyagrahas as early examples of Gandhi organizing diverse groups. Use the Bardoli Satyagraha (1928) and the Sholapur workers' violence after Gandhi's arrest (1930) as further examples of how different groups engaged with the movement in their own ways - sometimes even against Gandhi's principle of non-violence. End by addressing the two misconceptions directly: not all groups shared the same vision of independence, and women's greater participation did not automatically mean radical change in their social status.",
+        "blackboard_notes": "SYNTHESIS: Indian Nationalism\nKey Concepts: Swaraj | Rowlatt Act | Khilafat | Non-Cooperation | Hartal | Swadeshi | Bharat Mata\n\nDifferent groups, different Swaraj:\n- Peasants (Awadh, Champaran, Kheda, Bardoli) - revenue, land, exploitation\n- Workers (Ahmedabad, Sholapur, Chotanagpur) - wages, conditions\n- Business classes - swadeshi, protection from foreign competition\n- Women - increased participation, but not automatic social change\n\nMisconceptions to avoid:\n- Not one shared vision of independence\n- Women's participation =/= automatic radical social change",
+        "checkpoint_questions": [
+          {
+            "question": "Give two examples of how peasants participated in the nationalist movement and what they demanded.",
+            "source_spans": [
+              {
+                "page": 7,
+                "quote": "The peasant\nmovement demanded reduction of revenue, abolition of begar, and\nsocial boycott of oppressive landlords. In many places nai – dhobi\nbandhs were organised by panchayats to deprive landlords of the\nservices of even barbers and washermen.",
+                "end_char": 801,
+                "section_id": "page-7",
+                "start_char": 555
+              },
+              {
+                "page": 7,
+                "quote": "In 1928, Vallabhbhai Patel led the peasant\nmovement in Bardoli, a taluka in Gujarat, against\nenhancement of land revenue. Known as the\nBardoli Satyagraha, this movement was a success\nunder the able leadership of Vallabhbhai Patel.",
+                "end_char": 3183,
+                "section_id": "page-7",
+                "start_char": 2953
+              }
+            ],
+            "expected_answer": "In Awadh, peasants led by Baba Ramchandra demanded reduction of revenue, abolition of begar, and social boycott of oppressive landlords. In Bardoli (1928), a successful peasant movement led by Vallabhbhai Patel protested against enhancement of land revenue."
+          },
+          {
+            "question": "Why is it incorrect to assume all social groups shared the same vision of independence?",
+            "source_spans": [
+              {
+                "page": 6,
+                "quote": "All of them responded to the call of Swaraj,\nbut the term meant different things to different people.",
+                "end_char": 331,
+                "section_id": "page-6",
+                "start_char": 230
+              },
+              {
+                "page": 6,
+                "quote": "All of them responded to the call of Swaraj,\nbut the term meant different things to different people.",
+                "end_char": 331,
+                "section_id": "page-6",
+                "start_char": 230
+              }
+            ],
+            "expected_answer": "Different social groups interpreted swaraj differently based on their own aspirations and grievances, and it would be a misconception to think that all groups participating in the national movements shared the same understanding and vision of what independence should mean."
+          },
+          {
+            "question": "Did increased participation of women in the Civil Disobedience Movement automatically lead to radical social change?",
+            "source_spans": [
+              {
+                "page": 15,
+                "quote": "Yet, this increased public role did not necessarily mean any radical\nchange in the way the position of women was visualised. Gandhiji\nwas convinced that it was the duty of women to look after home\nand hearth, be good mothers and good wives.",
+                "end_char": 532,
+                "section_id": "page-15",
+                "start_char": 292
+              }
+            ],
+            "expected_answer": "No, it is a misconception to think that increased public participation of women in the Civil Disobedience Movement automatically led to radical changes in the position of women in society."
+          }
+        ]
+      }
+    ]
+  },
+  "activities": {
+    "periods": [
+      {
+        "activities": [
+          {
+            "type": "discussion",
+            "title": "Defining Swaraj: Multiple Perspectives",
+            "materials": [
+              "Chart paper",
+              "Markers",
+              "Textbook excerpts on swaraj"
+            ],
+            "instructions": [
+              "Divide students into groups representing peasants, workers, industrialists, and urban middle class.",
+              "Ask each group to discuss what 'swaraj' or self-rule would mean for their assigned social group.",
+              "Each group writes their interpretation on chart paper and presents to the class.",
+              "Facilitate a discussion on why different groups had different visions of swaraj."
+            ],
+            "source_spans": [
+              {
+                "page": 6,
+                "quote": "All of them responded to the call of Swaraj,\nbut the term meant different things to different people.",
+                "end_char": 331,
+                "section_id": "page-6",
+                "start_char": 230
+              }
+            ],
+            "duration_minutes": 20,
+            "success_criteria": [
+              "Students can articulate that swaraj meant different things to different social groups.",
+              "Groups present at least two distinct interpretations of swaraj based on their assigned identity."
+            ]
+          },
+          {
+            "type": "group work",
+            "title": "Case Study: Gandhi's Early Movements",
+            "materials": [
+              "Printed case study cards on Champaran, Ahmedabad, and Kheda satyagrahas"
+            ],
+            "instructions": [
+              "Distribute case study cards to small groups, each covering one of Gandhi's early satyagrahas.",
+              "Groups read and summarize the cause, method, and outcome of their assigned satyagraha.",
+              "Each group presents a two-minute summary to the class.",
+              "Class discusses how these early movements built the foundation for mass nationalism and the idea of swaraj."
+            ],
+            "source_spans": [
+              {
+                "page": 3,
+                "quote": "In 1917 he travelled to\nChamparan in  Bihar to inspire the peasants to struggle against the\noppressive plantation system.",
+                "end_char": 1019,
+                "section_id": "page-3",
+                "start_char": 898
+              },
+              {
+                "page": 3,
+                "quote": "In 1918, Mahatma Gandhi went to\nAhmedabad to organise a satyagraha movement amongst cotton\nmill workers.",
+                "end_char": 1124,
+                "section_id": "page-3",
+                "start_char": 1020
+              },
+              {
+                "page": 3,
+                "quote": "Then in 1918,  he organised a satyagraha to support\nthe peasants of the Kheda district of Gujarat. Affected by crop\nfailure and a plague epidemic, the peasants of Kheda could not pay\nthe revenue, and were demanding that revenue collection be relaxed.",
+                "end_char": 1375,
+                "section_id": "page-3",
+                "start_char": 1125
+              }
+            ],
+            "duration_minutes": 25,
+            "success_criteria": [
+              "Students correctly identify the location and purpose of each satyagraha.",
+              "Students connect these early movements to the broader idea of swaraj and mass mobilization."
+            ]
+          }
+        ],
+        "period_number": 1
+      },
+      {
+        "activities": [
+          {
+            "type": "role play",
+            "title": "Mock Legislative Council Debate on the Rowlatt Act",
+            "materials": [
+              "Role cards for Indian members and British officials",
+              "Summary of Rowlatt Act provisions"
+            ],
+            "instructions": [
+              "Assign roles: some students as Indian legislative council members opposing the Act, others as British officials defending it.",
+              "Provide each side with key facts about the Rowlatt Act's provisions.",
+              "Conduct a structured debate where each side presents arguments for or against the Act.",
+              "Conclude with a class vote and discussion on why the Act generated such unified Indian opposition."
+            ],
+            "source_spans": [
+              {
+                "page": 3,
+                "quote": "This\nAct had been hurriedly passed through the Imperial Legislative\nCouncil despite the united opposition of the Indian members. It\ngave the government enormous powers to repress political activities,\nand allowed detention of political prisoners without trial for two\nyears.",
+                "end_char": 1800,
+                "section_id": "page-3",
+                "start_char": 1526
+              }
+            ],
+            "duration_minutes": 30,
+            "success_criteria": [
+              "Students can explain the powers granted to the government under the Rowlatt Act.",
+              "Students articulate why the Act was seen as repressive by Indian leaders."
+            ]
+          }
+        ],
+        "period_number": 2
+      },
+      {
+        "activities": [
+          {
+            "type": "discussion",
+            "title": "Understanding the Khilafat Issue",
+            "materials": [
+              "Map of the Ottoman Empire",
+              "Timeline of World War I aftermath"
+            ],
+            "instructions": [
+              "Introduce the concept of the Khalifa and his significance to the Islamic world using the map.",
+              "Explain the situation after WWI and the concerns over the peace treaty imposed on the Ottoman emperor.",
+              "Ask students to discuss why Indian Muslims were concerned about this international issue.",
+              "Link this discussion to how the Congress used the issue to build unity."
+            ],
+            "source_spans": [
+              {
+                "page": 4,
+                "quote": "The First World War had\nended with the defeat of Ottoman Turkey. And there were rumours\nthat a harsh peace treaty was going to be imposed on the Ottoman\nemperor –  the spiritual head of the Islamic world (the Khalifa).",
+                "end_char": 1771,
+                "section_id": "page-4",
+                "start_char": 1553
+              },
+              {
+                "page": 4,
+                "quote": "Gandhiji saw this as an opportunity to bring\nMuslims under the umbrella of a unified national movement.",
+                "end_char": 2155,
+                "section_id": "page-4",
+                "start_char": 2052
+              }
+            ],
+            "duration_minutes": 20,
+            "success_criteria": [
+              "Students can explain who the Khalifa was and why the Khilafat issue arose.",
+              "Students understand the connection between the Khilafat issue and Hindu-Muslim unity efforts."
+            ]
+          }
+        ],
+        "period_number": 3
+      },
+      {
+        "activities": [
+          {
+            "type": "group work",
+            "title": "Mapping the Stages of Non-Cooperation",
+            "materials": [
+              "Flowchart templates",
+              "Colored pens"
+            ],
+            "instructions": [
+              "Provide groups with a blank flowchart template.",
+              "Ask students to sequence the stages of the Non-Cooperation Movement: surrender of titles, boycott of services/schools/courts, boycott of foreign goods, and civil disobedience.",
+              "Groups fill in the flowchart with details of each stage.",
+              "Class compares flowcharts and discusses the logic behind implementing the movement in stages."
+            ],
+            "source_spans": [
+              {
+                "page": 5,
+                "quote": "It should begin\nwith the surrender of titles that the government awarded, and a\nboycott of civil services, army, police, courts and legislative councils,\nschools, and foreign goods. Then, in case the government used\nrepression, a full civil disobedience campaign would be launched.",
+                "end_char": 727,
+                "section_id": "page-5",
+                "start_char": 446
+              },
+              {
+                "page": 5,
+                "quote": "It should begin\nwith the surrender of titles that the government awarded, and a\nboycott of civil services, army, police, courts and legislative councils,\nschools, and foreign goods. Then, in case the government used\nrepression, a full civil disobedience campaign would be launched.",
+                "end_char": 727,
+                "section_id": "page-5",
+                "start_char": 446
+              }
+            ],
+            "duration_minutes": 25,
+            "success_criteria": [
+              "Students correctly sequence the stages of the Non-Cooperation Movement.",
+              "Students explain why civil disobedience was planned as a follow-up stage if repression occurred."
+            ]
+          },
+          {
+            "type": "group work",
+            "title": "Regional Case Studies of Non-Cooperation",
+            "materials": [
+              "Regional case study handouts (Awadh, Gudem Hills, Assam plantations)"
+            ],
+            "instructions": [
+              "Divide class into three groups, each assigned a regional case: Awadh peasants, Gudem Hills tribal movement, or Assam plantation workers.",
+              "Groups read their case handout and identify how local grievances shaped participation in the Non-Cooperation Movement.",
+              "Each group presents their findings, highlighting unique local demands and methods of protest.",
+              "Class discusses how the movement took different forms across regions."
+            ],
+            "source_spans": [
+              {
+                "page": 7,
+                "quote": "The peasant\nmovement demanded reduction of revenue, abolition of begar, and\nsocial boycott of oppressive landlords. In many places nai – dhobi\nbandhs were organised by panchayats to deprive landlords of the\nservices of even barbers and washermen.",
+                "end_char": 801,
+                "section_id": "page-7",
+                "start_char": 555
+              },
+              {
+                "page": 8,
+                "quote": "In the Gudem Hills of Andhra\nPradesh, for instance, a militant guerrilla movement spread in\nthe early 1920s –  not a form of struggle that the Congress could\napprove.",
+                "end_char": 303,
+                "section_id": "page-8",
+                "start_char": 137
+              },
+              {
+                "page": 8,
+                "quote": "When they heard of the Non-Cooperation\nMovement, thousands of workers defied the authorities, left the\nplantations and headed home. They believed that Gandhi Raj was\ncoming and everyone would be given land in their own villages.",
+                "end_char": 2244,
+                "section_id": "page-8",
+                "start_char": 2016
+              }
+            ],
+            "duration_minutes": 25,
+            "success_criteria": [
+              "Students identify at least one specific local grievance and protest method from their case study.",
+              "Students recognize that the Non-Cooperation Movement had varied regional expressions."
+            ]
+          }
+        ],
+        "period_number": 4
+      },
+      {
+        "activities": [
+          {
+            "type": "demonstration",
+            "title": "Simulating a Hartal",
+            "materials": [
+              "Chalk",
+              "Placards (student-made)",
+              "Classroom space for simulation"
+            ],
+            "instructions": [
+              "Explain the concept of hartal as a form of civil resistance involving withdrawal from normal activities.",
+              "Have students simulate a hartal by role-playing shopkeepers closing shops and workers stopping work.",
+              "Discuss with students the effectiveness of hartal as a peaceful, non-violent protest method.",
+              "Connect the hartal simulation to its historical role during events like the Rowlatt Act protests."
+            ],
+            "source_spans": [
+              {
+                "page": 3,
+                "quote": "which would start with a hartal on 6 April.\nRallies were organised in various cities, workers went on strike in\nrailway workshops, and shops closed down.",
+                "end_char": 2033,
+                "section_id": "page-3",
+                "start_char": 1880
+              }
+            ],
+            "duration_minutes": 20,
+            "success_criteria": [
+              "Students can define hartal and describe its purpose as a protest method.",
+              "Students demonstrate understanding of how withdrawal from normal activities pressures authorities."
+            ]
+          }
+        ],
+        "period_number": 5
+      },
+      {
+        "activities": [
+          {
+            "type": "lab",
+            "title": "Designing a Swadeshi Symbol",
+            "materials": [
+              "Colored paper",
+              "Scissors",
+              "Glue",
+              "Reference image of the tricolour flag with eight lotuses and crescent moon"
+            ],
+            "instructions": [
+              "Show students the reference image of the Swadeshi tricolour flag with eight lotuses and a crescent moon.",
+              "Explain the symbolism of the eight lotuses representing eight provinces and the crescent moon representing Hindus and Muslims.",
+              "Have students recreate or design their own version of a nationalist symbol representing unity, using similar symbolic principles.",
+              "Students present their designs and explain the symbolism behind their choices."
+            ],
+            "source_spans": [
+              {
+                "page": 20,
+                "quote": "During the Swadeshi\nmovement in Bengal, a tricolour flag (red, green and yellow) was\ndesigned. It had eight lotuses representing eight provinces of British\nIndia, and a crescent moon, representing Hindus and Muslims.",
+                "end_char": 1194,
+                "section_id": "page-20",
+                "start_char": 978
+              }
+            ],
+            "duration_minutes": 30,
+            "success_criteria": [
+              "Students can explain the symbolism of the original Swadeshi flag's design elements.",
+              "Students create a design that reflects an understanding of using symbols to represent unity and indigenous pride."
+            ]
+          },
+          {
+            "type": "discussion",
+            "title": "Analyzing the Economic Impact of Boycott",
+            "materials": [
+              "Data chart showing import statistics of foreign cloth 1921-1922"
+            ],
+            "instructions": [
+              "Present the statistic that foreign cloth imports halved between 1921 and 1922, dropping from Rs 102 crore to Rs 57 crore.",
+              "Ask students to discuss what this data reveals about the effectiveness of the swadeshi and boycott movements.",
+              "Have students calculate the percentage drop and discuss its significance.",
+              "Discuss how economic boycotts served as a tool of nationalist resistance."
+            ],
+            "source_spans": [
+              {
+                "page": 6,
+                "quote": "The import of foreign\ncloth halved between 1921 and 1922, its value dropping from\nRs 102 crore to Rs 57 crore.",
+                "end_char": 1102,
+                "section_id": "page-6",
+                "start_char": 992
+              }
+            ],
+            "duration_minutes": 15,
+            "success_criteria": [
+              "Students correctly calculate the percentage decline in import value.",
+              "Students explain the connection between economic boycott and the broader Swadeshi Movement."
+            ]
+          }
+        ],
+        "period_number": 6
+      },
+      {
+        "activities": [
+          {
+            "type": "discussion",
+            "title": "Interpreting the Bharat Mata Painting",
+            "materials": [
+              "Print/projection of Abanindranath Tagore's Bharat Mata painting"
+            ],
+            "instructions": [
+              "Display the image of Abanindranath Tagore's Bharat Mata painting to the class.",
+              "Guide students to observe the ascetic, calm, and divine qualities of the figure.",
+              "Discuss how the image dispenses learning, food, and clothing, and what this symbolizes about the nation.",
+              "Ask students to reflect on why visual symbols like Bharat Mata were powerful tools for nationalism."
+            ],
+            "source_spans": [
+              {
+                "page": 19,
+                "quote": "It was in the twentieth\ncentury, with the growth of nationalism, that the identity of India\ncame to be visually associated with the image of Bharat Mata. The\nimage was first created by Bankim Chandra Chattopadhyay.",
+                "end_char": 414,
+                "section_id": "page-19",
+                "start_char": 200
+              },
+              {
+                "page": 19,
+                "quote": "Moved by the Swadeshi\nmovement, Abanindranath Tagore painted his famous image of\nBharat Mata (see Fig. 12). In this painting Bharat Mata is portrayed\nas an ascetic figure; she is calm, composed, divine and spiritual.",
+                "end_char": 800,
+                "section_id": "page-19",
+                "start_char": 584
+              }
+            ],
+            "duration_minutes": 25,
+            "success_criteria": [
+              "Students can describe the visual elements of the Bharat Mata painting.",
+              "Students explain the symbolic meaning of the image in the context of Indian nationalism."
+            ]
+          },
+          {
+            "type": "lab",
+            "title": "Creating a Popular Print: Sacrifice for the Nation",
+            "materials": [
+              "Drawing paper",
+              "Colored pencils",
+              "Sample popular prints depicting leaders offering themselves to Bharat Mata"
+            ],
+            "instructions": [
+              "Show students sample popular prints depicting nationalist leaders like Jawaharlal Nehru offering themselves to Bharat Mata.",
+              "Discuss the idea of sacrifice for the mother nation conveyed by these images.",
+              "Have students create their own simple print or sketch depicting a symbolic act of sacrifice for the nation.",
+              "Students share their sketches and explain the message they intended to convey."
+            ],
+            "source_spans": [
+              {
+                "page": 19,
+                "quote": "In a lot of popular prints, nationalist leaders are shown\noffering their heads to Bharat Mata. The idea of sacrifice for the mother was\npowerful within popular imagination.",
+                "end_char": 2288,
+                "section_id": "page-19",
+                "start_char": 2116
+              }
+            ],
+            "duration_minutes": 20,
+            "success_criteria": [
+              "Students can explain the concept of sacrifice as depicted in nationalist visual culture.",
+              "Students produce a sketch that conveys a clear symbolic message related to nationalism."
+            ]
+          }
+        ],
+        "period_number": 7
+      },
+      {
+        "activities": [
+          {
+            "type": "group work",
+            "title": "Concept Web: Threads of Indian Nationalism",
+            "materials": [
+              "Large chart paper",
+              "Markers",
+              "Sticky notes with concept names (Swaraj, Rowlatt Act, Khilafat, Non-Cooperation, Hartal, Swadeshi, Bharat Mata)"
+            ],
+            "instructions": [
+              "Divide students into groups and give each group the set of concept sticky notes.",
+              "Ask groups to arrange the concepts on chart paper, drawing connecting lines to show how each concept relates to others in the overall nationalist movement.",
+              "Groups write a short explanation next to each connection describing the relationship.",
+              "Groups present their concept webs to the class, explaining the synthesis of the movement."
+            ],
+            "source_spans": [
+              {
+                "page": 6,
+                "quote": "All of them responded to the call of Swaraj,\nbut the term meant different things to different people.",
+                "end_char": 331,
+                "section_id": "page-6",
+                "start_char": 230
+              },
+              {
+                "page": 3,
+                "quote": "This\nAct had been hurriedly passed through the Imperial Legislative\nCouncil despite the united opposition of the Indian members. It\ngave the government enormous powers to repress political activities,\nand allowed detention of political prisoners without trial for two\nyears.",
+                "end_char": 1800,
+                "section_id": "page-3",
+                "start_char": 1526
+              },
+              {
+                "page": 4,
+                "quote": "The First World War had\nended with the defeat of Ottoman Turkey. And there were rumours\nthat a harsh peace treaty was going to be imposed on the Ottoman\nemperor –  the spiritual head of the Islamic world (the Khalifa).",
+                "end_char": 1771,
+                "section_id": "page-4",
+                "start_char": 1553
+              },
+              {
+                "page": 5,
+                "quote": "It should begin\nwith the surrender of titles that the government awarded, and a\nboycott of civil services, army, police, courts and legislative councils,\nschools, and foreign goods. Then, in case the government used\nrepression, a full civil disobedience campaign would be launched.",
+                "end_char": 727,
+                "section_id": "page-5",
+                "start_char": 446
+              },
+              {
+                "page": 3,
+                "quote": "which would start with a hartal on 6 April.\nRallies were organised in various cities, workers went on strike in\nrailway workshops, and shops closed down.",
+                "end_char": 2033,
+                "section_id": "page-3",
+                "start_char": 1880
+              },
+              {
+                "page": 20,
+                "quote": "During the Swadeshi\nmovement in Bengal, a tricolour flag (red, green and yellow) was\ndesigned. It had eight lotuses representing eight provinces of British\nIndia, and a crescent moon, representing Hindus and Muslims.",
+                "end_char": 1194,
+                "section_id": "page-20",
+                "start_char": 978
+              },
+              {
+                "page": 19,
+                "quote": "It was in the twentieth\ncentury, with the growth of nationalism, that the identity of India\ncame to be visually associated with the image of Bharat Mata. The\nimage was first created by Bankim Chandra Chattopadhyay.",
+                "end_char": 414,
+                "section_id": "page-19",
+                "start_char": 200
+              }
+            ],
+            "duration_minutes": 30,
+            "success_criteria": [
+              "Students correctly connect at least five of the seven concepts with valid explanations.",
+              "Presentations demonstrate an integrated understanding of how these events and ideas built the mass nationalist movement."
+            ]
+          },
+          {
+            "type": "discussion",
+            "title": "Debate: Was Nationalism Unified or Divided?",
+            "materials": [
+              "Summary cards of eleven demands to the Viceroy",
+              "Notes on Swaraj flag symbolism"
+            ],
+            "instructions": [
+              "Present Gandhi's eleven demands to the Viceroy, highlighting how they addressed both general and class-specific interests.",
+              "Discuss the use of symbols like the Swaraj flag with a spinning wheel as unifying tools during marches.",
+              "Divide the class into two sides: one arguing that nationalism successfully unified diverse groups, and the other arguing that it remained fragmented by regional and class interests.",
+              "Conduct a structured debate, then synthesize key points from both sides in a closing class discussion."
+            ],
+            "source_spans": [
+              {
+                "page": 11,
+                "quote": "On 31 January 1930, he sent a letter to Viceroy Irwin\nstating eleven demands. Some of these were of general interest;\nothers were specific demands of different classes, from industrialists\nto peasants. The idea was to make the demands wide-ranging, so\nthat all classes within Indian society could identify with them and\neveryone could be brought together in a united campaign.",
+                "end_char": 1222,
+                "section_id": "page-11",
+                "start_char": 846
+              },
+              {
+                "page": 20,
+                "quote": "By\n1921, Gandhiji had designed the Swaraj flag. It was again a tricolour\n(red, green and white) and had a spinning wheel in the centre,\nrepresenting the Gandhian ideal of self-help. Carrying the flag,\nholding it aloft, during marches became a symbol of defiance.",
+                "end_char": 1457,
+                "section_id": "page-20",
+                "start_char": 1195
+              }
+            ],
+            "duration_minutes": 25,
+            "success_criteria": [
+              "Students reference specific historical evidence (e.g., eleven demands, Swaraj flag) to support their arguments.",
+              "Students articulate a nuanced view of nationalism as both a unifying and diverse movement."
+            ]
+          }
+        ],
+        "period_number": 8
+      }
+    ]
+  },
+  "assessments": {
+    "periods": [
+      {
+        "mcqs": [
+          {
+            "options": [
+              "Swaraj",
+              "Satyagraha",
+              "Khilafat",
+              "Swadeshi"
+            ],
+            "question": "What was the central concept that different social groups in India interpreted differently based on their own aspirations and grievances during the nationalist movement?",
+            "explanation": "Swaraj, meaning self-rule or independence, was interpreted differently by peasants, workers, business classes, and women based on their own concerns.",
+            "source_spans": [
+              {
+                "page": 6,
+                "quote": "All of them responded to the call of Swaraj,\nbut the term meant different things to different people.",
+                "end_char": 331,
+                "section_id": "page-6",
+                "start_char": 230
+              }
+            ],
+            "correct_option_index": 0
+          },
+          {
+            "options": [
+              "Organising a satyagraha among cotton mill workers in Ahmedabad",
+              "Leading the Quit India Movement",
+              "Signing the Gandhi-Irwin Pact",
+              "Attending the Round Table Conference"
+            ],
+            "question": "Which of the following was an early activity of Gandhi in India before the launch of the Non-Cooperation Movement?",
+            "explanation": "In 1918, Gandhi organised a satyagraha in Ahmedabad among cotton mill workers, one of his early efforts in India that helped establish his leadership before mass nationalism took shape.",
+            "source_spans": [
+              {
+                "page": 3,
+                "quote": "In 1918, Mahatma Gandhi went to\nAhmedabad to organise a satyagraha movement amongst cotton\nmill workers.",
+                "end_char": 1124,
+                "section_id": "page-3",
+                "start_char": 1020
+              }
+            ],
+            "correct_option_index": 0
+          }
+        ],
+        "numerical": [],
+        "long_answer": [
+          {
+            "rubric": [
+              "Mentions Champaran and the indigo/plantation issue",
+              "Mentions Ahmedabad and cotton mill workers",
+              "Mentions Kheda and crop failure/revenue issue",
+              "Connects these events to Gandhi's rise and shift toward mass nationalism"
+            ],
+            "question": "Discuss the historical developments that set the stage for Gandhi's entry into Indian politics, referencing his early activities in Champaran, Ahmedabad, and Kheda.",
+            "model_answer": "Before leading the mass nationalist movement, Gandhi engaged in several local struggles that established his method of satyagraha and his reputation as a leader of the masses. In 1917, he travelled to Champaran in Bihar to support peasants against the oppressive indigo plantation system. In 1918, he organised a satyagraha among cotton mill workers in Ahmedabad, and later that year he supported peasants in Kheda district, Gujarat, who faced crop failure and could not pay revenue. These early movements demonstrated Gandhi's method of non-violent resistance and helped shift Indian nationalism from an elite-led movement into one with mass participation.",
+            "source_spans": [
+              {
+                "page": 3,
+                "quote": "In 1917 he travelled to\nChamparan in  Bihar to inspire the peasants to struggle against the\noppressive plantation system.",
+                "end_char": 1019,
+                "section_id": "page-3",
+                "start_char": 898
+              },
+              {
+                "page": 3,
+                "quote": "In 1918, Mahatma Gandhi went to\nAhmedabad to organise a satyagraha movement amongst cotton\nmill workers.",
+                "end_char": 1124,
+                "section_id": "page-3",
+                "start_char": 1020
+              },
+              {
+                "page": 3,
+                "quote": "Then in 1918,  he organised a satyagraha to support\nthe peasants of the Kheda district of Gujarat. Affected by crop\nfailure and a plague epidemic, the peasants of Kheda could not pay\nthe revenue, and were demanding that revenue collection be relaxed.",
+                "end_char": 1375,
+                "section_id": "page-3",
+                "start_char": 1125
+              }
+            ]
+          }
+        ],
+        "short_answer": [
+          {
+            "rubric": [
+              "Mentions Swaraj as self-rule/independence",
+              "Explains that interpretation varied by social group",
+              "Gives at least one example of a group's specific interpretation",
+              "Connects to aspirations and grievances"
+            ],
+            "question": "Explain why the concept of Swaraj meant different things to different social groups in India.",
+            "model_answer": "Swaraj was understood as self-rule or independence, but its meaning varied because different groups had different aspirations and grievances against colonial rule - peasants wanted relief from oppressive taxes and landlords, workers wanted better conditions, business classes wanted economic freedom, and women sought social and political rights.",
+            "source_spans": [
+              {
+                "page": 6,
+                "quote": "All of them responded to the call of Swaraj,\nbut the term meant different things to different people.",
+                "end_char": 331,
+                "section_id": "page-6",
+                "start_char": 230
+              }
+            ]
+          }
+        ],
+        "period_number": 1
+      },
+      {
+        "mcqs": [
+          {
+            "options": [
+              "It allowed detention of political prisoners without trial for two years",
+              "It granted universal adult suffrage",
+              "It abolished the zamindari system",
+              "It established provincial legislative councils"
+            ],
+            "question": "What power did the Rowlatt Act of 1919 give to the British government in India?",
+            "explanation": "The Rowlatt Act gave the government enormous powers to repress political activities, including the detention of political prisoners without trial for up to two years.",
+            "source_spans": [
+              {
+                "page": 3,
+                "quote": "This\nAct had been hurriedly passed through the Imperial Legislative\nCouncil despite the united opposition of the Indian members. It\ngave the government enormous powers to repress political activities,\nand allowed detention of political prisoners without trial for two\nyears.",
+                "end_char": 1800,
+                "section_id": "page-3",
+                "start_char": 1526
+              }
+            ],
+            "correct_option_index": 0
+          },
+          {
+            "options": [
+              "They united in opposition to it",
+              "They unanimously supported it",
+              "They abstained from voting",
+              "They were not consulted at all"
+            ],
+            "question": "How did Indian members of the Imperial Legislative Council respond to the Rowlatt Act?",
+            "explanation": "The Act was passed despite the united opposition of Indian members of the Imperial Legislative Council, showing the widespread discontent it caused.",
+            "source_spans": [
+              {
+                "page": 3,
+                "quote": "This\nAct had been hurriedly passed through the Imperial Legislative\nCouncil despite the united opposition of the Indian members. It\ngave the government enormous powers to repress political activities,\nand allowed detention of political prisoners without trial for two\nyears.",
+                "end_char": 1800,
+                "section_id": "page-3",
+                "start_char": 1526
+              }
+            ],
+            "correct_option_index": 0
+          }
+        ],
+        "numerical": [],
+        "long_answer": [
+          {
+            "rubric": [
+              "Explains the Act's key provisions",
+              "Notes the united opposition of Indian legislative members",
+              "Analyzes why it was seen as unjust across social/political groups",
+              "Connects the Act to the rise of mass nationalist sentiment/movement"
+            ],
+            "question": "Analyze why the Rowlatt Act provoked united opposition among Indians and how this repressive legislation contributed to the growth of nationalist sentiment.",
+            "model_answer": "The Rowlatt Act was passed in 1919 despite the united opposition of Indian members of the Imperial Legislative Council, indicating that it was seen as an affront across political lines. The Act's provisions - granting the government enormous powers to repress political activity and allowing detention of political prisoners without trial for two years - were viewed as a direct assault on civil liberties and the rule of law. This united different sections of Indian society in opposition, as it demonstrated that even moderate constitutional methods of protest could be criminalized. The resentment against such repressive legislation created fertile ground for Gandhi and the Congress to mobilize mass opposition, ultimately feeding into the launch of the Non-Cooperation Movement.",
+            "source_spans": [
+              {
+                "page": 3,
+                "quote": "This\nAct had been hurriedly passed through the Imperial Legislative\nCouncil despite the united opposition of the Indian members. It\ngave the government enormous powers to repress political activities,\nand allowed detention of political prisoners without trial for two\nyears.",
+                "end_char": 1800,
+                "section_id": "page-3",
+                "start_char": 1526
+              }
+            ]
+          }
+        ],
+        "short_answer": [
+          {
+            "rubric": [
+              "States the year 1919",
+              "Mentions detention without trial for two years",
+              "Mentions enormous powers to repress political activities",
+              "Explains why this was seen as unjust/repressive"
+            ],
+            "question": "What were the main provisions of the Rowlatt Act, and why was it seen as repressive?",
+            "model_answer": "The Rowlatt Act, passed in 1919, gave the British government sweeping powers to suppress political activities, including the ability to detain political prisoners without trial for up to two years. It was seen as repressive because it curtailed civil liberties and allowed the government to imprison people without due judicial process, denying them basic legal rights.",
+            "source_spans": [
+              {
+                "page": 3,
+                "quote": "This\nAct had been hurriedly passed through the Imperial Legislative\nCouncil despite the united opposition of the Indian members. It\ngave the government enormous powers to repress political activities,\nand allowed detention of political prisoners without trial for two\nyears.",
+                "end_char": 1800,
+                "section_id": "page-3",
+                "start_char": 1526
+              }
+            ]
+          }
+        ],
+        "period_number": 2
+      },
+      {
+        "mcqs": [
+          {
+            "options": [
+              "The treatment of the Ottoman Sultan (Khalifa) after World War I",
+              "The partition of Bengal",
+              "The introduction of the Rowlatt Act",
+              "The design of the tricolour flag"
+            ],
+            "question": "What was the Khilafat issue primarily concerned with?",
+            "explanation": "The Khilafat issue related to concerns among Indian Muslims about the harsh treatment of the Ottoman Sultan, the spiritual head of the Islamic world, following the defeat of Ottoman Turkey in World War I.",
+            "source_spans": [
+              {
+                "page": 4,
+                "quote": "The First World War had\nended with the defeat of Ottoman Turkey. And there were rumours\nthat a harsh peace treaty was going to be imposed on the Ottoman\nemperor –  the spiritual head of the Islamic world (the Khalifa).",
+                "end_char": 1771,
+                "section_id": "page-4",
+                "start_char": 1553
+              }
+            ],
+            "correct_option_index": 0
+          }
+        ],
+        "numerical": [],
+        "long_answer": [
+          {
+            "rubric": [
+              "Explains the origin of the Khilafat issue linked to WWI and Ottoman defeat",
+              "Notes concern over harsh peace treaty on the Khalifa",
+              "Explains how Congress/Gandhi linked Khilafat with Non-Cooperation",
+              "Discusses the resulting Hindu-Muslim unity"
+            ],
+            "question": "Discuss how the Khilafat issue created an opportunity for Hindu-Muslim unity within the Indian nationalist struggle.",
+            "model_answer": "The Khilafat issue arose from concerns among Indian Muslims regarding the treatment of the Ottoman Sultan, or Khalifa, the spiritual head of the Islamic world, after the defeat of Ottoman Turkey in World War I. Fears of a harsh peace treaty being imposed on the Ottoman emperor galvanized Indian Muslims into a protest movement. Gandhi and the Indian National Congress saw this as an opportunity to bring Muslims into the wider nationalist movement by linking the Khilafat cause with the Non-Cooperation Movement. This alliance between the Khilafat movement and the nationalist struggle represented a significant moment of Hindu-Muslim unity, as both communities came together to oppose British rule on shared platforms.",
+            "source_spans": [
+              {
+                "page": 4,
+                "quote": "The First World War had\nended with the defeat of Ottoman Turkey. And there were rumours\nthat a harsh peace treaty was going to be imposed on the Ottoman\nemperor –  the spiritual head of the Islamic world (the Khalifa).",
+                "end_char": 1771,
+                "section_id": "page-4",
+                "start_char": 1553
+              }
+            ]
+          }
+        ],
+        "short_answer": [
+          {
+            "rubric": [
+              "Mentions defeat of Ottoman Turkey in WWI",
+              "Mentions concern about harsh peace treaty on the Ottoman emperor",
+              "Identifies the Khalifa as spiritual head of Islamic world",
+              "Connects this to Indian Muslim concerns"
+            ],
+            "question": "Explain the connection between World War I and the Khilafat issue in India.",
+            "model_answer": "World War I ended with the defeat of Ottoman Turkey, and this raised concerns among Indian Muslims about a harsh peace treaty being imposed on the Ottoman Sultan, who was regarded as the Khalifa, the spiritual head of the Islamic world. This international development directly triggered the Khilafat movement in India as Muslims sought to protect the position of the Khalifa.",
+            "source_spans": [
+              {
+                "page": 4,
+                "quote": "The First World War had\nended with the defeat of Ottoman Turkey. And there were rumours\nthat a harsh peace treaty was going to be imposed on the Ottoman\nemperor –  the spiritual head of the Islamic world (the Khalifa).",
+                "end_char": 1771,
+                "section_id": "page-4",
+                "start_char": 1553
+              }
+            ]
+          }
+        ],
+        "period_number": 3
+      },
+      {
+        "mcqs": [
+          {
+            "options": [
+              "Boycott of foreign universities in Britain",
+              "Boycott of civil services",
+              "Boycott of legislative councils",
+              "Boycott of foreign goods"
+            ],
+            "question": "Which of the following was NOT one of the boycotts proposed under the Non-Cooperation Movement?",
+            "explanation": "The Non-Cooperation Movement proposed boycotts of civil services, army, police, courts, legislative councils, schools, and foreign goods - not boycotts of foreign universities in Britain.",
+            "source_spans": [
+              {
+                "page": 5,
+                "quote": "It should begin\nwith the surrender of titles that the government awarded, and a\nboycott of civil services, army, police, courts and legislative councils,\nschools, and foreign goods. Then, in case the government used\nrepression, a full civil disobedience campaign would be launched.",
+                "end_char": 727,
+                "section_id": "page-5",
+                "start_char": 446
+              }
+            ],
+            "correct_option_index": 0
+          },
+          {
+            "options": [
+              "Civil disobedience",
+              "Armed rebellion",
+              "Negotiation with the Viceroy",
+              "Immediate independence declaration"
+            ],
+            "question": "What was the planned next step if the government responded to the Non-Cooperation Movement with repression?",
+            "explanation": "Gandhi's plan was that non-cooperation would be followed by civil disobedience if the government used repression against the movement.",
+            "source_spans": [
+              {
+                "page": 5,
+                "quote": "It should begin\nwith the surrender of titles that the government awarded, and a\nboycott of civil services, army, police, courts and legislative councils,\nschools, and foreign goods. Then, in case the government used\nrepression, a full civil disobedience campaign would be launched.",
+                "end_char": 727,
+                "section_id": "page-5",
+                "start_char": 446
+              }
+            ],
+            "correct_option_index": 0
+          }
+        ],
+        "numerical": [],
+        "long_answer": [
+          {
+            "rubric": [
+              "Explains the concept of non-cooperation as withdrawal of support from British institutions",
+              "Lists at least three specific forms of boycott",
+              "Explains that civil disobedience would follow if repression occurred",
+              "Discusses the phased/strategic nature of the movement"
+            ],
+            "question": "Describe Gandhi's strategy of non-cooperation and explain the planned progression from non-cooperation to civil disobedience.",
+            "model_answer": "Gandhi's strategy of non-cooperation was based on the idea that British rule in India survived because of the cooperation of Indians in various institutions, and that withdrawing this cooperation would paralyze the colonial administration. The movement proposed that Indians boycott civil services, the army, the police, courts, legislative councils, schools, and foreign goods. If the government responded to this peaceful non-cooperation with repression, the movement was planned to escalate into civil disobedience, a more direct and confrontational form of resistance against unjust laws. This phased strategy reflected Gandhi's belief in disciplined, non-violent protest that could be scaled up depending on the government's response.",
+            "source_spans": [
+              {
+                "page": 5,
+                "quote": "It should begin\nwith the surrender of titles that the government awarded, and a\nboycott of civil services, army, police, courts and legislative councils,\nschools, and foreign goods. Then, in case the government used\nrepression, a full civil disobedience campaign would be launched.",
+                "end_char": 727,
+                "section_id": "page-5",
+                "start_char": 446
+              }
+            ]
+          }
+        ],
+        "short_answer": [
+          {
+            "rubric": [
+              "Mentions civil services",
+              "Mentions army and/or police",
+              "Mentions courts and/or legislative councils",
+              "Mentions schools and foreign goods"
+            ],
+            "question": "List the various forms of boycott proposed under the Non-Cooperation Movement.",
+            "model_answer": "The Non-Cooperation Movement proposed boycotts of civil services, the army, the police, courts, legislative councils, schools, and foreign goods, as means of refusing to cooperate with British rule.",
+            "source_spans": [
+              {
+                "page": 5,
+                "quote": "It should begin\nwith the surrender of titles that the government awarded, and a\nboycott of civil services, army, police, courts and legislative councils,\nschools, and foreign goods. Then, in case the government used\nrepression, a full civil disobedience campaign would be launched.",
+                "end_char": 727,
+                "section_id": "page-5",
+                "start_char": 446
+              }
+            ]
+          }
+        ],
+        "period_number": 4
+      },
+      {
+        "mcqs": [
+          {
+            "options": [
+              "A form of protest in which people withdraw from normal activities, such as strikes and closure of shops",
+              "A form of forced labour without payment",
+              "A demonstration blocking the entrance to a shop or factory",
+              "A boycott of foreign goods only"
+            ],
+            "question": "What is a hartal?",
+            "explanation": "A hartal is a form of protest involving withdrawal from normal activities such as strikes and shop closures, used as civil resistance against the government.",
+            "source_spans": [
+              {
+                "page": 3,
+                "quote": "which would start with a hartal on 6 April.\nRallies were organised in various cities, workers went on strike in\nrailway workshops, and shops closed down.",
+                "end_char": 2033,
+                "section_id": "page-3",
+                "start_char": 1880
+              }
+            ],
+            "correct_option_index": 0
+          },
+          {
+            "options": [
+              "Assam",
+              "Bengal",
+              "Gujarat",
+              "Andhra Pradesh"
+            ],
+            "question": "In which region did plantation workers leave their workplaces and head home upon hearing about the Non-Cooperation Movement?",
+            "explanation": "Plantation workers in Assam left the tea gardens upon hearing of the Non-Cooperation Movement, believing Gandhi Raj was coming and land would be given to everyone.",
+            "source_spans": [
+              {
+                "page": 8,
+                "quote": "When they heard of the Non-Cooperation\nMovement, thousands of workers defied the authorities, left the\nplantations and headed home. They believed that Gandhi Raj was\ncoming and everyone would be given land in their own villages.",
+                "end_char": 2244,
+                "section_id": "page-8",
+                "start_char": 2016
+              }
+            ],
+            "correct_option_index": 0
+          }
+        ],
+        "numerical": [],
+        "long_answer": [
+          {
+            "rubric": [
+              "Defines hartal accurately",
+              "Uses the Assam plantation workers example correctly",
+              "Evaluates effectiveness in mobilizing participation",
+              "Notes how different groups interpreted the movement in their own way"
+            ],
+            "question": "Using the example of plantation workers in Assam, evaluate the effectiveness of hartals and related mass actions in mobilizing public participation during the nationalist movement.",
+            "model_answer": "Hartals, as a form of protest involving withdrawal from normal activities like strikes and closure of shops, proved to be an effective and widely accessible tool of civil resistance because they required no special resources or training and could be adopted by all sections of society. This is illustrated by the response of plantation workers in Assam who, upon hearing of the Non-Cooperation Movement, left the tea gardens and headed home, believing Gandhi Raj was coming and that they would be given land. This shows how the message of resistance could inspire spontaneous mass action even among workers far removed from urban political centers, though it also shows that different groups interpreted the movement's promises in their own ways, sometimes beyond what the leadership intended. Overall, hartals and similar mass withdrawals were effective in demonstrating widespread discontent and disrupting the colonial economy and administration.",
+            "source_spans": [
+              {
+                "page": 3,
+                "quote": "which would start with a hartal on 6 April.\nRallies were organised in various cities, workers went on strike in\nrailway workshops, and shops closed down.",
+                "end_char": 2033,
+                "section_id": "page-3",
+                "start_char": 1880
+              },
+              {
+                "page": 8,
+                "quote": "When they heard of the Non-Cooperation\nMovement, thousands of workers defied the authorities, left the\nplantations and headed home. They believed that Gandhi Raj was\ncoming and everyone would be given land in their own villages.",
+                "end_char": 2244,
+                "section_id": "page-8",
+                "start_char": 2016
+              }
+            ]
+          }
+        ],
+        "short_answer": [
+          {
+            "rubric": [
+              "Defines hartal as withdrawal from normal activities",
+              "Mentions strikes and/or shop closures as examples",
+              "Explains it as a form of civil resistance against government",
+              "Notes its non-violent nature"
+            ],
+            "question": "Define hartal and explain how it functioned as a tool of civil resistance.",
+            "model_answer": "A hartal is a form of protest in which people withdraw from their normal activities, such as through strikes and closure of shops, as an act of civil resistance against the government. It served as a powerful, visible, and disruptive method of showing collective opposition without resorting to violence.",
+            "source_spans": [
+              {
+                "page": 3,
+                "quote": "which would start with a hartal on 6 April.\nRallies were organised in various cities, workers went on strike in\nrailway workshops, and shops closed down.",
+                "end_char": 2033,
+                "section_id": "page-3",
+                "start_char": 1880
+              }
+            ]
+          }
+        ],
+        "period_number": 5
+      },
+      {
+        "mcqs": [
+          {
+            "options": [
+              "Swadeshi Movement",
+              "Non-Cooperation Movement",
+              "Khilafat Movement",
+              "Civil Disobedience Movement"
+            ],
+            "question": "What did the movement in Bengal that promoted Indian-made goods and indigenous culture come to be known as?",
+            "explanation": "The Swadeshi Movement in Bengal promoted Indian-made goods and indigenous culture, and included the design of a tricolour flag.",
+            "source_spans": [
+              {
+                "page": 20,
+                "quote": "During the Swadeshi\nmovement in Bengal, a tricolour flag (red, green and yellow) was\ndesigned. It had eight lotuses representing eight provinces of British\nIndia, and a crescent moon, representing Hindus and Muslims.",
+                "end_char": 1194,
+                "section_id": "page-20",
+                "start_char": 978
+              }
+            ],
+            "correct_option_index": 0
+          },
+          {
+            "options": [
+              "Hindus and Muslims",
+              "The eight provinces",
+              "The Ottoman Empire",
+              "Peasants and workers"
+            ],
+            "question": "What did the crescent moon on the tricolour flag designed during the Swadeshi Movement represent?",
+            "explanation": "The crescent moon on the flag represented Hindus and Muslims, symbolizing communal unity, while the eight lotuses represented eight provinces.",
+            "source_spans": [
+              {
+                "page": 20,
+                "quote": "During the Swadeshi\nmovement in Bengal, a tricolour flag (red, green and yellow) was\ndesigned. It had eight lotuses representing eight provinces of British\nIndia, and a crescent moon, representing Hindus and Muslims.",
+                "end_char": 1194,
+                "section_id": "page-20",
+                "start_char": 978
+              }
+            ],
+            "correct_option_index": 0
+          },
+          {
+            "options": [
+              "It halved in value from Rs 102 crore to Rs 57 crore",
+              "It doubled in value",
+              "It remained unchanged",
+              "It increased by 50%"
+            ],
+            "question": "What happened to the import of foreign cloth between 1921 and 1922, reflecting the impact of the boycott movement?",
+            "explanation": "The value of foreign cloth imports dropped from Rs 102 crore to Rs 57 crore between 1921 and 1922, demonstrating the economic impact of the Swadeshi/boycott movement.",
+            "source_spans": [
+              {
+                "page": 6,
+                "quote": "The import of foreign\ncloth halved between 1921 and 1922, its value dropping from\nRs 102 crore to Rs 57 crore.",
+                "end_char": 1102,
+                "section_id": "page-6",
+                "start_char": 992
+              }
+            ],
+            "correct_option_index": 0
+          }
+        ],
+        "numerical": [
+          {
+            "question": "By what percentage did the value of foreign cloth imports decrease between 1921 and 1922, given that it dropped from Rs 102 crore to Rs 57 crore?",
+            "tolerance": 1.0,
+            "source_spans": [
+              {
+                "page": 6,
+                "quote": "The import of foreign\ncloth halved between 1921 and 1922, its value dropping from\nRs 102 crore to Rs 57 crore.",
+                "end_char": 1102,
+                "section_id": "page-6",
+                "start_char": 992
+              }
+            ],
+            "correct_answer": 44.1,
+            "solution_steps": [
+              "Initial value = Rs 102 crore, Final value = Rs 57 crore",
+              "Decrease = 102 - 57 = 45 crore",
+              "Percentage decrease = (45/102) x 100 = 44.1%"
+            ]
+          }
+        ],
+        "long_answer": [
+          {
+            "rubric": [
+              "Explains the Swadeshi Movement's promotion of Indian goods and indigenous culture",
+              "Cites the foreign cloth import statistics as evidence of economic impact",
+              "Describes the flag's design and symbolism",
+              "Connects economic nationalism with cultural/symbolic identity"
+            ],
+            "question": "Explain the goals and methods of the Swadeshi Movement in Bengal, and discuss how economic nationalism was connected to cultural identity through symbols like the tricolour flag.",
+            "model_answer": "The Swadeshi Movement in Bengal aimed to promote Indian-made goods and indigenous culture as a means of resisting British colonial economic dominance and asserting national self-reliance. This economic nationalism was reflected in the significant drop in foreign cloth imports, whose value halved from Rs 102 crore in 1921 to Rs 57 crore in 1922, showing the tangible impact of boycotting foreign goods in favor of domestically produced products. Alongside this economic strategy, the movement also fostered a cultural and symbolic dimension through the creation of a tricolour flag featuring eight lotuses to represent the eight provinces of India and a crescent moon symbolizing unity between Hindus and Muslims. Together, the economic boycott of foreign goods and the cultural symbol of the flag reinforced each other, uniting practical resistance with a shared visual identity of nationhood.",
+            "source_spans": [
+              {
+                "page": 20,
+                "quote": "During the Swadeshi\nmovement in Bengal, a tricolour flag (red, green and yellow) was\ndesigned. It had eight lotuses representing eight provinces of British\nIndia, and a crescent moon, representing Hindus and Muslims.",
+                "end_char": 1194,
+                "section_id": "page-20",
+                "start_char": 978
+              },
+              {
+                "page": 6,
+                "quote": "The import of foreign\ncloth halved between 1921 and 1922, its value dropping from\nRs 102 crore to Rs 57 crore.",
+                "end_char": 1102,
+                "section_id": "page-6",
+                "start_char": 992
+              }
+            ]
+          }
+        ],
+        "short_answer": [
+          {
+            "rubric": [
+              "Mentions eight lotuses representing eight provinces",
+              "Mentions crescent moon representing Hindus and Muslims",
+              "Explains symbolism of unity across regions and religions"
+            ],
+            "question": "Describe the design of the tricolour flag created during the Swadeshi Movement and explain its symbolism.",
+            "model_answer": "The tricolour flag designed during the Swadeshi Movement had eight lotuses representing the eight provinces of British India, and a crescent moon representing the unity of Hindus and Muslims. This design reflected the movement's aim to build a shared national identity across regions and religious communities.",
+            "source_spans": [
+              {
+                "page": 20,
+                "quote": "During the Swadeshi\nmovement in Bengal, a tricolour flag (red, green and yellow) was\ndesigned. It had eight lotuses representing eight provinces of British\nIndia, and a crescent moon, representing Hindus and Muslims.",
+                "end_char": 1194,
+                "section_id": "page-20",
+                "start_char": 978
+              }
+            ]
+          }
+        ],
+        "period_number": 6
+      },
+      {
+        "mcqs": [
+          {
+            "options": [
+              "Bankim Chandra Chattopadhyay",
+              "Abanindranath Tagore",
+              "Mahatma Gandhi",
+              "Rabindranath Tagore"
+            ],
+            "question": "Who first created the image and idea of Bharat Mata as a symbol of the nation?",
+            "explanation": "The image and symbol of India as a mother figure (Bharat Mata) was first created by Bankim Chandra Chattopadhyay and later painted by Abanindranath Tagore.",
+            "source_spans": [
+              {
+                "page": 19,
+                "quote": "It was in the twentieth\ncentury, with the growth of nationalism, that the identity of India\ncame to be visually associated with the image of Bharat Mata. The\nimage was first created by Bankim Chandra Chattopadhyay.",
+                "end_char": 414,
+                "section_id": "page-19",
+                "start_char": 200
+              }
+            ],
+            "correct_option_index": 0
+          },
+          {
+            "options": [
+              "As an ascetic, calm, composed, divine and spiritual figure",
+              "As a warrior queen leading an army",
+              "As an industrial worker",
+              "As a peasant woman in the fields"
+            ],
+            "question": "How did Abanindranath Tagore portray Bharat Mata in his famous painting?",
+            "explanation": "Abanindranath Tagore painted Bharat Mata as an ascetic figure - calm, composed, divine and spiritual, dispensing learning, food and clothing.",
+            "source_spans": [
+              {
+                "page": 19,
+                "quote": "Moved by the Swadeshi\nmovement, Abanindranath Tagore painted his famous image of\nBharat Mata (see Fig. 12). In this painting Bharat Mata is portrayed\nas an ascetic figure; she is calm, composed, divine and spiritual.",
+                "end_char": 800,
+                "section_id": "page-19",
+                "start_char": 584
+              }
+            ],
+            "correct_option_index": 0
+          }
+        ],
+        "numerical": [],
+        "long_answer": [
+          {
+            "rubric": [
+              "Explains the origin of the Bharat Mata image with Bankim Chandra Chattopadhyay",
+              "Describes Abanindranath Tagore's ascetic, spiritual portrayal",
+              "Analyzes how the symbol unified diverse groups",
+              "Connects the symbol to broader themes of nationalism and mass mobilization"
+            ],
+            "question": "Analyze how the image of Bharat Mata functioned as a visual and cultural symbol that helped unify diverse groups under a common national identity.",
+            "model_answer": "The image of Bharat Mata represented India as a mother figure and became a powerful visual symbol of Indian nationalism in the twentieth century. First created by Bankim Chandra Chattopadhyay, the concept was given visual form by Abanindranath Tagore, who painted her as an ascetic, calm, composed, divine and spiritual figure, shown dispensing learning, food and clothing to her devotees. By personifying the nation as a nurturing yet spiritually elevated mother, this image evoked a sense of devotion and duty among Indians across different regions and communities, similar to devotion to a deity. Such symbols allowed people who might not share a common language, religion, or region to unite around a shared emotional and cultural identity - the idea of the nation as a mother worthy of service and protection. This helped translate abstract political ideas of nationalism into an accessible and emotionally resonant symbol for mass mobilization.",
+            "source_spans": [
+              {
+                "page": 19,
+                "quote": "It was in the twentieth\ncentury, with the growth of nationalism, that the identity of India\ncame to be visually associated with the image of Bharat Mata. The\nimage was first created by Bankim Chandra Chattopadhyay.",
+                "end_char": 414,
+                "section_id": "page-19",
+                "start_char": 200
+              },
+              {
+                "page": 19,
+                "quote": "Moved by the Swadeshi\nmovement, Abanindranath Tagore painted his famous image of\nBharat Mata (see Fig. 12). In this painting Bharat Mata is portrayed\nas an ascetic figure; she is calm, composed, divine and spiritual.",
+                "end_char": 800,
+                "section_id": "page-19",
+                "start_char": 584
+              }
+            ]
+          }
+        ],
+        "short_answer": [
+          {
+            "rubric": [
+              "Mentions Bankim Chandra Chattopadhyay as originator of the image",
+              "Mentions Abanindranath Tagore's painting",
+              "Describes the ascetic, spiritual qualities of the painted figure",
+              "Notes the association with twentieth-century Indian nationalism"
+            ],
+            "question": "Trace the evolution of the Bharat Mata image from Bankim Chandra Chattopadhyay to Abanindranath Tagore.",
+            "model_answer": "The image of Bharat Mata, representing India as a mother figure, was first created by Bankim Chandra Chattopadhyay. It was later painted by Abanindranath Tagore, who portrayed her as an ascetic, calm, composed, divine and spiritual figure, dispensing learning, food and clothing. This visual representation became closely associated with Indian nationalism in the twentieth century.\n\n",
+            "source_spans": [
+              {
+                "page": 19,
+                "quote": "It was in the twentieth\ncentury, with the growth of nationalism, that the identity of India\ncame to be visually associated with the image of Bharat Mata. The\nimage was first created by Bankim Chandra Chattopadhyay.",
+                "end_char": 414,
+                "section_id": "page-19",
+                "start_char": 200
+              },
+              {
+                "page": 19,
+                "quote": "Moved by the Swadeshi\nmovement, Abanindranath Tagore painted his famous image of\nBharat Mata (see Fig. 12). In this painting Bharat Mata is portrayed\nas an ascetic figure; she is calm, composed, divine and spiritual.",
+                "end_char": 800,
+                "section_id": "page-19",
+                "start_char": 584
+              }
+            ]
+          }
+        ],
+        "period_number": 7
+      },
+      {
+        "mcqs": [
+          {
+            "options": [
+              "Baba Ramchandra",
+              "Alluri Sitaram Raju",
+              "Vallabhbhai Patel",
+              "Bankim Chandra Chattopadhyay"
+            ],
+            "question": "Which peasant leader in Awadh led demands for reduction of revenue, abolition of begar, and social boycott of oppressive landlords?",
+            "explanation": "In Awadh, peasants led by Baba Ramchandra demanded reduction of revenue, abolition of begar, and organized social boycotts of oppressive landlords, including nai-dhobi bandhs.",
+            "source_spans": [
+              {
+                "page": 7,
+                "quote": "The peasant\nmovement demanded reduction of revenue, abolition of begar, and\nsocial boycott of oppressive landlords. In many places nai – dhobi\nbandhs were organised by panchayats to deprive landlords of the\nservices of even barbers and washermen.",
+                "end_char": 801,
+                "section_id": "page-7",
+                "start_char": 555
+              }
+            ],
+            "correct_option_index": 0
+          },
+          {
+            "options": [
+              "Alluri Sitaram Raju",
+              "Vallabhbhai Patel",
+              "Baba Ramchandra",
+              "Mahatma Gandhi"
+            ],
+            "question": "Who led a militant guerrilla movement in the Gudem Hills of Andhra Pradesh in the early 1920s against restrictions on forest access and forced begar?",
+            "explanation": "Alluri Sitaram Raju led a militant guerrilla movement in the Gudem Hills against the colonial government's restrictions on forest access and forced begar.",
+            "source_spans": [
+              {
+                "page": 8,
+                "quote": "In the Gudem Hills of Andhra\nPradesh, for instance, a militant guerrilla movement spread in\nthe early 1920s –  not a form of struggle that the Congress could\napprove.",
+                "end_char": 303,
+                "section_id": "page-8",
+                "start_char": 137
+              }
+            ],
+            "correct_option_index": 0
+          },
+          {
+            "options": [
+              "Vallabhbhai Patel",
+              "Mahatma Gandhi",
+              "Alluri Sitaram Raju",
+              "Baba Ramchandra"
+            ],
+            "question": "Who led the Bardoli Satyagraha of 1928 against enhancement of land revenue in Gujarat?",
+            "explanation": "The Bardoli Satyagraha of 1928 was a successful peasant movement led by Vallabhbhai Patel against the enhancement of land revenue.",
+            "source_spans": [
+              {
+                "page": 7,
+                "quote": "In 1928, Vallabhbhai Patel led the peasant\nmovement in Bardoli, a taluka in Gujarat, against\nenhancement of land revenue. Known as the\nBardoli Satyagraha, this movement was a success\nunder the able leadership of Vallabhbhai Patel.",
+                "end_char": 3183,
+                "section_id": "page-7",
+                "start_char": 2953
+              }
+            ],
+            "correct_option_index": 0
+          },
+          {
+            "options": [
+              "Patidars of Gujarat and Jats of Uttar Pradesh",
+              "Zamindars of Bengal",
+              "Cotton mill owners of Ahmedabad",
+              "Plantation owners of Assam"
+            ],
+            "question": "Which social groups actively participated in the Civil Disobedience Movement as producers of commercial crops affected by trade depression?",
+            "explanation": "Rich peasant communities like the Patidars of Gujarat and the Jats of Uttar Pradesh actively participated in the Civil Disobedience Movement as producers of commercial crops hit hard by trade depression and falling prices.",
+            "source_spans": [
+              {
+                "page": 13,
+                "quote": "In the countryside, rich peasant communities – like the Patidars of\nGujarat and the Jats of Uttar Pradesh – were active in the movement.\nBeing producers of commercial crops, they were very hard hit by\nthe trade depression and falling prices.",
+                "end_char": 1142,
+                "section_id": "page-13",
+                "start_char": 901
+              }
+            ],
+            "correct_option_index": 0
+          }
+        ],
+        "numerical": [],
+        "long_answer": [
+          {
+            "rubric": [
+              "Explains the varied interpretation of Swaraj across social groups",
+              "Includes peasant examples (Awadh/Baba Ramchandra, Gudem Hills/Alluri Sitaram Raju, or Bardoli Satyagraha)",
+              "Includes worker examples (Sholapur and/or Chotanagpur, and/or Assam plantation workers)",
+              "Synthesizes these examples into a cohesive argument about the diversity within the nationalist movement"
+            ],
+            "question": "Synthesize how different social groups - peasants, workers, and business classes - interpreted and participated in the idea of Swaraj and the broader nationalist movement, citing specific examples from the movements studied.",
+            "model_answer": "Different social groups interpreted Swaraj according to their own aspirations and grievances, leading to varied but overlapping forms of participation in the nationalist movement. Peasants often sought relief from oppressive economic burdens: in Awadh, peasants led by Baba Ramchandra demanded reduction of revenue, abolition of begar (forced unpaid labour), and organized social boycotts of oppressive landlords through nai-dhobi bandhs. In the Gudem Hills of Andhra Pradesh, Alluri Sitaram Raju led a militant guerrilla movement against restrictions on forest access and forced begar, showing that some peasant and tribal groups pursued more militant methods outside Gandhi's non-violent framework. Rich peasants like the Patidars of Gujarat and Jats of Uttar Pradesh, who produced commercial crops, joined the Civil Disobedience Movement particularly because of the trade depression and falling prices that hurt their livelihoods, as seen in the successful Bardoli Satyagraha of 1928 led by Vallabhbhai Patel against enhanced land revenue. Meanwhile, industrial workers also became active participants - in Sholapur, workers attacked colonial government buildings and infrastructure after Gandhi's arrest in 1930, and in Chotanagpur, tin mine workers wore Gandhi caps and joined protest rallies as part of the Civil Disobedience Movement. Even plantation workers in Assam left their workplaces believing that 'Gandhi Raj' would bring them land. Together, these examples show that Swaraj was not a single, uniform goal but a flexible idea that different groups shaped to address their own economic and social concerns, all while contributing to a broader united front against British colonial rule.",
+            "source_spans": [
+              {
+                "page": 6,
+                "quote": "All of them responded to the call of Swaraj,\nbut the term meant different things to different people.",
+                "end_char": 331,
+                "section_id": "page-6",
+                "start_char": 230
+              },
+              {
+                "page": 7,
+                "quote": "The peasant\nmovement demanded reduction of revenue, abolition of begar, and\nsocial boycott of oppressive landlords. In many places nai – dhobi\nbandhs were organised by panchayats to deprive landlords of the\nservices of even barbers and washermen.",
+                "end_char": 801,
+                "section_id": "page-7",
+                "start_char": 555
+              },
+              {
+                "page": 8,
+                "quote": "In the Gudem Hills of Andhra\nPradesh, for instance, a militant guerrilla movement spread in\nthe early 1920s –  not a form of struggle that the Congress could\napprove.",
+                "end_char": 303,
+                "section_id": "page-8",
+                "start_char": 137
+              },
+              {
+                "page": 7,
+                "quote": "In 1928, Vallabhbhai Patel led the peasant\nmovement in Bardoli, a taluka in Gujarat, against\nenhancement of land revenue. Known as the\nBardoli Satyagraha, this movement was a success\nunder the able leadership of Vallabhbhai Patel.",
+                "end_char": 3183,
+                "section_id": "page-7",
+                "start_char": 2953
+              },
+              {
+                "page": 13,
+                "quote": "In the countryside, rich peasant communities – like the Patidars of\nGujarat and the Jats of Uttar Pradesh – were active in the movement.\nBeing producers of commercial crops, they were very hard hit by\nthe trade depression and falling prices.",
+                "end_char": 1142,
+                "section_id": "page-13",
+                "start_char": 901
+              },
+              {
+                "page": 12,
+                "quote": "A month later, when Mahatma\nGandhi himself was arrested, industrial workers in Sholapur attacked\npolice posts, municipal buildings, lawcourts and railway stations –\nall structures that symbolised British rule.",
+                "end_char": 1097,
+                "section_id": "page-12",
+                "start_char": 888
+              },
+              {
+                "page": 14,
+                "quote": "In 1930 thousands of workers in\nChotanagpur tin mines wore Gandhi caps and participated in protest\nrallies and boycott campaigns.",
+                "end_char": 2123,
+                "section_id": "page-14",
+                "start_char": 1994
+              },
+              {
+                "page": 8,
+                "quote": "When they heard of the Non-Cooperation\nMovement, thousands of workers defied the authorities, left the\nplantations and headed home. They believed that Gandhi Raj was\ncoming and everyone would be given land in their own villages.",
+                "end_char": 2244,
+                "section_id": "page-8",
+                "start_char": 2016
+              }
+            ]
+          }
+        ],
+        "short_answer": [
+          {
+            "rubric": [
+              "Describes Sholapur workers' actions after Gandhi's arrest",
+              "Describes Chotanagpur tin mine workers wearing Gandhi caps and joining protests",
+              "Notes the year 1930 for both events",
+              "Draws a connection to working-class participation in nationalism"
+            ],
+            "question": "Explain how workers and industrial labourers participated in the nationalist movement, using examples from Sholapur and Chotanagpur.",
+            "model_answer": "Industrial workers played an active role in the nationalist movement. In Sholapur, workers attacked police posts, municipal buildings, lawcourts, and railway stations after Mahatma Gandhi's arrest in 1930, showing intense popular anger and direct action. In Chotanagpur, thousands of tin mine workers wore Gandhi caps and participated in protest rallies and boycott campaigns as part of the Civil Disobedience Movement in 1930, reflecting how the symbols and methods of the movement spread among the working classes.",
+            "source_spans": [
+              {
+                "page": 12,
+                "quote": "A month later, when Mahatma\nGandhi himself was arrested, industrial workers in Sholapur attacked\npolice posts, municipal buildings, lawcourts and railway stations –\nall structures that symbolised British rule.",
+                "end_char": 1097,
+                "section_id": "page-12",
+                "start_char": 888
+              },
+              {
+                "page": 14,
+                "quote": "In 1930 thousands of workers in\nChotanagpur tin mines wore Gandhi caps and participated in protest\nrallies and boycott campaigns.",
+                "end_char": 2123,
+                "section_id": "page-14",
+                "start_char": 1994
+              }
+            ]
+          }
+        ],
+        "period_number": 8
+      }
+    ]
+  },
+  "learning_gaps": {
+    "gaps": [
+      {
+        "severity": "high",
+        "remediation": "Use case studies or primary source excerpts illustrating the specific demands of different social groups (peasants seeking land reforms and tax reduction, workers seeking better working conditions, merchants seeking removal of colonial trade restrictions) to show that swaraj was interpreted differently depending on class and occupation. Have students create a comparison chart of different groups' goals during the national movement.",
+        "source_spans": [
+          {
+            "page": 6,
+            "quote": "All of them responded to the call of Swaraj,\nbut the term meant different things to different people.",
+            "end_char": 331,
+            "section_id": "page-6",
+            "start_char": 230
+          },
+          {
+            "page": 6,
+            "quote": "All of them responded to the call of Swaraj,\nbut the term meant different things to different people.",
+            "end_char": 331,
+            "section_id": "page-6",
+            "start_char": 230
+          }
+        ],
+        "misconception": "People might think that the different social groups participating in the national movements all shared the same understanding and vision of what independence should mean.",
+        "diagnostic_questions": [
+          {
+            "question": "Did peasants, workers, and merchants all want the same things from the national movement? Explain with examples of what each group hoped to gain.",
+            "source_spans": [
+              {
+                "page": 6,
+                "quote": "All of them responded to the call of Swaraj,\nbut the term meant different things to different people.",
+                "end_char": 331,
+                "section_id": "page-6",
+                "start_char": 230
+              },
+              {
+                "page": 6,
+                "quote": "All of them responded to the call of Swaraj,\nbut the term meant different things to different people.",
+                "end_char": 331,
+                "section_id": "page-6",
+                "start_char": 230
+              }
+            ],
+            "targets_misconception": "Assuming all social groups had a unified vision of swaraj/independence"
+          },
+          {
+            "question": "Why might a peasant's idea of 'swaraj' be different from a merchant's or a factory worker's idea of 'swaraj'?",
+            "source_spans": [
+              {
+                "page": 6,
+                "quote": "All of them responded to the call of Swaraj,\nbut the term meant different things to different people.",
+                "end_char": 331,
+                "section_id": "page-6",
+                "start_char": 230
+              }
+            ],
+            "targets_misconception": "Assuming all social groups had a unified vision of swaraj/independence"
+          }
+        ]
+      },
+      {
+        "severity": "medium",
+        "remediation": "Present evidence about Gandhi's views on women's roles (that their primary duty was home and family) alongside evidence of the Congress's reluctance to grant women real authority, to help students understand that visible participation in a movement does not necessarily translate into structural change in social status or political power for that group.",
+        "source_spans": [
+          {
+            "page": 15,
+            "quote": "Yet, this increased public role did not necessarily mean any radical\nchange in the way the position of women was visualised. Gandhiji\nwas convinced that it was the duty of women to look after home\nand hearth, be good mothers and good wives.",
+            "end_char": 532,
+            "section_id": "page-15",
+            "start_char": 292
+          }
+        ],
+        "misconception": "People might think that the increased public participation of women in the Civil Disobedience Movement automatically led to radical changes in the position of women in society.",
+        "diagnostic_questions": [
+          {
+            "question": "Did Mahatma Gandhi believe that women's participation in the Civil Disobedience Movement should change their traditional role in the home? What did he think their primary duty was?",
+            "source_spans": [
+              {
+                "page": 15,
+                "quote": "Yet, this increased public role did not necessarily mean any radical\nchange in the way the position of women was visualised. Gandhiji\nwas convinced that it was the duty of women to look after home\nand hearth, be good mothers and good wives.",
+                "end_char": 532,
+                "section_id": "page-15",
+                "start_char": 292
+              }
+            ],
+            "targets_misconception": "Assuming women's participation automatically produced radical social change in women's status"
+          },
+          {
+            "question": "Did the Congress give women real positions of authority and leadership after the Civil Disobedience Movement, or was their role mostly symbolic?",
+            "source_spans": [
+              {
+                "page": 15,
+                "quote": "Yet, this increased public role did not necessarily mean any radical\nchange in the way the position of women was visualised. Gandhiji\nwas convinced that it was the duty of women to look after home\nand hearth, be good mothers and good wives.",
+                "end_char": 532,
+                "section_id": "page-15",
+                "start_char": 292
+              }
+            ],
+            "targets_misconception": "Assuming women's participation automatically produced radical social change in women's status"
+          }
+        ]
+      }
+    ]
+  },
+  "validation_report": {
+    "schema_check": {
+      "errors": [],
+      "passed": true
+    },
+    "grounding_check": {
+      "passed": true,
+      "violations": []
+    },
+    "consistency_check": {
+      "passed": true,
+      "conflicts": []
+    },
+    "completeness_check": {
+      "passed": true,
+      "missing_items": []
+    }
+  },
+  "pdf_paths": {
+    "lesson_plans": "/files/tkp/3868f8d8-c221-424d-9b3a-8208eba3d3e0/lesson_plans.pdf?expires=1785590016&sig=076036639c873ca9bb497f2e728ec9080fb5763f904c8cb0391841eda7aef669",
+    "teacher_guide": "/files/tkp/3868f8d8-c221-424d-9b3a-8208eba3d3e0/teacher_guide.pdf?expires=1785590016&sig=715320ab7fe5f15383a3b9ec413f5765bd93e0a2bce0a4ee452e9caa2796e3c7",
+    "assessment_book": "/files/tkp/3868f8d8-c221-424d-9b3a-8208eba3d3e0/assessment_book.pdf?expires=1785590016&sig=2604ffa4fcd07f39d09f5fd4a1f28be22621ff28b097887219c2d1f2ef51715e"
+  },
+  "published_at": "2026-08-01T12:12:20.628747Z"
+}

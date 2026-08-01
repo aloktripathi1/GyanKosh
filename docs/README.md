@@ -119,11 +119,13 @@ Every run emits structured logs with a job ID, stage name, and duration, plus a 
 
 ## Samples
 
-Real, unedited pipeline output lives in [`/samples`](../samples):
+Real, unedited pipeline output lives in [`/samples`](../samples), each one run twice against the live deployment and read through in full before being included:
 
-- **`stem_chemistry_chemical_reactions_and_equations.json`**: a full run against a real NCERT Class 10 Chemistry chapter. Shows formula and equation extraction, a three-period lesson plan, and every validation check passing on genuine STEM content.
+- **`stem_chemistry_chemical_reactions_and_equations.json`**: a real NCERT Class 10 Chemistry chapter. Formula and equation extraction, a three-period lesson plan, all four validation checks passing.
+- **`history_nationalism_in_india.json`**: a real NCERT Class 10 History chapter. An 8-period plan sequenced thematically and chronologically (not a copy of the STEM shape), assessments that correctly skip numerical questions except where the source text itself contains a real statistic, and subject-specific activities (role-play, timeline work, case studies) rather than generic filler.
+- **`physics_electricity.json`**: a real NCERT Class 10 Physics chapter (Electricity). A circuit-building period progression (current → potential difference → resistance → series → parallel → power), correct extraction of physics notation (Ohm's law, proportionality, squared terms, multi-term series/parallel equations), and numerical questions used heavily and correctly, every one independently verified by hand.
 
-More samples (including a humanities example) are on the way.
+Read together, the three samples demonstrate the system adapting structure and assessment style to the subject rather than forcing one template onto all three.
 
 ---
 
@@ -154,5 +156,5 @@ No team ships a system with zero rough edges, and pretending otherwise helps no 
 - **A small coupling between the storage layer and the auth layer.** File-download authorization currently reaches directly into the local storage backend's signature-checking logic instead of going through a fully backend-agnostic interface. Fine today, would need a small refactor if a different storage backend (like S3) were swapped in.
 - **Cross-period terminology contradictions aren't explicitly checked.** Validation confirms every period reference is valid and non-duplicated, but doesn't compare the prose of two periods against each other. The actual defense against contradiction is structural: every claim is grounded to one immutable source, so divergence has nowhere to creep in, but this is a design argument, not a dedicated check.
 - **Local file storage doesn't survive a redeploy** on the current free-tier hosting. Fine for a demo, not a production storage strategy.
-- **Only one sample is published so far,** with a second on the way.
+- **Reliability on dense real documents needs continued attention.** Building the current three samples surfaced two real gap_analysis bugs on the same History chapter: a schema-shape mismatch (fixed) and a case where the model combined multiple facts into one grounding citation instead of listing them separately (the grounding check correctly rejected it; the prompt was tightened in response). Both fixes are verified against real re-runs, but grounding is deliberately strict, and strictness has a retry cost on complex content.
 - **Deliberately out of scope:** multilingual generation, curriculum-board alignment (CBSE, Common Core), and a full observability/tracing stack beyond structured logs and stage timing. These were never meant to be built for this version.
