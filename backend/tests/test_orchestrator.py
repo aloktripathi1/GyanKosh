@@ -19,7 +19,6 @@ from app.schemas.document_intelligence import DocumentIntelligenceOutput, Docume
 from app.schemas.gap_analysis import GapAnalysisOutput
 from app.schemas.knowledge_extraction import Concept, GroundedItem, KnowledgeExtractionOutput
 from app.schemas.teaching_planner import Period, TeachingPlanOutput
-from app.storage.local_storage import LocalStorageBackend
 
 SPAN = SourceSpan(section_id="s1", start_char=0, end_char=5, quote="F=ma.")
 
@@ -62,19 +61,6 @@ class FakeSession:
 
     def flush(self):
         pass
-
-
-@pytest.fixture
-def storage(tmp_path):
-    backend = LocalStorageBackend(str(tmp_path))
-    backend.save("doc.txt", __import__("io").BytesIO(b"Newton's second law: F=ma."))
-    return backend
-
-
-@pytest.fixture(autouse=True)
-def patch_storage(monkeypatch, storage):
-    monkeypatch.setattr(pipeline, "get_storage", lambda: storage)
-    monkeypatch.setattr(pipeline, "BACKOFF_BASE_SECONDS", 0)
 
 
 @pytest.fixture
@@ -236,6 +222,73 @@ def test_resume_from_checkpoint_skips_completed_stages_and_no_duplicate_calls(st
     assert set(job.stage_results.keys()) == set(STAGE_NAMES)
     for stage in STAGE_NAMES[:3]:
         assert calls_before_resume[stage] == stub_agents[stage], f"{stage} was re-invoked after resume"
+
+
+def test_pipeline_completes_for_non_english_content(stub_agents, storage):
+    """Section 15: nothing in the orchestrator/validation path may assume
+    English content — a non-English `language` classification must flow
+    through to a normal completed run, not a special-cased failure."""
+    document = FakeDocument("doc.txt")
+    db = FakeSession(document)
+    job = FakeJob()
+
+    hindi_classification = ClassificationOutput(
+        subject="विज्ञान", grade="9", difficulty=DifficultyLevel.BEGINNER, topic="t", chapter="c", category="cat", language="hi"
+    )
+    real_run = stage_runners.classification_agent.run
+    stage_runners.classification_agent.run = lambda *a, **k: hindi_classification
+    try:
+        pipeline.run_pipeline(db, job)
+    finally:
+        stage_runners.classification_agent.run = real_run
+
+    assert job.status == JobStatus.COMPLETED
+    assert job.stage_results["classification"]["language"] == "hi"
+
+
+def test_pipeline_completes_with_thin_extraction_and_single_period(stub_agents, storage):
+    """Section 15: a document too thin to justify more than one period, with
+    minimal extracted knowledge, must still complete cleanly — not assume a
+    'typical' multi-concept document."""
+    document = FakeDocument("doc.txt")
+    db = FakeSession(document)
+    job = FakeJob()
+
+    thin_extraction = KnowledgeExtractionOutput(
+        objectives=[GroundedItem(text="o", source_span=SPAN)],
+        prerequisites=[], concepts=[], definitions=[], formulae=[], keywords=[],
+        examples=[], applications=[], misconceptions=[],
+    )
+    real_run = stage_runners.knowledge_extraction.run
+    stage_runners.knowledge_extraction.run = lambda *a, **k: thin_extraction
+    try:
+        pipeline.run_pipeline(db, job)
+    finally:
+        stage_runners.knowledge_extraction.run = real_run
+
+    assert job.status == JobStatus.COMPLETED
+    assert job.stage_results["knowledge_extraction"]["concepts"] == []
+    assert len(job.stage_results["knowledge_extraction"]["objectives"]) == 1
+
+
+def test_pipeline_completes_with_ambiguous_multi_subject_classification(stub_agents, storage):
+    document = FakeDocument("doc.txt")
+    db = FakeSession(document)
+    job = FakeJob()
+
+    ambiguous = ClassificationOutput(
+        subject="Interdisciplinary (Science & Social Science)", grade="9",
+        difficulty=DifficultyLevel.INTERMEDIATE, topic="t", chapter="c", category="cat", language="en",
+    )
+    real_run = stage_runners.classification_agent.run
+    stage_runners.classification_agent.run = lambda *a, **k: ambiguous
+    try:
+        pipeline.run_pipeline(db, job)
+    finally:
+        stage_runners.classification_agent.run = real_run
+
+    assert job.status == JobStatus.COMPLETED
+    assert job.stage_results["classification"]["subject"] == "Interdisciplinary (Science & Social Science)"
 
 
 def test_stage_retries_then_succeeds(stub_agents, storage):

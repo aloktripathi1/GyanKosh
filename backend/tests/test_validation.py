@@ -1,5 +1,5 @@
 from app.schemas.activity_generator import Activity, ActivityGenerationOutput, PeriodActivities
-from app.schemas.assessment_generator import MCQ, AssessmentGenerationOutput, PeriodAssessment
+from app.schemas.assessment_generator import MCQ, AssessmentGenerationOutput, PeriodAssessment, ShortAnswerQuestion
 from app.schemas.classification import ClassificationOutput, DifficultyLevel
 from app.schemas.common import SourceSpan
 from app.schemas.content_generator import CheckpointQuestion, PeriodContent, PeriodContentOutput
@@ -138,6 +138,56 @@ def test_completeness_flags_missing_period():
     result = consistency_check.check_completeness(plan, _content(GROUNDED_SPAN), _activities(GROUNDED_SPAN), _assessments(GROUNDED_SPAN))
     assert not result.passed
     assert any("period 2" in item for item in result.missing_items)
+
+
+def test_completeness_accepts_humanities_style_assessment_with_no_numerical_questions():
+    """Section 15: a poem-analysis/humanities period with only short/long answer
+    questions (zero MCQs, zero numerical) must count as complete — the
+    assessment agent adapting question types away from numerical problems is
+    correct behavior, not a gap the completeness check should flag."""
+    plan = _plan()
+    humanities_assessment = AssessmentGenerationOutput(
+        periods=[
+            PeriodAssessment(
+                period_number=1,
+                mcqs=[],
+                short_answer=[ShortAnswerQuestion(question="q", model_answer="a", rubric=["r"], source_spans=[GROUNDED_SPAN])],
+                long_answer=[],
+                numerical=[],
+            )
+        ]
+    )
+    result = consistency_check.check_completeness(plan, _content(GROUNDED_SPAN), _activities(GROUNDED_SPAN), humanities_assessment)
+    assert result.passed
+
+
+def test_consistency_check_does_not_inspect_prose_for_contradictions():
+    """Documents a real, deliberate limitation (Section 15's 'two periods
+    contradicting each other's terminology' case): consistency_check only
+    checks period-number references, not prose content — grounding-by-
+    reference to immutable Stage 3 spans is the actual defense against
+    contradiction, not this check. Two periods with genuinely divergent
+    prose but valid period numbers must NOT be flagged here (that isn't
+    this check's job), which is what this test locks in."""
+    plan = TeachingPlanOutput(
+        periods=[
+            Period(period_number=1, title="P1", objectives=["o"], concepts_covered=["c"], sequencing_rationale="r", recommended_duration_minutes=40),
+            Period(period_number=2, title="P2", objectives=["o"], concepts_covered=["c"], sequencing_rationale="r", recommended_duration_minutes=40),
+        ],
+        total_periods=2, planning_rationale="r",
+    )
+    span_a = GROUNDED_SPAN
+    span_b = SourceSpan(section_id="s1", start_char=20, end_char=40, quote="a different but equally real fact")
+    contradictory_content = PeriodContentOutput(
+        periods=[
+            PeriodContent(period_number=1, entry_ticket="e", teacher_script="The boiling point is 100C", blackboard_notes="b",
+                           activities=["a"], checkpoint_questions=[], exit_ticket="x", homework="h", mentor_moment="m", source_spans=[span_a]),
+            PeriodContent(period_number=2, entry_ticket="e", teacher_script="The boiling point is 90C", blackboard_notes="b",
+                           activities=["a"], checkpoint_questions=[], exit_ticket="x", homework="h", mentor_moment="m", source_spans=[span_b]),
+        ]
+    )
+    result = consistency_check.check_consistency(plan, contradictory_content, _activities(GROUNDED_SPAN), _assessments(GROUNDED_SPAN))
+    assert result.passed  # not a false claim of correctness — a documented scope boundary
 
 
 def test_consistency_flags_orphaned_period_reference():
