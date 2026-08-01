@@ -90,8 +90,14 @@ export async function streamJobProgress(jobId, onEvent, { signal } = {}) {
   }
 }
 
+/**
+ * pdf_paths on a TKP now arrive as pre-signed, short-lived download paths
+ * (e.g. "/files/tkp/<job>/lesson_plans.pdf?expires=...&sig=...") straight
+ * from the backend (see api/tkp.py) — this just prefixes the API origin,
+ * it no longer builds the URL or attaches the shared API key itself.
+ */
 export function fileUrl(path) {
-  return `${BASE}/files/${path}?api_key=${encodeURIComponent(API_KEY)}`;
+  return `${BASE}${path}`;
 }
 
 export { ApiError };
