@@ -82,6 +82,43 @@ def test_structured_call_repairs_stringified_list_field(monkeypatch):
     assert result.items == ["a", "b", "c"]
 
 
+def test_structured_call_repairs_dict_wrapped_top_level_list(monkeypatch):
+    """Observed live on a real, dense NCERT History chapter: gap_analysis's
+    top-level `gaps` list field came back wrapped in an extra single-key dict
+    matching its own name, {"gaps": {"gaps": [...]}}, instead of the list
+    directly — a real schema validation failure in production, not a
+    hypothetical. Must be unwrapped before validation."""
+
+    class _DraftItem(BaseModel):
+        misconception: str
+
+    class _Draft(BaseModel):
+        gaps: list[_DraftItem]
+
+    double_wrapped_input = {"gaps": {"gaps": [{"misconception": "students confuse X and Y"}]}}
+    fake = _FakeAnthropicClient(_tool_use_response("_Draft", double_wrapped_input))
+    monkeypatch.setattr(llm_client, "_client", lambda: fake)
+
+    result = llm_client.structured_call(llm_client.ModelTier.STRONG, "sys", "user", _Draft)
+
+    assert len(result.gaps) == 1
+    assert result.gaps[0].misconception == "students confuse X and Y"
+
+
+def test_unwrap_dict_wrapped_lists_leaves_legitimately_dict_shaped_fields_alone():
+    """The unwrap must be narrow: a dict-typed field that happens to have one
+    key must not be mistaken for a mis-wrapped list."""
+
+    class _WithDictField(BaseModel):
+        items: list[str]
+        metadata: dict
+
+    value = {"items": ["a"], "metadata": {"only_key": "should stay a dict, not become a list"}}
+    result = llm_client._unwrap_dict_wrapped_lists(value, _WithDictField)
+    assert result["metadata"] == {"only_key": "should stay a dict, not become a list"}
+    assert result["items"] == ["a"]
+
+
 def test_repair_stringified_json_leaves_plain_strings_alone():
     assert llm_client._repair_stringified_json("just a normal string") == "just a normal string"
     assert llm_client._repair_stringified_json({"a": 1, "b": [1, 2]}) == {"a": 1, "b": [1, 2]}

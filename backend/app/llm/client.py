@@ -2,7 +2,7 @@ import base64
 import json
 from enum import Enum
 from functools import lru_cache
-from typing import Any, TypeVar
+from typing import Any, TypeVar, get_origin
 
 import anthropic
 from pydantic import BaseModel
@@ -71,9 +71,34 @@ def structured_call(tier: ModelTier, system_prompt: str, user_prompt: str, outpu
 
     for block in response.content:
         if block.type == "tool_use" and block.name == tool_name:
-            return output_schema.model_validate(_repair_stringified_json(block.input))
+            repaired = _repair_stringified_json(block.input)
+            repaired = _unwrap_dict_wrapped_lists(repaired, output_schema)
+            return output_schema.model_validate(repaired)
 
     raise RuntimeError(f"Model did not return a {tool_name} tool_use block")
+
+
+def _unwrap_dict_wrapped_lists(value: Any, schema: type[BaseModel]) -> Any:
+    """Occasionally a top-level list field comes back wrapped in an extra
+    single-key dict instead of the list directly — e.g. gap_analysis's `gaps`
+    field arriving as {"gaps": {"gaps": [...]}} instead of {"gaps": [...]}.
+    Observed live on a dense real document (a full NCERT History chapter),
+    only at the top level so far. Only unwraps where the schema says the
+    field must be a list and the value is a dict with exactly one key whose
+    value is a list — narrow enough that it can't silently mangle a field
+    that's legitimately dict-shaped."""
+    if not isinstance(value, dict):
+        return value
+    repaired = dict(value)
+    for field_name, field_info in schema.model_fields.items():
+        if field_name not in repaired or get_origin(field_info.annotation) is not list:
+            continue
+        field_value = repaired[field_name]
+        if isinstance(field_value, dict) and len(field_value) == 1:
+            (inner,) = field_value.values()
+            if isinstance(inner, list):
+                repaired[field_name] = inner
+    return repaired
 
 
 def _repair_stringified_json(value: Any) -> Any:
