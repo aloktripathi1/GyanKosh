@@ -1,0 +1,1840 @@
+{
+  "id": "ead7567c-91aa-4544-b968-dd15a458acff",
+  "job_id": "57e1181f-9d75-4549-8595-ae6e23b985e7",
+  "version": 1,
+  "classification": {
+    "grade": "10",
+    "topic": "Chemical Reactions and Equations",
+    "chapter": "1",
+    "subject": "Chemistry",
+    "category": "Textbook Chapter",
+    "language": "English",
+    "difficulty": "beginner"
+  },
+  "extracted_knowledge": {
+    "concepts": [
+      {
+        "name": "Chemical Reaction",
+        "text": "A chemical reaction is a process where the nature and identity of a substance changes, occurring whenever a chemical change takes place in matter.",
+        "source_span": {
+          "page": 1,
+          "quote": "Whenever a chemical\nchange occurs, we can say that a chemical reaction has taken place.",
+          "end_char": 610,
+          "section_id": "page-1",
+          "start_char": 523
+        }
+      },
+      {
+        "name": "Reactants",
+        "text": "Reactants are the substances that undergo chemical change in a reaction and are written on the left-hand side of a chemical equation.",
+        "source_span": {
+          "page": 2,
+          "quote": "The substances that undergo chemical change in the reaction (1.1),\nmagnesium and oxygen, are the reactants.",
+          "end_char": 1816,
+          "section_id": "page-2",
+          "start_char": 1709
+        }
+      },
+      {
+        "name": "Products",
+        "text": "Products are the new substances formed during a chemical reaction, written on the right-hand side of a chemical equation.",
+        "source_span": {
+          "page": 2,
+          "quote": "The new substance is\nmagnesium oxide, formed during the reaction, as a product.",
+          "end_char": 1896,
+          "section_id": "page-2",
+          "start_char": 1817
+        }
+      },
+      {
+        "name": "Word-equation",
+        "text": "A word-equation represents a chemical reaction by showing the transformation of reactants to products in sentence form using words rather than chemical symbols.",
+        "source_span": {
+          "page": 2,
+          "quote": "A word-equation shows change of reactants to products through an\narrow placed between them.",
+          "end_char": 1988,
+          "section_id": "page-2",
+          "start_char": 1897
+        }
+      },
+      {
+        "name": "Chemical Equation",
+        "text": "A chemical equation represents a chemical reaction using chemical formulae instead of words for a more concise and useful representation.",
+        "source_span": {
+          "page": 3,
+          "quote": "A chemical equation represents a\nchemical reaction.",
+          "end_char": 289,
+          "section_id": "page-3",
+          "start_char": 238
+        }
+      },
+      {
+        "name": "Skeletal Chemical Equation",
+        "text": "A skeletal chemical equation is an initial chemical equation written using chemical formulae but before it is balanced, where the number of atoms of each element may not be equal on both sides.",
+        "source_span": {
+          "page": 3,
+          "quote": "Such a chemical equation is a skeletal\nchemical equation for a reaction.",
+          "end_char": 790,
+          "section_id": "page-3",
+          "start_char": 718
+        }
+      },
+      {
+        "name": "Balanced Chemical Equation",
+        "text": "A balanced chemical equation is one where the number of atoms of each element is the same on both sides of the arrow, satisfying the law of conservation of mass.",
+        "source_span": {
+          "page": 3,
+          "quote": "As the number of atoms of each element is the same on both sides of\nthe arrow, Eq. (1.3) is a balanced chemical equation.",
+          "end_char": 1998,
+          "section_id": "page-3",
+          "start_char": 1877
+        }
+      },
+      {
+        "name": "Law of Conservation of Mass",
+        "text": "The law stating that mass can neither be created nor destroyed in a chemical reaction, meaning the total mass of elements in products equals the total mass in reactants.",
+        "source_span": {
+          "page": 3,
+          "quote": "Recall the law of conservation of mass that you studied in Class IX; mass\ncan neither be created nor destroyed in a chemical reaction.",
+          "end_char": 1043,
+          "section_id": "page-3",
+          "start_char": 909
+        }
+      }
+    ],
+    "examples": [
+      {
+        "text": "Burning of magnesium ribbon in air produces magnesium oxide, demonstrating a chemical reaction with visible signs of change including a dazzling white flame and formation of white powder.",
+        "source_span": {
+          "page": 2,
+          "quote": "magnesium ribbon burns with a\ndazzling white flame and changes into a white powder. This powder is\nmagnesium oxide. It is formed due to the reaction between magnesium\nand oxygen present in the air.",
+          "end_char": 2483,
+          "section_id": "page-2",
+          "start_char": 2286
+        },
+        "related_concept": null
+      },
+      {
+        "text": "Milk left at room temperature during summers undergoes chemical change (fermentation), representing a real-life example of a chemical reaction.",
+        "source_span": {
+          "page": 1,
+          "quote": "milk is left at room temperature during summers",
+          "end_char": 171,
+          "section_id": "page-1",
+          "start_char": 124
+        },
+        "related_concept": null
+      },
+      {
+        "text": "Iron tawa/pan/nail left exposed to humid atmosphere undergoes chemical change (rusting), a real-life example of a chemical reaction.",
+        "source_span": {
+          "page": 1,
+          "quote": "an iron tawa/pan/nail is left exposed to humid atmosphere",
+          "end_char": 232,
+          "section_id": "page-1",
+          "start_char": 175
+        },
+        "related_concept": null
+      },
+      {
+        "text": "Grapes fermentation is an example of a chemical reaction occurring in daily life.",
+        "source_span": {
+          "page": 1,
+          "quote": "grapes get fermented",
+          "end_char": 256,
+          "section_id": "page-1",
+          "start_char": 236
+        },
+        "related_concept": null
+      },
+      {
+        "text": "Food being cooked represents a chemical reaction that occurs in daily life.",
+        "source_span": {
+          "page": 1,
+          "quote": "food is cooked",
+          "end_char": 274,
+          "section_id": "page-1",
+          "start_char": 260
+        },
+        "related_concept": null
+      },
+      {
+        "text": "Food digestion in the body is a chemical reaction that occurs in daily life.",
+        "source_span": {
+          "page": 1,
+          "quote": "food gets digested in our body",
+          "end_char": 308,
+          "section_id": "page-1",
+          "start_char": 278
+        },
+        "related_concept": null
+      },
+      {
+        "text": "Respiration is a chemical reaction that occurs in daily life.",
+        "source_span": {
+          "page": 1,
+          "quote": "we respire",
+          "end_char": 322,
+          "section_id": "page-1",
+          "start_char": 312
+        },
+        "related_concept": null
+      }
+    ],
+    "formulae": [
+      {
+        "name": "Magnesium combustion",
+        "text": "The combustion of magnesium metal in oxygen to form magnesium oxide.",
+        "expression": "Mg + O2 → MgO",
+        "source_span": {
+          "page": 3,
+          "quote": "Mg + O2  →  MgO",
+          "end_char": 414,
+          "section_id": "page-3",
+          "start_char": 399
+        }
+      },
+      {
+        "name": "Zinc and sulphuric acid reaction",
+        "text": "The reaction between zinc and sulphuric acid to produce zinc sulphate and hydrogen gas, representing a balanced chemical equation.",
+        "expression": "Zn + H2SO4 → ZnSO4 + H2",
+        "source_span": {
+          "page": 3,
+          "quote": "Zn + H2SO4 → ZnSO4 + H2",
+          "end_char": 1683,
+          "section_id": "page-3",
+          "start_char": 1660
+        }
+      },
+      {
+        "name": "Iron oxidation",
+        "text": "An unbalanced chemical equation showing the reaction between iron and water.",
+        "expression": "Fe + H2O → Fe3O4 + H2",
+        "source_span": {
+          "page": 3,
+          "quote": "Fe + H2O → Fe3O4 + H2",
+          "end_char": 2076,
+          "section_id": "page-3",
+          "start_char": 2055
+        }
+      }
+    ],
+    "keywords": [
+      {
+        "text": "Chemical change",
+        "source_span": {
+          "page": 1,
+          "quote": "We have already learnt about physical\nand chemical changes of matter in our previous classes.",
+          "end_char": 522,
+          "section_id": "page-1",
+          "start_char": 429
+        }
+      },
+      {
+        "text": "Physical changes",
+        "source_span": {
+          "page": 1,
+          "quote": "We have already learnt about physical\nand chemical changes of matter in our previous classes.",
+          "end_char": 522,
+          "section_id": "page-1",
+          "start_char": 429
+        }
+      },
+      {
+        "text": "Reactants",
+        "source_span": {
+          "page": 2,
+          "quote": "The reactants are written on the left-hand\nside (LHS) with a plus sign (+) between them.",
+          "end_char": 2077,
+          "section_id": "page-2",
+          "start_char": 1989
+        }
+      },
+      {
+        "text": "Products",
+        "source_span": {
+          "page": 2,
+          "quote": "Similarly, products are\nwritten on the right-hand side (RHS) with a plus sign (+) between them.",
+          "end_char": 2173,
+          "section_id": "page-2",
+          "start_char": 2078
+        }
+      },
+      {
+        "text": "Chemical formulae",
+        "source_span": {
+          "page": 3,
+          "quote": "Chemical equations can be made more concise and useful if we use\nchemical formulae instead of words.",
+          "end_char": 237,
+          "section_id": "page-3",
+          "start_char": 137
+        }
+      },
+      {
+        "text": "Balanced",
+        "source_span": {
+          "page": 3,
+          "quote": "If yes, then the equation is balanced.",
+          "end_char": 613,
+          "section_id": "page-3",
+          "start_char": 575
+        }
+      },
+      {
+        "text": "Unbalanced",
+        "source_span": {
+          "page": 3,
+          "quote": "If not,\nthen the equation is unbalanced because the mass is not the same on\nboth sides of the equation.",
+          "end_char": 717,
+          "section_id": "page-3",
+          "start_char": 614
+        }
+      },
+      {
+        "text": "Law of conservation of mass",
+        "source_span": {
+          "page": 3,
+          "quote": "Recall the law of conservation of mass that you studied in Class IX; mass\ncan neither be created nor destroyed in a chemical reaction.",
+          "end_char": 1043,
+          "section_id": "page-3",
+          "start_char": 909
+        }
+      }
+    ],
+    "objectives": [],
+    "definitions": [
+      {
+        "term": "Chemical Reaction",
+        "text": "A process where a chemical change occurs, altering the nature and identity of substances involved.",
+        "source_span": {
+          "page": 1,
+          "quote": "Whenever a chemical\nchange occurs, we can say that a chemical reaction has taken place.",
+          "end_char": 610,
+          "section_id": "page-1",
+          "start_char": 523
+        }
+      },
+      {
+        "term": "Reactants",
+        "text": "The substances that undergo chemical change in a reaction.",
+        "source_span": {
+          "page": 2,
+          "quote": "The substances that undergo chemical change in the reaction (1.1),\nmagnesium and oxygen, are the reactants.",
+          "end_char": 1816,
+          "section_id": "page-2",
+          "start_char": 1709
+        }
+      },
+      {
+        "term": "Product",
+        "text": "The new substance formed during a chemical reaction.",
+        "source_span": {
+          "page": 2,
+          "quote": "The new substance is\nmagnesium oxide, formed during the reaction, as a product.",
+          "end_char": 1896,
+          "section_id": "page-2",
+          "start_char": 1817
+        }
+      },
+      {
+        "term": "Word-equation",
+        "text": "A representation of a chemical reaction in sentence form showing the transformation of reactants to products using words and an arrow.",
+        "source_span": {
+          "page": 2,
+          "quote": "A word-equation shows change of reactants to products through an\narrow placed between them.",
+          "end_char": 1988,
+          "section_id": "page-2",
+          "start_char": 1897
+        }
+      },
+      {
+        "term": "Chemical Equation",
+        "text": "A concise representation of a chemical reaction using chemical formulae instead of words.",
+        "source_span": {
+          "page": 3,
+          "quote": "Chemical equations can be made more concise and useful if we use\nchemical formulae instead of words. A chemical equation represents a\nchemical reaction.",
+          "end_char": 289,
+          "section_id": "page-3",
+          "start_char": 137
+        }
+      },
+      {
+        "term": "Skeletal Chemical Equation",
+        "text": "An unbalanced chemical equation written using chemical formulae where the number of atoms of each element may differ on both sides.",
+        "source_span": {
+          "page": 3,
+          "quote": "Such a chemical equation is a skeletal\nchemical equation for a reaction.",
+          "end_char": 790,
+          "section_id": "page-3",
+          "start_char": 718
+        }
+      },
+      {
+        "term": "Balanced Chemical Equation",
+        "text": "A chemical equation where the number of atoms of each element is equal on both sides of the arrow.",
+        "source_span": {
+          "page": 3,
+          "quote": "As the number of atoms of each element is the same on both sides of\nthe arrow, Eq. (1.3) is a balanced chemical equation.",
+          "end_char": 1998,
+          "section_id": "page-3",
+          "start_char": 1877
+        }
+      },
+      {
+        "term": "Law of Conservation of Mass",
+        "text": "The scientific principle stating that mass cannot be created or destroyed in a chemical reaction; total mass of products equals total mass of reactants.",
+        "source_span": {
+          "page": 3,
+          "quote": "mass\ncan neither be created nor destroyed in a chemical reaction. That is, the\ntotal mass of the elements present in the products of a chemical reaction\nhas to be equal to the total mass of the elements present in the reactants.",
+          "end_char": 1206,
+          "section_id": "page-3",
+          "start_char": 978
+        }
+      }
+    ],
+    "applications": [
+      {
+        "text": "Chemical equations are used to represent and communicate chemical reactions in a standardized, concise form that scientists can understand universally.",
+        "source_span": {
+          "page": 3,
+          "quote": "Chemical equations can be made more concise and useful if we use\nchemical formulae instead of words.",
+          "end_char": 237,
+          "section_id": "page-3",
+          "start_char": 137
+        }
+      },
+      {
+        "text": "Balancing chemical equations ensures compliance with the law of conservation of mass, which is fundamental to chemical calculations and stoichiometry.",
+        "source_span": {
+          "page": 3,
+          "quote": "Hence, we need to balance a\nskeletal chemical equation.",
+          "end_char": 1370,
+          "section_id": "page-3",
+          "start_char": 1315
+        }
+      }
+    ],
+    "prerequisites": [],
+    "misconceptions": [
+      {
+        "text": "A chemical equation written with chemical formulae is automatically balanced without checking if atom counts match on both sides.",
+        "correction": "A chemical equation must be checked to ensure that the number of atoms of each element is equal on both the left-hand side and right-hand side; if not, it is unbalanced and must be balanced according to the law of conservation of mass.",
+        "source_span": {
+          "page": 3,
+          "quote": "Count and compare the number of atoms of each element on the\nLHS and RHS of the arrow. Is the number of atoms of each element the\nsame on both the sides? If yes, then the equation is balanced. If not,\nthen the equation is unbalanced because the mass is not the same on\nboth sides of the equation.",
+          "end_char": 717,
+          "section_id": "page-3",
+          "start_char": 421
+        }
+      }
+    ]
+  },
+  "teaching_plan": {
+    "periods": [
+      {
+        "title": "Introduction to Chemical Reactions",
+        "objectives": [
+          "Define a chemical reaction and identify examples of chemical change",
+          "Distinguish reactants from products in a given reaction",
+          "Represent a chemical reaction using a word-equation"
+        ],
+        "period_number": 1,
+        "concepts_covered": [
+          "Chemical Reaction",
+          "Reactants",
+          "Products",
+          "Word-equation"
+        ],
+        "sequencing_rationale": "This period lays the conceptual foundation by introducing what a chemical reaction is and how it can be represented in the simplest form (words) before moving to symbolic representation. Students must grasp reactants/products conceptually before they can write formal equations.",
+        "recommended_duration_minutes": 35
+      },
+      {
+        "title": "From Words to Symbols: Writing Chemical Equations",
+        "objectives": [
+          "Convert word-equations into chemical equations using formulae",
+          "Understand the purpose and advantages of using chemical equations over word-equations",
+          "Identify a skeletal chemical equation and recognize why it needs balancing"
+        ],
+        "period_number": 2,
+        "concepts_covered": [
+          "Chemical Equation",
+          "Skeletal Chemical Equation"
+        ],
+        "sequencing_rationale": "Building on the previous period's word-equations, students now learn the symbolic representation, which is a direct progression from qualitative to quantitative/symbolic literacy. Introducing the skeletal equation sets up the need for balancing in the next period.",
+        "recommended_duration_minutes": 30
+      },
+      {
+        "title": "Balancing Chemical Equations and Conservation of Mass",
+        "objectives": [
+          "State and explain the law of conservation of mass",
+          "Understand why chemical equations must be balanced",
+          "Practice balancing simple skeletal equations to form balanced chemical equations",
+          "Verify atom counts of elements on both sides of an equation"
+        ],
+        "period_number": 3,
+        "concepts_covered": [
+          "Law of Conservation of Mass",
+          "Balanced Chemical Equation"
+        ],
+        "sequencing_rationale": "This period logically follows the introduction of skeletal equations, providing the conceptual justification (conservation of mass) and the practical skill (balancing) needed to complete the equation-writing process. Since balancing requires hands-on numerical practice, it needs a longer, focused session.",
+        "recommended_duration_minutes": 50
+      }
+    ],
+    "total_periods": 3,
+    "planning_rationale": "The content covers a tightly connected conceptual progression: understanding what a chemical reaction is, representing it in words, converting to symbolic chemical equations, and finally balancing those equations using the law of conservation of mass. For beginner Grade 10 students, each stage requires dedicated time to build understanding before advancing — rushing word-equations and balancing into one session would overwhelm learners new to symbolic chemistry. Three periods allow a natural build-up: (1) conceptual foundation, (2) symbolic representation, and (3) the more skill-intensive balancing practice, which needs a longer session due to its hands-on, iterative nature."
+  },
+  "period_content": {
+    "periods": [
+      {
+        "homework": "List five chemical reactions you notice at home over the next day (e.g., cooking, rusting) and write a word-equation for each.",
+        "activities": [
+          "Observe and discuss the burning of magnesium ribbon (teacher demonstration or video)",
+          "Identify reactants and products in given real-life scenarios",
+          "Write word-equations for 3 daily-life chemical reactions in pairs"
+        ],
+        "exit_ticket": "Write a word-equation for the burning of magnesium ribbon in air, and underline the reactants once and the products twice.",
+        "entry_ticket": "Look around you: think of one change you've seen recently (cooking, rusting, fermenting food). Write down what changed and whether you think a new substance was formed.",
+        "source_spans": [
+          {
+            "page": 1,
+            "quote": "Whenever a chemical\nchange occurs, we can say that a chemical reaction has taken place.",
+            "end_char": 610,
+            "section_id": "page-1",
+            "start_char": 523
+          },
+          {
+            "page": 2,
+            "quote": "The substances that undergo chemical change in the reaction (1.1),\nmagnesium and oxygen, are the reactants.",
+            "end_char": 1816,
+            "section_id": "page-2",
+            "start_char": 1709
+          },
+          {
+            "page": 2,
+            "quote": "The new substance is\nmagnesium oxide, formed during the reaction, as a product.",
+            "end_char": 1896,
+            "section_id": "page-2",
+            "start_char": 1817
+          },
+          {
+            "page": 2,
+            "quote": "A word-equation shows change of reactants to products through an\narrow placed between them.",
+            "end_char": 1988,
+            "section_id": "page-2",
+            "start_char": 1897
+          },
+          {
+            "page": 2,
+            "quote": "magnesium ribbon burns with a\ndazzling white flame and changes into a white powder. This powder is\nmagnesium oxide. It is formed due to the reaction between magnesium\nand oxygen present in the air.",
+            "end_char": 2483,
+            "section_id": "page-2",
+            "start_char": 2286
+          },
+          {
+            "page": 1,
+            "quote": "milk is left at room temperature during summers",
+            "end_char": 171,
+            "section_id": "page-1",
+            "start_char": 124
+          },
+          {
+            "page": 1,
+            "quote": "an iron tawa/pan/nail is left exposed to humid atmosphere",
+            "end_char": 232,
+            "section_id": "page-1",
+            "start_char": 175
+          },
+          {
+            "page": 1,
+            "quote": "grapes get fermented",
+            "end_char": 256,
+            "section_id": "page-1",
+            "start_char": 236
+          },
+          {
+            "page": 1,
+            "quote": "food is cooked",
+            "end_char": 274,
+            "section_id": "page-1",
+            "start_char": 260
+          },
+          {
+            "page": 1,
+            "quote": "food gets digested in our body",
+            "end_char": 308,
+            "section_id": "page-1",
+            "start_char": 278
+          },
+          {
+            "page": 1,
+            "quote": "we respire",
+            "end_char": 322,
+            "section_id": "page-1",
+            "start_char": 312
+          }
+        ],
+        "mentor_moment": "Encourage students to connect chemistry to their everyday lives - when they see rusting, fermenting, or cooking as chemical reactions, the subject stops feeling abstract and becomes something they observe daily. Use their own home examples as much as possible to build ownership of the concept.",
+        "period_number": 1,
+        "teacher_script": "Begin by asking students to recall changes they see every day - milk turning sour, an iron nail rusting, food being cooked. Explain that a chemical reaction is a process where the nature and identity of a substance changes, occurring whenever a chemical change takes place in matter. Emphasize that this is different from just a physical change like ice melting, because in a chemical reaction, entirely new substances form. Introduce the burning of magnesium ribbon in air as a classic example: point out the dazzling white flame and the white powder that forms - this shows visible signs of a chemical reaction. Then explain that every chemical reaction has a starting point and an ending point. The substances that undergo chemical change in a reaction are called reactants, and they are written on the left-hand side of a chemical equation. The new substances formed during a chemical reaction are called products, written on the right-hand side. Show how we can represent this transformation in sentence form using words rather than chemical symbols - this is called a word-equation. Work through the magnesium example as a word-equation: Magnesium + Oxygen -> Magnesium Oxide. Ask students to identify reactants and products in this equation. Then discuss other daily-life examples: milk left at room temperature during summers undergoing fermentation, iron tawa/pan/nail rusting when exposed to humid atmosphere, grapes fermenting, food being cooked, food digestion in the body, and respiration - all are chemical reactions happening in daily life. Have students attempt to write simple word-equations for a couple of these examples.",
+        "blackboard_notes": "CHEMICAL REACTION: process where nature/identity of substance changes\nREACTANTS (left side) --> PRODUCTS (right side)\nWORD-EQUATION: Reactants (in words) -> Products (in words)\nExample: Magnesium + Oxygen -> Magnesium Oxide\nDaily-life examples: rusting of iron, fermentation of milk/grapes, cooking food, digestion, respiration",
+        "checkpoint_questions": [
+          {
+            "question": "What is a chemical reaction?",
+            "source_spans": [
+              {
+                "page": 1,
+                "quote": "Whenever a chemical\nchange occurs, we can say that a chemical reaction has taken place.",
+                "end_char": 610,
+                "section_id": "page-1",
+                "start_char": 523
+              }
+            ],
+            "expected_answer": "A process where the nature and identity of a substance changes, occurring whenever a chemical change takes place in matter."
+          },
+          {
+            "question": "In the reaction Magnesium + Oxygen -> Magnesium Oxide, identify the reactants and the products.",
+            "source_spans": [
+              {
+                "page": 2,
+                "quote": "The substances that undergo chemical change in the reaction (1.1),\nmagnesium and oxygen, are the reactants.",
+                "end_char": 1816,
+                "section_id": "page-2",
+                "start_char": 1709
+              },
+              {
+                "page": 2,
+                "quote": "The new substance is\nmagnesium oxide, formed during the reaction, as a product.",
+                "end_char": 1896,
+                "section_id": "page-2",
+                "start_char": 1817
+              },
+              {
+                "page": 3,
+                "quote": "Mg + O2  →  MgO",
+                "end_char": 414,
+                "section_id": "page-3",
+                "start_char": 399
+              }
+            ],
+            "expected_answer": "Reactants: Magnesium and Oxygen (substances undergoing change, written on left side). Products: Magnesium Oxide (new substance formed, written on right side)."
+          },
+          {
+            "question": "Give two examples of chemical reactions occurring in daily life.",
+            "source_spans": [
+              {
+                "page": 1,
+                "quote": "an iron tawa/pan/nail is left exposed to humid atmosphere",
+                "end_char": 232,
+                "section_id": "page-1",
+                "start_char": 175
+              },
+              {
+                "page": 1,
+                "quote": "milk is left at room temperature during summers",
+                "end_char": 171,
+                "section_id": "page-1",
+                "start_char": 124
+              }
+            ],
+            "expected_answer": "Any two of: rusting of iron, fermentation of milk or grapes, cooking of food, digestion of food, respiration."
+          }
+        ]
+      },
+      {
+        "homework": "Write the skeletal chemical equations (using formulae) for two of the word-equations you wrote for homework last time. Do not balance them yet - just convert.",
+        "activities": [
+          "Convert 3 given word-equations into chemical equations using formulae (with teacher support for symbols)",
+          "Count atoms of each element on both sides of the iron-water skeletal equation in small groups",
+          "Class discussion: advantages of chemical equations over word-equations"
+        ],
+        "exit_ticket": "Convert the word-equation 'Iron + Water -> Iron oxide + Hydrogen' into a skeletal chemical equation using formulae, and explain why it still needs balancing.",
+        "entry_ticket": "Recall the word-equation you wrote for magnesium burning in air. Can you think of a shorter way to write 'Magnesium' and 'Oxygen' using symbols you learned earlier?",
+        "source_spans": [
+          {
+            "page": 3,
+            "quote": "A chemical equation represents a\nchemical reaction.",
+            "end_char": 289,
+            "section_id": "page-3",
+            "start_char": 238
+          },
+          {
+            "page": 3,
+            "quote": "Such a chemical equation is a skeletal\nchemical equation for a reaction.",
+            "end_char": 790,
+            "section_id": "page-3",
+            "start_char": 718
+          },
+          {
+            "page": 3,
+            "quote": "Fe + H2O → Fe3O4 + H2",
+            "end_char": 2076,
+            "section_id": "page-3",
+            "start_char": 2055
+          },
+          {
+            "page": 3,
+            "quote": "Count and compare the number of atoms of each element on the\nLHS and RHS of the arrow. Is the number of atoms of each element the\nsame on both the sides? If yes, then the equation is balanced. If not,\nthen the equation is unbalanced because the mass is not the same on\nboth sides of the equation.",
+            "end_char": 717,
+            "section_id": "page-3",
+            "start_char": 421
+          },
+          {
+            "page": 3,
+            "quote": "Mg + O2  →  MgO",
+            "end_char": 414,
+            "section_id": "page-3",
+            "start_char": 399
+          }
+        ],
+        "mentor_moment": "When introducing chemical formulae, go slow with the symbols - many students confuse subscripts and coefficients at this stage. Use plenty of atom-counting practice before moving to balancing so students build confidence rather than fear of equations.",
+        "period_number": 2,
+        "teacher_script": "Start by reviewing the word-equation from the last class: Magnesium + Oxygen -> Magnesium Oxide. Ask students how chemists might write this more concisely. Introduce that a chemical equation represents a chemical reaction using chemical formulae instead of words for a more concise and useful representation. Convert the word-equation into a chemical equation using formulae: Mg + O2 -> MgO. Discuss why chemists prefer chemical equations: they are shorter, universally understood regardless of language, and show exact quantities and formulae involved. Now introduce the idea that not every chemical equation written straight from formulae is correct as it stands. Show the example of iron reacting with water: Fe + H2O -> Fe3O4 + H2, an unbalanced chemical equation showing the reaction between iron and water. Explain that this is called a skeletal chemical equation - an initial chemical equation written using chemical formulae but before it is balanced, where the number of atoms of each element may not be equal on both sides. Have students count atoms of Fe, H, and O on both sides to discover the mismatch themselves. Point out the misconception that a chemical equation written with chemical formulae is automatically balanced without checking if atom counts match on both sides - stress that this is NOT true, and balancing is a necessary next step, which we will do in the next class.",
+        "blackboard_notes": "CHEMICAL EQUATION: reaction shown using chemical formulae (concise, universal)\nWord equation: Magnesium + Oxygen -> Magnesium Oxide\nChemical equation: Mg + O2 -> MgO\nSKELETAL CHEMICAL EQUATION: formulae used but NOT balanced\nExample: Fe + H2O -> Fe3O4 + H2 (unbalanced - count atoms!)\nCAUTION: writing formulae does NOT mean it's automatically balanced!",
+        "checkpoint_questions": [
+          {
+            "question": "Why do chemists prefer chemical equations over word-equations?",
+            "source_spans": [
+              {
+                "page": 3,
+                "quote": "A chemical equation represents a\nchemical reaction.",
+                "end_char": 289,
+                "section_id": "page-3",
+                "start_char": 238
+              }
+            ],
+            "expected_answer": "Because a chemical equation represents a chemical reaction using chemical formulae instead of words, making it a more concise and useful representation."
+          },
+          {
+            "question": "What is a skeletal chemical equation and what is wrong with it?",
+            "source_spans": [
+              {
+                "page": 3,
+                "quote": "Such a chemical equation is a skeletal\nchemical equation for a reaction.",
+                "end_char": 790,
+                "section_id": "page-3",
+                "start_char": 718
+              }
+            ],
+            "expected_answer": "It is an initial chemical equation written using chemical formulae but before it is balanced, where the number of atoms of each element may not be equal on both sides."
+          },
+          {
+            "question": "Is the equation Fe + H2O -> Fe3O4 + H2 balanced? Explain using the idea of a common misconception.",
+            "source_spans": [
+              {
+                "page": 3,
+                "quote": "Fe + H2O → Fe3O4 + H2",
+                "end_char": 2076,
+                "section_id": "page-3",
+                "start_char": 2055
+              },
+              {
+                "page": 3,
+                "quote": "Count and compare the number of atoms of each element on the\nLHS and RHS of the arrow. Is the number of atoms of each element the\nsame on both the sides? If yes, then the equation is balanced. If not,\nthen the equation is unbalanced because the mass is not the same on\nboth sides of the equation.",
+                "end_char": 717,
+                "section_id": "page-3",
+                "start_char": 421
+              }
+            ],
+            "expected_answer": "No, it is not balanced - it is only a skeletal equation. Just writing formulae does not automatically make an equation balanced; atom counts must be checked and matched on both sides."
+          }
+        ]
+      },
+      {
+        "homework": "Balance three more skeletal chemical equations given in your worksheet, and for each, write out the atom count verification table showing atoms of each element on both sides.",
+        "activities": [
+          "Verify atom counts for Zn + H2SO4 -> ZnSO4 + H2 in pairs",
+          "Balance the skeletal equation Fe + H2O -> Fe3O4 + H2 step-by-step as a class",
+          "Independent practice: balance 3 given skeletal equations and verify atom counts",
+          "Peer-check: swap balanced equations with a partner and confirm atom counts match"
+        ],
+        "exit_ticket": "Balance the skeletal equation Fe + H2O -> Fe3O4 + H2 and verify the atom counts of Fe, H, and O on both sides in your final balanced equation.",
+        "entry_ticket": "Look at the skeletal equation Fe + H2O -> Fe3O4 + H2 from last class. Count the number of Fe, H, and O atoms on each side and write them down.",
+        "source_spans": [
+          {
+            "page": 3,
+            "quote": "Recall the law of conservation of mass that you studied in Class IX; mass\ncan neither be created nor destroyed in a chemical reaction.",
+            "end_char": 1043,
+            "section_id": "page-3",
+            "start_char": 909
+          },
+          {
+            "page": 3,
+            "quote": "Recall the law of conservation of mass that you studied in Class IX; mass\ncan neither be created nor destroyed in a chemical reaction.",
+            "end_char": 1043,
+            "section_id": "page-3",
+            "start_char": 909
+          },
+          {
+            "page": 3,
+            "quote": "As the number of atoms of each element is the same on both sides of\nthe arrow, Eq. (1.3) is a balanced chemical equation.",
+            "end_char": 1998,
+            "section_id": "page-3",
+            "start_char": 1877
+          },
+          {
+            "page": 3,
+            "quote": "Fe + H2O → Fe3O4 + H2",
+            "end_char": 2076,
+            "section_id": "page-3",
+            "start_char": 2055
+          },
+          {
+            "page": 3,
+            "quote": "Zn + H2SO4 → ZnSO4 + H2",
+            "end_char": 1683,
+            "section_id": "page-3",
+            "start_char": 1660
+          }
+        ],
+        "mentor_moment": "Balancing equations can frustrate students at first - remind them it is a puzzle-solving skill that improves only with repeated practice. Celebrate small wins, like a student correctly balancing their first equation, to build their confidence before moving to more complex reactions.",
+        "period_number": 3,
+        "teacher_script": "Begin by revisiting the skeletal equation from last class and the atom counts students found - they should notice mismatches. Introduce the law of conservation of mass: mass can neither be created nor destroyed in a chemical reaction, meaning the total mass of elements in products equals the total mass in reactants. Explain that this scientific principle is why every chemical equation must be balanced - if atoms disappeared or appeared out of nowhere, it would violate this fundamental law of nature. Define a balanced chemical equation as one where the number of atoms of each element is the same on both sides of the arrow, satisfying the law of conservation of mass. Walk through balancing the iron-water equation step by step: 3Fe + 4H2O -> Fe3O4 + 4H2, showing how coefficients are added (never changing subscripts) until atom counts match. Then work through the zinc-sulphuric acid reaction: Zn + H2SO4 -> ZnSO4 + H2, the reaction between zinc and sulphuric acid to produce zinc sulphate and hydrogen gas, representing a balanced chemical equation - have students verify it is already balanced by counting Zn, H, S, O atoms on both sides. Give students 2-3 more skeletal equations to practice balancing on their own, then have them verify atom counts on both sides as a final check for each.",
+        "blackboard_notes": "LAW OF CONSERVATION OF MASS: mass neither created nor destroyed in a chemical reaction; total mass reactants = total mass products\nBALANCED CHEMICAL EQUATION: atoms of each element equal on both sides of arrow\nExample 1: 3Fe + 4H2O -> Fe3O4 + 4H2 (balanced)\nExample 2: Zn + H2SO4 -> ZnSO4 + H2 (already balanced)\nSteps: 1) Count atoms each side 2) Add coefficients 3) Recount to verify",
+        "checkpoint_questions": [
+          {
+            "question": "State the law of conservation of mass.",
+            "source_spans": [
+              {
+                "page": 3,
+                "quote": "Recall the law of conservation of mass that you studied in Class IX; mass\ncan neither be created nor destroyed in a chemical reaction.",
+                "end_char": 1043,
+                "section_id": "page-3",
+                "start_char": 909
+              }
+            ],
+            "expected_answer": "Mass can neither be created nor destroyed in a chemical reaction, meaning the total mass of elements in products equals the total mass in reactants."
+          },
+          {
+            "question": "Why must chemical equations be balanced?",
+            "source_spans": [
+              {
+                "page": 3,
+                "quote": "As the number of atoms of each element is the same on both sides of\nthe arrow, Eq. (1.3) is a balanced chemical equation.",
+                "end_char": 1998,
+                "section_id": "page-3",
+                "start_char": 1877
+              },
+              {
+                "page": 3,
+                "quote": "Recall the law of conservation of mass that you studied in Class IX; mass\ncan neither be created nor destroyed in a chemical reaction.",
+                "end_char": 1043,
+                "section_id": "page-3",
+                "start_char": 909
+              }
+            ],
+            "expected_answer": "Because a balanced chemical equation must have the same number of atoms of each element on both sides of the arrow, satisfying the law of conservation of mass - unbalanced equations would imply mass is created or destroyed, which is not possible."
+          },
+          {
+            "question": "Verify that Zn + H2SO4 -> ZnSO4 + H2 is a balanced equation by counting atoms of each element on both sides.",
+            "source_spans": [
+              {
+                "page": 3,
+                "quote": "Zn + H2SO4 → ZnSO4 + H2",
+                "end_char": 1683,
+                "section_id": "page-3",
+                "start_char": 1660
+              }
+            ],
+            "expected_answer": "Left side: 1 Zn, 2 H, 1 S, 4 O. Right side: 1 Zn, 1 S, 4 O (in ZnSO4) + 2 H (in H2) = 1 Zn, 2 H, 1 S, 4 O. Both sides match, so it is balanced."
+          }
+        ]
+      }
+    ]
+  },
+  "activities": {
+    "periods": [
+      {
+        "activities": [
+          {
+            "type": "demonstration",
+            "title": "Magnesium Ribbon Burning Demonstration",
+            "materials": [
+              "Magnesium ribbon",
+              "Tongs",
+              "Bunsen burner",
+              "Safety goggles",
+              "Heat-proof mat"
+            ],
+            "instructions": [
+              "Hold a small strip of magnesium ribbon with tongs.",
+              "Clean the ribbon lightly to remove any oxide coating.",
+              "Ignite the ribbon over a Bunsen burner flame, holding it away from students at a safe distance.",
+              "Observe and record the dazzling white flame and the white powder formed.",
+              "Ask students to identify the reactant (magnesium) and product (magnesium oxide) and write the word-equation on the board."
+            ],
+            "source_spans": [
+              {
+                "page": 1,
+                "quote": "Whenever a chemical\nchange occurs, we can say that a chemical reaction has taken place.",
+                "end_char": 610,
+                "section_id": "page-1",
+                "start_char": 523
+              },
+              {
+                "page": 2,
+                "quote": "The substances that undergo chemical change in the reaction (1.1),\nmagnesium and oxygen, are the reactants.",
+                "end_char": 1816,
+                "section_id": "page-2",
+                "start_char": 1709
+              },
+              {
+                "page": 2,
+                "quote": "The new substance is\nmagnesium oxide, formed during the reaction, as a product.",
+                "end_char": 1896,
+                "section_id": "page-2",
+                "start_char": 1817
+              },
+              {
+                "page": 2,
+                "quote": "A word-equation shows change of reactants to products through an\narrow placed between them.",
+                "end_char": 1988,
+                "section_id": "page-2",
+                "start_char": 1897
+              },
+              {
+                "page": 2,
+                "quote": "magnesium ribbon burns with a\ndazzling white flame and changes into a white powder. This powder is\nmagnesium oxide. It is formed due to the reaction between magnesium\nand oxygen present in the air.",
+                "end_char": 2483,
+                "section_id": "page-2",
+                "start_char": 2286
+              }
+            ],
+            "duration_minutes": 15,
+            "success_criteria": [
+              "Students can state that a chemical reaction changes the nature/identity of a substance.",
+              "Students correctly identify magnesium as the reactant and magnesium oxide as the product.",
+              "Students write the correct word-equation: Magnesium + Oxygen → Magnesium Oxide."
+            ]
+          },
+          {
+            "type": "discussion",
+            "title": "Everyday Chemical Reactions Discussion Circle",
+            "materials": [
+              "Whiteboard",
+              "Markers",
+              "Picture cards of rusting nail, sour milk, cooking food, grapes fermenting"
+            ],
+            "instructions": [
+              "Divide students into small groups and give each group a picture card depicting a daily-life chemical change (rusting, milk turning sour, cooking, fermentation).",
+              "Ask each group to discuss what change is occurring and whether it is a chemical reaction.",
+              "Have each group present their example, naming the reactants and products where possible.",
+              "As a class, compile a list of daily-life chemical reactions on the board, including respiration and digestion.",
+              "Summarize by writing a word-equation for at least two of the examples discussed."
+            ],
+            "source_spans": [
+              {
+                "page": 1,
+                "quote": "milk is left at room temperature during summers",
+                "end_char": 171,
+                "section_id": "page-1",
+                "start_char": 124
+              },
+              {
+                "page": 1,
+                "quote": "an iron tawa/pan/nail is left exposed to humid atmosphere",
+                "end_char": 232,
+                "section_id": "page-1",
+                "start_char": 175
+              },
+              {
+                "page": 1,
+                "quote": "grapes get fermented",
+                "end_char": 256,
+                "section_id": "page-1",
+                "start_char": 236
+              },
+              {
+                "page": 1,
+                "quote": "food is cooked",
+                "end_char": 274,
+                "section_id": "page-1",
+                "start_char": 260
+              },
+              {
+                "page": 1,
+                "quote": "food gets digested in our body",
+                "end_char": 308,
+                "section_id": "page-1",
+                "start_char": 278
+              },
+              {
+                "page": 1,
+                "quote": "we respire",
+                "end_char": 322,
+                "section_id": "page-1",
+                "start_char": 312
+              },
+              {
+                "page": 2,
+                "quote": "A word-equation shows change of reactants to products through an\narrow placed between them.",
+                "end_char": 1988,
+                "section_id": "page-2",
+                "start_char": 1897
+              }
+            ],
+            "duration_minutes": 20,
+            "success_criteria": [
+              "Students can name at least three real-life examples of chemical reactions beyond the textbook.",
+              "Students distinguish between physical and chemical changes based on class discussion.",
+              "Students can construct a simple word-equation for a discussed example."
+            ]
+          }
+        ],
+        "period_number": 1
+      },
+      {
+        "activities": [
+          {
+            "type": "group work",
+            "title": "From Word-Equations to Skeletal Chemical Equations",
+            "materials": [
+              "Worksheet with word-equations",
+              "Chemical formula reference chart",
+              "Whiteboard",
+              "Markers"
+            ],
+            "instructions": [
+              "Provide groups with a worksheet listing several word-equations (e.g., Magnesium + Oxygen → Magnesium Oxide).",
+              "Instruct students to convert each word-equation into a chemical equation by replacing words with chemical formulae, using the reference chart.",
+              "Explain that the resulting equation, before checking atom counts, is called a skeletal chemical equation.",
+              "Have groups write their skeletal equations on the board and discuss why they are 'skeletal' (not yet balanced).",
+              "Facilitate a class discussion comparing the word-equation and skeletal chemical equation forms for the same reaction."
+            ],
+            "source_spans": [
+              {
+                "page": 3,
+                "quote": "A chemical equation represents a\nchemical reaction.",
+                "end_char": 289,
+                "section_id": "page-3",
+                "start_char": 238
+              },
+              {
+                "page": 3,
+                "quote": "Such a chemical equation is a skeletal\nchemical equation for a reaction.",
+                "end_char": 790,
+                "section_id": "page-3",
+                "start_char": 718
+              },
+              {
+                "page": 3,
+                "quote": "Chemical equations can be made more concise and useful if we use\nchemical formulae instead of words.",
+                "end_char": 237,
+                "section_id": "page-3",
+                "start_char": 137
+              }
+            ],
+            "duration_minutes": 25,
+            "success_criteria": [
+              "Students correctly convert at least three word-equations into skeletal chemical equations using proper chemical formulae.",
+              "Students can explain that a chemical equation is a more concise representation than a word-equation.",
+              "Students identify that a skeletal equation may not have equal numbers of atoms on both sides."
+            ]
+          }
+        ],
+        "period_number": 2
+      },
+      {
+        "activities": [
+          {
+            "type": "lab",
+            "title": "Atom Counting Lab: Checking for Balance",
+            "materials": [
+              "Molecular model kits or colored beads/balls representing atoms",
+              "Skeletal equation worksheet",
+              "Whiteboard"
+            ],
+            "instructions": [
+              "Give each group a skeletal chemical equation (e.g., Fe + H2O → Fe3O4 + H2) and a set of atom-model beads.",
+              "Have students build physical models of reactant and product molecules using the beads to represent atoms.",
+              "Ask students to count and record the number of atoms of each element on both the reactant and product sides.",
+              "Guide students to add coefficients (multiply molecules) to make the atom counts equal on both sides, rearranging bead models as needed.",
+              "Once balanced, have students verify that total atoms of each element match on both sides and discuss how this reflects the law of conservation of mass."
+            ],
+            "source_spans": [
+              {
+                "page": 3,
+                "quote": "Such a chemical equation is a skeletal\nchemical equation for a reaction.",
+                "end_char": 790,
+                "section_id": "page-3",
+                "start_char": 718
+              },
+              {
+                "page": 3,
+                "quote": "As the number of atoms of each element is the same on both sides of\nthe arrow, Eq. (1.3) is a balanced chemical equation.",
+                "end_char": 1998,
+                "section_id": "page-3",
+                "start_char": 1877
+              },
+              {
+                "page": 3,
+                "quote": "Recall the law of conservation of mass that you studied in Class IX; mass\ncan neither be created nor destroyed in a chemical reaction.",
+                "end_char": 1043,
+                "section_id": "page-3",
+                "start_char": 909
+              }
+            ],
+            "duration_minutes": 20,
+            "success_criteria": [
+              "Students correctly count atoms of each element in a skeletal equation.",
+              "Students successfully balance the equation so that atom counts match on both sides.",
+              "Students can explain that the balanced equation demonstrates the law of conservation of mass."
+            ]
+          },
+          {
+            "type": "discussion",
+            "title": "Conservation of Mass: Balancing Practice and Application Discussion",
+            "materials": [
+              "Balanced/unbalanced equation cards",
+              "Whiteboard",
+              "Markers"
+            ],
+            "instructions": [
+              "Present students with a set of unbalanced equations and ask them to identify why they violate conservation of mass.",
+              "In pairs, have students balance the equations and justify each coefficient choice by counting atoms.",
+              "Lead a class discussion on why balancing equations is essential for chemical calculations and stoichiometry, connecting it to real-world chemistry applications.",
+              "Ask students to reflect on how the law of conservation of mass applies to everyday chemical reactions discussed in Period 1 (e.g., rusting, burning magnesium)."
+            ],
+            "source_spans": [
+              {
+                "page": 3,
+                "quote": "As the number of atoms of each element is the same on both sides of\nthe arrow, Eq. (1.3) is a balanced chemical equation.",
+                "end_char": 1998,
+                "section_id": "page-3",
+                "start_char": 1877
+              },
+              {
+                "page": 3,
+                "quote": "Recall the law of conservation of mass that you studied in Class IX; mass\ncan neither be created nor destroyed in a chemical reaction.",
+                "end_char": 1043,
+                "section_id": "page-3",
+                "start_char": 909
+              },
+              {
+                "page": 3,
+                "quote": "Hence, we need to balance a\nskeletal chemical equation.",
+                "end_char": 1370,
+                "section_id": "page-3",
+                "start_char": 1315
+              }
+            ],
+            "duration_minutes": 15,
+            "success_criteria": [
+              "Students can identify unbalanced equations and explain why they are incorrect.",
+              "Students correctly balance at least two equations independently.",
+              "Students articulate the importance of balanced equations for stoichiometry and scientific communication."
+            ]
+          }
+        ],
+        "period_number": 3
+      }
+    ]
+  },
+  "assessments": {
+    "periods": [
+      {
+        "mcqs": [
+          {
+            "options": [
+              "A process where a substance changes its physical state without changing its identity",
+              "A process where the nature and identity of a substance changes, occurring whenever a chemical change takes place in matter",
+              "A process where substances are physically mixed without any transformation",
+              "A process where the mass of a substance increases without any change in its identity"
+            ],
+            "question": "Which of the following best defines a chemical reaction?",
+            "explanation": "A chemical reaction is defined as a process where the nature and identity of a substance changes, occurring whenever a chemical change takes place in matter.",
+            "source_spans": [
+              {
+                "page": 1,
+                "quote": "Whenever a chemical\nchange occurs, we can say that a chemical reaction has taken place.",
+                "end_char": 610,
+                "section_id": "page-1",
+                "start_char": 523
+              }
+            ],
+            "correct_option_index": 1
+          },
+          {
+            "options": [
+              "Right-hand side",
+              "Left-hand side",
+              "Above the arrow",
+              "Below the arrow"
+            ],
+            "question": "In a chemical equation, on which side are the reactants written?",
+            "explanation": "Reactants are the substances that undergo chemical change in a reaction and are written on the left-hand side of a chemical equation.",
+            "source_spans": [
+              {
+                "page": 2,
+                "quote": "The substances that undergo chemical change in the reaction (1.1),\nmagnesium and oxygen, are the reactants.",
+                "end_char": 1816,
+                "section_id": "page-2",
+                "start_char": 1709
+              }
+            ],
+            "correct_option_index": 1
+          },
+          {
+            "options": [
+              "Melting of ice",
+              "Iron tawa/pan/nail left exposed to humid atmosphere undergoing rusting",
+              "Cutting of paper",
+              "Dissolving salt in water"
+            ],
+            "question": "Which of the following is a real-life example of a chemical reaction?",
+            "explanation": "Iron tawa/pan/nail left exposed to humid atmosphere undergoes chemical change (rusting), which is given as a real-life example of a chemical reaction.",
+            "source_spans": [
+              {
+                "page": 1,
+                "quote": "an iron tawa/pan/nail is left exposed to humid atmosphere",
+                "end_char": 232,
+                "section_id": "page-1",
+                "start_char": 175
+              }
+            ],
+            "correct_option_index": 1
+          },
+          {
+            "options": [
+              "The substances that remain unchanged throughout the reaction",
+              "The substances written on the left-hand side of the equation",
+              "The new substances formed during a chemical reaction, written on the right-hand side of a chemical equation",
+              "The catalysts used to speed up the reaction"
+            ],
+            "question": "What are products in a chemical reaction?",
+            "explanation": "Products are the new substances formed during a chemical reaction and are written on the right-hand side of a chemical equation.",
+            "source_spans": [
+              {
+                "page": 2,
+                "quote": "The new substance is\nmagnesium oxide, formed during the reaction, as a product.",
+                "end_char": 1896,
+                "section_id": "page-2",
+                "start_char": 1817
+              }
+            ],
+            "correct_option_index": 2
+          }
+        ],
+        "numerical": [],
+        "long_answer": [
+          {
+            "rubric": [
+              "Correctly defines a chemical reaction",
+              "Correctly distinguishes reactants (left-hand side) from products (right-hand side)",
+              "Applies the definitions to the magnesium + oxygen example correctly, identifying reactants and product",
+              "Mentions visible signs of change (white flame, white powder)",
+              "Writes a correct word-equation for the reaction: Magnesium + Oxygen → Magnesium oxide"
+            ],
+            "question": "Discuss the concept of a chemical reaction, distinguishing between reactants and products, and illustrate your answer with the example of magnesium burning in oxygen. Also represent this reaction as a word-equation.",
+            "model_answer": "A chemical reaction is a process where the nature and identity of a substance changes, occurring whenever a chemical change takes place in matter. In any chemical reaction, there are two key components: reactants and products. Reactants are the substances that undergo chemical change in a reaction and are written on the left-hand side of a chemical equation, while products are the new substances formed during the reaction, written on the right-hand side. \n\nA good illustration is the combustion of magnesium metal in oxygen to form magnesium oxide. Here, magnesium and oxygen are the reactants, since they are the substances present before the reaction and undergo change. Magnesium oxide is the product, since it is the new substance formed as a result of the reaction. This reaction is accompanied by a dazzling white flame and the formation of a white powder, both visible signs of chemical change.\n\nAs a word-equation, this reaction can be represented as: Magnesium + Oxygen → Magnesium oxide. This word-equation shows the transformation of reactants (magnesium and oxygen) to the product (magnesium oxide) in sentence form using words rather than chemical symbols.",
+            "source_spans": [
+              {
+                "page": 1,
+                "quote": "Whenever a chemical\nchange occurs, we can say that a chemical reaction has taken place.",
+                "end_char": 610,
+                "section_id": "page-1",
+                "start_char": 523
+              },
+              {
+                "page": 2,
+                "quote": "The substances that undergo chemical change in the reaction (1.1),\nmagnesium and oxygen, are the reactants.",
+                "end_char": 1816,
+                "section_id": "page-2",
+                "start_char": 1709
+              },
+              {
+                "page": 2,
+                "quote": "The new substance is\nmagnesium oxide, formed during the reaction, as a product.",
+                "end_char": 1896,
+                "section_id": "page-2",
+                "start_char": 1817
+              },
+              {
+                "page": 3,
+                "quote": "Mg + O2  →  MgO",
+                "end_char": 414,
+                "section_id": "page-3",
+                "start_char": 399
+              },
+              {
+                "page": 2,
+                "quote": "magnesium ribbon burns with a\ndazzling white flame and changes into a white powder. This powder is\nmagnesium oxide. It is formed due to the reaction between magnesium\nand oxygen present in the air.",
+                "end_char": 2483,
+                "section_id": "page-2",
+                "start_char": 2286
+              },
+              {
+                "page": 2,
+                "quote": "A word-equation shows change of reactants to products through an\narrow placed between them.",
+                "end_char": 1988,
+                "section_id": "page-2",
+                "start_char": 1897
+              }
+            ]
+          }
+        ],
+        "short_answer": [
+          {
+            "rubric": [
+              "Mentions that burning magnesium ribbon produces magnesium oxide",
+              "Mentions the dazzling white flame and formation of white powder as visible signs of change",
+              "Explains that a chemical reaction is one where the nature/identity of the substance changes"
+            ],
+            "question": "Explain what happens when magnesium ribbon is burnt in air, and identify why this is considered a chemical reaction.",
+            "model_answer": "When magnesium ribbon is burnt in air, it produces magnesium oxide. This process is accompanied by visible signs of change, including a dazzling white flame and the formation of a white powder. This is a chemical reaction because the nature and identity of magnesium changes as it combines with oxygen to form an entirely new substance, magnesium oxide.",
+            "source_spans": [
+              {
+                "page": 2,
+                "quote": "magnesium ribbon burns with a\ndazzling white flame and changes into a white powder. This powder is\nmagnesium oxide. It is formed due to the reaction between magnesium\nand oxygen present in the air.",
+                "end_char": 2483,
+                "section_id": "page-2",
+                "start_char": 2286
+              },
+              {
+                "page": 1,
+                "quote": "Whenever a chemical\nchange occurs, we can say that a chemical reaction has taken place.",
+                "end_char": 610,
+                "section_id": "page-1",
+                "start_char": 523
+              }
+            ]
+          },
+          {
+            "rubric": [
+              "Names at least three valid daily-life chemical reaction examples",
+              "Examples must be drawn from the given list (milk fermentation, rusting, grape fermentation, cooking food, digestion, respiration)"
+            ],
+            "question": "List three examples of chemical reactions that occur in daily life, apart from combustion reactions.",
+            "model_answer": "Three examples of chemical reactions occurring in daily life are: (1) fermentation of milk left at room temperature during summers, (2) food digestion in the body, and (3) respiration.",
+            "source_spans": [
+              {
+                "page": 1,
+                "quote": "milk is left at room temperature during summers",
+                "end_char": 171,
+                "section_id": "page-1",
+                "start_char": 124
+              },
+              {
+                "page": 1,
+                "quote": "food gets digested in our body",
+                "end_char": 308,
+                "section_id": "page-1",
+                "start_char": 278
+              },
+              {
+                "page": 1,
+                "quote": "we respire",
+                "end_char": 322,
+                "section_id": "page-1",
+                "start_char": 312
+              }
+            ]
+          }
+        ],
+        "period_number": 1
+      },
+      {
+        "mcqs": [
+          {
+            "options": [
+              "A chemical equation is longer and more detailed than a word-equation",
+              "A chemical equation is a concise representation of a chemical reaction using chemical formulae instead of words",
+              "A chemical equation cannot represent reactants and products",
+              "A chemical equation is only used for reactions involving gases"
+            ],
+            "question": "Which of the following statements best describes the purpose of a chemical equation compared to a word-equation?",
+            "explanation": "A chemical equation represents a chemical reaction using chemical formulae instead of words, making it a more concise and useful representation compared to a word-equation.",
+            "source_spans": [
+              {
+                "page": 3,
+                "quote": "A chemical equation represents a\nchemical reaction.",
+                "end_char": 289,
+                "section_id": "page-3",
+                "start_char": 238
+              }
+            ],
+            "correct_option_index": 1
+          },
+          {
+            "options": [
+              "A balanced chemical equation with equal atoms on both sides",
+              "A word-equation that has not yet been converted to symbols",
+              "An initial chemical equation written using chemical formulae but before it is balanced, where atom numbers may not be equal on both sides",
+              "An equation that shows only the products of a reaction"
+            ],
+            "question": "What is a skeletal chemical equation?",
+            "explanation": "A skeletal chemical equation is an initial chemical equation written using chemical formulae but before it is balanced, where the number of atoms of each element may not be equal on both sides.",
+            "source_spans": [
+              {
+                "page": 3,
+                "quote": "Such a chemical equation is a skeletal\nchemical equation for a reaction.",
+                "end_char": 790,
+                "section_id": "page-3",
+                "start_char": 718
+              }
+            ],
+            "correct_option_index": 2
+          },
+          {
+            "options": [
+              "Because it is written in words instead of symbols",
+              "Because the number of atoms of each element may not be equal on both sides of the equation",
+              "Because it does not include the reactants",
+              "Because it does not follow standard chemical notation"
+            ],
+            "question": "Why does a skeletal chemical equation need balancing?",
+            "explanation": "A skeletal equation needs balancing because the number of atoms of each element may not be equal on both sides, which must be corrected to reflect a true chemical equation.",
+            "source_spans": [
+              {
+                "page": 3,
+                "quote": "Such a chemical equation is a skeletal\nchemical equation for a reaction.",
+                "end_char": 790,
+                "section_id": "page-3",
+                "start_char": 718
+              }
+            ],
+            "correct_option_index": 1
+          }
+        ],
+        "numerical": [],
+        "long_answer": [
+          {
+            "rubric": [
+              "Explains the process of replacing words with chemical formulae to form a chemical equation",
+              "Correctly writes the zinc + sulphuric acid word-equation and its formula equation",
+              "Defines a skeletal chemical equation accurately",
+              "Defines a balanced chemical equation accurately, referencing equal atom counts",
+              "Correctly identifies the zinc-sulphuric acid equation as balanced"
+            ],
+            "question": "Describe the process of converting a word-equation into a chemical equation using formulae. Use the reaction between zinc and sulphuric acid as an example, and explain the difference between a skeletal equation and a balanced chemical equation in this context.",
+            "model_answer": "Converting a word-equation into a chemical equation involves replacing the words for reactants and products with their respective chemical formulae. For example, the word-equation 'Zinc + Sulphuric acid → Zinc sulphate + Hydrogen' can be converted into a chemical equation using formulae: Zn + H2SO4 → ZnSO4 + H2.\n\nWhen first written using formulae, before checking whether the atoms balance, the equation is called a skeletal chemical equation — an initial chemical equation written using chemical formulae but before it is balanced, where the number of atoms of each element may not be equal on both sides. Once the atoms of each element are verified to be equal on both sides of the arrow, satisfying the law of conservation of mass, it becomes a balanced chemical equation. In this case, Zn + H2SO4 → ZnSO4 + H2 represents the reaction between zinc and sulphuric acid to produce zinc sulphate and hydrogen gas, representing a balanced chemical equation, since there is one zinc atom, two hydrogen atoms, one sulphur atom, and four oxygen atoms on each side.",
+            "source_spans": [
+              {
+                "page": 3,
+                "quote": "A chemical equation represents a\nchemical reaction.",
+                "end_char": 289,
+                "section_id": "page-3",
+                "start_char": 238
+              },
+              {
+                "page": 3,
+                "quote": "Such a chemical equation is a skeletal\nchemical equation for a reaction.",
+                "end_char": 790,
+                "section_id": "page-3",
+                "start_char": 718
+              },
+              {
+                "page": 3,
+                "quote": "As the number of atoms of each element is the same on both sides of\nthe arrow, Eq. (1.3) is a balanced chemical equation.",
+                "end_char": 1998,
+                "section_id": "page-3",
+                "start_char": 1877
+              },
+              {
+                "page": 3,
+                "quote": "Zn + H2SO4 → ZnSO4 + H2",
+                "end_char": 1683,
+                "section_id": "page-3",
+                "start_char": 1660
+              }
+            ]
+          }
+        ],
+        "short_answer": [
+          {
+            "rubric": [
+              "States that chemical equations use formulae instead of words",
+              "States that this makes chemical equations more concise/useful",
+              "Contrasts with word-equations being in sentence form using words"
+            ],
+            "question": "Explain why chemical equations are preferred over word-equations when representing chemical reactions.",
+            "model_answer": "Chemical equations are preferred over word-equations because they represent a chemical reaction using chemical formulae instead of words, making them a more concise and useful representation. Word-equations, on the other hand, show the transformation of reactants to products in sentence form using words rather than chemical symbols, which can be lengthy and less precise for scientific communication.",
+            "source_spans": [
+              {
+                "page": 3,
+                "quote": "A chemical equation represents a\nchemical reaction.",
+                "end_char": 289,
+                "section_id": "page-3",
+                "start_char": 238
+              },
+              {
+                "page": 2,
+                "quote": "A word-equation shows change of reactants to products through an\narrow placed between them.",
+                "end_char": 1988,
+                "section_id": "page-2",
+                "start_char": 1897
+              }
+            ]
+          },
+          {
+            "rubric": [
+              "Correctly identifies the equation as skeletal/unbalanced",
+              "Justifies the answer by referencing unequal atom counts on both sides"
+            ],
+            "question": "Identify whether the equation Fe + H2O → Fe3O4 + H2 is a skeletal or balanced equation, and justify your answer.",
+            "model_answer": "This is an unbalanced chemical equation (a skeletal equation) showing the reaction between iron and water, since the number of atoms of iron, hydrogen, and oxygen are not equal on both sides of the equation.",
+            "source_spans": [
+              {
+                "page": 3,
+                "quote": "Fe + H2O → Fe3O4 + H2",
+                "end_char": 2076,
+                "section_id": "page-3",
+                "start_char": 2055
+              },
+              {
+                "page": 3,
+                "quote": "Such a chemical equation is a skeletal\nchemical equation for a reaction.",
+                "end_char": 790,
+                "section_id": "page-3",
+                "start_char": 718
+              }
+            ]
+          }
+        ],
+        "period_number": 2
+      },
+      {
+        "mcqs": [
+          {
+            "options": [
+              "The total mass of products is always greater than the total mass of reactants",
+              "Mass can neither be created nor destroyed; the total mass of elements in products equals the total mass in reactants",
+              "The total mass of reactants is always greater than the total mass of products",
+              "Mass changes depending on the temperature of the reaction"
+            ],
+            "question": "According to the law of conservation of mass, what happens to the total mass in a chemical reaction?",
+            "explanation": "The law of conservation of mass states that mass can neither be created nor destroyed in a chemical reaction, meaning the total mass of elements in products equals the total mass in reactants.",
+            "source_spans": [
+              {
+                "page": 3,
+                "quote": "Recall the law of conservation of mass that you studied in Class IX; mass\ncan neither be created nor destroyed in a chemical reaction.",
+                "end_char": 1043,
+                "section_id": "page-3",
+                "start_char": 909
+              }
+            ],
+            "correct_option_index": 1
+          },
+          {
+            "options": [
+              "To make the equation look more complex",
+              "To satisfy the law of conservation of mass, ensuring atoms of each element are equal on both sides",
+              "To reduce the number of reactants used",
+              "Balancing is not actually necessary for chemical equations"
+            ],
+            "question": "Why must chemical equations be balanced?",
+            "explanation": "A balanced chemical equation is one where the number of atoms of each element is the same on both sides of the arrow, satisfying the law of conservation of mass.",
+            "source_spans": [
+              {
+                "page": 3,
+                "quote": "As the number of atoms of each element is the same on both sides of\nthe arrow, Eq. (1.3) is a balanced chemical equation.",
+                "end_char": 1998,
+                "section_id": "page-3",
+                "start_char": 1877
+              },
+              {
+                "page": 3,
+                "quote": "Recall the law of conservation of mass that you studied in Class IX; mass\ncan neither be created nor destroyed in a chemical reaction.",
+                "end_char": 1043,
+                "section_id": "page-3",
+                "start_char": 909
+              }
+            ],
+            "correct_option_index": 1
+          },
+          {
+            "options": [
+              "Fe + H2O → Fe3O4 + H2 (unbalanced)",
+              "Zn + H2SO4 → ZnSO4 + H2",
+              "Mg + O2 → MgO (unbalanced skeletal form)",
+              "None of the above are balanced"
+            ],
+            "question": "Which of the following equations represents a balanced chemical equation, according to the given examples?",
+            "explanation": "The reaction between zinc and sulphuric acid to produce zinc sulphate and hydrogen gas is given as an example representing a balanced chemical equation, since the atoms of each element are equal on both sides.",
+            "source_spans": [
+              {
+                "page": 3,
+                "quote": "Zn + H2SO4 → ZnSO4 + H2",
+                "end_char": 1683,
+                "section_id": "page-3",
+                "start_char": 1660
+              }
+            ],
+            "correct_option_index": 1
+          }
+        ],
+        "numerical": [
+          {
+            "question": "In the balanced chemical equation Zn + H2SO4 → ZnSO4 + H2, verify the law of conservation of mass by counting the number of atoms of each element (Zn, H, S, O) on both the reactant and product sides. State the count for each element on both sides.",
+            "tolerance": 0.0,
+            "source_spans": [
+              {
+                "page": 3,
+                "quote": "Zn + H2SO4 → ZnSO4 + H2",
+                "end_char": 1683,
+                "section_id": "page-3",
+                "start_char": 1660
+              },
+              {
+                "page": 3,
+                "quote": "As the number of atoms of each element is the same on both sides of\nthe arrow, Eq. (1.3) is a balanced chemical equation.",
+                "end_char": 1998,
+                "section_id": "page-3",
+                "start_char": 1877
+              },
+              {
+                "page": 3,
+                "quote": "Recall the law of conservation of mass that you studied in Class IX; mass\ncan neither be created nor destroyed in a chemical reaction.",
+                "end_char": 1043,
+                "section_id": "page-3",
+                "start_char": 909
+              }
+            ],
+            "correct_answer": 0.0,
+            "solution_steps": [
+              "Left side (reactants): Zn = 1 atom, H = 2 atoms (from H2SO4), S = 1 atom, O = 4 atoms.",
+              "Right side (products): Zn = 1 atom (from ZnSO4), S = 1 atom (from ZnSO4), O = 4 atoms (from ZnSO4), H = 2 atoms (from H2).",
+              "Comparing both sides: Zn (1=1), H (2=2), S (1=1), O (4=4) — all atom counts match on both sides.",
+              "Since the number of atoms of each element is equal on both sides, this confirms the equation is balanced and satisfies the law of conservation of mass."
+            ]
+          }
+        ],
+        "long_answer": [
+          {
+            "rubric": [
+              "States the law of conservation of mass accurately",
+              "Explains the connection between the law and the need for balanced equations",
+              "Correctly analyzes the zinc-sulphuric acid equation as balanced with matching atom counts",
+              "Correctly analyzes the iron-water equation as unbalanced/skeletal",
+              "Explains that balancing (adding coefficients) makes the equation reflect conservation of mass"
+            ],
+            "question": "Explain the law of conservation of mass and describe, using the examples of the zinc-sulphuric acid reaction and the iron-water reaction, how this law is verified through the process of balancing chemical equations.",
+            "model_answer": "The law of conservation of mass states that mass can neither be created nor destroyed in a chemical reaction, meaning the total mass of elements in products equals the total mass in reactants. This principle underlies the requirement that all chemical equations must be balanced: a balanced chemical equation is one where the number of atoms of each element is the same on both sides of the arrow, satisfying the law of conservation of mass.\n\nConsider the reaction between zinc and sulphuric acid to produce zinc sulphate and hydrogen gas: Zn + H2SO4 → ZnSO4 + H2. This is an example of a balanced chemical equation, since counting the atoms shows one zinc atom, two hydrogen atoms, one sulphur atom, and four oxygen atoms on each side — verifying that mass is conserved.\n\nIn contrast, consider the unbalanced chemical equation showing the reaction between iron and water: Fe + H2O → Fe3O4 + H2. Here, the number of atoms of iron, hydrogen, and oxygen are not equal on both sides, so this is a skeletal (unbalanced) equation. To make it consistent with the law of conservation of mass, coefficients must be added until the atoms of each element balance on both sides, at which point it becomes a proper balanced chemical equation. This process of balancing equations is essentially how chemists verify, at the level of individual reactions, that the law of conservation of mass holds true.",
+            "source_spans": [
+              {
+                "page": 3,
+                "quote": "Recall the law of conservation of mass that you studied in Class IX; mass\ncan neither be created nor destroyed in a chemical reaction.",
+                "end_char": 1043,
+                "section_id": "page-3",
+                "start_char": 909
+              },
+              {
+                "page": 3,
+                "quote": "As the number of atoms of each element is the same on both sides of\nthe arrow, Eq. (1.3) is a balanced chemical equation.",
+                "end_char": 1998,
+                "section_id": "page-3",
+                "start_char": 1877
+              },
+              {
+                "page": 3,
+                "quote": "Zn + H2SO4 → ZnSO4 + H2",
+                "end_char": 1683,
+                "section_id": "page-3",
+                "start_char": 1660
+              },
+              {
+                "page": 3,
+                "quote": "Fe + H2O → Fe3O4 + H2",
+                "end_char": 2076,
+                "section_id": "page-3",
+                "start_char": 2055
+              },
+              {
+                "page": 3,
+                "quote": "Such a chemical equation is a skeletal\nchemical equation for a reaction.",
+                "end_char": 790,
+                "section_id": "page-3",
+                "start_char": 718
+              }
+            ]
+          }
+        ],
+        "short_answer": [
+          {
+            "rubric": [
+              "Accurately states the law of conservation of mass",
+              "Explains that balancing equations ensures atom counts are equal, satisfying this law",
+              "Connects the concept of a balanced chemical equation to the law"
+            ],
+            "question": "State the law of conservation of mass and explain its significance in the process of balancing chemical equations.",
+            "model_answer": "The law of conservation of mass states that mass can neither be created nor destroyed in a chemical reaction, meaning the total mass of elements in products equals the total mass in reactants. This law is significant in balancing chemical equations because a balanced chemical equation must have the number of atoms of each element equal on both sides of the arrow, which directly reflects and satisfies the law of conservation of mass — no atoms are lost or gained during the reaction, only rearranged.",
+            "source_spans": [
+              {
+                "page": 3,
+                "quote": "Recall the law of conservation of mass that you studied in Class IX; mass\ncan neither be created nor destroyed in a chemical reaction.",
+                "end_char": 1043,
+                "section_id": "page-3",
+                "start_char": 909
+              },
+              {
+                "page": 3,
+                "quote": "As the number of atoms of each element is the same on both sides of\nthe arrow, Eq. (1.3) is a balanced chemical equation.",
+                "end_char": 1998,
+                "section_id": "page-3",
+                "start_char": 1877
+              }
+            ]
+          },
+          {
+            "rubric": [
+              "Mentions counting atoms of each element on both sides",
+              "Mentions adding coefficients (not changing formulae) to balance atom counts",
+              "Mentions rechecking/verifying atom counts after adjustment",
+              "Connects the final balanced state to the law of conservation of mass"
+            ],
+            "question": "The equation Fe + H2O → Fe3O4 + H2 is an unbalanced chemical equation showing the reaction between iron and water. Explain what steps you would take conceptually to verify and balance this equation.",
+            "model_answer": "To balance this skeletal equation, I would first count the number of atoms of each element (Fe, H, O) on both the reactant and product sides. Since the equation is unbalanced, the atom counts will not match on both sides. I would then add appropriate coefficients in front of the reactants and/or products so that the number of atoms of iron, hydrogen, and oxygen are equal on both sides of the arrow, without changing the chemical formulae themselves. Finally, I would recount the atoms on both sides to verify the equation is now balanced, satisfying the law of conservation of mass.",
+            "source_spans": [
+              {
+                "page": 3,
+                "quote": "Fe + H2O → Fe3O4 + H2",
+                "end_char": 2076,
+                "section_id": "page-3",
+                "start_char": 2055
+              },
+              {
+                "page": 3,
+                "quote": "As the number of atoms of each element is the same on both sides of\nthe arrow, Eq. (1.3) is a balanced chemical equation.",
+                "end_char": 1998,
+                "section_id": "page-3",
+                "start_char": 1877
+              },
+              {
+                "page": 3,
+                "quote": "Recall the law of conservation of mass that you studied in Class IX; mass\ncan neither be created nor destroyed in a chemical reaction.",
+                "end_char": 1043,
+                "section_id": "page-3",
+                "start_char": 909
+              }
+            ]
+          }
+        ],
+        "period_number": 3
+      }
+    ]
+  },
+  "learning_gaps": {
+    "gaps": [
+      {
+        "severity": "high",
+        "remediation": "Explicitly teach students the distinction between a skeletal equation and a balanced equation: emphasize that writing correct chemical formulae for reactants and products only produces a skeletal equation, which may not have equal atom counts on both sides. Provide guided practice where students first write the skeletal equation, then systematically tally the number of atoms of each element on the left- and right-hand sides in a table, and only add coefficients to balance the equation once a mismatch is found. Reinforce this with the law of conservation of mass as the underlying justification, using multiple examples (including polyatomic reactants/products) where an unbalanced skeletal equation is deliberately shown alongside its correctly balanced counterpart so students can compare and internalize the checking process as a mandatory step, not an assumption.",
+        "source_spans": [
+          {
+            "page": 3,
+            "quote": "Count and compare the number of atoms of each element on the\nLHS and RHS of the arrow. Is the number of atoms of each element the\nsame on both the sides? If yes, then the equation is balanced. If not,\nthen the equation is unbalanced because the mass is not the same on\nboth sides of the equation.",
+            "end_char": 717,
+            "section_id": "page-3",
+            "start_char": 421
+          },
+          {
+            "page": 3,
+            "quote": "Such a chemical equation is a skeletal\nchemical equation for a reaction.",
+            "end_char": 790,
+            "section_id": "page-3",
+            "start_char": 718
+          },
+          {
+            "page": 3,
+            "quote": "As the number of atoms of each element is the same on both sides of\nthe arrow, Eq. (1.3) is a balanced chemical equation.",
+            "end_char": 1998,
+            "section_id": "page-3",
+            "start_char": 1877
+          },
+          {
+            "page": 3,
+            "quote": "Recall the law of conservation of mass that you studied in Class IX; mass\ncan neither be created nor destroyed in a chemical reaction.",
+            "end_char": 1043,
+            "section_id": "page-3",
+            "start_char": 909
+          }
+        ],
+        "misconception": "A chemical equation written with chemical formulae is automatically balanced without checking if atom counts match on both sides.",
+        "diagnostic_questions": [
+          {
+            "question": "Given the skeletal equation H2 + O2 -> H2O, is this equation balanced? Explain how you know, by counting the number of hydrogen and oxygen atoms on each side.",
+            "source_spans": [
+              {
+                "page": 3,
+                "quote": "Count and compare the number of atoms of each element on the\nLHS and RHS of the arrow. Is the number of atoms of each element the\nsame on both the sides? If yes, then the equation is balanced. If not,\nthen the equation is unbalanced because the mass is not the same on\nboth sides of the equation.",
+                "end_char": 717,
+                "section_id": "page-3",
+                "start_char": 421
+              },
+              {
+                "page": 3,
+                "quote": "Such a chemical equation is a skeletal\nchemical equation for a reaction.",
+                "end_char": 790,
+                "section_id": "page-3",
+                "start_char": 718
+              }
+            ],
+            "targets_misconception": "Assuming that writing formulae automatically means the equation is balanced, without checking atom counts."
+          },
+          {
+            "question": "Why must the number of atoms of each element be checked on both sides of a chemical equation, even after chemical formulae have been written correctly for reactants and products?",
+            "source_spans": [
+              {
+                "page": 3,
+                "quote": "Count and compare the number of atoms of each element on the\nLHS and RHS of the arrow. Is the number of atoms of each element the\nsame on both the sides? If yes, then the equation is balanced. If not,\nthen the equation is unbalanced because the mass is not the same on\nboth sides of the equation.",
+                "end_char": 717,
+                "section_id": "page-3",
+                "start_char": 421
+              },
+              {
+                "page": 3,
+                "quote": "As the number of atoms of each element is the same on both sides of\nthe arrow, Eq. (1.3) is a balanced chemical equation.",
+                "end_char": 1998,
+                "section_id": "page-3",
+                "start_char": 1877
+              }
+            ],
+            "targets_misconception": "A chemical equation written with chemical formulae is automatically balanced without checking if atom counts match on both sides."
+          },
+          {
+            "question": "A student writes Fe + O2 -> Fe2O3 and claims the equation is correct because the formulae for iron oxide, iron, and oxygen are all correctly written. Is the student right? Justify your answer using the law of conservation of mass.",
+            "source_spans": [
+              {
+                "page": 3,
+                "quote": "Count and compare the number of atoms of each element on the\nLHS and RHS of the arrow. Is the number of atoms of each element the\nsame on both the sides? If yes, then the equation is balanced. If not,\nthen the equation is unbalanced because the mass is not the same on\nboth sides of the equation.",
+                "end_char": 717,
+                "section_id": "page-3",
+                "start_char": 421
+              },
+              {
+                "page": 3,
+                "quote": "Recall the law of conservation of mass that you studied in Class IX; mass\ncan neither be created nor destroyed in a chemical reaction.",
+                "end_char": 1043,
+                "section_id": "page-3",
+                "start_char": 909
+              }
+            ],
+            "targets_misconception": "Believing correct chemical formulae alone guarantee a balanced equation, ignoring the need to verify atom counts against the law of conservation of mass."
+          }
+        ]
+      }
+    ]
+  },
+  "validation_report": {
+    "schema_check": {
+      "errors": [],
+      "passed": true
+    },
+    "grounding_check": {
+      "passed": true,
+      "violations": []
+    },
+    "consistency_check": {
+      "passed": true,
+      "conflicts": []
+    },
+    "completeness_check": {
+      "passed": true,
+      "missing_items": []
+    }
+  },
+  "pdf_paths": {
+    "lesson_plans": "/files/tkp/57e1181f-9d75-4549-8595-ae6e23b985e7/lesson_plans.pdf?expires=1785586189&sig=53e492e6582f4458489b198e7ec446db506b98d3f84f850fb65c2470890ad275",
+    "teacher_guide": "/files/tkp/57e1181f-9d75-4549-8595-ae6e23b985e7/teacher_guide.pdf?expires=1785586189&sig=6360799241b9c694b74700ce61cb790470da5ddfd6b3d8a3dd97c11a29de260b",
+    "assessment_book": "/files/tkp/57e1181f-9d75-4549-8595-ae6e23b985e7/assessment_book.pdf?expires=1785586189&sig=f3a54db0cb38e2bc520a3492fdb7ea870168fb3e307fa8c3644a1527e65d7525"
+  },
+  "published_at": "2026-08-01T09:53:23.135095Z"
+}
