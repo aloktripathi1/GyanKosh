@@ -44,6 +44,10 @@ export function getJob(jobId) {
   return request(`/jobs/${jobId}`);
 }
 
+export function listJobs() {
+  return request("/jobs");
+}
+
 export function getTkp(tkpId) {
   return request(`/tkp/${tkpId}`);
 }

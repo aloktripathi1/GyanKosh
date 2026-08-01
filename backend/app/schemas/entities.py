@@ -73,3 +73,17 @@ class TKPVersionRead(BaseModel):
 
 class RegenerateSectionRequest(BaseModel):
     reason: str | None = None
+
+
+class JobSummary(BaseModel):
+    """One row of the Library/History view — deliberately thin, everything
+    here is already stored (document filename, classification subject/topic
+    once available, job status), no new agent call or heavy join needed."""
+
+    id: uuid.UUID
+    document_filename: str
+    subject: str | None = None
+    topic: str | None = None
+    status: JobStatus
+    tkp_version_id: uuid.UUID | None = None
+    created_at: datetime

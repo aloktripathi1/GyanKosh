@@ -149,6 +149,17 @@ a { color: var(--color-primary); }
   align-items: center;
   justify-content: space-between;
 }
+.nav-link {
+  font-size: var(--text-sm);
+  font-weight: 600;
+  color: var(--color-text-muted);
+  text-decoration: none;
+  transition: color 0.15s ease;
+}
+.nav-link:hover {
+  color: var(--color-primary);
+}
+
 .brand-mark {
   display: inline-flex;
   align-items: baseline;
@@ -195,6 +206,15 @@ a { color: var(--color-primary); }
   border: var(--rule);
   border-radius: var(--radius);
   padding: var(--space-5);
+}
+
+.library-row {
+  text-decoration: none;
+  color: inherit;
+  transition: border-color 0.15s ease;
+}
+.library-row:hover {
+  border-color: var(--color-primary);
 }
 
 .card-bordered {

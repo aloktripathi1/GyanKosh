@@ -7,8 +7,9 @@ from sqlalchemy.orm import Session
 
 from app.api.deps import require_api_key
 from app.db import SessionLocal, get_db
+from app.models.document import Document
 from app.models.job import Job
-from app.schemas.entities import JobRead
+from app.schemas.entities import JobRead, JobSummary
 
 router = APIRouter(prefix="/jobs", tags=["jobs"])
 
@@ -18,6 +19,35 @@ def _get_job_or_404(db: Session, job_id: uuid.UUID) -> Job:
     if job is None:
         raise HTTPException(status_code=status.HTTP_404_NOT_FOUND, detail="Job not found")
     return job
+
+
+@router.get("", response_model=list[JobSummary], dependencies=[Depends(require_api_key)])
+def list_jobs(db: Session = Depends(get_db), limit: int = 50) -> list[JobSummary]:
+    """Library/History view: every past run, newest first — reuses data
+    already stored at upload/classification time, no new agent call."""
+    rows = (
+        db.query(Job, Document)
+        .join(Document, Job.document_id == Document.id)
+        .order_by(Job.created_at.desc())
+        .limit(limit)
+        .all()
+    )
+    summaries = []
+    for job, document in rows:
+        classification = job.stage_results.get("classification") or {}
+        publishing = job.stage_results.get("publishing") or {}
+        summaries.append(
+            JobSummary(
+                id=job.id,
+                document_filename=document.filename,
+                subject=classification.get("subject"),
+                topic=classification.get("topic"),
+                status=job.status,
+                tkp_version_id=publishing.get("tkp_version_id"),
+                created_at=job.created_at,
+            )
+        )
+    return summaries
 
 
 @router.get("/{job_id}", response_model=JobRead, dependencies=[Depends(require_api_key)])

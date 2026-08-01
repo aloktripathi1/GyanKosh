@@ -11,7 +11,12 @@ export default function Layout() {
               <span className="brand-glyph">Gyan</span>Kosh
             </span>
           </Link>
-          <ThemeToggle />
+          <div className="row" style={{ gap: "var(--space-4)" }}>
+            <Link to="/library" className="nav-link">
+              Library
+            </Link>
+            <ThemeToggle />
+          </div>
         </div>
       </header>
       <Outlet />
