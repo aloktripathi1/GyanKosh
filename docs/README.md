@@ -10,9 +10,9 @@ Pipeline that converts a raw educational document into a structured, classroom-r
 - **Milestone 4 (validation, publishing, orchestration)**: schema/grounding/completeness/consistency checks (with a passing test that deliberately injects an ungrounded claim), TKP.json assembly, WeasyPrint PDF rendering (lesson plans, teacher guide, assessment book), and a real orchestrator: retry-with-backoff, explicit failure, and checkpoint/resume — tested against a simulated mid-run worker kill.
 - **Milestone 5 (review UI)**: Upload → JobProgress (SSE) → TKPReview (period-by-period, per-section regenerate, validation report surfaced, PDF downloads) — verified with a headless-Chromium walkthrough against real pipeline output, light and dark mode.
 
-**Known gaps** (Milestone 6 territory): no live Postgres/Redis/Docker access in the dev sandbox this was built in, so the orchestrator's DB integration is unit-tested against a fake session rather than end-to-end — needs a real smoke test via `docker compose up` or the Render deploy. Section 15's edge-case checklist (corrupted uploads, image-only PDFs, oversized docs, non-English content, period-count capping, etc.) isn't covered yet.
+- **Deployed**: live on Render (Free tier) — verified end-to-end against a real NCERT chapter, not just synthetic test docs. Runs the pipeline as a FastAPI `BackgroundTask` in the same web service rather than a separate Celery worker + Redis, since Render's Background Worker service type has no free tier — the orchestrator itself (checkpoint/resume, retry, explicit failure) is unchanged, only how a job gets kicked off.
 
-**Not yet deployed**: Render deploy is pending — `render.yaml` is committed but needs the repo connected via the Render dashboard (requires your account access).
+**Known gaps** (Milestone 6 territory): Section 15's edge-case checklist (corrupted uploads, image-only PDFs, oversized docs, non-English content, period-count capping, etc.) isn't covered yet.
 
 ## Local setup
 

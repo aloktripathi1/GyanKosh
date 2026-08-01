@@ -3,15 +3,18 @@ import uuid
 from app.db import SessionLocal
 from app.models.job import Job
 from app.orchestrator.pipeline import run_pipeline
-from app.tasks.celery_app import celery_app
 
 
-@celery_app.task(name="tasks.run_job", bind=True, max_retries=0)
-def run_job(self, job_id: str) -> None:
-    """Celery entrypoint: loads the job, hands it to the orchestrator. Retry/
-    backoff/checkpointing happen inside run_pipeline, not at the Celery level —
-    a worker restart just re-invokes this task, which resumes from the last
-    checkpointed stage rather than starting over."""
+def run_job_in_background(job_id: str) -> None:
+    """Entrypoint for FastAPI's BackgroundTasks: loads the job in its own DB
+    session (the request-scoped session from the upload endpoint is closed by
+    the time this runs) and hands it to the orchestrator. Runs in Starlette's
+    threadpool, not the event loop — see documents.py.
+
+    Retry/backoff/checkpointing happen inside run_pipeline, not here — a
+    process restart just re-invokes the pipeline for any job still pending or
+    running, which resumes from the last checkpointed stage rather than
+    starting over."""
     db = SessionLocal()
     try:
         job = db.get(Job, uuid.UUID(job_id))

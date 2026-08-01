@@ -2,7 +2,7 @@ import hashlib
 import io
 import uuid
 
-from fastapi import APIRouter, Depends, Form, HTTPException, UploadFile, status
+from fastapi import APIRouter, BackgroundTasks, Depends, Form, HTTPException, UploadFile, status
 from sqlalchemy.orm import Session
 
 from app.agents.document_type_hints import ALL_HINTS
@@ -12,7 +12,7 @@ from app.models.document import Document
 from app.models.job import Job
 from app.schemas.entities import DocumentCreateResponse, DocumentRead
 from app.storage import get_storage
-from app.tasks.pipeline_tasks import run_job
+from app.tasks.pipeline_tasks import run_job_in_background
 
 # Stages before Content/Activity/Assessment/Gap generation diverge — cheap to
 # reuse verbatim when the exact same document bytes are uploaded again, so a
@@ -33,6 +33,7 @@ MAX_UPLOAD_BYTES = 25 * 1024 * 1024
 @router.post("", response_model=DocumentCreateResponse, status_code=status.HTTP_202_ACCEPTED, dependencies=[Depends(require_api_key)])
 async def upload_document(
     file: UploadFile,
+    background_tasks: BackgroundTasks,
     teaching_context: str | None = Form(None),
     document_type_hint: str | None = Form(None),
     db: Session = Depends(get_db),
@@ -76,7 +77,7 @@ async def upload_document(
     db.refresh(document)
     db.refresh(job)
 
-    run_job.delay(str(job.id))
+    background_tasks.add_task(run_job_in_background, str(job.id))
 
     return DocumentCreateResponse(document=DocumentRead.model_validate(document), job_id=job.id)
 

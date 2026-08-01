@@ -8,7 +8,6 @@ class Settings(BaseSettings):
 
     anthropic_api_key: str = ""
     database_url: str = "postgresql+psycopg2://postgres:postgres@localhost:5432/gyankosh"
-    redis_url: str = "redis://localhost:6379/0"
     storage_backend: str = "local"
     local_storage_path: str = "./storage_data"
     api_key: str = "dev-local-key"

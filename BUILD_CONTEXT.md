@@ -140,7 +140,7 @@ gyankosh/
 │   │   ├── llm/
 │   │   │   ├── client.py             # Anthropic wrapper, model routing by task
 │   │   │   └── prompts/              # one template per agent
-│   │   └── tasks/                    # Celery tasks wrapping orchestrator stages
+│   │   └── tasks/                    # FastAPI BackgroundTasks wrapping orchestrator stages (see Section 18)
 │   ├── tests/
 │   ├── alembic/
 │   ├── requirements.txt
@@ -151,14 +151,14 @@ gyankosh/
 ├── docs/
 │   ├── architecture-diagram.excalidraw
 │   └── README.md
-└── docker-compose.yml                # postgres + redis + backend + worker, local dev
+└── docker-compose.yml                # postgres + backend, local dev (see Section 18)
 ```
 
 ## 10. Coding Conventions
 - Every agent module: `run(input: <PydanticModel>) -> <PydanticModel>`. Pure function, no side effects beyond the LLM call. Testable in isolation, no orchestrator logic leaking in.
 - Every stage call wrapped by the orchestrator: try/except → checkpoint on success, retry with backoff on failure (max 3), explicit `jobs.error` + failed status on exhaustion. Never fail silently or skip a stage.
 - All LLM calls use structured output (tool-use schema mode) bound to the Pydantic schema for that stage. No prompt-and-hope-it's-JSON.
-- Secrets/config via `.env` + pydantic-settings: `ANTHROPIC_API_KEY`, `DATABASE_URL`, `REDIS_URL`, `STORAGE_BACKEND`.
+- Secrets/config via `.env` + pydantic-settings: `ANTHROPIC_API_KEY`, `DATABASE_URL`, `STORAGE_BACKEND` (see Section 18 — no `REDIS_URL`, Celery/Redis were removed).
 - Storage access always through the `storage/base.py` interface, never direct filesystem/S3 calls from agents or API routes.
 
 ## 11. Build Order
@@ -217,3 +217,13 @@ Answers from the client to open questions about scope, gathered 2026-07-31. Thes
 5. **Pipeline shape**: multi-stage is expected and preferred (confirms current architecture). The client is open to an optional upfront clarifying-questions step (grade, objectives, teaching style, time constraints) if it materially improves output — explicitly framed as "if needed," not mandatory. **Open decision**: whether to build this now or treat classification (Stage 2) as sufficient inference and defer explicit clarifying questions to a later iteration.
 6. **Model/provider**: no mandatory provider. Already using Anthropic with tiered routing — this satisfies the requirement as-is, no change needed.
 7. **Parsing cost routing**: client explicitly wants a lightweight upfront document-type hint from the user (Mostly Text / Text with Tables / Text with Diagrams-Figures / Text with Equations / Scanned PDF / Not Sure), combined with automatic heuristics (file type, page count, embedded images, OCR signals), to route to cheaper or more advanced parsing. NCERT chapters routinely contain images, diagrams, tables, maps, and equations — current `document_intelligence` only does plain PyMuPDF text extraction with no OCR and no equation/diagram-aware parsing. **Action item**: this is a real gap against the stated benchmark, not just a cost optimization — scanned pages currently degrade silently to near-empty extracted text.
+
+## 18. Architecture Correction: Celery/Redis Removed
+
+Section 7/8 above chose Celery + Redis for orchestration fan-out, with the explicit rationale "reads as real orchestration under evaluation, not a hack." That reasoning assumed a worker process was cheaply deployable. It isn't, on the constraint that actually matters: **Render's Background Worker service type has no free tier at all** (Starter is $7/month minimum), discovered while deploying under a Free-tier-only constraint on 2026-08-01.
+
+Redis's only consumer in this codebase was Celery (broker + result backend) — nothing else read or wrote it. With no free way to run a separate worker, keeping Celery+Redis would mean either paying for a service the project's constraints don't allow, or deploying a worker that never actually runs, silently leaving every job stuck at `pending` forever. Neither is acceptable, and "looks like real orchestration" is not worth a broken deployment.
+
+**Fix**: the pipeline now runs via FastAPI's `BackgroundTasks`, in the same process as the web service. The orchestrator itself — `app/orchestrator/pipeline.py`'s `run_pipeline`/`run_stage`, Postgres-backed checkpointing, retry/backoff, explicit-failure-on-exhaustion — is completely unchanged; only the trigger mechanism changed (`background_tasks.add_task(...)` instead of `run_job.delay(...)`). Sync functions passed to `BackgroundTasks` run in Starlette's threadpool, not the event loop, so this doesn't block concurrent HTTP requests. `celery`, `redis`, the `gyankosh-worker` and `gyankosh-redis` Render services, and `REDIS_URL` are removed entirely — not stubbed out, not left as dead config.
+
+This is a direct instance of Section 2's own instruction ("do not attempt [bonus scope] before the core pipeline is fully working") applied to infrastructure choices too: a custom orchestrator that actually runs for free beats a conventional one that doesn't run at all.

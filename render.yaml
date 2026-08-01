@@ -5,11 +5,6 @@ databases:
     user: gyankosh
 
 services:
-  - type: redis
-    name: gyankosh-redis
-    plan: free
-    ipAllowList: []
-
   - type: web
     name: gyankosh-backend
     runtime: docker
@@ -22,11 +17,6 @@ services:
         fromDatabase:
           name: gyankosh-db
           property: connectionString
-      - key: REDIS_URL
-        fromService:
-          type: redis
-          name: gyankosh-redis
-          property: connectionString
       - key: ANTHROPIC_API_KEY
         sync: false
       - key: API_KEY
@@ -38,35 +28,14 @@ services:
       - key: CORS_ALLOWED_ORIGINS
         sync: false # set to the deployed frontend's URL, e.g. https://gyankosh-frontend.onrender.com
     # No preDeployCommand: that's a paid-tier-only Render feature. Migrations
-    # instead run from docker-entrypoint.sh on every container start (works
-    # on Free tier, and covers the worker service too since it shares this
-    # image).
-
-  - type: worker
-    name: gyankosh-worker
-    runtime: docker
-    dockerfilePath: ./backend/Dockerfile
-    dockerContext: ./backend
-    dockerCommand: celery -A app.tasks.celery_app worker --loglevel=info
-    plan: free
-    envVars:
-      - key: DATABASE_URL
-        fromDatabase:
-          name: gyankosh-db
-          property: connectionString
-      - key: REDIS_URL
-        fromService:
-          type: redis
-          name: gyankosh-redis
-          property: connectionString
-      - key: ANTHROPIC_API_KEY
-        sync: false
-      - key: API_KEY
-        sync: false
-      - key: STORAGE_BACKEND
-        value: local
-      - key: LOCAL_STORAGE_PATH
-        value: /app/storage_data
+    # instead run from docker-entrypoint.sh on every container start.
+    #
+    # No separate worker service, no Redis: Render's Background Worker type
+    # has no free tier (Starter is $7/mo minimum), and Redis's only job was
+    # feeding that worker via Celery. The pipeline now runs as a FastAPI
+    # BackgroundTask in this same web service instead — same orchestrator,
+    # same checkpoint/resume logic, just triggered in-process rather than via
+    # a message queue. See app/tasks/pipeline_tasks.py.
 
   - type: web
     name: gyankosh-frontend
