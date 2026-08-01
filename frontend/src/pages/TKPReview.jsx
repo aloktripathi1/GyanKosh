@@ -14,9 +14,7 @@ import {
   Puzzle,
   ClipboardList,
 } from "lucide-react";
-import { getTkp, regenerateSection } from "../api.js";
-
-const API_KEY = import.meta.env.VITE_API_KEY || "dev-local-key";
+import { fileUrl, getTkp, regenerateSection } from "../api.js";
 
 const TABS_STATIC = [
   { key: "overview", label: "Overview", icon: LayoutGrid },
@@ -130,7 +128,7 @@ function Header({ tkp }) {
             <a
               key={name}
               className="badge badge-neutral"
-              href={`/api/files/${path}?api_key=${encodeURIComponent(API_KEY)}`}
+              href={fileUrl(path)}
               target="_blank"
               rel="noreferrer"
             >

@@ -12,6 +12,10 @@ class Settings(BaseSettings):
     storage_backend: str = "local"
     local_storage_path: str = "./storage_data"
     api_key: str = "dev-local-key"
+    # Comma-separated list of allowed frontend origins, e.g.
+    # "https://gyankosh-frontend.onrender.com,https://app.example.com".
+    # Defaults to the local Vite dev server only.
+    cors_allowed_origins: str = "http://localhost:5173"
 
 
 @lru_cache

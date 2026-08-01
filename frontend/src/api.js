@@ -1,5 +1,10 @@
 const API_KEY = import.meta.env.VITE_API_KEY || "dev-local-key";
-const BASE = "/api";
+// In local dev, Vite's server.proxy rewrites /api -> localhost:8000 — but that
+// proxy only exists for `vite dev`; a production build is static files with
+// no proxy logic at all. VITE_API_BASE_URL must be set at build time to the
+// deployed backend's real URL, or every request 404s against the frontend's
+// own origin instead of reaching the backend.
+const BASE = import.meta.env.VITE_API_BASE_URL || "/api";
 
 class ApiError extends Error {
   constructor(status, detail) {
@@ -79,6 +84,10 @@ export async function streamJobProgress(jobId, onEvent, { signal } = {}) {
       if (line) onEvent(JSON.parse(line.slice("data: ".length)));
     }
   }
+}
+
+export function fileUrl(path) {
+  return `${BASE}/files/${path}?api_key=${encodeURIComponent(API_KEY)}`;
 }
 
 export { ApiError };
