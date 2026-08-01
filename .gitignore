@@ -19,6 +19,9 @@ node_modules/
 dist/
 frontend/.env
 
+# Internal notes, not for the repo
+decisions.md
+
 # OS
 .DS_Store
 
