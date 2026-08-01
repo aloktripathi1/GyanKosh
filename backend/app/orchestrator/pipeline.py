@@ -1,3 +1,5 @@
+from concurrent.futures import ThreadPoolExecutor, as_completed
+
 from sqlalchemy.orm import Session
 from tenacity import Retrying, stop_after_attempt, wait_exponential
 
@@ -23,6 +25,13 @@ from app.validation import consistency_check, grounding_check, schema_check
 
 MAX_RETRIES = 3
 BACKOFF_BASE_SECONDS = 2
+
+# content/activity/assessment generation and gap analysis each depend only on
+# the teaching plan and/or knowledge extraction, never on each other — running
+# them concurrently overlaps their LLM latency instead of paying for it 4x.
+PARALLEL_STAGE_GROUP = frozenset(
+    {"content_generation", "activity_generation", "assessment_generation", "gap_analysis"}
+)
 
 
 class StageFailedError(Exception):
@@ -143,9 +152,11 @@ def _run_publishing(job: Job, storage: StorageBackend, db: Session) -> dict:
     return {"tkp_version_id": str(tkp_version.id), "pdf_paths": pdf_paths}
 
 
-def run_stage(db: Session, job: Job, stage: str, document: Document, storage: StorageBackend) -> None:
-    """Execute one stage with retry/backoff, checkpoint the result on success, and
-    mark the job failed (explicitly, never silently) on exhaustion."""
+def _compute_stage(db: Session, job: Job, stage: str, document: Document, storage: StorageBackend) -> dict:
+    """Run one stage's agent with retry/backoff and return its result. No DB
+    writes happen here — this is the half of stage execution that's safe to
+    call from a worker thread, so the parallel group can run several of these
+    concurrently before checkpointing any of them."""
     try:
         result = None
         for attempt in Retrying(
@@ -155,15 +166,58 @@ def run_stage(db: Session, job: Job, stage: str, document: Document, storage: St
         ):
             with attempt:
                 result = _execute_stage(job, stage, document, storage, db)
+        return result
     except Exception as e:  # noqa: BLE001 - any stage failure is retryable, then explicit
-        job.status = JobStatus.FAILED
-        job.error = f"Stage '{stage}' failed after {MAX_RETRIES} attempts: {e}"
-        db.commit()
         raise StageFailedError(stage, e) from e
 
+
+def _checkpoint_stage(db: Session, job: Job, stage: str, result: dict) -> None:
     job.stage_results = {**job.stage_results, stage: result}
     completed = sum(1 for s in STAGE_NAMES if s in job.stage_results)
     progress.emit(db, job, stage, int(completed / len(STAGE_NAMES) * 100))
+
+
+def run_stage(db: Session, job: Job, stage: str, document: Document, storage: StorageBackend) -> None:
+    """Execute one stage with retry/backoff, checkpoint the result on success, and
+    mark the job failed (explicitly, never silently) on exhaustion."""
+    try:
+        result = _compute_stage(db, job, stage, document, storage)
+    except StageFailedError as e:
+        job.status = JobStatus.FAILED
+        job.error = str(e)
+        db.commit()
+        raise
+    _checkpoint_stage(db, job, stage, result)
+
+
+def _run_parallel_group(db: Session, job: Job, document: Document, storage: StorageBackend) -> None:
+    """Run every not-yet-checkpointed stage in PARALLEL_STAGE_GROUP concurrently.
+    Stages that succeed are checkpointed even if a sibling stage fails, so a
+    resumed run doesn't redo work that already completed."""
+    pending = [s for s in STAGE_NAMES if s in PARALLEL_STAGE_GROUP and s not in job.stage_results]
+    if not pending:
+        return
+
+    job.current_stage = "+".join(pending)
+    db.commit()
+
+    first_error: StageFailedError | None = None
+    with ThreadPoolExecutor(max_workers=len(pending)) as pool:
+        futures = {pool.submit(_compute_stage, db, job, stage, document, storage): stage for stage in pending}
+        for future in as_completed(futures):
+            stage = futures[future]
+            try:
+                result = future.result()
+            except StageFailedError as e:
+                first_error = first_error or e
+                continue
+            _checkpoint_stage(db, job, stage, result)
+
+    if first_error is not None:
+        job.status = JobStatus.FAILED
+        job.error = str(first_error)
+        db.commit()
+        raise first_error
 
 
 def run_pipeline(db: Session, job: Job) -> None:
@@ -183,9 +237,12 @@ def run_pipeline(db: Session, job: Job) -> None:
 
     stage = next_stage(job)
     while stage is not None:
-        job.current_stage = stage
-        db.commit()
-        run_stage(db, job, stage, document, storage)
+        if stage in PARALLEL_STAGE_GROUP:
+            _run_parallel_group(db, job, document, storage)
+        else:
+            job.current_stage = stage
+            db.commit()
+            run_stage(db, job, stage, document, storage)
         stage = next_stage(job)
 
     job.status = JobStatus.COMPLETED

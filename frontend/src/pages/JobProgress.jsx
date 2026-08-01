@@ -16,6 +16,8 @@ const STAGES = [
   ["publishing", "Publishing package"],
 ];
 
+const STAGE_LABELS = Object.fromEntries(STAGES);
+
 function useElapsed(startTime) {
   const [elapsed, setElapsed] = useState(0);
   useEffect(() => {
@@ -95,7 +97,10 @@ export default function JobProgress() {
     );
   }
 
-  const currentIndex = STAGES.findIndex(([key]) => key === job.current_stage);
+  // A handful of independent generation stages run concurrently on the backend;
+  // current_stage is "+"-joined across all of them while that batch is in flight.
+  const activeStages = (job.current_stage || "").split("+").filter(Boolean);
+  const currentIndex = STAGES.findIndex(([key]) => activeStages.includes(key));
 
   return (
     <div className="app-shell fade-in">
@@ -130,11 +135,11 @@ export default function JobProgress() {
           <div className="stepper">
             {STAGES.map(([key, label], i) => {
               const state =
-                job.status === "failed" && key === job.current_stage
+                job.status === "failed" && activeStages.includes(key)
                   ? "failed"
                   : i < currentIndex || job.status === "completed"
                     ? "done"
-                    : i === currentIndex
+                    : activeStages.includes(key)
                       ? "active"
                       : "pending";
               return (
@@ -161,7 +166,8 @@ export default function JobProgress() {
 
         {job.status === "failed" && (
           <div className="error-banner">
-            Pipeline failed during <strong>{job.current_stage}</strong>: {job.error}
+            Pipeline failed during{" "}
+            <strong>{activeStages.map((k) => STAGE_LABELS[k] || k).join(", ")}</strong>: {job.error}
           </div>
         )}
         {connectionError && <div className="error-banner">{connectionError}</div>}
