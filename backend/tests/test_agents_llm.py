@@ -108,6 +108,46 @@ def test_teaching_planner_run_includes_teaching_context_in_prompt(monkeypatch, s
     assert "Only 3 periods available" in captured["user_prompt"]
 
 
+def test_teaching_planner_caps_period_count(monkeypatch, sample_classification, sample_extraction):
+    """Section 15: a dense document must not be able to produce an unbounded
+    period count even if the model ignores the prompt's own guidance."""
+    oversized = TeachingPlanOutput(
+        periods=[
+            Period(
+                period_number=n,
+                title=f"P{n}",
+                objectives=["o"],
+                concepts_covered=["c"],
+                sequencing_rationale="r",
+                recommended_duration_minutes=30,
+            )
+            for n in range(1, 41)
+        ],
+        total_periods=40,
+        planning_rationale="dense document",
+    )
+    monkeypatch.setattr(teaching_planner, "structured_call", lambda **kwargs: oversized)
+
+    result = teaching_planner.run(teaching_planner.TeachingPlannerInput(sample_classification, sample_extraction))
+
+    assert len(result.periods) == teaching_planner.MAX_PERIODS
+    assert result.total_periods == teaching_planner.MAX_PERIODS
+
+
+def test_teaching_planner_rejects_zero_periods(monkeypatch, sample_classification, sample_extraction):
+    empty_plan = TeachingPlanOutput(periods=[], total_periods=0, planning_rationale="nothing to teach")
+    monkeypatch.setattr(teaching_planner, "structured_call", lambda **kwargs: empty_plan)
+
+    with pytest.raises(ValueError, match="zero periods"):
+        teaching_planner.run(teaching_planner.TeachingPlannerInput(sample_classification, sample_extraction))
+
+
+def test_teaching_planner_leaves_reasonable_plan_untouched(monkeypatch, sample_classification, sample_extraction, sample_plan):
+    monkeypatch.setattr(teaching_planner, "structured_call", lambda **kwargs: sample_plan)
+    result = teaching_planner.run(teaching_planner.TeachingPlannerInput(sample_classification, sample_extraction))
+    assert result == sample_plan
+
+
 def test_knowledge_extraction_run_resolves_grounding(monkeypatch, sample_document):
     from app.agents.knowledge_extraction import _DraftItem, _KnowledgeExtractionDraft
 

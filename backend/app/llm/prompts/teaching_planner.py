@@ -11,7 +11,9 @@ to the others, and a recommended_duration_minutes that reflects how long this
 specific content actually takes to teach well at this grade level — a short
 conceptual period might realistically need 20-30 minutes, a dense numerical-practice
 period might need 50-60. Base the estimate on content volume and grade level, not a
-generic classroom-period default."""
+generic classroom-period default. Even for very dense content, do not exceed 12
+periods — group related concepts together and rely on recommended_duration_minutes,
+not period count, to reflect depth."""
 
 
 def build_user_prompt(
