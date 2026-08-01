@@ -119,7 +119,8 @@ function Header({ tkp }) {
       <p className="eyebrow">Teacher Knowledge Package</p>
       <h1 style={{ marginTop: "var(--space-2)" }}>{c.topic || "Untitled"}</h1>
       <p className="subtitle">
-        {c.subject} · Grade {c.grade} · {c.chapter}
+        {c.subject} · Grade {c.grade}
+        {c.chapter ? ` · Chapter ${c.chapter}` : ""}
       </p>
       <div className="row" style={{ marginTop: "var(--space-4)", flexWrap: "wrap" }}>
         <ValidationBadge report={tkp.validation_report} />

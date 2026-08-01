@@ -169,6 +169,7 @@ a { color: var(--color-primary); }
 .eyebrow {
   display: inline-flex;
   align-items: center;
+  gap: 7px;
   font-size: var(--text-xs);
   font-weight: 600;
   letter-spacing: 0.14em;
@@ -199,9 +200,17 @@ a { color: var(--color-primary); }
 .card-bordered {
   background: var(--color-surface);
   border: var(--rule);
-  border-top: 3px solid var(--color-text);
   border-radius: var(--radius);
   padding: var(--space-6);
+  position: relative;
+  overflow: hidden;
+}
+.card-bordered::before {
+  content: "";
+  position: absolute;
+  inset: 0 0 auto 0;
+  height: 3px;
+  background: var(--color-text);
 }
 
 .stack { display: flex; flex-direction: column; gap: var(--space-4); }
