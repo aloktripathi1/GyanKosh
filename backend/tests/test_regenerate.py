@@ -2,9 +2,11 @@ import uuid
 
 import pytest
 
+from app.api import tkp as tkp_api
 from app.models.job import Job, JobStatus
 from app.models.tkp_version import TKPVersion
 from app.orchestrator import regenerate, stage_runners
+from app.schemas.entities import RegenerateSectionRequest
 from app.schemas.activity_generator import ActivityGenerationOutput
 from app.schemas.assessment_generator import AssessmentGenerationOutput
 from app.schemas.classification import ClassificationOutput, DifficultyLevel
@@ -102,6 +104,65 @@ def test_regenerate_rejects_unknown_section():
 
     with pytest.raises(regenerate.RegenerationError):
         regenerate.regenerate_section(db, tkp, "not_a_real_section")
+
+
+class _LockRecordingQuery:
+    def __init__(self, tkp):
+        self._tkp = tkp
+        self.locked = False
+
+    def filter(self, *a, **k):
+        return self
+
+    def with_for_update(self):
+        self.locked = True
+        return self
+
+    def first(self):
+        return self._tkp
+
+
+class _LockRecordingSession:
+    """Section 15: concurrent regenerate-section requests on the same TKP must
+    serialize on a row lock, not race. This doesn't (and can't, without a live
+    Postgres) prove the lock actually blocks a second transaction — it proves
+    the route requests one via with_for_update() rather than the unlocked
+    db.get() every other read-only route uses."""
+
+    def __init__(self, job, tkp):
+        self._job = job
+        self._tkp = tkp
+        self.query_obj = _LockRecordingQuery(tkp)
+
+    def get(self, model, id_):
+        return self._job  # only Job is fetched via .get() in this flow
+
+    def query(self, model):
+        assert model is TKPVersion
+        return self.query_obj
+
+    def commit(self):
+        pass
+
+    def refresh(self, obj):
+        pass
+
+
+def test_regenerate_route_locks_the_tkp_row_for_update(monkeypatch):
+    job = _job_with_doc_intel()
+    tkp = _tkp_version(job.id)
+    db = _LockRecordingSession(job, tkp)
+
+    new_plan = TeachingPlanOutput(
+        periods=[Period(period_number=1, title="Updated", objectives=["o2"], concepts_covered=["c"], sequencing_rationale="r2", recommended_duration_minutes=40)],
+        total_periods=1, planning_rationale="regenerated",
+    )
+    monkeypatch.setattr(stage_runners.teaching_planner, "run", lambda *a, **k: new_plan)
+
+    result = tkp_api.regenerate_section(tkp.id, "teaching_plan", RegenerateSectionRequest(), db)
+
+    assert db.query_obj.locked, "regenerate route must fetch the TKP row with with_for_update()"
+    assert result.teaching_plan["planning_rationale"] == "regenerated"
 
 
 def test_regenerate_classification_requires_document_intelligence_checkpoint(monkeypatch):
