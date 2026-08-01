@@ -1,13 +1,11 @@
-import time
-
 from sqlalchemy.orm import Session
+from tenacity import Retrying, stop_after_attempt, wait_exponential
 
-from app.agents import activity_generator, assessment_generator, classification as classification_agent
-from app.agents import content_generator, document_intelligence, gap_analysis, knowledge_extraction, teaching_planner
+from app.agents import document_intelligence
 from app.models.document import Document
 from app.models.job import STAGE_NAMES, Job, JobStatus
 from app.models.tkp_version import TKPVersion
-from app.orchestrator import progress
+from app.orchestrator import progress, stage_runners
 from app.publishing import json_builder
 from app.publishing.pdf_renderer import render_assessment_book, render_lesson_plans, render_teacher_guide
 from app.schemas.activity_generator import ActivityGenerationOutput
@@ -59,36 +57,35 @@ def _execute_stage(job: Job, stage: str, document: Document, storage: StorageBac
 
     if stage == "classification":
         doc_intel = _load(job, "document_intelligence", DocumentIntelligenceOutput)
-        return classification_agent.run(doc_intel, job.teaching_context).model_dump(mode="json")
+        return stage_runners.run_classification(doc_intel, job.teaching_context)
 
     if stage == "knowledge_extraction":
         doc_intel = _load(job, "document_intelligence", DocumentIntelligenceOutput)
-        return knowledge_extraction.run(doc_intel).model_dump(mode="json")
+        return stage_runners.run_knowledge_extraction(doc_intel)
 
     if stage == "teaching_planner":
         cls = _load(job, "classification", ClassificationOutput)
         ek = _load(job, "knowledge_extraction", KnowledgeExtractionOutput)
-        planner_input = teaching_planner.TeachingPlannerInput(cls, ek, job.teaching_context)
-        return teaching_planner.run(planner_input).model_dump(mode="json")
+        return stage_runners.run_teaching_planner(cls, ek, job.teaching_context)
 
     if stage == "content_generation":
         plan = _load(job, "teaching_planner", TeachingPlanOutput)
         ek = _load(job, "knowledge_extraction", KnowledgeExtractionOutput)
-        return content_generator.run(content_generator.ContentGeneratorInput(plan, ek)).model_dump(mode="json")
+        return stage_runners.run_content_generation(plan, ek)
 
     if stage == "activity_generation":
         plan = _load(job, "teaching_planner", TeachingPlanOutput)
         ek = _load(job, "knowledge_extraction", KnowledgeExtractionOutput)
-        return activity_generator.run(activity_generator.ActivityGeneratorInput(plan, ek)).model_dump(mode="json")
+        return stage_runners.run_activity_generation(plan, ek)
 
     if stage == "assessment_generation":
         plan = _load(job, "teaching_planner", TeachingPlanOutput)
         ek = _load(job, "knowledge_extraction", KnowledgeExtractionOutput)
-        return assessment_generator.run(assessment_generator.AssessmentGeneratorInput(plan, ek)).model_dump(mode="json")
+        return stage_runners.run_assessment_generation(plan, ek)
 
     if stage == "gap_analysis":
         ek = _load(job, "knowledge_extraction", KnowledgeExtractionOutput)
-        return gap_analysis.run(ek).model_dump(mode="json")
+        return stage_runners.run_gap_analysis(ek)
 
     if stage == "validation":
         return _run_validation(job).model_dump(mode="json")
@@ -149,23 +146,24 @@ def _run_publishing(job: Job, storage: StorageBackend, db: Session) -> dict:
 def run_stage(db: Session, job: Job, stage: str, document: Document, storage: StorageBackend) -> None:
     """Execute one stage with retry/backoff, checkpoint the result on success, and
     mark the job failed (explicitly, never silently) on exhaustion."""
-    last_exc: Exception | None = None
-    for attempt in range(1, MAX_RETRIES + 1):
-        try:
-            result = _execute_stage(job, stage, document, storage, db)
-            job.stage_results = {**job.stage_results, stage: result}
-            completed = sum(1 for s in STAGE_NAMES if s in job.stage_results)
-            progress.emit(db, job, stage, int(completed / len(STAGE_NAMES) * 100))
-            return
-        except Exception as e:  # noqa: BLE001 - any stage failure is retryable, then explicit
-            last_exc = e
-            if attempt < MAX_RETRIES:
-                time.sleep(BACKOFF_BASE_SECONDS * (2 ** (attempt - 1)))
+    try:
+        result = None
+        for attempt in Retrying(
+            stop=stop_after_attempt(MAX_RETRIES),
+            wait=wait_exponential(multiplier=BACKOFF_BASE_SECONDS, min=BACKOFF_BASE_SECONDS),
+            reraise=True,
+        ):
+            with attempt:
+                result = _execute_stage(job, stage, document, storage, db)
+    except Exception as e:  # noqa: BLE001 - any stage failure is retryable, then explicit
+        job.status = JobStatus.FAILED
+        job.error = f"Stage '{stage}' failed after {MAX_RETRIES} attempts: {e}"
+        db.commit()
+        raise StageFailedError(stage, e) from e
 
-    job.status = JobStatus.FAILED
-    job.error = f"Stage '{stage}' failed after {MAX_RETRIES} attempts: {last_exc}"
-    db.commit()
-    raise StageFailedError(stage, last_exc)
+    job.stage_results = {**job.stage_results, stage: result}
+    completed = sum(1 for s in STAGE_NAMES if s in job.stage_results)
+    progress.emit(db, job, stage, int(completed / len(STAGE_NAMES) * 100))
 
 
 def run_pipeline(db: Session, job: Job) -> None:

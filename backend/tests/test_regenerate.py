@@ -4,7 +4,7 @@ import pytest
 
 from app.models.job import Job, JobStatus
 from app.models.tkp_version import TKPVersion
-from app.orchestrator import regenerate
+from app.orchestrator import regenerate, stage_runners
 from app.schemas.activity_generator import ActivityGenerationOutput
 from app.schemas.assessment_generator import AssessmentGenerationOutput
 from app.schemas.classification import ClassificationOutput, DifficultyLevel
@@ -87,7 +87,7 @@ def test_regenerate_teaching_plan_updates_field_and_revalidates(monkeypatch):
         periods=[Period(period_number=1, title="Updated", objectives=["o2"], concepts_covered=["c"], sequencing_rationale="r2", recommended_duration_minutes=40)],
         total_periods=1, planning_rationale="regenerated",
     )
-    monkeypatch.setattr(regenerate.teaching_planner, "run", lambda *a, **k: new_plan)
+    monkeypatch.setattr(stage_runners.teaching_planner, "run", lambda *a, **k: new_plan)
 
     updated = regenerate.regenerate_section(db, tkp, "teaching_plan")
 

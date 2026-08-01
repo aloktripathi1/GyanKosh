@@ -9,7 +9,7 @@ import uuid
 import pytest
 
 from app.models.job import STAGE_NAMES, JobStatus
-from app.orchestrator import pipeline
+from app.orchestrator import pipeline, stage_runners
 from app.schemas.activity_generator import ActivityGenerationOutput
 from app.schemas.assessment_generator import AssessmentGenerationOutput
 from app.schemas.classification import ClassificationOutput, DifficultyLevel
@@ -110,13 +110,13 @@ def stub_agents(monkeypatch):
         return stub
 
     monkeypatch.setattr(pipeline.document_intelligence, "run", make_stub("document_intelligence", doc_intel))
-    monkeypatch.setattr(pipeline.classification_agent, "run", make_stub("classification", classification))
-    monkeypatch.setattr(pipeline.knowledge_extraction, "run", make_stub("knowledge_extraction", extraction))
-    monkeypatch.setattr(pipeline.teaching_planner, "run", make_stub("teaching_planner", plan))
-    monkeypatch.setattr(pipeline.content_generator, "run", make_stub("content_generation", content))
-    monkeypatch.setattr(pipeline.activity_generator, "run", make_stub("activity_generation", activities))
-    monkeypatch.setattr(pipeline.assessment_generator, "run", make_stub("assessment_generation", assessments))
-    monkeypatch.setattr(pipeline.gap_analysis, "run", make_stub("gap_analysis", gaps))
+    monkeypatch.setattr(stage_runners.classification_agent, "run", make_stub("classification", classification))
+    monkeypatch.setattr(stage_runners.knowledge_extraction, "run", make_stub("knowledge_extraction", extraction))
+    monkeypatch.setattr(stage_runners.teaching_planner, "run", make_stub("teaching_planner", plan))
+    monkeypatch.setattr(stage_runners.content_generator, "run", make_stub("content_generation", content))
+    monkeypatch.setattr(stage_runners.activity_generator, "run", make_stub("activity_generation", activities))
+    monkeypatch.setattr(stage_runners.assessment_generator, "run", make_stub("assessment_generation", assessments))
+    monkeypatch.setattr(stage_runners.gap_analysis, "run", make_stub("gap_analysis", gaps))
     monkeypatch.setattr(pipeline, "render_lesson_plans", lambda tkp, storage: "tkp/lesson_plans.pdf")
     monkeypatch.setattr(pipeline, "render_teacher_guide", lambda tkp, storage: "tkp/teacher_guide.pdf")
     monkeypatch.setattr(pipeline, "render_assessment_book", lambda tkp, storage: "tkp/assessment_book.pdf")
@@ -166,17 +166,17 @@ def test_progress_reflects_precached_stages_from_document_hash_reuse(stub_agents
     )
 
     progress_at_first_new_stage = {}
-    real_teaching_planner_run = pipeline.teaching_planner.run
+    real_teaching_planner_run = stage_runners.teaching_planner.run
 
     def capture_progress(*args, **kwargs):
         progress_at_first_new_stage["value"] = job.progress_pct
         return real_teaching_planner_run(*args, **kwargs)
 
-    pipeline.teaching_planner.run = capture_progress
+    stage_runners.teaching_planner.run = capture_progress
     try:
         pipeline.run_pipeline(db, job)
     finally:
-        pipeline.teaching_planner.run = real_teaching_planner_run
+        stage_runners.teaching_planner.run = real_teaching_planner_run
 
     # 3 of 10 stages were already checkpointed before the pipeline even started.
     assert progress_at_first_new_stage["value"] == 30
@@ -244,7 +244,7 @@ def test_stage_retries_then_succeeds(stub_agents, storage):
     job = FakeJob()
 
     attempts = {"n": 0}
-    real_run = pipeline.classification_agent.run
+    real_run = stage_runners.classification_agent.run
 
     def flaky(*args, **kwargs):
         attempts["n"] += 1
@@ -253,11 +253,11 @@ def test_stage_retries_then_succeeds(stub_agents, storage):
         return real_run(*args, **kwargs)
 
     job.stage_results["document_intelligence"] = pipeline.document_intelligence.run(None).model_dump(mode="json")
-    pipeline.classification_agent.run = flaky
+    stage_runners.classification_agent.run = flaky
     try:
         pipeline.run_stage(db, job, "classification", document, storage)
     finally:
-        pipeline.classification_agent.run = real_run
+        stage_runners.classification_agent.run = real_run
 
     assert attempts["n"] == 2
     assert "classification" in job.stage_results
@@ -270,17 +270,17 @@ def test_stage_fails_explicitly_after_exhausting_retries(stub_agents, storage):
     job = FakeJob()
     job.stage_results["document_intelligence"] = pipeline.document_intelligence.run(None).model_dump(mode="json")
 
+    real_run = stage_runners.classification_agent.run
+
     def always_fails(*args, **kwargs):
         raise RuntimeError("permanent LLM error")
 
-    pipeline.classification_agent.run = always_fails
+    stage_runners.classification_agent.run = always_fails
     try:
         with pytest.raises(pipeline.StageFailedError):
             pipeline.run_stage(db, job, "classification", document, storage)
     finally:
-        import importlib
-
-        importlib.reload(pipeline)
+        stage_runners.classification_agent.run = real_run
 
     assert job.status == JobStatus.FAILED
     assert job.error is not None

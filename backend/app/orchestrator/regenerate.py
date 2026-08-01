@@ -1,9 +1,8 @@
 from sqlalchemy.orm import Session
 
-from app.agents import activity_generator, assessment_generator, classification as classification_agent
-from app.agents import content_generator, gap_analysis, knowledge_extraction, teaching_planner
 from app.models.job import Job
 from app.models.tkp_version import TKPVersion
+from app.orchestrator import stage_runners
 from app.schemas.activity_generator import ActivityGenerationOutput
 from app.schemas.assessment_generator import AssessmentGenerationOutput
 from app.schemas.classification import ClassificationOutput
@@ -39,26 +38,27 @@ def _doc_intel(job: Job) -> DocumentIntelligenceOutput:
 def _regenerate_field(section: str, tkp_version: TKPVersion, job: Job) -> dict:
     """Run only the one agent needed for `section`, using the TKP version's
     current fields (not the original job.stage_results) as context — so a
-    prior regeneration of an upstream section is reflected."""
+    prior regeneration of an upstream section is reflected. Delegates the
+    actual agent-invocation logic to stage_runners, the same functions the
+    sequential pipeline uses for the equivalent stage."""
     classification = ClassificationOutput.model_validate(tkp_version.classification)
     extracted_knowledge = KnowledgeExtractionOutput.model_validate(tkp_version.extracted_knowledge)
     teaching_plan = TeachingPlanOutput.model_validate(tkp_version.teaching_plan)
 
     if section == "classification":
-        return classification_agent.run(_doc_intel(job), job.teaching_context).model_dump(mode="json")
+        return stage_runners.run_classification(_doc_intel(job), job.teaching_context)
     if section == "extracted_knowledge":
-        return knowledge_extraction.run(_doc_intel(job)).model_dump(mode="json")
+        return stage_runners.run_knowledge_extraction(_doc_intel(job))
     if section == "teaching_plan":
-        planner_input = teaching_planner.TeachingPlannerInput(classification, extracted_knowledge, job.teaching_context)
-        return teaching_planner.run(planner_input).model_dump(mode="json")
+        return stage_runners.run_teaching_planner(classification, extracted_knowledge, job.teaching_context)
     if section == "period_content":
-        return content_generator.run(content_generator.ContentGeneratorInput(teaching_plan, extracted_knowledge)).model_dump(mode="json")
+        return stage_runners.run_content_generation(teaching_plan, extracted_knowledge)
     if section == "activities":
-        return activity_generator.run(activity_generator.ActivityGeneratorInput(teaching_plan, extracted_knowledge)).model_dump(mode="json")
+        return stage_runners.run_activity_generation(teaching_plan, extracted_knowledge)
     if section == "assessments":
-        return assessment_generator.run(assessment_generator.AssessmentGeneratorInput(teaching_plan, extracted_knowledge)).model_dump(mode="json")
+        return stage_runners.run_assessment_generation(teaching_plan, extracted_knowledge)
     if section == "learning_gaps":
-        return gap_analysis.run(extracted_knowledge).model_dump(mode="json")
+        return stage_runners.run_gap_analysis(extracted_knowledge)
 
     raise RegenerationError(f"Section '{section}' is not regeneratable")
 
