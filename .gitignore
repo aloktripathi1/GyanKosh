@@ -19,7 +19,6 @@ frontend/.env
 # Internal notes, not for the repo
 AUDIT_REPORT.md
 BUILD_CONTEXT.md
-assets/limitations.md
 
 # OS
 .DS_Store
