@@ -8,6 +8,19 @@ Drop in a PDF, DOCX, PPTX, or plain-text chapter. Get back structured JSON and p
 
 Live: backend on Render, frontend on Vercel.
 
+For the reasoning behind these choices, including the bugs found along the way, see [`DECISIONS.md`](DECISIONS.md). For a quick conceptual overview of the pipeline, see [`assets/architecture.md`](assets/architecture.md).
+
+## Contents
+
+- [Why it's built this way](#why-its-built-this-way)
+- [Quick start](#quick-start)
+- [How it works](#how-it-works)
+- [The orchestration engine](#the-orchestration-engine)
+- [Built-in highlights](#built-in-highlights)
+- [Samples](#samples)
+- [Testing](#testing)
+- [Honest limitations](#honest-limitations)
+
 ---
 
 ## Why it's built this way
