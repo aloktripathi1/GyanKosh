@@ -11,9 +11,6 @@ __pycache__/
 # Storage
 backend/storage_data/
 
-# Local test input material (sample docs, not app code)
-input/
-
 # Node / frontend
 node_modules/
 dist/

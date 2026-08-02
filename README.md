@@ -119,7 +119,7 @@ Every run emits structured logs with a job ID, stage name, and duration, plus a 
 
 ## Samples
 
-Real, unedited pipeline output lives in [`/samples`](samples), each one run twice against the live deployment and read through in full before being included. Each JSON has its original source PDF alongside it (`*_source.pdf`), so output can be independently checked against the actual input, not just taken on faith:
+Real, unedited pipeline output lives in [`/samples`](samples), each one run twice against the live deployment and read through in full before being included. The original source PDFs are in [`/samples/input`](samples/input), so output can be checked against the actual input directly, not just taken on faith:
 
 - **`stem_chemistry_chemical_reactions_and_equations.json`**: a real NCERT Class 10 Chemistry chapter. Formula and equation extraction, a three-period lesson plan, all four validation checks passing.
 - **`history_nationalism_in_india.json`**: a real NCERT Class 10 History chapter. An 8-period plan sequenced thematically and chronologically (not a copy of the STEM shape), assessments that correctly skip numerical questions except where the source text itself contains a real statistic, and subject-specific activities (role-play, timeline work, case studies) rather than generic filler.
