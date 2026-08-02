@@ -249,10 +249,10 @@ function KnowledgeList({ label, items, render }) {
 function ValidationDetail({ report }) {
   if (!report) return null;
   const rows = [
-    ["Schema", report.schema_check],
-    ["Grounding", report.grounding_check],
-    ["Completeness", report.completeness_check],
-    ["Consistency", report.consistency_check],
+    ["Structure verified", report.schema_check],
+    ["Every claim traced to your document", report.grounding_check],
+    ["All sections generated", report.completeness_check],
+    ["No contradictions across periods", report.consistency_check],
   ];
   return (
     <div className="section-block">
