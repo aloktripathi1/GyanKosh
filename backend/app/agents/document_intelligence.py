@@ -199,6 +199,22 @@ def _parse_pptx(document_id: str, content: bytes) -> DocumentIntelligenceOutput:
             if shape.shape_type == 13:  # MSO_SHAPE_TYPE.PICTURE
                 figures.append(FigureBlock(id=f"{section_id}-fig{len(figures)}"))
 
+        # `slide.shapes.title` only finds a heading if the deck uses real title
+        # placeholders. Decks converted from PDF (observed live: a real NCERT
+        # slide export) use plain text boxes for everything, so shapes.title is
+        # None on every slide even though the very first slide is still,
+        # unambiguously, a title slide. Guessing a heading on every slide this
+        # way is too unreliable (checked against the real deck: the "largest
+        # font on the slide" on a dense content slide is just a mid-equation
+        # fragment, a worse outcome than no heading at all) — this only
+        # covers the one case that's actually safe to infer.
+        if heading is None and slide_index == 0 and texts:
+            for candidate in texts[:3]:
+                if len(candidate) <= 60 and "\n" not in candidate:
+                    heading = candidate
+                    texts.remove(candidate)
+                    break
+
         text = "\n".join(texts)
         raw_text_parts.append(f"{heading or ''}\n{text}")
         sections.append(

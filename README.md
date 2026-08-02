@@ -129,13 +129,15 @@ Every run emits structured logs with a job ID, stage name, and duration, plus a 
 
 ## Samples
 
-Real, unedited pipeline output lives in [`/samples`](samples), each one run twice against the live deployment and read through in full before being included. The original source PDFs are in [`/samples/input`](samples/input), so output can be checked against the actual input directly, not just taken on faith:
+Real, unedited pipeline output lives in [`/samples`](samples), each one run against the live deployment and read through in full before being included. The original source files are in [`/samples/input`](samples/input), so output can be checked against the actual input directly, not just taken on faith:
 
-- **`stem_chemistry_chemical_reactions_and_equations.json`**: a real NCERT Class 10 Chemistry chapter. Formula and equation extraction, a three-period lesson plan, all four validation checks passing.
-- **`history_nationalism_in_india.json`**: a real NCERT Class 10 History chapter. An 8-period plan sequenced thematically and chronologically (not a copy of the STEM shape), assessments that correctly skip numerical questions except where the source text itself contains a real statistic, and subject-specific activities (role-play, timeline work, case studies) rather than generic filler.
-- **`physics_electricity.json`**: a real NCERT Class 10 Physics chapter (Electricity). A circuit-building period progression (current → potential difference → resistance → series → parallel → power), correct extraction of physics notation (Ohm's law, proportionality, squared terms, multi-term series/parallel equations), and numerical questions used heavily and correctly, every one independently verified by hand.
+- **`stem_chemistry_chemical_reactions_and_equations.json`**: a real NCERT Class 10 Chemistry chapter (PDF). Formula and equation extraction, a three-period lesson plan, all four validation checks passing.
+- **`history_nationalism_in_india.json`**: a real NCERT Class 10 History chapter (PDF). An 8-period plan sequenced thematically and chronologically (not a copy of the STEM shape), assessments that correctly skip numerical questions except where the source text itself contains a real statistic, and subject-specific activities (role-play, timeline work, case studies) rather than generic filler.
+- **`physics_electricity.json`**: a real NCERT Class 10 Physics chapter (Electricity, PDF). A circuit-building period progression (current → potential difference → resistance → series → parallel → power), correct extraction of physics notation (Ohm's law, proportionality, squared terms, multi-term series/parallel equations), and numerical questions used heavily and correctly, every one independently verified by hand.
+- **`physics_electricity_docx.json`**: the same Electricity chapter, this time as a **DOCX** upload, confirming document intelligence isn't PDF-only. Same formulae, same five-period circuit-building progression, all four validation checks passing.
+- **`physics_motion_in_a_straight_line_pptx.json`**: a real Class 11 Physics lecture deck (Motion in a Straight Line) as a **PPTX** upload. This one surfaced a real bug: the deck has no PowerPoint title placeholders at all (it reads like a PDF-to-slides conversion), so heading detection returned nothing. Fixed with a narrowly-scoped fallback for title slides specifically, since guessing headings on dense content slides produced worse results than no heading at all, verified with a regression test.
 
-Read together, the three samples demonstrate the system adapting structure and assessment style to the subject rather than forcing one template onto all three.
+Read together, the five samples demonstrate the system adapting structure and assessment style to the subject, not just the source format, rather than forcing one template onto all of them.
 
 ---
 

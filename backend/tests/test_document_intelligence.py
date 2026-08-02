@@ -2,11 +2,21 @@
 (scans, image-only pages) should be routed to vision-based transcription
 instead of silently degrading to near-empty text."""
 
+from pathlib import Path
+
 import fitz
 import pytest
 
 from app.agents import document_intelligence
 from app.agents.document_type_hints import SCANNED_PDF
+
+# Real, non-mocked source files uploaded through the live pipeline this
+# session (docx: NCERT-style Physics Electricity chapter, pptx: a Physics
+# Motion in a Straight Line lecture deck) — not synthetic fixtures, the
+# actual documents used to generate the /samples entries.
+_SAMPLES_INPUT = Path(__file__).resolve().parents[2] / "samples" / "input"
+_REAL_DOCX = _SAMPLES_INPUT / "class10_physics_ch11_electricty.docx"
+_REAL_PPTX = _SAMPLES_INPUT / "class11_physics_ch2.pptx"
 
 
 def _blank_pdf_bytes() -> bytes:
@@ -121,3 +131,84 @@ def test_scanned_hint_lowers_the_bar_for_ocr(monkeypatch):
 
     assert len(calls) == 1
     assert result.sections[0].text == "Full transcription via OCR."
+
+
+# --- DOCX/PPTX, using the real uploaded files, not mocks or synthetic fixtures ---
+
+
+@pytest.mark.skipif(not _REAL_DOCX.exists(), reason=f"real sample file not present: {_REAL_DOCX}")
+def test_docx_parses_real_file_without_crashing():
+    content = _REAL_DOCX.read_bytes()
+    result = document_intelligence.run(document_intelligence.DocumentIntelligenceInput("d1", "docx", content))
+
+    assert result.sections
+    assert result.raw_text.strip()
+
+
+@pytest.mark.skipif(not _REAL_DOCX.exists(), reason=f"real sample file not present: {_REAL_DOCX}")
+def test_docx_preserves_headings_as_distinct_sections():
+    content = _REAL_DOCX.read_bytes()
+    result = document_intelligence.run(document_intelligence.DocumentIntelligenceInput("d1", "docx", content))
+
+    headed_sections = [s for s in result.sections if s.heading]
+    assert headed_sections, "expected at least one section with a heading detected, not everything flattened into one blob"
+
+
+@pytest.mark.skipif(not _REAL_DOCX.exists(), reason=f"real sample file not present: {_REAL_DOCX}")
+def test_docx_extracts_real_electricity_content_not_garbage():
+    """Confirms _parse_docx actually ran against real content, not a
+    fallback or an empty/garbage extraction — this is the same chapter
+    verified live via the pipeline (samples/physics_electricity.json),
+    so the vocabulary must be genuinely present."""
+    content = _REAL_DOCX.read_bytes()
+    result = document_intelligence.run(document_intelligence.DocumentIntelligenceInput("d1", "docx", content))
+
+    lowered = result.raw_text.lower()
+    assert "resistance" in lowered or "current" in lowered or "circuit" in lowered
+
+
+@pytest.mark.skipif(not _REAL_PPTX.exists(), reason=f"real sample file not present: {_REAL_PPTX}")
+def test_pptx_parses_real_file_without_crashing():
+    content = _REAL_PPTX.read_bytes()
+    result = document_intelligence.run(document_intelligence.DocumentIntelligenceInput("d1", "pptx", content))
+
+    assert result.sections
+    assert result.raw_text.strip()
+
+
+@pytest.mark.skipif(not _REAL_PPTX.exists(), reason=f"real sample file not present: {_REAL_PPTX}")
+def test_pptx_preserves_slide_titles_as_headings():
+    content = _REAL_PPTX.read_bytes()
+    result = document_intelligence.run(document_intelligence.DocumentIntelligenceInput("d1", "pptx", content))
+
+    headed_sections = [s for s in result.sections if s.heading]
+    assert headed_sections, "expected at least one slide title detected as a heading, not everything flattened into one blob"
+
+
+@pytest.mark.skipif(not _REAL_PPTX.exists(), reason=f"real sample file not present: {_REAL_PPTX}")
+def test_pptx_infers_title_slide_heading_when_no_placeholder_exists():
+    """Regression test for a real bug: this deck was converted from a PDF, so
+    no slide uses an actual title placeholder and shape == slide.shapes.title
+    was always False, leaving every heading None. The fix infers a heading
+    only for the first slide (a title slide is a safe, narrow assumption) and
+    deliberately does NOT try to guess headings on dense content slides,
+    where the real deck's largest-font text is just a mid-equation fragment,
+    not a heading — a wrong heading is worse than none."""
+    content = _REAL_PPTX.read_bytes()
+    result = document_intelligence.run(document_intelligence.DocumentIntelligenceInput("d1", "pptx", content))
+
+    assert result.sections[0].heading == "Chapter Two"
+    # content-heavy slides (index 1+) must not get a fabricated heading
+    assert all(s.heading is None for s in result.sections[1:])
+
+
+@pytest.mark.skipif(not _REAL_PPTX.exists(), reason=f"real sample file not present: {_REAL_PPTX}")
+def test_pptx_extracts_real_motion_content_not_garbage():
+    """Confirms _parse_pptx actually ran against real content — same deck
+    verified live via the pipeline (classification came back 'Motion in a
+    Straight Line'), so that vocabulary must be genuinely present."""
+    content = _REAL_PPTX.read_bytes()
+    result = document_intelligence.run(document_intelligence.DocumentIntelligenceInput("d1", "pptx", content))
+
+    lowered = result.raw_text.lower()
+    assert "motion" in lowered or "velocity" in lowered or "displacement" in lowered

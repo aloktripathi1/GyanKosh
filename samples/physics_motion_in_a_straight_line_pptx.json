@@ -1,0 +1,2083 @@
+{
+  "id": "9ac694bc-8498-41d9-861a-6e4f5584fba4",
+  "job_id": "9b8141f1-c131-46d1-b034-aa2e2b0b2e40",
+  "version": 1,
+  "classification": {
+    "grade": "11",
+    "topic": "Motion in a Straight Line",
+    "chapter": "Chapter 2",
+    "subject": "Physics",
+    "category": "textbook chapter",
+    "language": "English",
+    "difficulty": "intermediate"
+  },
+  "extracted_knowledge": {
+    "concepts": [
+      {
+        "name": "Instantaneous Speed",
+        "text": "The magnitude of velocity at a particular instant. At any instant, instantaneous speed is always equal to the magnitude of instantaneous velocity.",
+        "source_span": {
+          "page": null,
+          "quote": "Instantaneous speed or simply speed is the magnitude of velocity. For example, a velocity of\n+ 24.0 m s–1 and a velocity of – 24.0 m s–1 —\nboth have an associated speed of 24.0 m s-1.",
+          "end_char": 2124,
+          "section_id": "slide-3",
+          "start_char": 1941
+        }
+      },
+      {
+        "name": "Displacement",
+        "text": "The change in position of an object, representing the area under the velocity-time curve for a given time interval.",
+        "source_span": {
+          "page": null,
+          "quote": "An interesting feature of a velocity-time graph for any moving object is that the area\nunder\tthe\tcurve\trepresents\tthe \ndisplacement over a given time interval.",
+          "end_char": 2413,
+          "section_id": "slide-4",
+          "start_char": 2254
+        }
+      },
+      {
+        "name": "Rectilinear Motion",
+        "text": "Motion of objects along a straight line, also known as motion in one dimension.",
+        "source_span": {
+          "page": null,
+          "quote": "We shall confine ourselves to the study of motion of objects along a straight line, also known as rectilinear motion.",
+          "end_char": 1059,
+          "section_id": "slide-1",
+          "start_char": 942
+        }
+      },
+      {
+        "name": "Point Object",
+        "text": "An approximation where an extended object is treated as a point particle, valid when the size of the object is much smaller than the distance it moves in a reasonable duration of time.",
+        "source_span": {
+          "page": null,
+          "quote": "In our discussions, we shall treat the objects in motion as point objects. This approximation is valid so far as the size of the object is much smaller than the distance it moves in a reasonable duration of time.",
+          "end_char": 1478,
+          "section_id": "slide-1",
+          "start_char": 1266
+        }
+      },
+      {
+        "name": "Kinematics",
+        "text": "The study of ways to describe motion without going into the causes of motion.",
+        "source_span": {
+          "page": null,
+          "quote": "In Kinematics, we study ways to describe motion without\ngoing into the causes of motion.",
+          "end_char": 1718,
+          "section_id": "slide-1",
+          "start_char": 1630
+        }
+      },
+      {
+        "name": "Reaction Time",
+        "text": "The time a person takes to observe, think and act in response to a situation or stimulus.",
+        "source_span": {
+          "page": null,
+          "quote": "Reaction  time  is  the time a person takes to observe, think and act.  For example, if a person is driving and suddenly a boy appears on the road, then the time elapsed before he slams the brakes of the car is the reaction time.",
+          "end_char": 788,
+          "section_id": "slide-9",
+          "start_char": 559
+        }
+      },
+      {
+        "name": "Stopping Distance",
+        "text": "The distance a moving vehicle travels before stopping after brakes are applied, depending on initial velocity and braking deceleration.",
+        "source_span": {
+          "page": null,
+          "quote": "When brakes are applied to a moving vehicle, the distance it travels before stopping is called stopping distance. It is an important factor for road safety and depends on the initial velocity (v0) and the braking capacity, or deceleration, –a that is caused by the braking.",
+          "end_char": 1289,
+          "section_id": "slide-8",
+          "start_char": 1016
+        }
+      }
+    ],
+    "examples": [
+      {
+        "text": "Example 2.2: Deriving kinematic equations using calculus by integrating acceleration and velocity with respect to time, showing how to obtain v = v0 + at and displacement equations.",
+        "source_span": {
+          "page": null,
+          "quote": "Example 2.2 Obtain equations of motion for constant acceleration using method of calculus.",
+          "end_char": 788,
+          "section_id": "slide-6",
+          "start_char": 698
+        },
+        "related_concept": null
+      },
+      {
+        "text": "Example 2.3: A ball thrown vertically upward with velocity 20 m s⁻¹ from a building 25.0 m high rises 20 m and takes 5 s total to hit the ground, demonstrating application of kinematic equations to vertical motion.",
+        "source_span": {
+          "page": null,
+          "quote": "Example 2.3 A ball is thrown vertically upwards with a velocity of 20 m s–1 from the top of a multistorey building. The height of the point from where the ball is thrown is 25.0 m from the ground.",
+          "end_char": 1625,
+          "section_id": "slide-6",
+          "start_char": 1429
+        },
+        "related_concept": null
+      },
+      {
+        "text": "Example 2.4: Free fall motion analysis showing that for an object dropped from rest, velocity v = -g*t, distance y = -½*g*t², and v² = -2*g*y with g = 9.8 m s⁻².",
+        "source_span": {
+          "page": null,
+          "quote": "Example 2.4  Free-fall : Discuss the motion of an object under free fall. Neglect air resistance.",
+          "end_char": 1360,
+          "section_id": "slide-7",
+          "start_char": 1263
+        },
+        "related_concept": null
+      },
+      {
+        "text": "Example 2.6: Stopping distance of vehicles is proportional to square of initial velocity, expressed as ds = v0²/(2a), showing that doubling velocity increases stopping distance by factor of 4.",
+        "source_span": {
+          "page": null,
+          "quote": "Example 2.6 Stopping distance of vehicles : When brakes are applied to a moving vehicle, the distance it travels before stopping is called stopping distance.",
+          "end_char": 1129,
+          "section_id": "slide-8",
+          "start_char": 972
+        },
+        "related_concept": null
+      },
+      {
+        "text": "Example 2.7: Measuring reaction time by catching a dropped ruler. When ruler falls distance d = 21.0 cm, reaction time can be estimated using free fall equations.",
+        "source_span": {
+          "page": null,
+          "quote": "Example 2.7 Reaction time : When a situation demands our immediate action, it takes some time before we really  respond.  Reaction  time  is  the time a person takes to observe, think and act.",
+          "end_char": 629,
+          "section_id": "slide-9",
+          "start_char": 437
+        },
+        "related_concept": null
+      }
+    ],
+    "formulae": [],
+    "keywords": [
+      {
+        "text": "Average velocity",
+        "source_span": {
+          "page": null,
+          "quote": "The average velocity tells us how fast an object has been moving over a given time interval",
+          "end_char": 148,
+          "section_id": "slide-2",
+          "start_char": 57
+        }
+      },
+      {
+        "text": "Acceleration",
+        "source_span": {
+          "page": null,
+          "quote": "acceleration as the rate of change of velocity with time",
+          "end_char": 3168,
+          "section_id": "slide-3",
+          "start_char": 3112
+        }
+      },
+      {
+        "text": "Uniform acceleration",
+        "source_span": {
+          "page": null,
+          "quote": "motion with constant acceleration",
+          "end_char": 1400,
+          "section_id": "slide-4",
+          "start_char": 1367
+        }
+      },
+      {
+        "text": "Displacement",
+        "source_span": {
+          "page": null,
+          "quote": "the area\nunder\tthe\tcurve\trepresents\tthe \ndisplacement over a given time interval",
+          "end_char": 2412,
+          "section_id": "slide-4",
+          "start_char": 2332
+        }
+      },
+      {
+        "text": "Position-time graph",
+        "source_span": {
+          "page": null,
+          "quote": "Position-time graphs for motion with positive, negative and zero acceleration",
+          "end_char": 1075,
+          "section_id": "slide-4",
+          "start_char": 998
+        }
+      },
+      {
+        "text": "Free fall",
+        "source_span": {
+          "page": null,
+          "quote": "If air resistance is neglected, the object is said to be in free fall.",
+          "end_char": 1622,
+          "section_id": "slide-7",
+          "start_char": 1552
+        }
+      },
+      {
+        "text": "Rectilinear motion",
+        "source_span": {
+          "page": null,
+          "quote": "motion of objects along a straight line, also known as rectilinear motion",
+          "end_char": 1058,
+          "section_id": "slide-1",
+          "start_char": 985
+        }
+      },
+      {
+        "text": "Point object",
+        "source_span": {
+          "page": null,
+          "quote": "treat the objects in motion as point objects",
+          "end_char": 1339,
+          "section_id": "slide-1",
+          "start_char": 1295
+        }
+      },
+      {
+        "text": "Reaction time",
+        "source_span": {
+          "page": null,
+          "quote": "Reaction  time  is  the time a person takes to observe, think and act.",
+          "end_char": 629,
+          "section_id": "slide-9",
+          "start_char": 559
+        }
+      },
+      {
+        "text": "Stopping distance",
+        "source_span": {
+          "page": null,
+          "quote": "the distance it travels before stopping is called stopping distance",
+          "end_char": 1128,
+          "section_id": "slide-8",
+          "start_char": 1061
+        }
+      }
+    ],
+    "objectives": [],
+    "definitions": [
+      {
+        "term": "Velocity",
+        "text": "The rate of change of position with respect to time at a particular instant.",
+        "source_span": {
+          "page": null,
+          "quote": "It is the rate of change of\nposition with respect to time, at that instant.",
+          "end_char": 847,
+          "section_id": "slide-2",
+          "start_char": 772
+        }
+      },
+      {
+        "term": "Average Velocity",
+        "text": "The displacement divided by the time interval, telling how fast an object has been moving over a given time interval.",
+        "source_span": {
+          "page": null,
+          "quote": "The average velocity tells us how fast an object has been moving over a given time interval but does not tell us how fast it moves at different instants of time during that interval.",
+          "end_char": 239,
+          "section_id": "slide-2",
+          "start_char": 57
+        }
+      },
+      {
+        "term": "Rectilinear Motion",
+        "text": "Motion of an object along a straight line.",
+        "source_span": {
+          "page": null,
+          "quote": "We shall confine ourselves to the study of motion of objects along a straight line, also known as rectilinear motion.",
+          "end_char": 1059,
+          "section_id": "slide-1",
+          "start_char": 942
+        }
+      },
+      {
+        "term": "Speed",
+        "text": "The magnitude of velocity, always a positive quantity.",
+        "source_span": {
+          "page": null,
+          "quote": "Instantaneous speed or simply speed is the magnitude of velocity.",
+          "end_char": 2006,
+          "section_id": "slide-3",
+          "start_char": 1941
+        }
+      },
+      {
+        "term": "Motion",
+        "text": "Change in position of an object with time.",
+        "source_span": {
+          "page": null,
+          "quote": "Motion is change in position of an object with time.",
+          "end_char": 780,
+          "section_id": "slide-1",
+          "start_char": 728
+        }
+      }
+    ],
+    "applications": [
+      {
+        "text": "Measuring reaction time in drivers or individuals using a simple ruler-dropping experiment based on free fall motion.",
+        "source_span": {
+          "page": null,
+          "quote": "You can measure your reaction time by a simple experiment. Take a ruler and ask your friend to drop it vertically through the gap between your thumb and forefinger",
+          "end_char": 1027,
+          "section_id": "slide-9",
+          "start_char": 864
+        }
+      },
+      {
+        "text": "Analyzing projectile motion by applying kinematic equations to vertical motion of objects thrown upward, such as predicting maximum height and total time of flight.",
+        "source_span": {
+          "page": null,
+          "quote": "A ball is thrown vertically upwards with a velocity of 20 m s–1 from the top of a multistorey building.",
+          "end_char": 1544,
+          "section_id": "slide-6",
+          "start_char": 1441
+        }
+      },
+      {
+        "text": "Analyzing falling objects using free fall motion equations to determine velocity and distance fallen as functions of time.",
+        "source_span": {
+          "page": null,
+          "quote": "An object released near the surface of the Earth is accelerated downward under the influence of the force of gravity.",
+          "end_char": 1485,
+          "section_id": "slide-7",
+          "start_char": 1368
+        }
+      }
+    ],
+    "prerequisites": [
+      {
+        "text": "Understanding of basic concepts of position and time",
+        "source_span": {
+          "page": null,
+          "quote": "Motion is change in position of an object with time. How\ndoes the position change with time ?",
+          "end_char": 821,
+          "section_id": "slide-1",
+          "start_char": 728
+        }
+      },
+      {
+        "text": "Knowledge of Cartesian coordinate systems and sign conventions",
+        "source_span": {
+          "page": null,
+          "quote": "For motion in a straight line, position to the right of the origin is taken as positive and to the left as negative.",
+          "end_char": 1715,
+          "section_id": "slide-9",
+          "start_char": 1599
+        }
+      },
+      {
+        "text": "Familiarity with differential calculus concepts",
+        "source_span": {
+          "page": null,
+          "quote": "In the language of calculus, the quantity on the right hand side of Eq. (2.1a) is the differential coefficient of x with respect to t",
+          "end_char": 743,
+          "section_id": "slide-2",
+          "start_char": 610
+        }
+      }
+    ],
+    "misconceptions": [
+      {
+        "text": "Thinking that acceleration must mean speeding up or in the direction of motion.",
+        "correction": "Acceleration can result from a change in speed, a change in direction, or changes in both. If a particle is speeding up, acceleration is in the direction of velocity; if speed is decreasing, acceleration is opposite to velocity direction.",
+        "source_span": {
+          "page": null,
+          "quote": "If a particle is speeding up, acceleration is in the direction of velocity; if its speed is decreasing, acceleration is in the direction opposite to that of the velocity.",
+          "end_char": 410,
+          "section_id": "slide-11",
+          "start_char": 240
+        }
+      },
+      {
+        "text": "Assuming that zero velocity at any instant means zero acceleration at that instant.",
+        "correction": "A particle may have zero velocity at an instant but non-zero acceleration. For example, a ball thrown upward has zero velocity at its highest point but continues to have gravitational acceleration.",
+        "source_span": {
+          "page": null,
+          "quote": "The zero velocity of a particle at any instant does not necessarily imply zero acceleration at that instant. A particle may be momentarily at rest and yet have non-zero acceleration. For example, a particle thrown up has zero velocity at its uppermost point but the acceleration at that instant continues to be the acceleration due to gravity.",
+          "end_char": 1396,
+          "section_id": "slide-11",
+          "start_char": 1053
+        }
+      }
+    ]
+  },
+  "teaching_plan": {
+    "periods": [
+      {
+        "title": "Introduction to Motion: Kinematics, Point Objects, and Rectilinear Motion",
+        "objectives": [
+          "Define kinematics and distinguish it from dynamics",
+          "Understand the point object approximation and when it is valid",
+          "Explain what rectilinear motion (motion in a straight line) means",
+          "Recall prerequisite concepts of position, time, coordinate systems, and sign conventions"
+        ],
+        "period_number": 1,
+        "concepts_covered": [
+          "Kinematics",
+          "Point Object",
+          "Rectilinear Motion"
+        ],
+        "sequencing_rationale": "This period establishes the foundational vocabulary and conceptual framework of the topic before any quantitative treatment. Students must understand what kinematics studies, why objects can be treated as points, and what one-dimensional motion means before displacement and speed can be meaningfully introduced. Reviewing prerequisites here ensures a smooth transition into calculus-based descriptions later.",
+        "recommended_duration_minutes": 30
+      },
+      {
+        "title": "Describing Position Change: Displacement",
+        "objectives": [
+          "Define displacement and distinguish it from distance",
+          "Understand displacement as a vector quantity with sign and magnitude",
+          "Relate displacement to the area under a velocity-time curve"
+        ],
+        "period_number": 2,
+        "concepts_covered": [
+          "Displacement"
+        ],
+        "sequencing_rationale": "Displacement builds directly on the position concept introduced in period 1 and is a prerequisite for understanding velocity and speed. Introducing the velocity-time graph interpretation here sets up the graphical reasoning skills needed for subsequent periods on speed and velocity.",
+        "recommended_duration_minutes": 35
+      },
+      {
+        "title": "Instantaneous Speed and Its Relation to Velocity",
+        "objectives": [
+          "Define instantaneous speed as the magnitude of velocity at an instant",
+          "Differentiate between average and instantaneous speed",
+          "Understand why instantaneous speed always equals the magnitude of instantaneous velocity",
+          "Apply basic differential calculus to compute instantaneous speed from position-time data"
+        ],
+        "period_number": 3,
+        "concepts_covered": [
+          "Instantaneous Speed"
+        ],
+        "sequencing_rationale": "This period follows displacement since velocity and speed are derived from position change over time. It requires the calculus prerequisite explicitly, so it is placed after foundational and graphical concepts are secure, allowing students to connect the mathematical definition to physical meaning.",
+        "recommended_duration_minutes": 40
+      },
+      {
+        "title": "Real-World Application: Reaction Time and Stopping Distance",
+        "objectives": [
+          "Define reaction time and describe its physiological basis",
+          "Understand how reaction time contributes to total stopping distance",
+          "Explain the relationship between initial velocity, braking deceleration, and stopping distance",
+          "Solve numerical problems involving stopping distance calculations"
+        ],
+        "period_number": 4,
+        "concepts_covered": [
+          "Reaction Time",
+          "Stopping Distance"
+        ],
+        "sequencing_rationale": "This period applies the kinematic concepts of speed, velocity, and displacement learned in earlier periods to a practical, real-life scenario, reinforcing understanding through application. It is placed last since it requires synthesis of all previously covered ideas and includes denser numerical practice appropriate for a longer session.",
+        "recommended_duration_minutes": 50
+      }
+    ],
+    "total_periods": 4,
+    "planning_rationale": "The content covers seven interrelated concepts of foundational kinematics in one dimension, ranging from conceptual definitions (kinematics, point object, rectilinear motion) to quantitative and applied ideas (displacement, instantaneous speed, reaction time, stopping distance). Given the moderate depth and grade-11 level with calculus prerequisites, four periods allow logical progression: first establishing conceptual foundations, then building quantitative descriptions of motion (displacement, speed), and finally applying these ideas to a real-world numerical context (stopping distance). This grouping avoids fragmenting closely related ideas while allowing sufficient time for both conceptual understanding and numerical practice, respecting the maximum of 12 periods and matching realistic classroom pacing for intermediate-level students."
+  },
+  "period_content": {
+    "periods": [
+      {
+        "homework": "Write short definitions in your notebook for: kinematics, point object, rectilinear motion. For each, give one real-life example from your daily life.",
+        "activities": [
+          "Think-Pair-Share: List 5 real-world motions and classify as point-object-valid or not",
+          "Class discussion: Kinematics vs Dynamics — sorting statements into the two categories",
+          "Diagram activity: Draw a number line coordinate system and mark positive/negative directions"
+        ],
+        "exit_ticket": "In your own words, explain why we can treat a train travelling between two cities as a point object, but not when studying the motion of a person walking inside the train.",
+        "entry_ticket": "Write down one example of something moving in a straight line and one example of something moving along a curved path. What do you think physicists mean when they say they are studying 'motion' without caring about its cause?",
+        "source_spans": [
+          {
+            "page": null,
+            "quote": "In Kinematics, we study ways to describe motion without\ngoing into the causes of motion.",
+            "end_char": 1718,
+            "section_id": "slide-1",
+            "start_char": 1630
+          },
+          {
+            "page": null,
+            "quote": "In our discussions, we shall treat the objects in motion as point objects. This approximation is valid so far as the size of the object is much smaller than the distance it moves in a reasonable duration of time.",
+            "end_char": 1478,
+            "section_id": "slide-1",
+            "start_char": 1266
+          },
+          {
+            "page": null,
+            "quote": "We shall confine ourselves to the study of motion of objects along a straight line, also known as rectilinear motion.",
+            "end_char": 1059,
+            "section_id": "slide-1",
+            "start_char": 942
+          },
+          {
+            "page": null,
+            "quote": "We shall confine ourselves to the study of motion of objects along a straight line, also known as rectilinear motion.",
+            "end_char": 1059,
+            "section_id": "slide-1",
+            "start_char": 942
+          }
+        ],
+        "mentor_moment": "Start the course by grounding students in the 'why' before the 'how' — spend extra time letting students debate examples of point objects vs extended objects; this builds intuition that will make later vector and calculus concepts land more easily.",
+        "period_number": 1,
+        "teacher_script": "Today we begin our study of motion. Physics has two broad ways of looking at motion: dynamics, which asks 'why does something move the way it does', and kinematics, which is 'the study of ways to describe motion without going into the causes of motion.' We will focus purely on kinematics this term. To describe motion mathematically, we often simplify real objects — a car, a person, a planet — into a single point. This works because of 'an approximation where an extended object is treated as a point particle, valid when the size of the object is much smaller than the distance it moves in a reasonable duration of time.' For example, when describing a car travelling between cities, we can treat the car as a point because the size of the car is negligible compared to the distance travelled. Today we'll also focus on the simplest case of motion: motion along a straight line, called rectilinear motion. Recall that 'motion of an object along a straight line' is also known as 'motion of objects along a straight line, also known as motion in one dimension.' Before we go further, let's recall position, time, coordinate systems, and sign conventions — these are the building blocks we'll use throughout kinematics.",
+        "blackboard_notes": "KINEMATICS: study of describing motion without cause\nPOINT OBJECT: valid when object size << distance travelled\nRECTILINEAR MOTION = motion along a straight line = motion in one dimension\nPrerequisites: position, time, coordinate system, sign convention",
+        "checkpoint_questions": [
+          {
+            "question": "What is kinematics, and how does it differ from dynamics?",
+            "source_spans": [
+              {
+                "page": null,
+                "quote": "In Kinematics, we study ways to describe motion without\ngoing into the causes of motion.",
+                "end_char": 1718,
+                "section_id": "slide-1",
+                "start_char": 1630
+              }
+            ],
+            "expected_answer": "Kinematics is 'the study of ways to describe motion without going into the causes of motion,' whereas dynamics studies the causes (forces) behind motion."
+          },
+          {
+            "question": "When is it valid to treat an object as a point object?",
+            "source_spans": [
+              {
+                "page": null,
+                "quote": "In our discussions, we shall treat the objects in motion as point objects. This approximation is valid so far as the size of the object is much smaller than the distance it moves in a reasonable duration of time.",
+                "end_char": 1478,
+                "section_id": "slide-1",
+                "start_char": 1266
+              }
+            ],
+            "expected_answer": "It is valid when the object is treated as 'an approximation where an extended object is treated as a point particle, valid when the size of the object is much smaller than the distance it moves in a reasonable duration of time.'"
+          },
+          {
+            "question": "What is rectilinear motion?",
+            "source_spans": [
+              {
+                "page": null,
+                "quote": "We shall confine ourselves to the study of motion of objects along a straight line, also known as rectilinear motion.",
+                "end_char": 1059,
+                "section_id": "slide-1",
+                "start_char": 942
+              },
+              {
+                "page": null,
+                "quote": "We shall confine ourselves to the study of motion of objects along a straight line, also known as rectilinear motion.",
+                "end_char": 1059,
+                "section_id": "slide-1",
+                "start_char": 942
+              }
+            ],
+            "expected_answer": "Rectilinear motion is 'motion of an object along a straight line,' also called 'motion of objects along a straight line, also known as motion in one dimension.'"
+          }
+        ]
+      },
+      {
+        "homework": "Sketch a simple velocity-time graph for a car speeding up for 5 s, moving at constant speed for 5 s, then decelerating for 5 s. Calculate the displacement using area under the curve.",
+        "activities": [
+          "Graph reading activity: Given a v-t graph, calculate displacement by finding area of shapes",
+          "Walking activity: Students walk forward/backward in class and track distance vs displacement",
+          "Worked example: Compare distance and displacement for a round trip"
+        ],
+        "exit_ticket": "A car moves 10 m forward then 4 m backward. State its distance travelled and its displacement, and explain the difference in sign/meaning.",
+        "entry_ticket": "If you walk 5 m east and then 3 m west, how far have you actually travelled (distance), and how far are you from your starting point (displacement)? Are these the same?",
+        "source_spans": [
+          {
+            "page": null,
+            "quote": "Motion is change in position of an object with time.",
+            "end_char": 780,
+            "section_id": "slide-1",
+            "start_char": 728
+          },
+          {
+            "page": null,
+            "quote": "An interesting feature of a velocity-time graph for any moving object is that the area\nunder\tthe\tcurve\trepresents\tthe \ndisplacement over a given time interval.",
+            "end_char": 2413,
+            "section_id": "slide-4",
+            "start_char": 2254
+          }
+        ],
+        "mentor_moment": "Displacement is where most students first meet the idea that direction matters mathematically — use lots of physical, walking-based demonstrations before jumping to graphs; the body memory helps make the sign convention intuitive.",
+        "period_number": 2,
+        "teacher_script": "Today we study displacement, one of the most important quantities in kinematics. Displacement is defined as 'change in position of an object with time,' and more specifically 'the change in position of an object, representing the area under the velocity-time curve for a given time interval.' Unlike distance, which is always positive and tells us the total path length travelled, displacement is a vector — it has both magnitude and direction (sign). If you walk forward and then backward, your distance keeps adding up, but your displacement might be small or even zero if you return to the start. We will also see graphically that displacement over a time interval equals the area enclosed between the velocity-time graph and the time axis — this is a powerful geometric way to compute displacement without needing calculus formulas directly.",
+        "blackboard_notes": "DISPLACEMENT = change in position of object with time\nDisplacement = area under velocity-time curve for given interval\nVector: has magnitude AND sign/direction\nDistance ≠ Displacement (distance is always positive, path length)",
+        "checkpoint_questions": [
+          {
+            "question": "Define displacement.",
+            "source_spans": [
+              {
+                "page": null,
+                "quote": "Motion is change in position of an object with time.",
+                "end_char": 780,
+                "section_id": "slide-1",
+                "start_char": 728
+              },
+              {
+                "page": null,
+                "quote": "An interesting feature of a velocity-time graph for any moving object is that the area\nunder\tthe\tcurve\trepresents\tthe \ndisplacement over a given time interval.",
+                "end_char": 2413,
+                "section_id": "slide-4",
+                "start_char": 2254
+              }
+            ],
+            "expected_answer": "Displacement is 'change in position of an object with time,' representing 'the change in position of an object, representing the area under the velocity-time curve for a given time interval.'"
+          },
+          {
+            "question": "How can displacement be found using a velocity-time graph?",
+            "source_spans": [
+              {
+                "page": null,
+                "quote": "An interesting feature of a velocity-time graph for any moving object is that the area\nunder\tthe\tcurve\trepresents\tthe \ndisplacement over a given time interval.",
+                "end_char": 2413,
+                "section_id": "slide-4",
+                "start_char": 2254
+              }
+            ],
+            "expected_answer": "Displacement equals 'the area under the velocity-time curve for a given time interval.'"
+          }
+        ]
+      },
+      {
+        "homework": "Practice differentiating three different position-time functions to find velocity, then evaluate instantaneous speed at a given time for each.",
+        "activities": [
+          "Calculus mini-lesson: Differentiating simple position functions x(t) to get v(t)",
+          "Worked example: Compute instantaneous speed at t=2s from x(t) = 3t² + 2t",
+          "Discussion: Ball thrown upward — is acceleration zero at the highest point where v=0?"
+        ],
+        "exit_ticket": "Given x(t) = 5t² (in meters, t in seconds), find the instantaneous speed at t = 3 s using differentiation.",
+        "entry_ticket": "If a car covers 100 km in 2 hours, what is its average speed? Do you think the car was moving at exactly this speed the entire time?",
+        "source_spans": [
+          {
+            "page": null,
+            "quote": "Instantaneous speed or simply speed is the magnitude of velocity. For example, a velocity of\n+ 24.0 m s–1 and a velocity of – 24.0 m s–1 —\nboth have an associated speed of 24.0 m s-1.",
+            "end_char": 2124,
+            "section_id": "slide-3",
+            "start_char": 1941
+          },
+          {
+            "page": null,
+            "quote": "The average velocity tells us how fast an object has been moving over a given time interval but does not tell us how fast it moves at different instants of time during that interval.",
+            "end_char": 239,
+            "section_id": "slide-2",
+            "start_char": 57
+          },
+          {
+            "page": null,
+            "quote": "It is the rate of change of\nposition with respect to time, at that instant.",
+            "end_char": 847,
+            "section_id": "slide-2",
+            "start_char": 772
+          },
+          {
+            "page": null,
+            "quote": "Instantaneous speed or simply speed is the magnitude of velocity.",
+            "end_char": 2006,
+            "section_id": "slide-3",
+            "start_char": 1941
+          },
+          {
+            "page": null,
+            "quote": "The zero velocity of a particle at any instant does not necessarily imply zero acceleration at that instant. A particle may be momentarily at rest and yet have non-zero acceleration. For example, a particle thrown up has zero velocity at its uppermost point but the acceleration at that instant continues to be the acceleration due to gravity.",
+            "end_char": 1396,
+            "section_id": "slide-11",
+            "start_char": 1053
+          }
+        ],
+        "mentor_moment": "Introduce calculus gently — many students fear derivatives. Frame it as 'zooming in' on a graph until the curve looks straight, and the slope at that zoomed-in point is the instantaneous speed. Address the zero-velocity-zero-acceleration misconception explicitly with the thrown-ball example; it is one of the most persistent errors students carry forward.",
+        "period_number": 3,
+        "teacher_script": "Today's topic is instantaneous speed. We already know average speed is 'the displacement divided by the time interval, telling how fast an object has been moving over a given time interval.' But real motion rarely happens at constant speed — a car speeds up, slows down, stops at signals. Instantaneous speed captures how fast the object is moving at one specific moment. Formally, instantaneous speed is defined as 'the magnitude of velocity at a particular instant. At any instant, instantaneous speed is always equal to the magnitude of instantaneous velocity.' It's also described simply as 'the magnitude of velocity, always a positive quantity.' To compute instantaneous velocity mathematically, we use 'the rate of change of position with respect to time at a particular instant' — this is exactly the derivative from calculus. So instantaneous speed = |dx/dt| at any instant. We will practice extracting position-time data and applying basic differentiation to find instantaneous speed at specific times. Be careful of a common misconception: some students think that if velocity is zero at an instant, then acceleration must also be zero at that instant — 'assuming that zero velocity at any instant means zero acceleration at that instant' is NOT always true; think of a ball thrown upward at its highest point.",
+        "blackboard_notes": "AVERAGE SPEED = displacement / time interval\nINSTANTANEOUS SPEED = magnitude of velocity at an instant = |instantaneous velocity|\nInstantaneous velocity = rate of change of position w.r.t. time at an instant (derivative dx/dt)\nSpeed is always positive\nMisconception: v=0 at an instant does NOT imply a=0 at that instant",
+        "checkpoint_questions": [
+          {
+            "question": "What is instantaneous speed?",
+            "source_spans": [
+              {
+                "page": null,
+                "quote": "Instantaneous speed or simply speed is the magnitude of velocity. For example, a velocity of\n+ 24.0 m s–1 and a velocity of – 24.0 m s–1 —\nboth have an associated speed of 24.0 m s-1.",
+                "end_char": 2124,
+                "section_id": "slide-3",
+                "start_char": 1941
+              }
+            ],
+            "expected_answer": "Instantaneous speed is 'the magnitude of velocity at a particular instant. At any instant, instantaneous speed is always equal to the magnitude of instantaneous velocity.'"
+          },
+          {
+            "question": "How does average speed differ from instantaneous speed?",
+            "source_spans": [
+              {
+                "page": null,
+                "quote": "The average velocity tells us how fast an object has been moving over a given time interval but does not tell us how fast it moves at different instants of time during that interval.",
+                "end_char": 239,
+                "section_id": "slide-2",
+                "start_char": 57
+              },
+              {
+                "page": null,
+                "quote": "It is the rate of change of\nposition with respect to time, at that instant.",
+                "end_char": 847,
+                "section_id": "slide-2",
+                "start_char": 772
+              }
+            ],
+            "expected_answer": "Average speed is 'the displacement divided by the time interval, telling how fast an object has been moving over a given time interval,' while instantaneous speed is the magnitude of velocity at one particular instant, computed as 'the rate of change of position with respect to time at a particular instant.'"
+          },
+          {
+            "question": "If a ball thrown upward has zero velocity at its highest point, does that mean its acceleration is also zero there? Why is this a common misconception?",
+            "source_spans": [
+              {
+                "page": null,
+                "quote": "The zero velocity of a particle at any instant does not necessarily imply zero acceleration at that instant. A particle may be momentarily at rest and yet have non-zero acceleration. For example, a particle thrown up has zero velocity at its uppermost point but the acceleration at that instant continues to be the acceleration due to gravity.",
+                "end_char": 1396,
+                "section_id": "slide-11",
+                "start_char": 1053
+              }
+            ],
+            "expected_answer": "No — this is a misconception. 'Assuming that zero velocity at any instant means zero acceleration at that instant' is incorrect; the ball still has gravitational acceleration acting on it even when momentarily at rest."
+          }
+        ]
+      },
+      {
+        "homework": "Research typical reaction times for humans and typical braking decelerations for cars. Using ds = v0²/(2a), calculate stopping distances at 40 km/h, 60 km/h, and 80 km/h, and compare how much stopping distance increases.",
+        "activities": [
+          "Ruler-drop experiment: measure reaction time for each student using free-fall distance",
+          "Numerical problem set: Calculate stopping distances for different initial velocities using ds = v0²/(2a)",
+          "Class discussion: Why speed limits near schools are so much lower than highways"
+        ],
+        "exit_ticket": "A car travels at 20 m/s and has a braking deceleration of 5 m/s². Using ds = v0²/(2a), calculate its braking distance. If the driver's reaction time is 0.5 s, what is the total stopping distance?",
+        "entry_ticket": "When you see a red light while driving/cycling, is there a delay between seeing it and actually pressing the brake? Why might that delay matter?",
+        "source_spans": [
+          {
+            "page": null,
+            "quote": "Reaction  time  is  the time a person takes to observe, think and act.  For example, if a person is driving and suddenly a boy appears on the road, then the time elapsed before he slams the brakes of the car is the reaction time.",
+            "end_char": 788,
+            "section_id": "slide-9",
+            "start_char": 559
+          },
+          {
+            "page": null,
+            "quote": "When brakes are applied to a moving vehicle, the distance it travels before stopping is called stopping distance. It is an important factor for road safety and depends on the initial velocity (v0) and the braking capacity, or deceleration, –a that is caused by the braking.",
+            "end_char": 1289,
+            "section_id": "slide-8",
+            "start_char": 1016
+          },
+          {
+            "page": null,
+            "quote": "Example 2.6 Stopping distance of vehicles : When brakes are applied to a moving vehicle, the distance it travels before stopping is called stopping distance.",
+            "end_char": 1129,
+            "section_id": "slide-8",
+            "start_char": 972
+          },
+          {
+            "page": null,
+            "quote": "Example 2.7 Reaction time : When a situation demands our immediate action, it takes some time before we really  respond.  Reaction  time  is  the time a person takes to observe, think and act.",
+            "end_char": 629,
+            "section_id": "slide-9",
+            "start_char": 437
+          }
+        ],
+        "mentor_moment": "This period connects physics directly to road safety — a topic students care about deeply, especially those learning to drive or ride. Use the ruler-drop experiment as a memorable, hands-on hook, and let the v0² relationship become a genuine 'aha' moment about why speeding is disproportionately dangerous.",
+        "period_number": 4,
+        "teacher_script": "Today we apply kinematics to a real, life-saving scenario: stopping a vehicle. First, reaction time is 'the time a person takes to observe, think and act in response to a situation or stimulus.' During this reaction time, the vehicle continues moving at its initial velocity before brakes are even applied — this adds a 'reaction distance' to the total stopping distance. Once the brakes are applied, the vehicle decelerates and covers additional distance before coming to rest; this braking distance is described as 'the distance a moving vehicle travels before stopping after brakes are applied, depending on initial velocity and braking deceleration.' A key relationship, shown in Example 2.6, is that 'stopping distance of vehicles is proportional to square of initial velocity, expressed as ds = v0²/(2a), showing that doubling velocity increases stopping distance by factor of 4.' This is why speed limits matter so much — small increases in speed cause large increases in stopping distance. We can even measure our own reaction time using a simple ruler-drop experiment: 'measuring reaction time by catching a dropped ruler. When ruler falls distance d = 21.0 cm, reaction time can be estimated using free fall equations.' We'll do this experiment in class and calculate our own reaction times.",
+        "blackboard_notes": "REACTION TIME: time to observe, think, act\nSTOPPING DISTANCE = reaction distance + braking distance\nds = v0²/(2a)  → stopping distance ∝ v0²\nDouble speed → 4x stopping distance\nRuler-drop experiment: d = 21.0 cm → estimate reaction time via free fall",
+        "checkpoint_questions": [
+          {
+            "question": "What is reaction time?",
+            "source_spans": [
+              {
+                "page": null,
+                "quote": "Reaction  time  is  the time a person takes to observe, think and act.  For example, if a person is driving and suddenly a boy appears on the road, then the time elapsed before he slams the brakes of the car is the reaction time.",
+                "end_char": 788,
+                "section_id": "slide-9",
+                "start_char": 559
+              }
+            ],
+            "expected_answer": "Reaction time is 'the time a person takes to observe, think and act in response to a situation or stimulus.'"
+          },
+          {
+            "question": "What does stopping distance depend on?",
+            "source_spans": [
+              {
+                "page": null,
+                "quote": "When brakes are applied to a moving vehicle, the distance it travels before stopping is called stopping distance. It is an important factor for road safety and depends on the initial velocity (v0) and the braking capacity, or deceleration, –a that is caused by the braking.",
+                "end_char": 1289,
+                "section_id": "slide-8",
+                "start_char": 1016
+              }
+            ],
+            "expected_answer": "Stopping distance is 'the distance a moving vehicle travels before stopping after brakes are applied, depending on initial velocity and braking deceleration.'"
+          },
+          {
+            "question": "If a vehicle's initial velocity doubles, how does its stopping distance change, and why?",
+            "source_spans": [
+              {
+                "page": null,
+                "quote": "Example 2.6 Stopping distance of vehicles : When brakes are applied to a moving vehicle, the distance it travels before stopping is called stopping distance.",
+                "end_char": 1129,
+                "section_id": "slide-8",
+                "start_char": 972
+              }
+            ],
+            "expected_answer": "The stopping distance increases by a factor of 4, since 'stopping distance of vehicles is proportional to square of initial velocity, expressed as ds = v0²/(2a), showing that doubling velocity increases stopping distance by factor of 4.'"
+          },
+          {
+            "question": "How can a dropped ruler be used to estimate a person's reaction time?",
+            "source_spans": [
+              {
+                "page": null,
+                "quote": "Example 2.7 Reaction time : When a situation demands our immediate action, it takes some time before we really  respond.  Reaction  time  is  the time a person takes to observe, think and act.",
+                "end_char": 629,
+                "section_id": "slide-9",
+                "start_char": 437
+              }
+            ],
+            "expected_answer": "By measuring the distance the ruler falls before being caught (e.g., d = 21.0 cm) and using free-fall equations to convert that fall distance into a time, as in 'measuring reaction time by catching a dropped ruler. When ruler falls distance d = 21.0 cm, reaction time can be estimated using free fall equations.'"
+          }
+        ]
+      }
+    ]
+  },
+  "activities": {
+    "periods": [
+      {
+        "activities": [
+          {
+            "type": "discussion",
+            "title": "Kinematics Concept Discussion: Describing Motion Without Causes",
+            "materials": [
+              "Whiteboard",
+              "Markers",
+              "Projector for slides"
+            ],
+            "instructions": [
+              "Introduce the term kinematics and ask students what they think it means to 'describe' motion versus 'explain' it.",
+              "Present the definition: kinematics is the study of ways to describe motion without going into the causes of motion.",
+              "Facilitate a discussion contrasting kinematics with dynamics (which deals with causes/forces), even though forces are not covered here.",
+              "Have students brainstorm everyday examples of motion (cars, balls, people walking) and identify what aspects of motion (position, speed, direction) they could describe.",
+              "Summarize key vocabulary on the board: kinematics, point object, rectilinear motion."
+            ],
+            "source_spans": [
+              {
+                "page": null,
+                "quote": "In Kinematics, we study ways to describe motion without\ngoing into the causes of motion.",
+                "end_char": 1718,
+                "section_id": "slide-1",
+                "start_char": 1630
+              }
+            ],
+            "duration_minutes": 15,
+            "success_criteria": [
+              "Students can state the definition of kinematics in their own words.",
+              "Students can distinguish describing motion from explaining its causes."
+            ]
+          },
+          {
+            "type": "demonstration",
+            "title": "Point Object Approximation: Modeling Real Objects as Points",
+            "materials": [
+              "Toy car",
+              "Meter stick or measuring tape",
+              "Small ball",
+              "Large classroom or hallway space"
+            ],
+            "instructions": [
+              "Show a toy car moving across a long table or hallway floor and ask students to describe its size relative to the distance it travels.",
+              "Explain the point object approximation: an extended object can be treated as a point particle when its size is much smaller than the distance it moves.",
+              "Roll the toy car a short distance (e.g., 20 cm) and then a long distance (e.g., 5 m), asking students in which case the point approximation is more valid.",
+              "Have students discuss in pairs when treating a bus, a person, or a planet as a point object would or would not be reasonable.",
+              "Wrap up by asking each pair to share one example where the point object approximation works well and one where it doesn't."
+            ],
+            "source_spans": [
+              {
+                "page": null,
+                "quote": "In our discussions, we shall treat the objects in motion as point objects. This approximation is valid so far as the size of the object is much smaller than the distance it moves in a reasonable duration of time.",
+                "end_char": 1478,
+                "section_id": "slide-1",
+                "start_char": 1266
+              }
+            ],
+            "duration_minutes": 15,
+            "success_criteria": [
+              "Students can explain why the point object approximation is used in kinematics.",
+              "Students can judge whether the approximation is valid for a given real-world scenario."
+            ]
+          },
+          {
+            "type": "lab",
+            "title": "Exploring Rectilinear Motion with a Straight Track",
+            "materials": [
+              "Straight track or ruler on the floor/table",
+              "Toy car or marble",
+              "Stopwatch",
+              "Meter stick"
+            ],
+            "instructions": [
+              "Set up a straight line path on the floor or table using tape or a ruler.",
+              "Explain that rectilinear motion is motion of objects along a straight line, also known as motion in one dimension.",
+              "In small groups, have students release a marble or toy car along the straight path and observe its motion.",
+              "Ask groups to record whether the motion stays strictly along the straight line and note any deviations.",
+              "Discuss as a class why physics often starts by studying straight-line motion before more complex paths."
+            ],
+            "source_spans": [
+              {
+                "page": null,
+                "quote": "We shall confine ourselves to the study of motion of objects along a straight line, also known as rectilinear motion.",
+                "end_char": 1059,
+                "section_id": "slide-1",
+                "start_char": 942
+              }
+            ],
+            "duration_minutes": 20,
+            "success_criteria": [
+              "Students can define rectilinear motion accurately.",
+              "Students can identify real examples of one-dimensional motion versus more complex motion."
+            ]
+          }
+        ],
+        "period_number": 1
+      },
+      {
+        "activities": [
+          {
+            "type": "group work",
+            "title": "Mapping Displacement on a Number Line",
+            "materials": [
+              "Number line handouts",
+              "Rulers",
+              "Colored markers",
+              "Toy car or walking student volunteers"
+            ],
+            "instructions": [
+              "Introduce displacement as the change in position of an object.",
+              "In groups, have students mark an initial position and a final position on a number line for several scenarios (e.g., a person walking from x=2m to x=7m, then back to x=3m).",
+              "Ask each group to calculate the displacement for each scenario using final minus initial position.",
+              "Have one student in each group physically walk the described path while others time and measure the positions with a meter stick.",
+              "Groups present their number line diagrams and displacement calculations to the class."
+            ],
+            "source_spans": [
+              {
+                "page": null,
+                "quote": "An interesting feature of a velocity-time graph for any moving object is that the area\nunder\tthe\tcurve\trepresents\tthe \ndisplacement over a given time interval.",
+                "end_char": 2413,
+                "section_id": "slide-4",
+                "start_char": 2254
+              }
+            ],
+            "duration_minutes": 20,
+            "success_criteria": [
+              "Students can correctly calculate displacement from given initial and final positions.",
+              "Students can distinguish displacement from total distance traveled."
+            ]
+          },
+          {
+            "type": "lab",
+            "title": "Velocity-Time Graph: Finding Displacement as Area Under the Curve",
+            "materials": [
+              "Graph paper",
+              "Pre-drawn velocity-time graphs",
+              "Rulers",
+              "Calculators"
+            ],
+            "instructions": [
+              "Distribute graph paper with a simple velocity-time graph showing constant velocity for a given time interval.",
+              "Explain that displacement is the area under the velocity-time curve for a given time interval.",
+              "Guide students to calculate the area (a rectangle) under the graph to find displacement.",
+              "Provide a second graph with changing velocity (e.g., a trapezoid shape) and have students calculate displacement by finding the area of the trapezoid.",
+              "Have students check their answers with a partner and discuss any discrepancies."
+            ],
+            "source_spans": [
+              {
+                "page": null,
+                "quote": "An interesting feature of a velocity-time graph for any moving object is that the area\nunder\tthe\tcurve\trepresents\tthe \ndisplacement over a given time interval.",
+                "end_char": 2413,
+                "section_id": "slide-4",
+                "start_char": 2254
+              }
+            ],
+            "duration_minutes": 20,
+            "success_criteria": [
+              "Students can compute displacement from a velocity-time graph by calculating area.",
+              "Students correctly interpret units of displacement resulting from the area calculation."
+            ]
+          }
+        ],
+        "period_number": 2
+      },
+      {
+        "activities": [
+          {
+            "type": "discussion",
+            "title": "Instantaneous Speed vs. Instantaneous Velocity: Concept Discussion",
+            "materials": [
+              "Whiteboard",
+              "Markers"
+            ],
+            "instructions": [
+              "Ask students what a car's speedometer shows at any given moment and how this relates to speed and velocity.",
+              "Present the definition: instantaneous speed is the magnitude of velocity at a particular instant, and at any instant, instantaneous speed is always equal to the magnitude of instantaneous velocity.",
+              "Discuss with students why speed (a scalar) equals the magnitude of velocity (a vector) at that instant, using examples of motion in different directions.",
+              "Pose a scenario: a car travels north at 20 m/s, then turns south at 20 m/s. Ask students to identify the velocity vs speed in each phase and confirm speed equals magnitude of velocity in both cases.",
+              "Summarize the relationship on the board with a simple diagram showing velocity vectors and their magnitudes as speed."
+            ],
+            "source_spans": [
+              {
+                "page": null,
+                "quote": "Instantaneous speed or simply speed is the magnitude of velocity. For example, a velocity of\n+ 24.0 m s–1 and a velocity of – 24.0 m s–1 —\nboth have an associated speed of 24.0 m s-1.",
+                "end_char": 2124,
+                "section_id": "slide-3",
+                "start_char": 1941
+              }
+            ],
+            "duration_minutes": 15,
+            "success_criteria": [
+              "Students can state that instantaneous speed equals the magnitude of instantaneous velocity.",
+              "Students can differentiate between speed as a scalar quantity and velocity as a vector quantity."
+            ]
+          },
+          {
+            "type": "lab",
+            "title": "Measuring Instantaneous Speed with a Rolling Ball",
+            "materials": [
+              "Ramp",
+              "Ball or marble",
+              "Stopwatch or motion sensor",
+              "Meter stick",
+              "Data recording sheets"
+            ],
+            "instructions": [
+              "Set up a ramp and release a ball, marking short intervals along its path with tape.",
+              "Have students work in small groups to time the ball as it passes through very short marked intervals near a chosen point.",
+              "Calculate the average speed over each short interval as an approximation of the instantaneous speed at that point.",
+              "Discuss how making the intervals smaller gives a better approximation of the true instantaneous speed.",
+              "Have groups compare their calculated instantaneous speed values and discuss sources of measurement error."
+            ],
+            "source_spans": [
+              {
+                "page": null,
+                "quote": "Instantaneous speed or simply speed is the magnitude of velocity. For example, a velocity of\n+ 24.0 m s–1 and a velocity of – 24.0 m s–1 —\nboth have an associated speed of 24.0 m s-1.",
+                "end_char": 2124,
+                "section_id": "slide-3",
+                "start_char": 1941
+              }
+            ],
+            "duration_minutes": 20,
+            "success_criteria": [
+              "Students can approximate instantaneous speed using small time/distance intervals.",
+              "Students understand that instantaneous speed equals the magnitude of instantaneous velocity at that point."
+            ]
+          }
+        ],
+        "period_number": 3
+      },
+      {
+        "activities": [
+          {
+            "type": "lab",
+            "title": "Ruler Drop Experiment: Measuring Reaction Time",
+            "materials": [
+              "30 cm rulers",
+              "Data recording sheets",
+              "Calculators"
+            ],
+            "instructions": [
+              "Explain that reaction time is the time a person takes to observe, think and act in response to a situation or stimulus.",
+              "Demonstrate the ruler-dropping method: one student holds a ruler vertically, another positions fingers at the bottom mark ready to catch it, then the first student drops it without warning.",
+              "Reference Example 2.7: when the ruler falls a distance d = 21.0 cm, reaction time can be estimated using free fall equations.",
+              "Have students work in pairs to perform multiple trials, recording the distance d the ruler falls before being caught each time.",
+              "Guide students to use the free fall equation to calculate their own reaction time from the recorded distance d for each trial.",
+              "Have each pair average their reaction time results across trials and compare with classmates."
+            ],
+            "source_spans": [
+              {
+                "page": null,
+                "quote": "Reaction  time  is  the time a person takes to observe, think and act.  For example, if a person is driving and suddenly a boy appears on the road, then the time elapsed before he slams the brakes of the car is the reaction time.",
+                "end_char": 788,
+                "section_id": "slide-9",
+                "start_char": 559
+              },
+              {
+                "page": null,
+                "quote": "Example 2.7 Reaction time : When a situation demands our immediate action, it takes some time before we really  respond.  Reaction  time  is  the time a person takes to observe, think and act.",
+                "end_char": 629,
+                "section_id": "slide-9",
+                "start_char": 437
+              },
+              {
+                "page": null,
+                "quote": "You can measure your reaction time by a simple experiment. Take a ruler and ask your friend to drop it vertically through the gap between your thumb and forefinger",
+                "end_char": 1027,
+                "section_id": "slide-9",
+                "start_char": 864
+              }
+            ],
+            "duration_minutes": 25,
+            "success_criteria": [
+              "Students can explain reaction time in their own words and its role in the experiment.",
+              "Students correctly calculate reaction time from the ruler drop distance using free fall equations.",
+              "Students recognize variability in human reaction time across trials."
+            ]
+          },
+          {
+            "type": "group work",
+            "title": "Stopping Distance and the Danger of Speed: Group Problem Solving",
+            "materials": [
+              "Whiteboard",
+              "Calculators",
+              "Worksheet with stopping distance problems"
+            ],
+            "instructions": [
+              "Define stopping distance as the distance a moving vehicle travels before stopping after brakes are applied, depending on initial velocity and braking deceleration.",
+              "Introduce the relationship from Example 2.6: stopping distance is proportional to the square of initial velocity, expressed as ds = v0²/(2a), so doubling velocity increases stopping distance by a factor of 4.",
+              "In small groups, have students calculate stopping distances for a vehicle at different initial speeds (e.g., 10 m/s, 20 m/s, 30 m/s) given a fixed deceleration value.",
+              "Ask groups to graph stopping distance versus initial velocity to visually confirm the squared relationship.",
+              "Facilitate a class discussion connecting reaction time and stopping distance to real-world road safety, asking groups to calculate total stopping distance including reaction distance."
+            ],
+            "source_spans": [
+              {
+                "page": null,
+                "quote": "When brakes are applied to a moving vehicle, the distance it travels before stopping is called stopping distance. It is an important factor for road safety and depends on the initial velocity (v0) and the braking capacity, or deceleration, –a that is caused by the braking.",
+                "end_char": 1289,
+                "section_id": "slide-8",
+                "start_char": 1016
+              },
+              {
+                "page": null,
+                "quote": "Example 2.6 Stopping distance of vehicles : When brakes are applied to a moving vehicle, the distance it travels before stopping is called stopping distance.",
+                "end_char": 1129,
+                "section_id": "slide-8",
+                "start_char": 972
+              }
+            ],
+            "duration_minutes": 20,
+            "success_criteria": [
+              "Students can correctly apply the formula ds = v0²/(2a) to calculate stopping distance.",
+              "Students can explain why doubling speed quadruples stopping distance.",
+              "Students can connect reaction time and braking distance to overall vehicle stopping distance and road safety."
+            ]
+          }
+        ],
+        "period_number": 4
+      }
+    ]
+  },
+  "assessments": {
+    "periods": [
+      {
+        "mcqs": [
+          {
+            "options": [
+              "The study of ways to describe motion without going into the causes of motion.",
+              "The study of forces that cause motion.",
+              "The study of energy transformations during motion.",
+              "The study of the mass and weight of moving objects."
+            ],
+            "question": "Which of the following best defines kinematics?",
+            "explanation": "Kinematics is defined as the study of ways to describe motion without going into the causes of motion, which distinguishes it from dynamics, which deals with forces and causes of motion.",
+            "source_spans": [
+              {
+                "page": null,
+                "quote": "In Kinematics, we study ways to describe motion without\ngoing into the causes of motion.",
+                "end_char": 1718,
+                "section_id": "slide-1",
+                "start_char": 1630
+              }
+            ],
+            "correct_option_index": 0
+          },
+          {
+            "options": [
+              "The size of the object is much smaller than the distance it moves in a reasonable duration of time.",
+              "The object is moving at constant velocity.",
+              "The object has zero mass.",
+              "The object is undergoing circular motion."
+            ],
+            "question": "The point object approximation is valid when:",
+            "explanation": "An object can be treated as a point object when its size is much smaller than the distance it travels, making its internal structure irrelevant to the description of its motion.",
+            "source_spans": [
+              {
+                "page": null,
+                "quote": "In our discussions, we shall treat the objects in motion as point objects. This approximation is valid so far as the size of the object is much smaller than the distance it moves in a reasonable duration of time.",
+                "end_char": 1478,
+                "section_id": "slide-1",
+                "start_char": 1266
+              }
+            ],
+            "correct_option_index": 0
+          },
+          {
+            "options": [
+              "Motion of an object along a straight line.",
+              "Motion of an object in a circular path.",
+              "Motion of an object with varying direction.",
+              "Motion of an object in two dimensions only."
+            ],
+            "question": "Rectilinear motion refers to:",
+            "explanation": "Rectilinear motion is specifically motion along a straight line, also called one-dimensional motion.",
+            "source_spans": [
+              {
+                "page": null,
+                "quote": "We shall confine ourselves to the study of motion of objects along a straight line, also known as rectilinear motion.",
+                "end_char": 1059,
+                "section_id": "slide-1",
+                "start_char": 942
+              },
+              {
+                "page": null,
+                "quote": "We shall confine ourselves to the study of motion of objects along a straight line, also known as rectilinear motion.",
+                "end_char": 1059,
+                "section_id": "slide-1",
+                "start_char": 942
+              }
+            ],
+            "correct_option_index": 0
+          }
+        ],
+        "numerical": [],
+        "long_answer": [
+          {
+            "rubric": [
+              "Defines kinematics correctly",
+              "Explains the point object approximation and its validity condition",
+              "Defines rectilinear motion correctly",
+              "Discusses need for coordinate systems and sign conventions",
+              "Integrates concepts into a coherent explanation of how one-dimensional motion is described"
+            ],
+            "question": "Discuss the foundational concepts required to study rectilinear motion, including the point object approximation, the definition of kinematics, and prerequisite ideas such as position and coordinate systems. Explain how these concepts work together to describe one-dimensional motion.",
+            "model_answer": "To study rectilinear motion, we first need to understand kinematics, which is the study of ways to describe motion without going into the causes of motion. This means we focus purely on describing how objects move (position, velocity, acceleration) rather than why they move. Since real objects have size and shape, we often simplify our analysis using the point object approximation, treating an extended object as a point particle. This approximation is valid only when the size of the object is much smaller than the distance it moves over a reasonable duration of time; otherwise, internal structure and rotation could affect the description of motion. Rectilinear motion itself refers to motion of an object along a straight line, also called motion in one dimension. To describe such motion mathematically, we require prerequisite concepts: a coordinate system to specify position along the line, a defined origin and positive direction (sign convention) to indicate direction of displacement, and a time reference to track how position changes. Together, these tools allow us to set up a mathematical description of an object's straight-line motion, forming the basis for later concepts like displacement, velocity, and acceleration.",
+            "source_spans": [
+              {
+                "page": null,
+                "quote": "In Kinematics, we study ways to describe motion without\ngoing into the causes of motion.",
+                "end_char": 1718,
+                "section_id": "slide-1",
+                "start_char": 1630
+              },
+              {
+                "page": null,
+                "quote": "In our discussions, we shall treat the objects in motion as point objects. This approximation is valid so far as the size of the object is much smaller than the distance it moves in a reasonable duration of time.",
+                "end_char": 1478,
+                "section_id": "slide-1",
+                "start_char": 1266
+              },
+              {
+                "page": null,
+                "quote": "We shall confine ourselves to the study of motion of objects along a straight line, also known as rectilinear motion.",
+                "end_char": 1059,
+                "section_id": "slide-1",
+                "start_char": 942
+              },
+              {
+                "page": null,
+                "quote": "We shall confine ourselves to the study of motion of objects along a straight line, also known as rectilinear motion.",
+                "end_char": 1059,
+                "section_id": "slide-1",
+                "start_char": 942
+              }
+            ]
+          }
+        ],
+        "short_answer": [
+          {
+            "rubric": [
+              "Correctly states that kinematics describes motion without addressing causes",
+              "Correctly notes that dynamics deals with causes (forces)",
+              "Clearly distinguishes the two areas of study"
+            ],
+            "question": "Explain the difference between kinematics and dynamics.",
+            "model_answer": "Kinematics is the study of ways to describe motion without going into the causes of motion, meaning it focuses on quantities like position, velocity, and acceleration. Dynamics, on the other hand, deals with the causes of motion, such as forces acting on objects. Kinematics answers 'how' an object moves, while dynamics answers 'why' it moves that way.",
+            "source_spans": [
+              {
+                "page": null,
+                "quote": "In Kinematics, we study ways to describe motion without\ngoing into the causes of motion.",
+                "end_char": 1718,
+                "section_id": "slide-1",
+                "start_char": 1630
+              }
+            ]
+          },
+          {
+            "rubric": [
+              "Explains the simplification benefit of treating objects as points",
+              "States the condition of validity: object size much smaller than distance traveled",
+              "Mentions relevance to time duration of motion"
+            ],
+            "question": "Why is the point object approximation useful in analyzing motion, and under what condition does it hold validity?",
+            "model_answer": "The point object approximation simplifies analysis by allowing us to treat an extended object as a single particle without internal structure. This approximation is valid when the size of the object is much smaller than the distance it moves in a reasonable duration of time, so the object's dimensions do not significantly affect the description of its motion.",
+            "source_spans": [
+              {
+                "page": null,
+                "quote": "In our discussions, we shall treat the objects in motion as point objects. This approximation is valid so far as the size of the object is much smaller than the distance it moves in a reasonable duration of time.",
+                "end_char": 1478,
+                "section_id": "slide-1",
+                "start_char": 1266
+              }
+            ]
+          }
+        ],
+        "period_number": 1
+      },
+      {
+        "mcqs": [
+          {
+            "options": [
+              "The change in position of an object with time, represented as area under the velocity-time curve.",
+              "The total path length traveled by an object.",
+              "The speed of an object at a given instant.",
+              "The time taken for an object to travel a given distance."
+            ],
+            "question": "Displacement is best described as:",
+            "explanation": "Displacement is defined as the change in position of an object, which can be found as the area under the velocity-time curve over a given time interval.",
+            "source_spans": [
+              {
+                "page": null,
+                "quote": "An interesting feature of a velocity-time graph for any moving object is that the area\nunder\tthe\tcurve\trepresents\tthe \ndisplacement over a given time interval.",
+                "end_char": 2413,
+                "section_id": "slide-4",
+                "start_char": 2254
+              },
+              {
+                "page": null,
+                "quote": "Motion is change in position of an object with time.",
+                "end_char": 780,
+                "section_id": "slide-1",
+                "start_char": 728
+              }
+            ],
+            "correct_option_index": 0
+          },
+          {
+            "options": [
+              "Displacement is a vector with sign and magnitude, whereas distance is a scalar with only magnitude.",
+              "Displacement and distance are always numerically equal.",
+              "Distance can be negative, but displacement cannot.",
+              "Displacement depends on the path taken, while distance does not."
+            ],
+            "question": "Which statement correctly distinguishes displacement from distance?",
+            "explanation": "Displacement is a vector quantity possessing both magnitude and direction (sign), while distance is a scalar representing only magnitude/path length; they are not always equal.",
+            "source_spans": [
+              {
+                "page": null,
+                "quote": "An interesting feature of a velocity-time graph for any moving object is that the area\nunder\tthe\tcurve\trepresents\tthe \ndisplacement over a given time interval.",
+                "end_char": 2413,
+                "section_id": "slide-4",
+                "start_char": 2254
+              }
+            ],
+            "correct_option_index": 0
+          }
+        ],
+        "numerical": [],
+        "long_answer": [
+          {
+            "rubric": [
+              "Correctly defines displacement",
+              "Explains area under velocity-time curve equals displacement",
+              "Discusses effect of sign/direction on area calculation",
+              "Notes vector nature of displacement in context of the graph"
+            ],
+            "question": "Describe how displacement relates to the velocity-time graph of an object's motion, and explain how this relationship can be used to determine displacement over a given time interval.",
+            "model_answer": "Displacement is defined as the change in position of an object, and it can be represented as the area under the velocity-time curve for a given time interval. On a velocity-time graph, the horizontal axis represents time and the vertical axis represents velocity. The area enclosed between the curve and the time axis, over the interval of interest, corresponds numerically to the displacement of the object during that interval. If velocity is constant, this area is simply a rectangle (velocity × time). If velocity varies, the area may need to be computed using geometric decomposition or integration. Importantly, areas below the time axis (representing negative velocity) subtract from the total displacement, reflecting the vector nature of displacement — it has both sign and magnitude, unlike distance, which only accumulates in magnitude regardless of direction.",
+            "source_spans": [
+              {
+                "page": null,
+                "quote": "An interesting feature of a velocity-time graph for any moving object is that the area\nunder\tthe\tcurve\trepresents\tthe \ndisplacement over a given time interval.",
+                "end_char": 2413,
+                "section_id": "slide-4",
+                "start_char": 2254
+              }
+            ]
+          }
+        ],
+        "short_answer": [
+          {
+            "rubric": [
+              "States displacement has magnitude and direction",
+              "Explains role of sign to indicate direction in 1D",
+              "Distinguishes from scalar quantities like distance"
+            ],
+            "question": "Explain why displacement is considered a vector quantity, including how sign conventions are used.",
+            "model_answer": "Displacement is a vector because it has both magnitude (how far the object has moved) and direction, which is represented in one-dimensional motion using a sign (positive or negative) based on a chosen coordinate system. Unlike distance, which is a scalar, displacement's sign tells us the overall direction of the object's change in position relative to its starting point.",
+            "source_spans": [
+              {
+                "page": null,
+                "quote": "An interesting feature of a velocity-time graph for any moving object is that the area\nunder\tthe\tcurve\trepresents\tthe \ndisplacement over a given time interval.",
+                "end_char": 2413,
+                "section_id": "slide-4",
+                "start_char": 2254
+              }
+            ]
+          }
+        ],
+        "period_number": 2
+      },
+      {
+        "mcqs": [
+          {
+            "options": [
+              "The magnitude of velocity at a particular instant.",
+              "The total distance traveled divided by total time.",
+              "The displacement divided by time interval.",
+              "The average of initial and final velocities."
+            ],
+            "question": "Instantaneous speed is defined as:",
+            "explanation": "Instantaneous speed is the magnitude of velocity at a particular instant, and it is always equal to the magnitude of instantaneous velocity at that instant.",
+            "source_spans": [
+              {
+                "page": null,
+                "quote": "Instantaneous speed or simply speed is the magnitude of velocity. For example, a velocity of\n+ 24.0 m s–1 and a velocity of – 24.0 m s–1 —\nboth have an associated speed of 24.0 m s-1.",
+                "end_char": 2124,
+                "section_id": "slide-3",
+                "start_char": 1941
+              }
+            ],
+            "correct_option_index": 0
+          },
+          {
+            "options": [
+              "Instantaneous speed always equals the magnitude of instantaneous velocity.",
+              "Instantaneous speed can be negative while instantaneous velocity is positive.",
+              "Instantaneous speed and instantaneous velocity are unrelated quantities.",
+              "Instantaneous speed is always greater than instantaneous velocity's magnitude."
+            ],
+            "question": "Which of these statements about instantaneous speed and instantaneous velocity is correct?",
+            "explanation": "By definition, instantaneous speed is the magnitude of velocity at a particular instant, so it always equals the magnitude of the instantaneous velocity vector, and being a magnitude, it is always non-negative.",
+            "source_spans": [
+              {
+                "page": null,
+                "quote": "Instantaneous speed or simply speed is the magnitude of velocity. For example, a velocity of\n+ 24.0 m s–1 and a velocity of – 24.0 m s–1 —\nboth have an associated speed of 24.0 m s-1.",
+                "end_char": 2124,
+                "section_id": "slide-3",
+                "start_char": 1941
+              },
+              {
+                "page": null,
+                "quote": "Instantaneous speed or simply speed is the magnitude of velocity.",
+                "end_char": 2006,
+                "section_id": "slide-3",
+                "start_char": 1941
+              }
+            ],
+            "correct_option_index": 0
+          },
+          {
+            "options": [
+              "The rate of change of position with respect to time at a particular instant.",
+              "The total distance divided by total time for the whole journey.",
+              "The average speed over a long time interval.",
+              "A scalar quantity representing only magnitude."
+            ],
+            "question": "Instantaneous velocity is best described as:",
+            "explanation": "Instantaneous velocity is defined as the rate of change of position with respect to time at a particular instant, which mathematically is the derivative of position with respect to time.",
+            "source_spans": [
+              {
+                "page": null,
+                "quote": "It is the rate of change of\nposition with respect to time, at that instant.",
+                "end_char": 847,
+                "section_id": "slide-2",
+                "start_char": 772
+              }
+            ],
+            "correct_option_index": 0
+          }
+        ],
+        "numerical": [
+          {
+            "question": "An object's position is given by x(t) = 3t^2 + 2t (in meters, t in seconds). Find the instantaneous speed of the object at t = 2 s.",
+            "tolerance": 0.1,
+            "source_spans": [
+              {
+                "page": null,
+                "quote": "It is the rate of change of\nposition with respect to time, at that instant.",
+                "end_char": 847,
+                "section_id": "slide-2",
+                "start_char": 772
+              },
+              {
+                "page": null,
+                "quote": "Instantaneous speed or simply speed is the magnitude of velocity. For example, a velocity of\n+ 24.0 m s–1 and a velocity of – 24.0 m s–1 —\nboth have an associated speed of 24.0 m s-1.",
+                "end_char": 2124,
+                "section_id": "slide-3",
+                "start_char": 1941
+              }
+            ],
+            "correct_answer": 14.0,
+            "solution_steps": [
+              "Instantaneous velocity is the rate of change of position with respect to time at a particular instant: v(t) = dx/dt.",
+              "Differentiate x(t) = 3t^2 + 2t with respect to t: v(t) = 6t + 2.",
+              "Substitute t = 2 s: v(2) = 6(2) + 2 = 14 m/s.",
+              "Instantaneous speed is the magnitude of velocity at a particular instant, so speed = |14| = 14 m/s."
+            ]
+          }
+        ],
+        "long_answer": [
+          {
+            "rubric": [
+              "Correctly defines instantaneous velocity as derivative of position with time",
+              "Defines instantaneous speed as magnitude of velocity",
+              "Explains logically why speed equals magnitude of velocity at an instant",
+              "Describes use of differential calculus (derivative) to compute instantaneous speed from position-time data"
+            ],
+            "question": "Explain why instantaneous speed always equals the magnitude of instantaneous velocity, and describe how calculus is used to determine instantaneous speed from position-time data.",
+            "model_answer": "Instantaneous velocity is defined as the rate of change of position with respect to time at a particular instant — mathematically, it is the derivative of the position function x(t) with respect to time, dx/dt, evaluated at a specific instant. This velocity is a vector quantity in one dimension, carrying a sign indicating direction. Instantaneous speed, by definition, is the magnitude of velocity at a particular instant. Since magnitude discards the sign/direction information and retains only the size of the quantity, instantaneous speed is mathematically the absolute value of instantaneous velocity, i.e., |dx/dt|. This is why, at any given instant, instantaneous speed always equals the magnitude of instantaneous velocity — there is no other component or direction involved in one-dimensional motion that would make these quantities differ. To compute instantaneous speed from discrete position-time data, one models position as a continuous, differentiable function of time x(t), applies differential calculus to find the derivative dx/dt at the instant of interest, and then takes the absolute value of this derivative to obtain the instantaneous speed at that instant.",
+            "source_spans": [
+              {
+                "page": null,
+                "quote": "It is the rate of change of\nposition with respect to time, at that instant.",
+                "end_char": 847,
+                "section_id": "slide-2",
+                "start_char": 772
+              },
+              {
+                "page": null,
+                "quote": "Instantaneous speed or simply speed is the magnitude of velocity. For example, a velocity of\n+ 24.0 m s–1 and a velocity of – 24.0 m s–1 —\nboth have an associated speed of 24.0 m s-1.",
+                "end_char": 2124,
+                "section_id": "slide-3",
+                "start_char": 1941
+              },
+              {
+                "page": null,
+                "quote": "Instantaneous speed or simply speed is the magnitude of velocity.",
+                "end_char": 2006,
+                "section_id": "slide-3",
+                "start_char": 1941
+              }
+            ]
+          }
+        ],
+        "short_answer": [
+          {
+            "rubric": [
+              "Explains average speed as calculated over a finite interval",
+              "Explains instantaneous speed as speed at a specific instant",
+              "Identifies differentiation (calculus) as tool to compute instantaneous velocity/speed from position-time data",
+              "Notes instantaneous speed is magnitude of the derivative (velocity)"
+            ],
+            "question": "Differentiate between average speed and instantaneous speed, and explain the mathematical tool needed to compute instantaneous speed from position-time data.",
+            "model_answer": "Average speed refers to how fast an object has been moving over a given (finite) time interval, essentially total distance or displacement magnitude over time interval — related to the displacement divided by the time interval, telling how fast an object has been moving over a given time interval, but generalized for speed using total path length. Instantaneous speed, in contrast, is the magnitude of velocity at a particular instant — an infinitesimally small time interval. To compute instantaneous speed from position-time data, we use differential calculus: specifically, we take the derivative of the position function with respect to time to get instantaneous velocity, then take its magnitude to obtain instantaneous speed.",
+            "source_spans": [
+              {
+                "page": null,
+                "quote": "The average velocity tells us how fast an object has been moving over a given time interval but does not tell us how fast it moves at different instants of time during that interval.",
+                "end_char": 239,
+                "section_id": "slide-2",
+                "start_char": 57
+              },
+              {
+                "page": null,
+                "quote": "Instantaneous speed or simply speed is the magnitude of velocity. For example, a velocity of\n+ 24.0 m s–1 and a velocity of – 24.0 m s–1 —\nboth have an associated speed of 24.0 m s-1.",
+                "end_char": 2124,
+                "section_id": "slide-3",
+                "start_char": 1941
+              },
+              {
+                "page": null,
+                "quote": "It is the rate of change of\nposition with respect to time, at that instant.",
+                "end_char": 847,
+                "section_id": "slide-2",
+                "start_char": 772
+              }
+            ]
+          }
+        ],
+        "period_number": 3
+      },
+      {
+        "mcqs": [
+          {
+            "options": [
+              "The time a person takes to observe, think and act in response to a situation or stimulus.",
+              "The time taken for a vehicle to travel one kilometer.",
+              "The time between two consecutive braking events.",
+              "The time taken for a car's engine to start."
+            ],
+            "question": "Reaction time is best defined as:",
+            "explanation": "Reaction time refers specifically to the physiological delay between perceiving a stimulus and acting on it — the time a person takes to observe, think and act in response to a situation or stimulus.",
+            "source_spans": [
+              {
+                "page": null,
+                "quote": "Reaction  time  is  the time a person takes to observe, think and act.  For example, if a person is driving and suddenly a boy appears on the road, then the time elapsed before he slams the brakes of the car is the reaction time.",
+                "end_char": 788,
+                "section_id": "slide-9",
+                "start_char": 559
+              }
+            ],
+            "correct_option_index": 0
+          },
+          {
+            "options": [
+              "Stopping distance is proportional to the square of initial velocity.",
+              "Stopping distance is proportional to initial velocity directly.",
+              "Stopping distance is inversely proportional to initial velocity.",
+              "Stopping distance does not depend on initial velocity."
+            ],
+            "question": "According to Example 2.6, how does stopping distance relate to initial velocity?",
+            "explanation": "Stopping distance of vehicles is proportional to the square of initial velocity, expressed as ds = v0²/(2a); doubling the velocity increases stopping distance by a factor of 4.",
+            "source_spans": [
+              {
+                "page": null,
+                "quote": "Example 2.6 Stopping distance of vehicles : When brakes are applied to a moving vehicle, the distance it travels before stopping is called stopping distance.",
+                "end_char": 1129,
+                "section_id": "slide-8",
+                "start_char": 972
+              }
+            ],
+            "correct_option_index": 0
+          },
+          {
+            "options": [
+              "Initial velocity and braking deceleration.",
+              "Only the mass of the vehicle.",
+              "Only the color of the vehicle.",
+              "The temperature of the road surface only."
+            ],
+            "question": "What quantity does the stopping distance of a moving vehicle depend on?",
+            "explanation": "Stopping distance is defined as the distance a moving vehicle travels before stopping after brakes are applied, depending on initial velocity and braking deceleration.",
+            "source_spans": [
+              {
+                "page": null,
+                "quote": "When brakes are applied to a moving vehicle, the distance it travels before stopping is called stopping distance. It is an important factor for road safety and depends on the initial velocity (v0) and the braking capacity, or deceleration, –a that is caused by the braking.",
+                "end_char": 1289,
+                "section_id": "slide-8",
+                "start_char": 1016
+              }
+            ],
+            "correct_option_index": 0
+          }
+        ],
+        "numerical": [
+          {
+            "question": "A car travels at an initial velocity of 20 m/s. When the brakes are applied, the car decelerates at 5 m/s². Using ds = v0²/(2a), calculate the braking distance of the car.",
+            "tolerance": 0.5,
+            "source_spans": [
+              {
+                "page": null,
+                "quote": "Example 2.6 Stopping distance of vehicles : When brakes are applied to a moving vehicle, the distance it travels before stopping is called stopping distance.",
+                "end_char": 1129,
+                "section_id": "slide-8",
+                "start_char": 972
+              }
+            ],
+            "correct_answer": 40.0,
+            "solution_steps": [
+              "Use the braking distance formula: ds = v0²/(2a).",
+              "Substitute v0 = 20 m/s and a = 5 m/s²: ds = (20)²/(2×5) = 400/10.",
+              "Calculate: ds = 40 m."
+            ]
+          },
+          {
+            "question": "If the initial velocity of a vehicle is doubled while braking deceleration remains constant, by what factor does the braking distance increase? Give a numerical value.",
+            "tolerance": 0.0,
+            "source_spans": [
+              {
+                "page": null,
+                "quote": "Example 2.6 Stopping distance of vehicles : When brakes are applied to a moving vehicle, the distance it travels before stopping is called stopping distance.",
+                "end_char": 1129,
+                "section_id": "slide-8",
+                "start_char": 972
+              }
+            ],
+            "correct_answer": 4.0,
+            "solution_steps": [
+              "Braking distance is given by ds = v0²/(2a).",
+              "If v0 is doubled to 2v0, new braking distance ds' = (2v0)²/(2a) = 4v0²/(2a) = 4 × ds.",
+              "Thus, the braking distance increases by a factor of 4."
+            ]
+          },
+          {
+            "question": "In a reaction time test (Example 2.7), a dropped ruler falls a distance of 21.0 cm before being caught. Using the free-fall relation d = ½gt² with g = 9.8 m/s², estimate the reaction time in seconds.",
+            "tolerance": 0.01,
+            "source_spans": [
+              {
+                "page": null,
+                "quote": "Example 2.7 Reaction time : When a situation demands our immediate action, it takes some time before we really  respond.  Reaction  time  is  the time a person takes to observe, think and act.",
+                "end_char": 629,
+                "section_id": "slide-9",
+                "start_char": 437
+              }
+            ],
+            "correct_answer": 0.207,
+            "solution_steps": [
+              "Convert distance to meters: d = 21.0 cm = 0.210 m.",
+              "Use the free-fall equation: d = ½ g t².",
+              "Solve for t: t = sqrt(2d/g) = sqrt(2 × 0.210 / 9.8) = sqrt(0.04286).",
+              "Calculate: t ≈ 0.207 s."
+            ]
+          }
+        ],
+        "long_answer": [
+          {
+            "rubric": [
+              "Explains reaction distance component and its dependence on reaction time and initial velocity",
+              "Explains braking distance component and dependence on initial velocity and deceleration",
+              "States the overall stopping distance definition",
+              "Uses the ds = v0²/(2a) relationship to explain quadratic scaling",
+              "Correctly concludes doubling velocity quadruples the (braking) stopping distance"
+            ],
+            "question": "Discuss the physics behind vehicle stopping distance, including the roles of reaction time and braking deceleration, and explain quantitatively why doubling a vehicle's initial speed increases its stopping distance by a factor of four.",
+            "model_answer": "The total stopping distance of a vehicle consists of two components: the distance traveled during the driver's reaction time and the distance traveled while braking. Reaction time is the time a person takes to observe, think and act in response to a situation or stimulus; during this interval, the vehicle continues moving at its initial velocity because the brakes have not yet been engaged, so this reaction distance is simply initial velocity multiplied by reaction time. Once the brakes are applied, the vehicle decelerates due to braking deceleration until it comes to rest; this braking distance depends on the initial velocity (at the moment of braking) and the magnitude of deceleration. Overall, the stopping distance is the distance a moving vehicle travels before stopping after brakes are applied, depending on initial velocity and braking deceleration. As shown in Example 2.6, the braking distance component is proportional to the square of the initial velocity, expressed as ds = v0²/(2a). This means that if the initial velocity v0 is doubled, since ds depends on v0², the braking distance increases by a factor of 2² = 4. This quadratic relationship explains why even modest increases in speed can lead to significantly larger stopping distances, which has crucial implications for road safety and speed limits.",
+            "source_spans": [
+              {
+                "page": null,
+                "quote": "Reaction  time  is  the time a person takes to observe, think and act.  For example, if a person is driving and suddenly a boy appears on the road, then the time elapsed before he slams the brakes of the car is the reaction time.",
+                "end_char": 788,
+                "section_id": "slide-9",
+                "start_char": 559
+              },
+              {
+                "page": null,
+                "quote": "When brakes are applied to a moving vehicle, the distance it travels before stopping is called stopping distance. It is an important factor for road safety and depends on the initial velocity (v0) and the braking capacity, or deceleration, –a that is caused by the braking.",
+                "end_char": 1289,
+                "section_id": "slide-8",
+                "start_char": 1016
+              },
+              {
+                "page": null,
+                "quote": "Example 2.6 Stopping distance of vehicles : When brakes are applied to a moving vehicle, the distance it travels before stopping is called stopping distance.",
+                "end_char": 1129,
+                "section_id": "slide-8",
+                "start_char": 972
+              }
+            ]
+          }
+        ],
+        "short_answer": [
+          {
+            "rubric": [
+              "Defines reaction time correctly",
+              "Explains that vehicle continues at initial velocity during reaction time, adding distance",
+              "Notes total stopping distance = reaction distance + braking distance",
+              "References dependence on initial velocity and braking deceleration"
+            ],
+            "question": "Explain how reaction time contributes to the total stopping distance of a vehicle.",
+            "model_answer": "Reaction time is the time a person takes to observe, think and act in response to a situation or stimulus — for a driver, this is the delay between seeing a hazard and pressing the brake pedal. During this reaction time, the vehicle continues moving at its initial velocity (since brakes have not yet been applied), covering an additional distance. This reaction distance adds to the braking distance (the distance traveled while decelerating after brakes are applied) to give the total stopping distance, which depends on initial velocity and braking deceleration.",
+            "source_spans": [
+              {
+                "page": null,
+                "quote": "Reaction  time  is  the time a person takes to observe, think and act.  For example, if a person is driving and suddenly a boy appears on the road, then the time elapsed before he slams the brakes of the car is the reaction time.",
+                "end_char": 788,
+                "section_id": "slide-9",
+                "start_char": 559
+              },
+              {
+                "page": null,
+                "quote": "When brakes are applied to a moving vehicle, the distance it travels before stopping is called stopping distance. It is an important factor for road safety and depends on the initial velocity (v0) and the braking capacity, or deceleration, –a that is caused by the braking.",
+                "end_char": 1289,
+                "section_id": "slide-8",
+                "start_char": 1016
+              }
+            ]
+          },
+          {
+            "rubric": [
+              "Describes the basic setup of dropping and catching a ruler",
+              "Notes that the fall distance is measured",
+              "Explains that free-fall equations relate distance to reaction time",
+              "References numerical value of distance similar to example (21.0 cm) if used"
+            ],
+            "question": "Describe the method for measuring reaction time by catching a dropped ruler, as illustrated in Example 2.7.",
+            "model_answer": "In this method, a ruler is held vertically and suddenly dropped without warning; the person being tested tries to catch it as quickly as possible. The distance the ruler falls (for example, d = 21.0 cm) before being caught is measured. Since the ruler undergoes free fall, this distance can be related to time using free-fall kinematic equations (distance = ½gt²), allowing the reaction time to be estimated from the fall distance.",
+            "source_spans": [
+              {
+                "page": null,
+                "quote": "Example 2.7 Reaction time : When a situation demands our immediate action, it takes some time before we really  respond.  Reaction  time  is  the time a person takes to observe, think and act.",
+                "end_char": 629,
+                "section_id": "slide-9",
+                "start_char": 437
+              }
+            ]
+          }
+        ],
+        "period_number": 4
+      }
+    ]
+  },
+  "learning_gaps": {
+    "gaps": [
+      {
+        "severity": "high",
+        "remediation": "Explicitly teach that acceleration is defined as any change in velocity, which includes changes in speed, direction, or both. Use worked examples showing objects speeding up (acceleration parallel to velocity), slowing down (acceleration antiparallel to velocity), and turning (acceleration not aligned with velocity at all). Reinforce with vector diagrams distinguishing velocity and acceleration directions in one-dimensional motion contexts.",
+        "source_spans": [
+          {
+            "page": null,
+            "quote": "If a particle is speeding up, acceleration is in the direction of velocity; if its speed is decreasing, acceleration is in the direction opposite to that of the velocity.",
+            "end_char": 410,
+            "section_id": "slide-11",
+            "start_char": 240
+          },
+          {
+            "page": null,
+            "quote": "We shall confine ourselves to the study of motion of objects along a straight line, also known as rectilinear motion.",
+            "end_char": 1059,
+            "section_id": "slide-1",
+            "start_char": 942
+          }
+        ],
+        "misconception": "Thinking that acceleration must mean speeding up or in the direction of motion.",
+        "diagnostic_questions": [
+          {
+            "question": "A car is moving forward but its brakes are applied, causing it to slow down. Is the car accelerating? If so, in which direction is the acceleration relative to its velocity?",
+            "source_spans": [
+              {
+                "page": null,
+                "quote": "If a particle is speeding up, acceleration is in the direction of velocity; if its speed is decreasing, acceleration is in the direction opposite to that of the velocity.",
+                "end_char": 410,
+                "section_id": "slide-11",
+                "start_char": 240
+              }
+            ],
+            "targets_misconception": "Thinking that acceleration must mean speeding up or in the direction of motion."
+          },
+          {
+            "question": "Can an object have an acceleration that points in the opposite direction to its velocity? Explain with an example.",
+            "source_spans": [
+              {
+                "page": null,
+                "quote": "If a particle is speeding up, acceleration is in the direction of velocity; if its speed is decreasing, acceleration is in the direction opposite to that of the velocity.",
+                "end_char": 410,
+                "section_id": "slide-11",
+                "start_char": 240
+              }
+            ],
+            "targets_misconception": "Thinking that acceleration must mean speeding up or in the direction of motion."
+          },
+          {
+            "question": "If a particle moves along a straight line and changes direction, does this involve acceleration even if its speed stays constant? Why or why not?",
+            "source_spans": [
+              {
+                "page": null,
+                "quote": "If a particle is speeding up, acceleration is in the direction of velocity; if its speed is decreasing, acceleration is in the direction opposite to that of the velocity.",
+                "end_char": 410,
+                "section_id": "slide-11",
+                "start_char": 240
+              },
+              {
+                "page": null,
+                "quote": "We shall confine ourselves to the study of motion of objects along a straight line, also known as rectilinear motion.",
+                "end_char": 1059,
+                "section_id": "slide-1",
+                "start_char": 942
+              }
+            ],
+            "targets_misconception": "Thinking that acceleration must mean speeding up or in the direction of motion."
+          }
+        ]
+      },
+      {
+        "severity": "high",
+        "remediation": "Use the classic example of a ball thrown vertically upward to show that velocity and acceleration are independent quantities at any given instant. Emphasize that acceleration depends on the rate of change of velocity over time, not the value of velocity itself, and that gravitational acceleration acts continuously regardless of the instantaneous velocity value.",
+        "source_spans": [
+          {
+            "page": null,
+            "quote": "The zero velocity of a particle at any instant does not necessarily imply zero acceleration at that instant. A particle may be momentarily at rest and yet have non-zero acceleration. For example, a particle thrown up has zero velocity at its uppermost point but the acceleration at that instant continues to be the acceleration due to gravity.",
+            "end_char": 1396,
+            "section_id": "slide-11",
+            "start_char": 1053
+          }
+        ],
+        "misconception": "Assuming that zero velocity at any instant means zero acceleration at that instant.",
+        "diagnostic_questions": [
+          {
+            "question": "A ball is thrown straight up into the air. At the highest point of its trajectory, its velocity is zero. Is its acceleration also zero at that instant? Justify your answer.",
+            "source_spans": [
+              {
+                "page": null,
+                "quote": "The zero velocity of a particle at any instant does not necessarily imply zero acceleration at that instant. A particle may be momentarily at rest and yet have non-zero acceleration. For example, a particle thrown up has zero velocity at its uppermost point but the acceleration at that instant continues to be the acceleration due to gravity.",
+                "end_char": 1396,
+                "section_id": "slide-11",
+                "start_char": 1053
+              }
+            ],
+            "targets_misconception": "Assuming that zero velocity at any instant means zero acceleration at that instant."
+          },
+          {
+            "question": "Can you think of a situation in one-dimensional motion where an object's instantaneous velocity is zero but it is still accelerating? Describe it.",
+            "source_spans": [
+              {
+                "page": null,
+                "quote": "The zero velocity of a particle at any instant does not necessarily imply zero acceleration at that instant. A particle may be momentarily at rest and yet have non-zero acceleration. For example, a particle thrown up has zero velocity at its uppermost point but the acceleration at that instant continues to be the acceleration due to gravity.",
+                "end_char": 1396,
+                "section_id": "slide-11",
+                "start_char": 1053
+              },
+              {
+                "page": null,
+                "quote": "We shall confine ourselves to the study of motion of objects along a straight line, also known as rectilinear motion.",
+                "end_char": 1059,
+                "section_id": "slide-1",
+                "start_char": 942
+              }
+            ],
+            "targets_misconception": "Assuming that zero velocity at any instant means zero acceleration at that instant."
+          }
+        ]
+      },
+      {
+        "severity": "medium",
+        "remediation": "Clarify the distinct definitions of average speed (total distance/total time) versus average velocity (displacement/time), showing they can differ, while instantaneous speed and instantaneous velocity magnitude are always equal by definition since they are evaluated over an infinitesimally small time interval.",
+        "source_spans": [
+          {
+            "page": null,
+            "quote": "Instantaneous speed or simply speed is the magnitude of velocity. For example, a velocity of\n+ 24.0 m s–1 and a velocity of – 24.0 m s–1 —\nboth have an associated speed of 24.0 m s-1.",
+            "end_char": 2124,
+            "section_id": "slide-3",
+            "start_char": 1941
+          }
+        ],
+        "misconception": "Students may confuse instantaneous speed with average speed or think speed and velocity magnitude can differ at an instant, failing to recognize that instantaneous speed always equals the magnitude of instantaneous velocity.",
+        "diagnostic_questions": [
+          {
+            "question": "At a specific instant in time, can an object's speed be different from the magnitude of its velocity? Explain why or why not.",
+            "source_spans": [
+              {
+                "page": null,
+                "quote": "Instantaneous speed or simply speed is the magnitude of velocity. For example, a velocity of\n+ 24.0 m s–1 and a velocity of – 24.0 m s–1 —\nboth have an associated speed of 24.0 m s-1.",
+                "end_char": 2124,
+                "section_id": "slide-3",
+                "start_char": 1941
+              }
+            ],
+            "targets_misconception": "Students may confuse instantaneous speed with average speed or think speed and velocity magnitude can differ at an instant, failing to recognize that instantaneous speed always equals the magnitude of instantaneous velocity."
+          },
+          {
+            "question": "Is average speed over a time interval always equal to the magnitude of average velocity over the same interval? How does this compare to the instantaneous case?",
+            "source_spans": [
+              {
+                "page": null,
+                "quote": "Instantaneous speed or simply speed is the magnitude of velocity. For example, a velocity of\n+ 24.0 m s–1 and a velocity of – 24.0 m s–1 —\nboth have an associated speed of 24.0 m s-1.",
+                "end_char": 2124,
+                "section_id": "slide-3",
+                "start_char": 1941
+              }
+            ],
+            "targets_misconception": "Students may confuse instantaneous speed with average speed or think speed and velocity magnitude can differ at an instant, failing to recognize that instantaneous speed always equals the magnitude of instantaneous velocity."
+          }
+        ]
+      },
+      {
+        "severity": "medium",
+        "remediation": "Use velocity-time graphs with regions above and below the time axis to show that displacement is the signed (net) area under the curve, while distance traveled is the total unsigned area. Provide practice problems where velocity changes sign, requiring students to compute both distance and displacement separately.",
+        "source_spans": [
+          {
+            "page": null,
+            "quote": "An interesting feature of a velocity-time graph for any moving object is that the area\nunder\tthe\tcurve\trepresents\tthe \ndisplacement over a given time interval.",
+            "end_char": 2413,
+            "section_id": "slide-4",
+            "start_char": 2254
+          }
+        ],
+        "misconception": "Students may incorrectly equate displacement with distance traveled or misunderstand displacement as simply the area under the velocity-time curve without recognizing sign/direction considerations.",
+        "diagnostic_questions": [
+          {
+            "question": "If a velocity-time graph shows a particle moving in the positive direction and then reversing to move in the negative direction, how would you calculate the net displacement using the area under the curve?",
+            "source_spans": [
+              {
+                "page": null,
+                "quote": "An interesting feature of a velocity-time graph for any moving object is that the area\nunder\tthe\tcurve\trepresents\tthe \ndisplacement over a given time interval.",
+                "end_char": 2413,
+                "section_id": "slide-4",
+                "start_char": 2254
+              }
+            ],
+            "targets_misconception": "Students may incorrectly equate displacement with distance traveled or misunderstand displacement as simply the area under the velocity-time curve without recognizing sign/direction considerations."
+          },
+          {
+            "question": "Is the displacement of an object always equal to the total distance it traveled? Give an example where these two differ.",
+            "source_spans": [
+              {
+                "page": null,
+                "quote": "An interesting feature of a velocity-time graph for any moving object is that the area\nunder\tthe\tcurve\trepresents\tthe \ndisplacement over a given time interval.",
+                "end_char": 2413,
+                "section_id": "slide-4",
+                "start_char": 2254
+              }
+            ],
+            "targets_misconception": "Students may incorrectly equate displacement with distance traveled or misunderstand displacement as simply the area under the velocity-time curve without recognizing sign/direction considerations."
+          }
+        ]
+      },
+      {
+        "severity": "low",
+        "remediation": "Discuss the conditions under which the point-particle approximation is valid, using contrasting examples: a car traveling across a city (valid approximation) versus a car maneuvering into a tight parking spot (not valid, since its size is comparable to the distances involved).",
+        "source_spans": [
+          {
+            "page": null,
+            "quote": "In our discussions, we shall treat the objects in motion as point objects. This approximation is valid so far as the size of the object is much smaller than the distance it moves in a reasonable duration of time.",
+            "end_char": 1478,
+            "section_id": "slide-1",
+            "start_char": 1266
+          }
+        ],
+        "misconception": "Students may misunderstand the point-particle approximation, applying it universally without recognizing it is only valid when object size is much smaller than the distance traveled.",
+        "diagnostic_questions": [
+          {
+            "question": "Would it be appropriate to treat a car as a point particle when analyzing its motion while parking in a garage? Why or why not?",
+            "source_spans": [
+              {
+                "page": null,
+                "quote": "In our discussions, we shall treat the objects in motion as point objects. This approximation is valid so far as the size of the object is much smaller than the distance it moves in a reasonable duration of time.",
+                "end_char": 1478,
+                "section_id": "slide-1",
+                "start_char": 1266
+              }
+            ],
+            "targets_misconception": "Students may misunderstand the point-particle approximation, applying it universally without recognizing it is only valid when object size is much smaller than the distance traveled."
+          }
+        ]
+      },
+      {
+        "severity": "medium",
+        "remediation": "Teach stopping distance as the sum of two components: the distance traveled during reaction time (at constant initial velocity) and the braking distance (during deceleration). Use numerical examples with given reaction times and deceleration values to compute each component separately before summing them.",
+        "source_spans": [
+          {
+            "page": null,
+            "quote": "Reaction  time  is  the time a person takes to observe, think and act.  For example, if a person is driving and suddenly a boy appears on the road, then the time elapsed before he slams the brakes of the car is the reaction time.",
+            "end_char": 788,
+            "section_id": "slide-9",
+            "start_char": 559
+          },
+          {
+            "page": null,
+            "quote": "When brakes are applied to a moving vehicle, the distance it travels before stopping is called stopping distance. It is an important factor for road safety and depends on the initial velocity (v0) and the braking capacity, or deceleration, –a that is caused by the braking.",
+            "end_char": 1289,
+            "section_id": "slide-8",
+            "start_char": 1016
+          }
+        ],
+        "misconception": "Students may not account for reaction time as a factor separate from braking deceleration when calculating total stopping distance of a vehicle.",
+        "diagnostic_questions": [
+          {
+            "question": "When calculating how far a car travels before coming to a complete stop after a driver sees a hazard, should you include the distance traveled during the driver's reaction time, or only the braking distance? Explain.",
+            "source_spans": [
+              {
+                "page": null,
+                "quote": "Reaction  time  is  the time a person takes to observe, think and act.  For example, if a person is driving and suddenly a boy appears on the road, then the time elapsed before he slams the brakes of the car is the reaction time.",
+                "end_char": 788,
+                "section_id": "slide-9",
+                "start_char": 559
+              },
+              {
+                "page": null,
+                "quote": "When brakes are applied to a moving vehicle, the distance it travels before stopping is called stopping distance. It is an important factor for road safety and depends on the initial velocity (v0) and the braking capacity, or deceleration, –a that is caused by the braking.",
+                "end_char": 1289,
+                "section_id": "slide-8",
+                "start_char": 1016
+              }
+            ],
+            "targets_misconception": "Students may not account for reaction time as a factor separate from braking deceleration when calculating total stopping distance of a vehicle."
+          }
+        ]
+      }
+    ]
+  },
+  "validation_report": {
+    "schema_check": {
+      "errors": [],
+      "passed": true
+    },
+    "grounding_check": {
+      "passed": true,
+      "violations": []
+    },
+    "consistency_check": {
+      "passed": true,
+      "conflicts": []
+    },
+    "completeness_check": {
+      "passed": true,
+      "missing_items": []
+    }
+  },
+  "pdf_paths": {
+    "lesson_plans": "/files/tkp/9b8141f1-c131-46d1-b034-aa2e2b0b2e40/lesson_plans.pdf?expires=1785675307&sig=046d8a2b646440eb1018901a55414c9ce0d1512557c3d34878899c1330f0875d",
+    "teacher_guide": "/files/tkp/9b8141f1-c131-46d1-b034-aa2e2b0b2e40/teacher_guide.pdf?expires=1785675307&sig=f602855e6eabbe260048c9d9bea43f1e80778673218e637daade494be86eea9b",
+    "assessment_book": "/files/tkp/9b8141f1-c131-46d1-b034-aa2e2b0b2e40/assessment_book.pdf?expires=1785675307&sig=84c7d29de6a925c42b9c1e7a5bc44279a06e4ed5e66d4ad3435b886d01de3842"
+  },
+  "published_at": "2026-08-02T11:54:40.735984Z"
+}
