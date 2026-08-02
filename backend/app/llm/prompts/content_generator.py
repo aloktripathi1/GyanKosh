@@ -28,13 +28,24 @@ def _format_knowledge(extracted_knowledge: KnowledgeExtractionOutput) -> str:
     return "\n".join(lines)
 
 
-def build_user_prompt(teaching_plan: TeachingPlanOutput, extracted_knowledge: KnowledgeExtractionOutput) -> str:
+def build_user_prompt(
+    teaching_plan: TeachingPlanOutput, extracted_knowledge: KnowledgeExtractionOutput, language: str = "English"
+) -> str:
     periods = "\n".join(
         f"Period {p.period_number}: {p.title}\n  Objectives: {p.objectives}\n  Concepts: {p.concepts_covered}"
         for p in teaching_plan.periods
     )
+    language_line = (
+        f"Write every generated field (entry_ticket, teacher_script, blackboard_notes, activities, "
+        f"checkpoint_questions, exit_ticket, homework, mentor_moment) in {language}. This applies only to "
+        "prose you generate — grounding_refs must still be exact verbatim copies from the extracted "
+        "knowledge below, in whatever language those quotes are already in.\n\n"
+        if language and language.lower() != "english"
+        else ""
+    )
     return (
         f"Teaching plan:\n{periods}\n\n"
         f"Extracted knowledge (cite these verbatim in grounding_refs):\n{_format_knowledge(extracted_knowledge)}\n\n"
+        f"{language_line}"
         "Generate full classroom content for every period listed above."
     )

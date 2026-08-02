@@ -9,9 +9,15 @@ from app.schemas.teaching_planner import TeachingPlanOutput
 
 
 class ActivityGeneratorInput:
-    def __init__(self, teaching_plan: TeachingPlanOutput, extracted_knowledge: KnowledgeExtractionOutput):
+    def __init__(
+        self,
+        teaching_plan: TeachingPlanOutput,
+        extracted_knowledge: KnowledgeExtractionOutput,
+        language: str = "English",
+    ):
         self.teaching_plan = teaching_plan
         self.extracted_knowledge = extracted_knowledge
+        self.language = language
 
 
 class _DraftActivity(BaseModel):
@@ -37,7 +43,7 @@ def run(input: ActivityGeneratorInput) -> ActivityGenerationOutput:
     draft = structured_call(
         tier=ModelTier.STRONG,
         system_prompt=SYSTEM_PROMPT,
-        user_prompt=build_user_prompt(input.teaching_plan, input.extracted_knowledge),
+        user_prompt=build_user_prompt(input.teaching_plan, input.extracted_knowledge, input.language),
         output_schema=_ActivityGenerationDraft,
     )
 

@@ -31,17 +31,19 @@ def run_teaching_planner(cls: ClassificationOutput, ek: KnowledgeExtractionOutpu
     return teaching_planner.run(planner_input).model_dump(mode="json")
 
 
-def run_content_generation(plan: TeachingPlanOutput, ek: KnowledgeExtractionOutput) -> dict:
-    return content_generator.run(content_generator.ContentGeneratorInput(plan, ek)).model_dump(mode="json")
+def run_content_generation(plan: TeachingPlanOutput, ek: KnowledgeExtractionOutput, language: str = "English") -> dict:
+    return content_generator.run(content_generator.ContentGeneratorInput(plan, ek, language)).model_dump(mode="json")
 
 
-def run_activity_generation(plan: TeachingPlanOutput, ek: KnowledgeExtractionOutput) -> dict:
-    return activity_generator.run(activity_generator.ActivityGeneratorInput(plan, ek)).model_dump(mode="json")
+def run_activity_generation(plan: TeachingPlanOutput, ek: KnowledgeExtractionOutput, language: str = "English") -> dict:
+    return activity_generator.run(activity_generator.ActivityGeneratorInput(plan, ek, language)).model_dump(mode="json")
 
 
-def run_assessment_generation(plan: TeachingPlanOutput, ek: KnowledgeExtractionOutput) -> dict:
-    return assessment_generator.run(assessment_generator.AssessmentGeneratorInput(plan, ek)).model_dump(mode="json")
+def run_assessment_generation(plan: TeachingPlanOutput, ek: KnowledgeExtractionOutput, language: str = "English") -> dict:
+    return assessment_generator.run(assessment_generator.AssessmentGeneratorInput(plan, ek, language)).model_dump(
+        mode="json"
+    )
 
 
-def run_gap_analysis(ek: KnowledgeExtractionOutput) -> dict:
-    return gap_analysis.run(ek).model_dump(mode="json")
+def run_gap_analysis(ek: KnowledgeExtractionOutput, language: str = "English") -> dict:
+    return gap_analysis.run(ek, language).model_dump(mode="json")
