@@ -69,9 +69,7 @@ No Redis, no separate worker to babysit. The pipeline runs as a background task 
 
 ## How it works
 
-![GyanKosh architecture diagram](Gyankosh.png)
-
-Full editable diagram: [`architecture-diagram.excalidraw`](architecture-diagram.excalidraw) (open at [excalidraw.com](https://excalidraw.com)).
+![GyanKosh architecture diagram](architecture.png)
 
 1. **Upload.** The file is checked for type, size, and real content (not just a trusted file extension), then stored. Re-upload the same document and the cheap early stages are reused instead of re-billed.
 2. **Understand the document.** Parses text, tables, figures, and equations, with an OCR fallback for scanned pages.
@@ -133,7 +131,7 @@ Read together, the three samples demonstrate the system adapting structure and a
 
 ## Testing
 
-**99 automated tests**, run before every push.
+**101 automated tests**, run before every push.
 
 - Unit tests per agent, with the LLM mocked and output checked against its schema.
 - Golden fixture tests: a STEM document and a humanities document both validate cleanly end to end, and a deliberately thin or messy document degrades gracefully instead of crashing or faking a pass.
@@ -144,7 +142,7 @@ Read together, the three samples demonstrate the system adapting structure and a
 
 ```bash
 cd backend && source .venv/bin/activate
-pytest                                                          # 98 tests, no database needed
+pytest                                                          # 100 tests, no database needed
 GYANKOSH_TEST_DATABASE_URL=postgresql+psycopg2://... pytest     # adds the concurrency test
 ```
 
