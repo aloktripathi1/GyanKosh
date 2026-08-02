@@ -21,6 +21,8 @@ frontend/.env
 
 # Internal notes, not for the repo
 decisions.md
+AUDIT_REPORT.md
+BUILD_CONTEXT.md
 
 # OS
 .DS_Store

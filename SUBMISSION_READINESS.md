@@ -19,7 +19,7 @@ Run 2026-08-02. Every item below is backed by a command actually run or a file a
 **2. Source code repository — PASS**
 - `gh repo view` → `"visibility":"PUBLIC"`.
 - `git log origin/main -1` and `git rev-parse HEAD origin/main` both resolve to the same commit (`5995c18` at start of this pass) — local main and origin/main are identical, nothing unpushed.
-- `git ls-files` confirms 103 files under `backend/`, 15 under `frontend/`, plus `docs/`, `samples/`, `docker-compose.yml`, `render.yaml`, `BUILD_CONTEXT.md` all present and tracked.
+- `git ls-files` confirms 103 files under `backend/`, 15 under `frontend/`, plus `assets/`, `samples/`, `docker-compose.yml`, `render.yaml` all present and tracked. (`BUILD_CONTEXT.md` and `AUDIT_REPORT.md` are kept as local reference material and deliberately not pushed, per a later restructuring pass.)
 - Confirmed by direct grep that every major fix from this session is literally in the current tree: `expire_on_commit=False` in `db.py` (concurrency fix), `class PathTraversalError` in `local_storage.py`, `STAGE_TIMEOUT_SECONDS = 600` and its use in `pipeline.py`, 3 files in `samples/`.
 - `decisions.md` confirmed NOT tracked (correctly gitignored, was never meant to be pushed).
 
