@@ -1,5 +1,3 @@
-# GyanKosh
-
 ![GyanKosh banner](assets/readme-banner.png)
 
 **GyanKosh** (Gyan = knowledge, Kosh = treasury) turns a raw educational document into a complete, classroom-ready **Teacher Knowledge Package**: lesson plans, activities, assessments, and a learning-gap analysis, all grounded in your source material and ready to teach from.
@@ -8,7 +6,7 @@ Drop in a PDF, DOCX, PPTX, or plain-text chapter. Get back structured JSON and p
 
 Live: backend on Render, frontend on Vercel.
 
-For the reasoning behind these choices, including the bugs found along the way, see [`DECISIONS.md`](DECISIONS.md). For a quick conceptual overview of the pipeline, see [`assets/architecture.md`](assets/architecture.md).
+For the reasoning behind these choices, including the bugs found along the way, see [`decisions.md`](assets/decisions.md). For a quick conceptual overview of the pipeline, see [`assets/architecture.md`](assets/architecture.md).
 
 ## Contents
 
@@ -19,7 +17,6 @@ For the reasoning behind these choices, including the bugs found along the way, 
 - [Built-in highlights](#built-in-highlights)
 - [Samples](#samples)
 - [Testing](#testing)
-- [Honest limitations](#honest-limitations)
 
 ---
 
@@ -161,13 +158,6 @@ GYANKOSH_TEST_DATABASE_URL=postgresql+psycopg2://... pytest     # adds the concu
 
 ---
 
-## Honest limitations
+## License
 
-No team ships a system with zero rough edges, and pretending otherwise helps no one. Here's what's genuinely still open:
-
-- **Single-tenant by design.** One worker, one database, one shared API key. This was a deliberate scope decision, not an oversight: there's no multi-tenant or compliance requirement here, and building real user accounts would have been pure scope creep against the deadline.
-- **A small coupling between the storage layer and the auth layer.** File-download authorization currently reaches directly into the local storage backend's signature-checking logic instead of going through a fully backend-agnostic interface. Fine today, would need a small refactor if a different storage backend (like S3) were swapped in.
-- **Cross-period terminology contradictions aren't explicitly checked.** Validation confirms every period reference is valid and non-duplicated, but doesn't compare the prose of two periods against each other. The actual defense against contradiction is structural: every claim is grounded to one immutable source, so divergence has nowhere to creep in, but this is a design argument, not a dedicated check.
-- **Local file storage doesn't survive a redeploy** on the current free-tier hosting. Fine for a demo, not a production storage strategy.
-- **Reliability on dense real documents needs continued attention.** Building the current three samples surfaced two real gap_analysis bugs on the same History chapter: a schema-shape mismatch (fixed) and a case where the model combined multiple facts into one grounding citation instead of listing them separately (the grounding check correctly rejected it; the prompt was tightened in response). Both fixes are verified against real re-runs, but grounding is deliberately strict, and strictness has a retry cost on complex content.
-- **Deliberately out of scope:** multilingual generation, curriculum-board alignment (CBSE, Common Core), and a full observability/tracing stack beyond structured logs and stage timing. These were never meant to be built for this version.
+MIT, see [`LICENSE`](LICENSE).
