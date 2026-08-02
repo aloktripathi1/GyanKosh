@@ -8,7 +8,7 @@ import time
 
 import pytest
 
-from app.storage.local_storage import LocalStorageBackend, PathTraversalError, verify_signature
+from app.storage.local_storage import LocalStorageBackend, PathTraversalError
 
 
 def test_read_rejects_simple_parent_traversal(tmp_path):
@@ -61,38 +61,53 @@ def test_legitimate_nested_access_still_works(tmp_path):
 
 
 def test_url_generates_a_verifiable_signature(tmp_path):
+    """Verified through the StorageBackend interface (verify_url), not the
+    local implementation's private helpers — this is what api/deps.py
+    actually calls, so this test exercises the same path a real request
+    does, not an internal implementation detail."""
     backend = LocalStorageBackend(str(tmp_path))
     url = backend.url("tkp/job1/lesson_plans.pdf", expires_in=3600)
 
     assert url.startswith("/files/tkp/job1/lesson_plans.pdf?")
     query = dict(pair.split("=") for pair in url.split("?", 1)[1].split("&"))
-    assert verify_signature("tkp/job1/lesson_plans.pdf", int(query["expires"]), query["sig"])
+    assert backend.verify_url("tkp/job1/lesson_plans.pdf", query)
 
 
-def test_signature_rejects_expired_link():
+def test_signature_rejects_expired_link(tmp_path):
+    backend = LocalStorageBackend(str(tmp_path))
     already_expired = int(time.time()) - 10
     # Even a correctly-computed signature for an already-past expiry must fail.
     from app.storage.local_storage import _sign
 
     sig = _sign("tkp/job1/lesson_plans.pdf", already_expired)
-    assert not verify_signature("tkp/job1/lesson_plans.pdf", already_expired, sig)
+    assert not backend.verify_url("tkp/job1/lesson_plans.pdf", {"expires": already_expired, "sig": sig})
 
 
-def test_signature_rejects_tampered_path():
+def test_signature_rejects_tampered_path(tmp_path):
     """A signature is scoped to one exact path — a valid signature for file A
     must not authorize access to file B."""
+    backend = LocalStorageBackend(str(tmp_path))
     from app.storage.local_storage import _sign
 
     expires_at = int(time.time()) + 3600
     sig = _sign("tkp/job1/lesson_plans.pdf", expires_at)
-    assert not verify_signature("tkp/job1/teacher_guide.pdf", expires_at, sig)
+    assert not backend.verify_url("tkp/job1/teacher_guide.pdf", {"expires": expires_at, "sig": sig})
 
 
-def test_signature_rejects_tampered_expiry():
+def test_signature_rejects_tampered_expiry(tmp_path):
     """Bumping the expiry forward without re-signing must not extend access."""
+    backend = LocalStorageBackend(str(tmp_path))
     from app.storage.local_storage import _sign
 
     real_expiry = int(time.time()) + 60
     sig = _sign("tkp/job1/lesson_plans.pdf", real_expiry)
     extended_expiry = real_expiry + 1_000_000
-    assert not verify_signature("tkp/job1/lesson_plans.pdf", extended_expiry, sig)
+    assert not backend.verify_url("tkp/job1/lesson_plans.pdf", {"expires": extended_expiry, "sig": sig})
+
+
+def test_verify_url_rejects_missing_query_params(tmp_path):
+    """Interface-level guard: no expires/sig at all must not blow up or
+    accidentally pass, matching require_file_access's own fallback path."""
+    backend = LocalStorageBackend(str(tmp_path))
+    assert not backend.verify_url("tkp/job1/lesson_plans.pdf", {})
+    assert not backend.verify_url("tkp/job1/lesson_plans.pdf", {"expires": None, "sig": None})

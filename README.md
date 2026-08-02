@@ -136,8 +136,9 @@ Real, unedited pipeline output lives in [`/samples`](samples), each one run agai
 - **`physics_electricity.json`**: a real NCERT Class 10 Physics chapter (Electricity, PDF). A circuit-building period progression (current → potential difference → resistance → series → parallel → power), correct extraction of physics notation (Ohm's law, proportionality, squared terms, multi-term series/parallel equations), and numerical questions used heavily and correctly, every one independently verified by hand.
 - **`physics_electricity_docx.json`**: the same Electricity chapter, this time as a **DOCX** upload, confirming document intelligence isn't PDF-only. Same formulae, same five-period circuit-building progression, all four validation checks passing.
 - **`physics_motion_in_a_straight_line_pptx.json`**: a real Class 11 Physics lecture deck (Motion in a Straight Line) as a **PPTX** upload. This one surfaced a real bug: the deck has no PowerPoint title placeholders at all (it reads like a PDF-to-slides conversion), so heading detection returned nothing. Fixed with a narrowly-scoped fallback for title slides specifically, since guessing headings on dense content slides produced worse results than no heading at all, verified with a regression test.
+- **`history_thin_excerpt.json`**: a deliberately sparse input, a single 699-character opening paragraph, not a full chapter. Included specifically to show the system doesn't pad thin input to look complete: extraction comes back honestly minimal (2 concepts, 0 examples, 0 formulae, 0 definitions) and the plan collapses to 2 periods instead of forcing the usual 3-8, while all four validation checks still pass because nothing generated goes beyond what the source actually supports.
 
-Read together, the five samples demonstrate the system adapting structure and assessment style to the subject, not just the source format, rather than forcing one template onto all of them.
+Read together, the six samples demonstrate the system adapting structure, assessment style, and output depth to what the input actually contains, not the source format and not a fixed template.
 
 ---
 

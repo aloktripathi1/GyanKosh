@@ -26,13 +26,6 @@ def _sign(storage_path: str, expires_at: int) -> str:
     return hmac.new(secret, message, hashlib.sha256).hexdigest()
 
 
-def verify_signature(storage_path: str, expires_at: int, signature: str) -> bool:
-    if time.time() > expires_at:
-        return False
-    expected = _sign(storage_path, expires_at)
-    return hmac.compare_digest(expected, signature)
-
-
 class LocalStorageBackend(StorageBackend):
     def __init__(self, base_path: str):
         self.base_path = Path(base_path).resolve()
@@ -64,6 +57,17 @@ class LocalStorageBackend(StorageBackend):
         expires_at = int(time.time()) + expires_in
         signature = _sign(storage_path, expires_at)
         return f"/files/{storage_path}?expires={expires_at}&sig={signature}"
+
+    def verify_url(self, storage_path: str, query_params: dict) -> bool:
+        expires_at = query_params.get("expires")
+        signature = query_params.get("sig")
+        if expires_at is None or signature is None:
+            return False
+        expires_at = int(expires_at)
+        if time.time() > expires_at:
+            return False
+        expected = _sign(storage_path, expires_at)
+        return hmac.compare_digest(expected, str(signature))
 
     def delete(self, storage_path: str) -> None:
         target = self._resolve(storage_path)

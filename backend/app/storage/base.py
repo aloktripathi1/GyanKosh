@@ -20,5 +20,16 @@ class StorageBackend(ABC):
         """Return a (signed, expiring where supported) URL for downloading the file."""
 
     @abstractmethod
+    def verify_url(self, storage_path: str, query_params: dict) -> bool:
+        """Verify that query_params (e.g. from a GET /files/{path} request)
+        actually authorizes access to storage_path, using whatever scheme
+        this backend's url() produces. Callers (api/deps.py) go through this
+        rather than a backend-specific verification function, so swapping
+        backends doesn't require touching the auth layer — a real S3
+        implementation would likely make this a no-op returning False, since
+        S3 verifies its own presigned URLs and this backend would never be
+        asked to."""
+
+    @abstractmethod
     def delete(self, storage_path: str) -> None:
         """Remove the file at storage_path."""
