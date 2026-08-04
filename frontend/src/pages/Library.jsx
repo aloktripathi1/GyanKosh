@@ -92,17 +92,17 @@ export default function Library() {
           <div className="stack-sm">
             {jobs.map((job) => (
               <Link key={job.id} to={rowHref(job)} className="card row-between library-row">
-                <div className="stack-sm" style={{ gap: 2 }}>
+                <div className="stack-sm" style={{ gap: 2, minWidth: 0 }}>
                   <div className="row" style={{ gap: 8 }}>
-                    <FileText size={15} style={{ opacity: 0.6 }} />
-                    <span style={{ fontWeight: 600 }}>{job.document_filename}</span>
+                    <FileText size={15} style={{ opacity: 0.6, flexShrink: 0 }} />
+                    <span style={{ fontWeight: 600, overflowWrap: "anywhere" }}>{job.document_filename}</span>
                   </div>
                   <p className="muted" style={{ fontSize: "var(--text-sm)" }}>
                     {job.subject || "Not yet classified"}
                     {job.topic ? ` · ${job.topic}` : ""} · {formatDate(job.created_at)}
                   </p>
                 </div>
-                <div className="row" style={{ gap: "var(--space-3)" }}>
+                <div className="row" style={{ gap: "var(--space-3)", flexShrink: 0 }}>
                   <StatusBadge status={job.status} />
                   <button
                     type="button"
