@@ -92,21 +92,25 @@ def _execute_stage(job: Job, stage: str, document: Document, storage: StorageBac
     if stage == "content_generation":
         plan = _load(job, "teaching_planner", TeachingPlanOutput)
         ek = _load(job, "knowledge_extraction", KnowledgeExtractionOutput)
-        return stage_runners.run_content_generation(plan, ek)
+        language = _load(job, "classification", ClassificationOutput).language
+        return stage_runners.run_content_generation(plan, ek, language)
 
     if stage == "activity_generation":
         plan = _load(job, "teaching_planner", TeachingPlanOutput)
         ek = _load(job, "knowledge_extraction", KnowledgeExtractionOutput)
-        return stage_runners.run_activity_generation(plan, ek)
+        language = _load(job, "classification", ClassificationOutput).language
+        return stage_runners.run_activity_generation(plan, ek, language)
 
     if stage == "assessment_generation":
         plan = _load(job, "teaching_planner", TeachingPlanOutput)
         ek = _load(job, "knowledge_extraction", KnowledgeExtractionOutput)
-        return stage_runners.run_assessment_generation(plan, ek)
+        language = _load(job, "classification", ClassificationOutput).language
+        return stage_runners.run_assessment_generation(plan, ek, language)
 
     if stage == "gap_analysis":
         ek = _load(job, "knowledge_extraction", KnowledgeExtractionOutput)
-        return stage_runners.run_gap_analysis(ek)
+        language = _load(job, "classification", ClassificationOutput).language
+        return stage_runners.run_gap_analysis(ek, language)
 
     if stage == "validation":
         return _run_validation(job).model_dump(mode="json")

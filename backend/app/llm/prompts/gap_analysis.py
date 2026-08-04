@@ -24,8 +24,16 @@ def _format_knowledge(extracted_knowledge: KnowledgeExtractionOutput) -> str:
     return "\n".join(lines)
 
 
-def build_user_prompt(extracted_knowledge: KnowledgeExtractionOutput) -> str:
+def build_user_prompt(extracted_knowledge: KnowledgeExtractionOutput, language: str = "English") -> str:
+    language_line = (
+        f"Write every generated field (misconception, diagnostic questions, remediation) in {language}. "
+        "This applies only to prose you generate — grounding_refs must still be exact verbatim copies "
+        "from the extracted knowledge below, in whatever language those quotes are already in.\n\n"
+        if language and language.lower() != "english"
+        else ""
+    )
     return (
         f"Extracted knowledge (cite these verbatim in grounding_refs):\n{_format_knowledge(extracted_knowledge)}\n\n"
+        f"{language_line}"
         "Produce the learning-gap analysis."
     )

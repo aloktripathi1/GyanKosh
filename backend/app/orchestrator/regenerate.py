@@ -52,13 +52,13 @@ def _regenerate_field(section: str, tkp_version: TKPVersion, job: Job) -> dict:
     if section == "teaching_plan":
         return stage_runners.run_teaching_planner(classification, extracted_knowledge, job.teaching_context)
     if section == "period_content":
-        return stage_runners.run_content_generation(teaching_plan, extracted_knowledge)
+        return stage_runners.run_content_generation(teaching_plan, extracted_knowledge, classification.language)
     if section == "activities":
-        return stage_runners.run_activity_generation(teaching_plan, extracted_knowledge)
+        return stage_runners.run_activity_generation(teaching_plan, extracted_knowledge, classification.language)
     if section == "assessments":
-        return stage_runners.run_assessment_generation(teaching_plan, extracted_knowledge)
+        return stage_runners.run_assessment_generation(teaching_plan, extracted_knowledge, classification.language)
     if section == "learning_gaps":
-        return stage_runners.run_gap_analysis(extracted_knowledge)
+        return stage_runners.run_gap_analysis(extracted_knowledge, classification.language)
 
     raise RegenerationError(f"Section '{section}' is not regeneratable")
 

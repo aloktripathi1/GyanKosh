@@ -16,5 +16,6 @@ def build_user_prompt(document: DocumentIntelligenceOutput, teaching_context: st
         f"{context_block}\n"
         f"Document text:\n{text}\n\n"
         "Classify this document: subject, grade level, difficulty, topic, chapter, "
-        "category (e.g. textbook chapter, lecture notes, worksheet), and language."
+        "category (e.g. textbook chapter, lecture notes, worksheet), and language (the "
+        "language's plain English name, e.g. 'English', 'Hindi', 'Tamil', not a language code)."
     )

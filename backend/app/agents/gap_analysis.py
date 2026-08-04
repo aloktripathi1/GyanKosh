@@ -26,11 +26,11 @@ class _GapAnalysisDraft(BaseModel):
     gaps: list[_DraftLearningGap]
 
 
-def run(input: KnowledgeExtractionOutput) -> GapAnalysisOutput:
+def run(input: KnowledgeExtractionOutput, language: str = "English") -> GapAnalysisOutput:
     draft = structured_call(
         tier=ModelTier.STRONG,
         system_prompt=SYSTEM_PROMPT,
-        user_prompt=build_user_prompt(input),
+        user_prompt=build_user_prompt(input, language),
         output_schema=_GapAnalysisDraft,
     )
 

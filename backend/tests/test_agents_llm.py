@@ -229,6 +229,52 @@ def test_content_generator_resolves_grounding(monkeypatch, sample_plan, sample_e
     assert result.periods[0].source_spans[0].quote == "Newton's second law:"
 
 
+def test_content_generator_passes_non_english_language_into_prompt(monkeypatch, sample_plan, sample_extraction):
+    from app.agents.content_generator import _DraftPeriodContent, _PeriodContentDraft
+
+    draft = _PeriodContentDraft(
+        periods=[
+            _DraftPeriodContent(
+                period_number=1, entry_ticket="e", teacher_script="t", blackboard_notes="b", activities=["a"],
+                checkpoint_questions=[], exit_ticket="x", homework="h", mentor_moment="m",
+                grounding_refs=["Understand force and acceleration"],
+            )
+        ]
+    )
+    captured = {}
+
+    def fake_call(**kwargs):
+        captured.update(kwargs)
+        return draft
+
+    monkeypatch.setattr(content_generator, "structured_call", fake_call)
+    content_generator.run(content_generator.ContentGeneratorInput(sample_plan, sample_extraction, "Hindi"))
+    assert "Hindi" in captured["user_prompt"]
+
+
+def test_content_generator_defaults_to_english_with_no_language_instruction(monkeypatch, sample_plan, sample_extraction):
+    from app.agents.content_generator import _DraftPeriodContent, _PeriodContentDraft
+
+    draft = _PeriodContentDraft(
+        periods=[
+            _DraftPeriodContent(
+                period_number=1, entry_ticket="e", teacher_script="t", blackboard_notes="b", activities=["a"],
+                checkpoint_questions=[], exit_ticket="x", homework="h", mentor_moment="m",
+                grounding_refs=["Understand force and acceleration"],
+            )
+        ]
+    )
+    captured = {}
+
+    def fake_call(**kwargs):
+        captured.update(kwargs)
+        return draft
+
+    monkeypatch.setattr(content_generator, "structured_call", fake_call)
+    content_generator.run(content_generator.ContentGeneratorInput(sample_plan, sample_extraction))
+    assert "Write every generated field" not in captured["user_prompt"]
+
+
 def test_content_generator_raises_on_ungrounded_ref(monkeypatch, sample_plan, sample_extraction):
     from app.agents.content_generator import _DraftPeriodContent, _PeriodContentDraft
 
@@ -323,3 +369,25 @@ def test_gap_analysis_resolves_grounding(monkeypatch, sample_extraction):
     monkeypatch.setattr(gap_analysis, "structured_call", lambda **kwargs: draft)
     result = gap_analysis.run(sample_extraction)
     assert result.gaps[0].severity.value == "high"
+
+
+def test_gap_analysis_passes_non_english_language_into_prompt(monkeypatch, sample_extraction):
+    from app.agents.gap_analysis import _DraftLearningGap, _GapAnalysisDraft
+
+    draft = _GapAnalysisDraft(
+        gaps=[
+            _DraftLearningGap(
+                misconception="m", severity="high", diagnostic_questions=[], remediation="r",
+                grounding_refs=["Understand force and acceleration"],
+            )
+        ]
+    )
+    captured = {}
+
+    def fake_call(**kwargs):
+        captured.update(kwargs)
+        return draft
+
+    monkeypatch.setattr(gap_analysis, "structured_call", fake_call)
+    gap_analysis.run(sample_extraction, "Hindi")
+    assert "Hindi" in captured["user_prompt"]
