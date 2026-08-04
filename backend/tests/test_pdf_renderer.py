@@ -4,6 +4,8 @@ this is specifically about the HTML/CSS -> PDF conversion, not agent logic."""
 
 from datetime import UTC, datetime
 
+import fitz
+
 from app.publishing.pdf_renderer import render_assessment_book, render_lesson_plans, render_teacher_guide
 from app.schemas.activity_generator import Activity, ActivityGenerationOutput, PeriodActivities
 from app.schemas.assessment_generator import MCQ, AssessmentGenerationOutput, PeriodAssessment
@@ -97,3 +99,12 @@ def test_assessment_book_pdf_renders_special_characters(tmp_path):
     key = render_assessment_book(_tkp(), storage)
     pdf_bytes = storage.read(key)
     assert pdf_bytes.startswith(b"%PDF")
+
+
+def test_teacher_guide_pdf_prints_difficulty_value_not_enum_repr(tmp_path):
+    storage = LocalStorageBackend(str(tmp_path))
+    key = render_teacher_guide(_tkp(), storage)
+    pdf_bytes = storage.read(key)
+    text = fitz.open(stream=pdf_bytes, filetype="pdf")[0].get_text()
+    assert "Difficulty: intermediate" in text
+    assert "DifficultyLevel" not in text
